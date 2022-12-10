@@ -42,7 +42,7 @@
         box-sizing: border-box;
         margin-bottom: 33px;
         filter: grayscale(100%);
-        transition: all .6s;
+        transition: all .3s ease-in-out;
         cursor: pointer;
         &:hover {
           filter: grayscale(0);

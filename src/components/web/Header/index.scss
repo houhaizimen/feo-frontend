@@ -45,8 +45,13 @@
       }
       & > .link {
         & > img {
+          cursor: pointer;
           width: 28px;
           margin-right: 20px;
+          transition: all .4s ease-in-out;
+          &:hover {
+            transform: scale(1.2);
+          }
         }
       }
       & > .connect {
