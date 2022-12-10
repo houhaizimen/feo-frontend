@@ -11,14 +11,14 @@
     & > .list {
       position: relative;
       padding: rem(30) rem(34) rem(52);
-      border: 2px solid #EF267C;
+      border: 4px solid #EF267C;
       & > .angle {
         display: block;
         position: absolute;
         
         height: 0px;
         width: 0px;
-        border: 10px solid #000;
+        border: 14px solid transparent;
         border-top-color: #EF267C;
         border-bottom-color: transparent;
         border-left-color:#EF267C ;

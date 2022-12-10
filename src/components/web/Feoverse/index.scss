@@ -6,6 +6,7 @@
     margin-bottom: 52px;
   }
   &-wrap {
+    font-family: 'Akrobat-Bold';
     width: 1200px;
     display: grid;
     grid-template-columns: 422px auto;
@@ -35,6 +36,9 @@
         padding-left: 22px;
         bottom: 0;
         left: 0;
+        & > .name {
+          font-size: 25px;
+        }
       }
       &:hover {
         transform: scale(1.05);

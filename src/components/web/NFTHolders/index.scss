@@ -21,8 +21,12 @@
         font-family: 'Akrobat-Bold';
       }
       & > li:last-child {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         & > dt {
           font-family: 'Universal Serif';
+          font-weight: bold;
           margin-bottom: 18px;
           font-size: 25px;
         }

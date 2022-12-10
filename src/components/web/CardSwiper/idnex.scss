@@ -82,8 +82,13 @@
       line-height: 89px;
       font-family: 'Akrobat-Bold';
       font-weight: bold;
+      cursor: pointer;
+      transition: all .5s ease-in-out;
       &:last-child {
         margin-right: 0;
+      }
+      &:hover {
+        transform: scale(1.15);
       }
     }
   }
