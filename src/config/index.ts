@@ -75,7 +75,5 @@ export const SWIPER_LIST = [
   { icon: '7' },
   { icon: '8' },
   { icon: '9' },
-  { icon: '10' },
-  { icon: '11' },
-  { icon: '12' }
+  { icon: '10' }
 ]

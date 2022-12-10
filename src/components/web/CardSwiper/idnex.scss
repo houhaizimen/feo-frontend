@@ -42,6 +42,28 @@
           }
         }
       }
+      .swiper-button-prev {
+        width: 89px;
+        left: 60px;
+        &::after {
+          content: '';
+          width: 89px;
+          height: 89px;
+          background-image: imgurl('icon-left.png');
+          background-size: cover;
+        }
+      }
+      .swiper-button-next {
+        width: 89px;
+        right: 60px;
+        &::after {
+          content: '';
+          width: 89px;
+          height: 89px;
+          background-image: imgurl('icon-right.png');
+          background-size: cover;
+        }
+      }
     }
   }
   & > .btn-wrap {
