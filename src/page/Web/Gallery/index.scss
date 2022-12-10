@@ -1,0 +1,67 @@
+.web-gallery {
+  @include full-bg;
+  &-cont {
+    @include center-1200;
+    & > h1 {
+      text-align: center;
+      font-size: 40px !important;
+      line-height: 54px !important;
+    }
+    & > .tips {
+      margin-top: 12px;
+      & > li {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 1200px;
+        height: 305px;
+        background-size: 100% 100%;
+        padding-bottom: 28px;
+        box-sizing: border-box;
+        & > h2 {
+          font-size: 46px;
+          font-family: 'Universal Serif';
+          margin-bottom: 20px;
+          text-transform: uppercase;
+        }
+        & > p {
+          width: 850px;
+          font-size: 23px;
+          line-height: 33px;
+        }
+      }
+    }
+    & > .card {
+      margin-top: 116px;
+      margin-bottom: rem(40);
+      & > li {
+        position: relative;
+        width: 1200px;
+        height: 274px;
+        background-size: 100% 100%;
+        box-sizing: border-box;
+        margin-bottom: 33px;
+        filter: grayscale(100%);
+        transition: all .6s;
+        cursor: pointer;
+        &:hover {
+          filter: grayscale(0);
+        }
+        & > h1 {
+          position: absolute;
+          top: 50%;
+          right: 154px;
+          font-size: 46px;
+          font-family: 'Universal Serif';
+          text-transform: uppercase;
+        }
+        &:last-child {
+          margin-bottom: 0;
+          & > h1 {
+            right: 75px;
+          }
+        }
+      }
+    }
+  }
+}

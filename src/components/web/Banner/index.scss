@@ -1,0 +1,64 @@
+.web-home-banner {
+  position: relative;
+  background-image: imgurl('banner-bg.png');
+  background-size: 100% 100%;
+  z-index: 1;
+  & > .cont {
+    position: relative;
+    @include center-1200;
+    padding-top: 164px;
+    padding-bottom: 183px;
+    & > h1, & > h2 {
+      width: 681px;
+      font-family: 'Universal Serif';
+    }
+    & > h1 {
+      line-height: 90px;
+      margin-top: 11px;
+      font-size: 87px;
+    }
+    & > .line {
+      width: 681px;
+      height: 2px;
+      background-color: #fff;
+    }
+    & > h2 {
+      line-height: 52px;
+      margin-bottom: 16px;
+    }
+    z-index: 3;
+  }
+  &-buy {
+    width: 405px;
+    margin-top: 46px;
+    font-family: 'Akrobat-Bold';
+    & > .item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 26px;
+      padding-bottom: 14px;
+      border-bottom: 0.5px solid #fff;
+      font-size: 18px;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+    & > p {
+      font-size: 18px;
+      text-align: center;
+      margin: 26px 0;
+    }
+    &-step {
+      margin-bottom: 27px;
+    }
+  }
+  & > .person {
+    z-index: 1;
+    position: absolute;
+    bottom: 8px;
+    right: 0;
+    width: 70vw;
+    // height: calc(100% - 107px);
+  }
+}

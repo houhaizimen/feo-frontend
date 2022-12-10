@@ -1,0 +1,54 @@
+.web-stepper {
+  display: flex;
+  align-items: center;
+  font-size: 20pxs;
+  &-sub, &-add {
+    width: 41px;
+    height: 41px;
+    background-image: imgurl('step-del.png');
+    background-size: 100% 100%;
+    cursor: pointer;
+    border: 0;
+  }
+  &-add {
+    background-image: imgurl('step-add.png');
+    background-size: 100% 100%;
+  }
+  label {
+    display: block;
+    margin: 0 4px;
+    text-align: center;
+    border: 1px solid #fff;
+    width: 316px;
+    height: 41px;
+    text-align: center;
+    line-height: 41px;
+    box-sizing: border-box;
+    background-image: imgurl('step-bg.png');
+    background-size: 100% 100%;
+  }
+  button:disabled {
+    color: rgba(#fff, .3);
+  }
+  &.mobile {
+    font-size: rem(16);
+    .web-stepper-sub, .web-stepper-add {
+      width: rem(32);
+      height: rem(32);
+      text-align: center;
+      line-height: rem(32);
+      font-size: rem(20);
+      padding: 0;
+    }
+    label {
+      margin: 0 rem(5);
+      width: rem(99);
+      height: rem(32);
+      text-align: center;
+      line-height: rem(32);
+    }
+    button:disabled {
+      color: rgba(#fff, .3);
+    }
+  }
+}

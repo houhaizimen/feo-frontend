@@ -1,0 +1,64 @@
+.app-home-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  z-index: 999;
+  background-color: #000;
+  height: rem(98);
+  transition: all .3s;
+  & > .cont {
+    height: 100%;
+    @include center-1200;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    & > .left {
+      & > img {
+        width: rem(72);
+      }
+    }
+    & > .right {
+      display: flex;
+      align-items: center;
+      font-family: 'Akrobat-Bold';
+      font-size: 18px;
+      & > .title, & > .link {
+        display: flex;
+        align-items: center;
+      }
+      & > .title {
+        li {
+          width: 115px;
+          height: 38px;
+          margin-right: 29px;
+          line-height: 38px;
+          text-align: center;
+          white-space: nowrap;
+          cursor: pointer;
+          &.active {
+            background-image: imgurl('active-bg.png');
+            background-size: 100% 100%;
+          }
+        }
+      }
+      & > .link {
+        & > img {
+          width: 28px;
+          margin-right: 20px;
+        }
+      }
+      & > .connect {
+        height: 48px;
+        text-align: center;
+        line-height: 48px;
+        border-radius: 7px;
+        margin-left: 21px;
+        padding: 0 32px;
+        cursor: pointer;
+        border: 1px solid #fff;
+      }
+    }
+  }
+}

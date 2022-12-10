@@ -1,0 +1,28 @@
+$min-width: 1200px;
+
+@mixin center-1200 {
+  display: block;
+  width: $min-width;
+  margin: 0 auto;
+}
+
+@mixin full-bg {
+  min-height: 100vh;
+  position: relative;
+  background: imgurl('1.png') no-repeat;
+  background-size: cover;
+  background-position: 0 rem(-98);
+  padding-top: rem(147);
+  padding-bottom: rem(260);
+  box-sizing: border-box
+}
+
+
+@function rem($px) {
+  @return ($px * 0.01) + rem;
+}
+
+@function imgurl($url) {
+  @return url('../../public/assets/' + $url);
+}
+

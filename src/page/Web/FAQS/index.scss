@@ -1,0 +1,91 @@
+.web-faq {
+  @include full-bg;
+  &-cont {
+    @include center-1200;
+    & > h1 {
+      text-align: center;
+      font-size: 40px !important;
+      line-height: 54px !important;
+      margin-bottom: 36px;
+    }
+    & > .list {
+      position: relative;
+      padding: rem(30) rem(34) rem(52);
+      border: 2px solid #EF267C;
+      & > .angle {
+        display: block;
+        position: absolute;
+        
+        height: 0px;
+        width: 0px;
+        border: 10px solid #000;
+        border-top-color: #EF267C;
+        border-bottom-color: transparent;
+        border-left-color:#EF267C ;
+        border-right-color: transparent;
+        &:nth-child(1) {
+          top: 4px;
+          left: 4px;
+        }
+        &:nth-child(2) {
+          top: 4px;
+          right: 4px;
+          border-top-color: #EF267C;
+          border-bottom-color: transparent;
+          border-right-color:#EF267C ;
+          border-left-color: transparent;
+        }
+        &:nth-child(3) {
+          bottom: 4px;
+          left: 4px;
+          border-bottom-color: #EF267C;
+          border-top-color: transparent;
+          border-left-color:#EF267C ;
+          border-right-color: transparent;
+        }
+        &:nth-child(4) {
+          bottom: 4px;
+          right: 4px;
+          border-bottom-color: #EF267C;
+          border-top-color: transparent;
+          border-right-color:#EF267C ;
+          border-left-color: transparent;
+        }
+      }
+      & > dl {
+        padding-bottom: 10px;
+        border-bottom: 1px solid #fff;
+        & > dt {
+          position: relative;
+          font-size: 17px;
+          display: flex;
+          align-items: center;
+          font-weight: bold;
+          margin-top: rem(22);
+          &::before {
+            position: relative;
+            left: 0;
+            margin-right: 10px;
+            width: 25px;
+            height: 24px;
+            background-image: imgurl('icon-web.png');
+            background-size: cover;
+          }
+        }
+        & > dd {
+          font-size: 20px;
+          margin-top: rem(12);
+          color: rgba(#fff, .6);
+        }
+        &:first-child {
+          dt {
+            margin-top: 0;
+          }
+        }
+        &:last-child {
+          border: 0;
+        }
+      }
+    }
+  }
+}

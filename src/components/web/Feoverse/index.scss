@@ -1,0 +1,72 @@
+.web-home-feoverse {
+  @include center-1200;
+  margin-top: 82px;
+  & > p {
+    margin-top: 39px;
+    margin-bottom: 52px;
+  }
+  &-wrap {
+    width: 1200px;
+    display: grid;
+    grid-template-columns: 422px auto;
+    grid-template-rows: 230px 299px;
+    grid-gap: 25px;
+    .item{
+      position: relative;
+      font-size: 43px;
+      font-family: 'Akrobat-Bold';
+      cursor: pointer;
+      transition: all .3s;
+      & > img {
+        width: 100%;
+      }
+      & > span {
+        position: absolute;
+        top: 22px;
+        left: 22px;
+      }
+      & > div {
+        position: absolute;
+        width: 100%;
+        background-color: rgba(#000, .3);
+        font-size: 25px;
+        height: 69px;
+        line-height: 69px;
+        padding-left: 22px;
+        bottom: 0;
+        left: 0;
+      }
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+    & > .right {
+      grid-column: 2 /2;
+      grid-row: 1/ 3;
+      display: grid;
+      grid-template-columns: 252px 229px 222px;
+      grid-template-rows: 163px 170px 171px;
+      grid-gap: 25px;
+      & > .three {
+        grid-column: 1 / 1;
+        grid-row: 1 / 3;
+      }
+      & > .six {
+        grid-column: 2 / 4;
+        grid-row: 1 / 1;
+      }
+      & > .five {
+        grid-column: 2 / 2;
+        grid-row: 2 / 2;
+      }
+      & > .four {
+        grid-column: 1 / 3;
+        grid-row: 3 / 3;
+      }
+      & > .seven {
+        grid-column: 3 / 3;
+        grid-row: 2 / 4;
+      }
+    }
+  }
+}

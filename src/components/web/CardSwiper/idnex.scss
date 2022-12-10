@@ -1,0 +1,68 @@
+.web-home-card-swiper {
+  @include center-1200;
+  margin-top: 16px;
+  & > h1 {
+    white-space: nowrap;
+    margin-bottom: 63px;
+  }
+  & > p {
+    margin-bottom: 30px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &-wrap {
+    margin-top: 63px;
+    &-swiper {
+      img {
+        display: block;
+        width: 686px;
+        height: 682px;
+        margin: 0 auto;
+      }
+      .swiper-wrapper {
+        width: 400px !important;
+        .swiper-slide {
+          position: relative;
+          transform:scale(.9);
+          transition: all .3s ease-in-out;
+          z-index: 1;
+          img {
+            width: 100%;
+            object-fit: contain;
+            transition: all .3s ease-in-out;
+            opacity: .3;
+          }
+          &-active {
+            transform:scale(1.7);
+            z-index: 9;
+            img {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+  & > .btn-wrap {
+    margin-top: 73px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & > li {
+      width: 274px;
+      height: 89px;
+      white-space: nowrap;
+      margin-right: 61px;
+      background-image: imgurl('btn-bg.png');
+      background-size: 100% 100%;
+      text-align: center;
+      line-height: 89px;
+      font-family: 'Akrobat-Bold';
+      font-weight: bold;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
