@@ -6,13 +6,9 @@ const Index = () => {
   const navigate = useNavigate()
   const contList = [
     { name: 'PRIVACY POLICY', link: '' },
-    { name: 'TERMS', link: '/terms' },
-    { name: 'CONTACT US', link: '', outside: true }
+    { name: 'TERMS', link: '/terms' }
   ]
   const handleJump = (item: any) => {
-    if (item.outside) {
-      return
-    }
     navigate(item.link)
   }
   return <div className='web-home-footer'>
@@ -22,6 +18,9 @@ const Index = () => {
         {
           contList.map(item => <li onClick={() => handleJump(item)} key={item.name}>{item.name}</li>)
         }
+        <li>
+          <a href='mailto:creative@nervape.com'>CONTACT US</a>
+        </li>
       </ul>
       <div className='link'>
         {
