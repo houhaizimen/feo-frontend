@@ -62,7 +62,7 @@
     bottom: rem(8);
     height: 94%;
     object-fit: contain;
-    animation: float-top-bottom 1.3s linear infinite alternate;
+    animation: float-top-bottom 1s ease-in-out infinite alternate;
   }
 }
 @keyframes float-top-bottom {
