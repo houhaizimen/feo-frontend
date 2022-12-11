@@ -19,6 +19,16 @@ const Index = () => {
       name: 'Metamask',
       icon: 'metamask',
       connectId: ConnectorNames.Injected
+    },
+    {
+      name: 'Coinbase',
+      icon: 'coinbase',
+      connectId: ConnectorNames.WalletLink
+    },
+    {
+      name: 'WalletConnect',
+      icon: 'wallet-connect',
+      connectId: ConnectorNames.WalletConnect
     }
   ]
   const HEADER_LIST = [
@@ -70,7 +80,7 @@ const Index = () => {
               Connect Wallet
               <ul className={classNames('wallet-connect')}>
                 {
-                  walletList.map(item => <li key={item.name} onClick={() => handleLogin(item.connectId)}>
+                  walletList.map(item => <li className='left' key={item.name} onClick={() => handleLogin(item.connectId)}>
                     <img src={`./assets/${item.icon}.png`} />
                     <span>{item.name}</span>
                   </li>)

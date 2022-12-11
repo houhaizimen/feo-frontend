@@ -97,11 +97,15 @@
             justify-content: center;
             color:#fff;
             font-size: rem(18);
+            padding-left: rem(8);
             box-sizing: border-box;
             text-align: center;
+            &.left {
+              justify-content: flex-start;
+            }
             & > img {
               width: rem(24);
-              margin-right: 13px;
+              margin-right: rem(13);
             }
           }
         }
