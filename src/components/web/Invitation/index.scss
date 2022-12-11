@@ -1,18 +1,18 @@
 .web-home-invitation {
   position: relative;
-  padding: 146px 0 120px 0;
+  padding: rem(146) 0 rem(120) 0;
   @include center-1200;
   & > p {
     margin-top: 30px;
-    width: 642px;
+    width: rem(642);
     &:first-child {
       margin-top: 43px;
     }
   }
   & > img {
     position: absolute;
-    top: 0;
-    right: -140px;
-    width: 900px;
+    top: rem(30);
+    left: rem(600);
+    height: 100%;
   }
 }

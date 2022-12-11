@@ -66,7 +66,7 @@ const Index: FC<PropsType> = ({ size = 'default', value = 0, min = 0, max = 10, 
         onTouchEnd={() => touchEnd('sub', 'touch')}
         onMouseDown={() => touchStart('mouse')}
         onMouseUp={() => touchEnd('sub', 'mouse')}
-      >-</button>
+      ></button>
       <label>{currValue}</label>
       <button
         className="web-stepper-add"
@@ -75,7 +75,7 @@ const Index: FC<PropsType> = ({ size = 'default', value = 0, min = 0, max = 10, 
         onTouchEnd={() => touchEnd('add', 'touch')}
         onMouseDown={() => touchStart('mouse')}
         onMouseUp={() => touchEnd('add', 'mouse')}
-      >+</button>
+      ></button>
     </div>
   )
 }

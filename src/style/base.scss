@@ -3,10 +3,7 @@ html {
   background-color: #000;
 }
 body {
-  line-height: 1;
   font-family: 'Lovato Light', 'Universal Serif', 'PingFang SC', 'Akrobat-SemiBold', 'Akrobat-Bold';
-  font-size: 23px;
-  line-height: 33px;
   color: #fff;
   & > iframe {
     display: none !important;z-index: 0 !important;position: static !important;
@@ -44,6 +41,8 @@ body, html, ul, li, dl, dt, dd, div, img, p, h1, h2 {
 }
 ul {
   list-style: none;
+}
+.pc-mode {
 }
 // 移动端特殊样式
 .mobile-mode {

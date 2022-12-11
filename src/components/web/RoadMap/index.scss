@@ -2,14 +2,14 @@
   position: relative;
   background-image: imgurl('roadmap-bg.png');
   background-size: 100% 100%;
-  padding-top: 85px;
+  padding-top: rem(85);
   &-header {
     display: flex;
     align-items: center;
     position: absolute;
     left: -50px;
     right: -50px;
-    top: 85px;
+    top: rem(85);
     & > img, & > span {
       margin-right: 102px;
       font-size: 58px;
@@ -27,7 +27,7 @@
   & > .cont {
     min-width: 1200px;
     width: 100%;
-    padding-top: 106px;
+    padding-top: rem(106);
     & > img {
       width: 100%;
     }

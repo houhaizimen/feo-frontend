@@ -1,19 +1,20 @@
 .web-button {
   width: 405px;
-  height: 81px;
+  height: rem(81);
   padding: 0;
-  line-height: 81px;
+  line-height: rem(81);
   text-align: center;
   background-image: imgurl('btn-bg.png');
   background-size: 100% 100%;
   color: #fff;
-  font-size: 25px;
+  font-size: rem(25);
   color: #fff;
   border: 0;
   cursor: pointer;
-  font-family: 'SERIM-3';
+  font-family: 'Akrobat-Bold';
   transition: all .3s;
   box-shadow: 0 10px 100px 10px #000;
+  font-weight: bold;
    &.mini {
     width: 133px;
   }

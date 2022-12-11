@@ -48,7 +48,7 @@ const Index = () => {
     {/* <div className='sticky'/> */}
     <div className={ classNames('app-home-header', { fixed })}>
     <ul className='cont'>
-      <li className='left'><img src='assets/logo.png' alt="" /></li>
+      <li className='left' onClick={() => handleLink('/build.rar')}><img src='assets/logo.png' alt="" /></li>
       <li className='right'>
         {
           <ul className='title'>

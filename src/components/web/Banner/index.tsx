@@ -21,7 +21,7 @@ const Index = () => {
         </dl>
         <dl className='item'>
           <dd>Total</dd>
-          <dt>7777 ETH</dt>
+          <dt>7777</dt>
         </dl>
         {/* <dl className='item'>
           <dd>Time</dd>
@@ -31,7 +31,6 @@ const Index = () => {
         <div className='web-home-banner-buy-step'>
           <Stepper value={3} max={3} min={1}/>
         </div>
-        <p>Whitelists of EdgeRunners can mint 1d in advance</p>
         <Button>MINT</Button>
       </div>
     </div>

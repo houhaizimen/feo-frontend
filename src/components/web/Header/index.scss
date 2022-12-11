@@ -3,14 +3,15 @@
   top: 0;
   left: 0;
   right: 0;
-  box-sizing: border-box;
   z-index: 999;
   background-color: #000;
   height: rem(98);
+  padding: 0 200px;
   transition: all .3s;
+  box-sizing: border-box;
   & > .cont {
     height: 100%;
-    @include center-1200;
+    // @include center-1200;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -103,5 +104,20 @@
         }
       }
     }
+  }
+}
+@media screen and (max-width: 1380px) {
+  .app-home-header {
+    padding: 0 40px;
+  }
+}
+@media screen and (min-width:1381px) and (max-width: 1600px) {
+  .app-home-header {
+    padding: 0 100px;
+  }
+}
+@media screen and (min-width:1601px) and (max-width: 1920px) {
+  .app-home-header {
+    padding: 0 140px;
   }
 }

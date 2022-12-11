@@ -1,7 +1,7 @@
 .web-home-nft-holders {
   position: relative;
-  margin-top: 105px;
-  padding-bottom: 90px;
+  margin-top: rem(105);
+  padding-bottom: rem(90);
   z-index: 2;
   & > h1 {
     @include center-1200;
@@ -11,14 +11,16 @@
     @include center-1200;
     z-index: 3;
     & > ul {
-      margin-top: 91px;
+      margin-top: rem(91);
       display: flex;
       align-items: center;
       color: #EF267C;
       & > li:first-child {
-        margin-right: 61px;
-        font-size: 107px;
+        margin-right: rem(61);
+        font-size: rem(107);
         font-family: 'Akrobat-Bold';
+        margin-top: -6px;
+        font-weight: bold;
       }
       & > li:last-child {
         display: flex;
@@ -27,8 +29,8 @@
         & > dt {
           font-family: 'Universal Serif';
           font-weight: bold;
-          margin-bottom: 18px;
-          font-size: 25px;
+          margin-bottom: rem(18);
+          font-size: rem(25);
         }
         & > dd {
           color: #fff;
@@ -36,8 +38,8 @@
       }
     }
     & > img {
-      width: 1195px;
-      margin-top: 69px;
+      width: rem(1195);
+      margin-top: rem(69);
     }
   }
   &-person {

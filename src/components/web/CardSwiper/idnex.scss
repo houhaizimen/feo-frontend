@@ -12,7 +12,8 @@
     }
   }
   &-wrap {
-    margin-top: 63px;
+    margin: 0 auto;
+    margin-top: -60px;
     &-swiper {
       img {
         display: block;
@@ -24,7 +25,7 @@
         width: 400px !important;
         .swiper-slide {
           position: relative;
-          transform:scale(.9);
+          transform:scale(.7);
           transition: all .3s ease-in-out;
           z-index: 1;
           img {
@@ -34,7 +35,7 @@
             opacity: .3;
           }
           &-active {
-            transform:scale(1.7);
+            transform:scale(1.2);
             z-index: 9;
             img {
               opacity: 1;
@@ -43,23 +44,23 @@
         }
       }
       .swiper-button-prev {
-        width: 89px;
-        left: 60px;
+        width: rem(89);
+        left: rem(60);
         &::after {
           content: '';
-          width: 89px;
-          height: 89px;
+          width: rem(89);
+          height: rem(80);
           background-image: imgurl('icon-left.png');
           background-size: cover;
         }
       }
       .swiper-button-next {
-        width: 89px;
-        right: 60px;
+        width: rem(89);
+        right: rem(60);
         &::after {
           content: '';
-          width: 89px;
-          height: 89px;
+          width: rem(89);
+          height: rem(80);
           background-image: imgurl('icon-right.png');
           background-size: cover;
         }
@@ -67,15 +68,16 @@
     }
   }
   & > .btn-wrap {
-    margin-top: 73px;
+    // margin-top: 73px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     & > li {
       width: 274px;
       height: 89px;
+      font-size: rem(30);
       white-space: nowrap;
-      margin-right: 61px;
+      // margin-right: rem(60);
       background-image: imgurl('btn-bg.png');
       background-size: 100% 100%;
       text-align: center;
@@ -84,9 +86,9 @@
       font-weight: bold;
       cursor: pointer;
       transition: all .5s ease-in-out;
-      &:last-child {
-        margin-right: 0;
-      }
+      // &:last-child {
+      //   margin-right: 0;
+      // }
       &:hover {
         transform: scale(1.15);
       }

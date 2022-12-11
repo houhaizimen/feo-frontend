@@ -6,38 +6,39 @@
   & > .cont {
     position: relative;
     @include center-1200;
-    padding-top: 164px;
-    padding-bottom: 183px;
+    padding-top: rem(140);
+    padding-bottom: rem(180);
     & > h1, & > h2 {
-      width: 681px;
+      width: rem(681);
       font-family: 'Universal Serif';
     }
     & > h1 {
-      line-height: 90px;
-      margin-top: 11px;
-      font-size: 87px;
+      line-height: rem(85);
+      margin-top: rem(11);
+      font-size: rem(70);
     }
     & > .line {
-      width: 681px;
+      width: rem(681);
       height: 2px;
       background-color: #fff;
     }
     & > h2 {
-      line-height: 52px;
-      margin-bottom: 16px;
+      line-height: rem(52);
+      margin-bottom: rem(16);
+      font-size: rem(46);
     }
     z-index: 3;
   }
   &-buy {
     width: 405px;
-    margin-top: 46px;
+    margin-top: rem(40);
     font-family: 'Akrobat-Bold';
     & > .item {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-top: 26px;
-      padding-bottom: 14px;
+      margin-top: rem(26);
+      padding-bottom: rem(14);
       border-bottom: 0.5px solid #fff;
       font-size: 18px;
       &:first-child {
@@ -47,17 +48,19 @@
     & > p {
       font-size: 18px;
       text-align: center;
-      margin: 26px 0;
+      margin: rem(26) 0;
+      color: #fff;
     }
     &-step {
-      margin-bottom: 27px;
+      margin-bottom: rem(27);
     }
   }
   & > .person {
     z-index: 1;
     position: absolute;
-    bottom: 8px;
+    bottom: rem(8);
     right: 0;
-    width: rem(1289);
+    height: 94%;
+    object-fit: contain;
   }
 }

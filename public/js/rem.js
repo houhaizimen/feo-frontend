@@ -27,6 +27,7 @@
       }
       const width = w > 1920 ? 1920 : w < 1200 ? 1200 : w
       const fz = ~~(width * 100000 / 192) / 10000
+      html.classList.add('pc-mode')
       html.style.cssText = 'font-size: ' + fz + 'px'
     }
   }

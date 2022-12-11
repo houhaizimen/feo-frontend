@@ -2,7 +2,7 @@
   width: 100vw;
   position: absolute;
   bottom: 0;
-  font-size: 18px;
+  font-size: rem(18);
   &-top {
     @include center-1200;
     display: flex;
