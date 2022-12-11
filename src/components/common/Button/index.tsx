@@ -15,7 +15,7 @@ const Index: FC<PropsType> = ({ size = 'small', loading = false, disabled = fals
     if (disabled) return
     onClick?.()
   }
-  const url = isMobile() ? '../img/load.png' : 'img/load.png'
+  const url = isMobile() ? '../assets/load.png' : 'assets/load.png'
   return <button className={classNames('web-button', size, type, { disabled, mobile: isMobile() })} onClick={handleClick}>
     {
       loading && <div className='loading-wrap'>

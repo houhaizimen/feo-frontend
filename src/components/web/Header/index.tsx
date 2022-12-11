@@ -9,12 +9,9 @@ import { useAuth } from '@/hooks/useAuth'
 
 const Index = () => {
   const { account } = useWeb3React()
-  console.log(account)
   const { login, logout } = useAuth()
-  console.log(logout)
   const scroll = useScroll(document) ?? 0
   const [fixed, setFixed] = useState<boolean>(false)
-  // const [show, setShow] = useState<boolean>(false)
   const { pathname } = useLocation()
   const navigate = useNavigate()
   const walletList = [
@@ -24,7 +21,6 @@ const Index = () => {
       connectId: ConnectorNames.Injected
     }
   ]
-  console.log(walletList)
   const HEADER_LIST = [
     { name: 'World', link: '/' },
     { name: 'Fighter Gallery', link: '/gallery' },
@@ -35,7 +31,6 @@ const Index = () => {
     localStorage.setItem(key, connector)
     await login(connector)
   }
-  console.log(handleLogin)
   useEffect(() => {
     const { top } = scroll as {
       left: number
@@ -69,7 +64,34 @@ const Index = () => {
             }
           </div>
         }
-        <div className='connect'>Connect Wallet</div>
+        {
+          !account && <div className='wallet'>
+            <div className='connect'>
+              Connect Wallet
+              <ul className={classNames('wallet-connect')}>
+                {
+                  walletList.map(item => <li key={item.name} onClick={() => handleLogin(item.connectId)}>
+                    <img src={`./assets/${item.icon}.png`} />
+                    <span>{item.name}</span>
+                  </li>)
+                }
+              </ul>
+            </div>
+          </div>
+        }
+        {
+          account && <div className='wallet'>
+            <div className='connect'>
+              {account.slice(0, 4)}...{account.slice(-6)}
+              <ul className={classNames('wallet-connect')}>
+                <li onClick={() => logout()}>
+                  <img src="assets/exit.png" alt="" />
+                  <span>Disconnect Wallet</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        }
       </li>
     </ul>
   </div>
