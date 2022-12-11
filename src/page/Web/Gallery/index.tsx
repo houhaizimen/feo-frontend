@@ -5,7 +5,7 @@ import Footer from '@/components/web/Footer'
 const Index = () => {
   return <div className='web-gallery'>
     <div className='web-gallery-cont'>
-      <h1 className='title'>A world class fighting competition KOF<br /> in FEOVERSE is aproaching…</h1>
+      <h1 className='title'>A world class fighting competition KOF<br /> in FEOVERSE is aproaching</h1>
       <ul className='tips'>
         {
           GALLERY_TOP_LIST.map(item => {
