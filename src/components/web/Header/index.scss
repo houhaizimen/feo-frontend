@@ -25,6 +25,7 @@
       align-items: center;
       font-family: 'Akrobat-Bold';
       font-size: 18px;
+      padding-right: rem(168);
       & > .title, & > .link {
         display: flex;
         align-items: center;
@@ -65,42 +66,50 @@
         }
       }
       & > .wallet {
-        position: relative;
+        position: absolute;
+        right: 0;
+        top: 30%;
         & > .connect {
+          position: relative;
+          width: rem(166);
           font-size: rem(18);
           height: rem(38);
           text-align: center;
           line-height: rem(38);
           border-radius: 7px;
           margin-left: 21px;
-          width: rem(184);
           cursor: pointer;
           border: 1px solid #fff;
+          .icon {
+            width: rem(19);
+            margin-right: rem(11);
+          }
         }
         .wallet-connect {
           width: 100%;
           position: relative;
-          left: 50%;
-          transform: translate(-50%);
-          border-radius: 8px;
-          background: rgba(#000, .5);
-          border-radius: 8px;
-          margin-top: 4px;
+          top: rem(38);
+          left: rem(34);
           z-index: 2;
           transition: all 1s;
+          margin-left: rem(-4);
           opacity: 0;
           height: 0;
           overflow: hidden;
           & > li {
-            height: rem(42);
+            cursor: pointer;
+            width: rem(166);
             display: flex;
             align-items: center;
             justify-content: center;
             color:#fff;
-            font-size: rem(18);
-            padding-left: rem(24);
+            font-size: rem(16);
+            padding-left: rem(13);
             box-sizing: border-box;
             text-align: center;
+            margin-bottom: rem(8);
+            background-image: imgurl('account-bg.png');
+            background-size: 100% 100%;
             &.left {
               justify-content: flex-start;
             }
@@ -111,6 +120,7 @@
           }
         }
         &:hover {
+          // margin-top: rem(120);
           .wallet-connect {
             height: auto;
             overflow: visible;

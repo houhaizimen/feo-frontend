@@ -78,7 +78,8 @@ const Index = () => {
           !account && <div className='wallet'>
             <div className='connect'>
               Connect Wallet
-              <ul className={classNames('wallet-connect')}>
+            </div>
+            <ul className={classNames('wallet-connect')}>
                 {
                   walletList.map(item => <li className='left' key={item.name} onClick={() => handleLogin(item.connectId)}>
                     <img src={`./assets/${item.icon}.png`} />
@@ -86,20 +87,20 @@ const Index = () => {
                   </li>)
                 }
               </ul>
-            </div>
           </div>
         }
         {
           account && <div className='wallet'>
             <div className='connect'>
+              <img className='icon' src="assets/icon-account.png" alt="" />
               {account.slice(0, 4)}...{account.slice(-6)}
-              <ul className={classNames('wallet-connect')}>
-                <li onClick={() => logout()}>
-                  <img src="assets/exit.png" alt="" />
-                  <span>Disconnect Wallet</span>
-                </li>
-              </ul>
             </div>
+            <ul className={classNames('wallet-connect')}>
+              <li onClick={() => logout()}>
+                <img className='icon' src="assets/icon-dismiss.png" alt="" />
+                <span>Disconnect Wallet</span>
+              </li>
+            </ul>
           </div>
         }
       </li>
