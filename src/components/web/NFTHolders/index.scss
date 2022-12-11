@@ -16,7 +16,7 @@
       align-items: center;
       color: #EF267C;
       & > li:first-child {
-        margin-right: rem(61);
+        width: rem(150);
         font-size: rem(107);
         font-family: 'Akrobat-Bold';
         margin-top: -6px;
@@ -40,8 +40,10 @@
       }
     }
     & > img {
+      position: relative;
       width: rem(1195);
       margin-top: rem(69);
+      z-index: 2;
     }
   }
   &-person {
@@ -49,6 +51,6 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    z-index: 1;
+    z-index: 3;
   }
 }

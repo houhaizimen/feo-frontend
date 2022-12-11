@@ -67,9 +67,10 @@
       & > .wallet {
         position: relative;
         & > .connect {
-          height: rem(48);
+          font-size: rem(18);
+          height: rem(38);
           text-align: center;
-          line-height: rem(48);
+          line-height: rem(38);
           border-radius: 7px;
           margin-left: 21px;
           width: rem(184);
