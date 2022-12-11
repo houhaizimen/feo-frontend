@@ -58,9 +58,14 @@
   & > .person {
     z-index: 1;
     position: absolute;
-    bottom: rem(8);
     right: 0;
+    bottom: rem(8);
     height: 94%;
     object-fit: contain;
+    animation: float-top-bottom 1.3s linear infinite alternate;
   }
+}
+@keyframes float-top-bottom {
+  0%{transform: translateY(0);}
+  100%{transform: translateY(-24px);}
 }

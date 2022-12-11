@@ -60,7 +60,7 @@ const Index = () => {
         {
           <div className='link'>
             {
-              connectList.map(item => <img key={item.icon} src={`assets/${item.icon}.png`} alt="" />)
+              connectList.map(item => <img onClick={() => window.open(item.link)} key={item.icon} src={`assets/${item.icon}.png`} alt="" />)
             }
           </div>
         }

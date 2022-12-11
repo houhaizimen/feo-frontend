@@ -3,7 +3,7 @@ import React from 'react'
 const Index = () => {
   return <div className='web-home-feoverse'>
     <h1>FEOVERSE</h1>
-    <p>The FEOVerse will offer an immersive metaverse in which fans and collectors can stake their claim in a new and collaborative world of collecting.</p>
+    <p>The FEOVERSE will offer an immersive metaverse in which fans and collectors can stake their claim in a new and collaborative world of collecting.</p>
     <div className='web-home-feoverse-wrap'>
       <div className='item one'>
         <img src="./assets/feo/01.png" alt="" />

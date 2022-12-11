@@ -23,10 +23,6 @@ const Index = () => {
           <dd>Total</dd>
           <dt>7777</dt>
         </dl>
-        {/* <dl className='item'>
-          <dd>Time</dd>
-          <dt>12.30</dt>
-        </dl> */}
         <p>Whitelists can mint 8h in advance</p>
         <div className='web-home-banner-buy-step'>
           <Stepper value={3} max={3} min={1}/>

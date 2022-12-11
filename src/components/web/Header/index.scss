@@ -4,11 +4,11 @@
   left: 0;
   right: 0;
   z-index: 999;
-  background-color: #000;
   height: rem(98);
   padding: 0 200px;
   transition: all .3s;
   box-sizing: border-box;
+  
   & > .cont {
     height: 100%;
     // @include center-1200;
@@ -58,12 +58,12 @@
       & > .wallet {
         position: relative;
         & > .connect {
-          height: 48px;
+          height: rem(48);
           text-align: center;
-          line-height: 48px;
+          line-height: rem(48);
           border-radius: 7px;
           margin-left: 21px;
-          width: 184px;
+          width: rem(184);
           cursor: pointer;
           border: 1px solid #fff;
         }
@@ -82,15 +82,16 @@
           height: 0;
           overflow: hidden;
           & > li {
-            height: 42px;
+            height: rem(42);
             display: flex;
             align-items: center;
             justify-content: center;
             color:#fff;
-            font-size: 18px;
+            font-size: rem(18);
             box-sizing: border-box;
+            text-align: center;
             & > img {
-              width: 24px;
+              width: rem(24);
               margin-right: 13px;
             }
           }
@@ -104,6 +105,9 @@
         }
       }
     }
+  }
+  &.fixed {
+    background-color: #000;
   }
 }
 @media screen and (max-width: 1380px) {
