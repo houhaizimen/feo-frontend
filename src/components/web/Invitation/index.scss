@@ -2,17 +2,71 @@
   position: relative;
   padding: rem(146) 0 rem(120) 0;
   @include center-1200;
-  & > p {
+  p {
     margin-top: 30px;
     width: rem(642);
     &:first-child {
       margin-top: 43px;
     }
   }
-  & > img {
+  &-star{
+    width: rem(909);
+    height: 100%;
     position: absolute;
     top: rem(30);
     left: rem(800);
-    height: 100%;
+    z-index: 1;
+    & > img.bg {
+      position: absolute;
+      top: -20%;
+      transform: translateX(-25%);
+      width: 120%;
+      animation: bg-load 1s linear infinite alternate;
+      z-index: 2;
+    }
+    & > img.invitation {
+      position: absolute;
+      top: 0;
+      height: 90%;
+      z-index: 3;
+    }
+    .star-1 {
+      position: absolute;
+      top: -6%;
+      left: rem(-6);
+      width: rem(135);
+      animation: star-load .8s .2s linear infinite alternate;
+    }
+    .star-2 {
+      position: absolute;
+      bottom: 40%;
+      left: rem(590);
+      width: rem(129);
+      animation: star-load .8s .4s linear infinite alternate;
+    }
+    .star-3 {
+      position: absolute;
+      bottom: 16%;
+      left: rem(550);
+      width: rem(109);
+      animation: star-load .8s .6s linear infinite alternate;
+    }
+  } 
+}
+
+@keyframes bg-load {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes star-load {
+  0% {
+    transform: scale(.5);
+  }
+  100% {
+    transform: scale(1.2);
   }
 }
