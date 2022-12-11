@@ -82,33 +82,35 @@ const Index = () => {
     return (!isWhiteTime && !isPTime) || !account || !balance
   }, [isWhiteTime, isPTime, account, balance, max])
   return <div className='web-home-banner'>
-    <div className='cont'>
-      <h2>START YOUR JOURNEY IN</h2>
-      <div className='line' />
-      <h1>FIGHTER ERA ODYSSEY</h1>
-      <div className='web-home-banner-buy'>
-        <dl className='item'>
-        {/* Public Sale Whitelist Total Time */}
-          <dd>Public Sale</dd>
-          {/* <dt>2022.12.28 pm9:00 - 12.29 pm9:00</dt> */}
-          <dt>{PRICE.P} ETH</dt>
-        </dl>
-        <dl className='item'>
-          <dd>Whitelist</dd>
-          <dt>{PRICE.W} ETH</dt>
-        </dl>
-        <dl className='item'>
-          <dd>Total</dd>
-          <dt>7777</dt>
-        </dl>
-        <p>Whitelists can mint 8h in advance</p>
-        <div className='web-home-banner-buy-step'>
-          <Stepper value={quantity} max={max} min={1} onChange={val => setQuantity(val)}/>
+    <div className='wrap'>
+      <div className='cont'>
+        <h2>START YOUR JOURNEY IN</h2>
+        <div className='line' />
+        <h1>FIGHTER ERA ODYSSEY</h1>
+        <div className='web-home-banner-buy'>
+          <dl className='item'>
+          {/* Public Sale Whitelist Total Time */}
+            <dd>Public Sale</dd>
+            {/* <dt>2022.12.28 pm9:00 - 12.29 pm9:00</dt> */}
+            <dt>{PRICE.P} ETH</dt>
+          </dl>
+          <dl className='item'>
+            <dd>Whitelist</dd>
+            <dt>{PRICE.W} ETH</dt>
+          </dl>
+          <dl className='item'>
+            <dd>Total</dd>
+            <dt>7777</dt>
+          </dl>
+          <p>Whitelists can mint 8h in advance</p>
+          <div className='web-home-banner-buy-step'>
+            <Stepper value={quantity} max={max} min={1} onChange={val => setQuantity(val)}/>
+          </div>
+          <Button loading={loading} disabled={disabled} onClick={handleMint}>MINT</Button>
         </div>
-        <Button loading={loading} disabled={disabled} onClick={handleMint}>MINT</Button>
       </div>
+      <img src="assets/banner-person.png" alt="" className='person'/>
     </div>
-    <img src="assets/banner-person.png" alt="" className='person'/>
     <Tips tip={tips} show={show} onClose={() => setShow(false)}/>
   </div>
 }
