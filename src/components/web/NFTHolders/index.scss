@@ -30,10 +30,12 @@
           font-family: 'Universal Serif';
           font-weight: bold;
           margin-bottom: rem(18);
-          font-size: rem(25);
+          font-size: rem(28);
+        text-transform: uppercase;
         }
         & > dd {
           color: #fff;
+          font-size: rem(25);
         }
       }
     }
@@ -43,7 +45,7 @@
     }
   }
   &-person {
-    height: 98%;
+    height: rem(911);
     position: absolute;
     bottom: 0;
     right: 0;

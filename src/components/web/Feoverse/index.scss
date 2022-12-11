@@ -18,7 +18,7 @@
       font-family: 'Akrobat-Bold';
       cursor: pointer;
       transition: all .3s;
-      filter: grayscale(70%);
+      // filter: grayscale(70%);
       & > img {
         width: 100%;
       }
@@ -42,7 +42,7 @@
         }
       }
       &:hover {
-        filter: grayscale(0);
+        // filter: grayscale(0);
         transform: scale(1.05);
       }
     }
