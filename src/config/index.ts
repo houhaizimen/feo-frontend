@@ -1,7 +1,7 @@
 export const API_BASE_URL = ''
 export enum PRICE {
-  W = 0.035,
-  P = 0.045
+  W = 0.04,
+  P = 0.05
 }
 
 export const connectList = [

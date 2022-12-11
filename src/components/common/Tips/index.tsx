@@ -22,7 +22,7 @@ const Index: FC<PropsTypes> = ({ show = false, type = 'success', onClose, tip, c
     <>
       {
         show && (<div className={classNames('web-home-tips', { mobile: isMobile() })}>
-          <img src={`img/tips-${type === 'success' ? '1' : '2'}.png`} alt="" />
+          <img src={`assets/tips-${type === 'success' ? '1' : '2'}.png`} alt="" />
           <span>{tip}{children}</span>
         </div>)
       }

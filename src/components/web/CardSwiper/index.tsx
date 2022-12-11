@@ -19,7 +19,7 @@ const Index = () => {
     'Fighting Battle'
   ]
   return <div className='web-home-card-swiper'>
-    <h1 className='title'>The first SNK fighter<br /> to appear on the stage</h1>
+    <h1 className='title'>The first fighter<br /> to appear on the stage</h1>
     {
       list.map(item => <p key={item}>{item}</p>)
     }

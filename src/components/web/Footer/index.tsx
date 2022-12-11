@@ -7,14 +7,20 @@ const Index = () => {
   const contList = [
     { name: 'PRIVACY POLICY', link: '' },
     { name: 'TERMS', link: '/terms' },
-    { name: 'CONTACT US', link: '' }
+    { name: 'CONTACT US', link: '', outside: true }
   ]
+  const handleJump = (item: any) => {
+    if (item.outside) {
+      return
+    }
+    navigate(item.link)
+  }
   return <div className='web-home-footer'>
     <div className='web-home-footer-top'>
       <img src="assets/logo.png" alt="" />
       <ul className='cont'>
         {
-          contList.map(item => <li onClick={() => navigate(item.link)} key={item.name}>{item.name}</li>)
+          contList.map(item => <li onClick={() => handleJump(item)} key={item.name}>{item.name}</li>)
         }
       </ul>
       <div className='link'>

@@ -31,16 +31,25 @@
       }
       & > .title {
         li {
-          width: 115px;
+          position: relative;
           height: 38px;
-          margin-right: 29px;
+          margin-right: 58px;
           line-height: 38px;
           text-align: center;
           white-space: nowrap;
           cursor: pointer;
           &.active {
-            background-image: imgurl('active-bg.png');
-            background-size: 100% 100%;
+            &::after {
+              content: '';
+              position: absolute;
+              left: 50%;
+              transform: translate(-50%);
+              top: 0;
+              bottom: 0;
+              width: 115px;
+              background-image: imgurl('active-bg.png');
+              background-size: 100% 100%;
+            }
           }
         }
       }
