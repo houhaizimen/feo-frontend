@@ -26,7 +26,8 @@
   }
   & > .cont {
     min-width: 1200px;
-    width: 100%;
+    width: rem(1680);
+    margin: 0 auto;
     padding-top: rem(106);
     & > img {
       width: 100%;
