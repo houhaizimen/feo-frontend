@@ -19,7 +19,7 @@ const Index = () => {
           contList.map(item => <li onClick={() => handleJump(item)} key={item.name}>{item.name}</li>)
         }
         <li>
-          <a href='mailto:1679997020@qq.com'>CONTACT US</a>
+          <a href='mailto:FEO.SNK@gmail.com'>CONTACT US</a>
         </li>
       </ul>
       <div className='link'>
