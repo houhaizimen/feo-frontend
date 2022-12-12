@@ -2,9 +2,9 @@ import React from 'react'
 
 const Index = () => {
   const list = [
-    'In 2077, a world-class mixed martial arts competition in parallel time and space will be held soon. South Town is a city where fighting masters from all over the world gather, and a contest across time and space is about to be staged here.',
-    'Every fighter needs to eliminate another opponent in parallel time and space then obtain the opponent’s energy to continue to become stronger.',
-    'The new fighting competition is about to start, but the contestants are missing frequently, and the blame of all this can’t help to point to a mysterious organization. A terrifying conspiracy is about to be revealed…'
+    'In 2077, a world-class mixed martial arts competition in parallel time and space is around the corner. Fighting masters all over the world gather at South Town, and a contest across time and space is about to be staged.',
+    'Every fighter would eliminate another opponent in parallel time and space, obtain his/her energy to become stronger.',
+    'The fighting competition is approaching. However, fighters are missing one by one, and this might have something to do with a mysterious organization. A terrifying conspiracy is about to emerge…'
   ]
   return <div className='web-home-invitation'>
     <h1 className='title'>SNK Officially<br /> Authorized NFT</h1>

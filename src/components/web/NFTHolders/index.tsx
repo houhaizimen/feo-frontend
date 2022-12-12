@@ -3,7 +3,7 @@ import React from 'react'
 const Index = () => {
   const list = [
     { title: 'SNK Fan Community', desc: 'Make new friends with big fan of SNK' },
-    { title: 'Priority Purchasing', desc: 'Your NFT is the key to next series NFT and IRL' },
+    { title: 'Priority Purchasing', desc: 'Your collection is the key to next series of NFT and events IRL' },
     { title: 'Unlock Exclusive Experience', desc: 'Amazing KOF battles and gaming' }
   ]
   return <div className='web-home-nft-holders'>
