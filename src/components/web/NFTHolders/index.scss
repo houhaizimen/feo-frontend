@@ -39,11 +39,18 @@
         }
       }
     }
-    & > img {
+    & > .line {
       position: relative;
       width: rem(1195);
       margin-top: rem(69);
-      z-index: 2;
+      z-index: 5;
+    }
+    &-text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: rem(647);
+      z-index: 4;
     }
   }
   &-person {
@@ -51,6 +58,6 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    z-index: 3;
+    z-index: 6;
   }
 }

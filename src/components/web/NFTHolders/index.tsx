@@ -9,6 +9,7 @@ const Index = () => {
   return <div className='web-home-nft-holders'>
     <h1 className='title'>Privilege for<br /> NFT Holders</h1>
     <div className='web-home-nft-holders-wrap'>
+      <img className='web-home-nft-holders-wrap-text' src="./assets/nft-holder-text.png" alt="" />
       {
         list.map((item, index) => <ul key={item.title}>
           <li>0{index + 1}</li>
@@ -18,7 +19,7 @@ const Index = () => {
           </li>
         </ul>)
       }
-      <img src="./assets/nft-holder-line.png" alt="" />
+      <img className='line' src="./assets/nft-holder-line.png" alt="" />
     </div>
     <img className='web-home-nft-holders-person' src="./assets/card/9.png" alt="" />
   </div>

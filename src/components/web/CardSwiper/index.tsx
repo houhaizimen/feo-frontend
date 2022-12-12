@@ -29,7 +29,7 @@ const Index = () => {
         modules={[Navigation]}
         spaceBetween={0}
         centeredSlides={true}
-        initialSlide={1}
+        initialSlide={5}
         slidesPerView={'auto'}
         // centeredSlides={true}
         className="mySwiper web-home-card-swiper-wrap-swiper">
