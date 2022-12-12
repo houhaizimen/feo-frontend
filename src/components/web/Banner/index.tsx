@@ -45,6 +45,10 @@ const Index = () => {
   }, [handleBalanceOf, account])
 
   const handleMint = async () => {
+    const sta = true
+    if (sta) {
+      return
+    }
     setLoading(true)
     const price = PRICE[isPTime ? 'P' : 'W']
     if (Number(balance) < price) {
