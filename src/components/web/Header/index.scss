@@ -10,6 +10,7 @@
   box-sizing: border-box;
   
   & > .cont {
+    position: relative;
     height: 100%;
     // @include center-1200;
     display: flex;

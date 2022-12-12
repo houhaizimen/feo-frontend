@@ -26,28 +26,28 @@
     }
     & > img.invitation {
       position: absolute;
-      top: 0;
-      height: 90%;
+      top: rem(50);
+      height: 85%;
       z-index: 3;
     }
     .star-1 {
       position: absolute;
-      top: -6%;
-      left: rem(-6);
+      top: rem(-8);
+      left: rem(-10);
       width: rem(135);
       animation: star-load .8s .2s linear infinite alternate;
     }
     .star-2 {
       position: absolute;
       bottom: 40%;
-      left: rem(590);
+      left: rem(570);
       width: rem(129);
       animation: star-load .8s .4s linear infinite alternate;
     }
     .star-3 {
       position: absolute;
       bottom: 16%;
-      left: rem(550);
+      left: rem(530);
       width: rem(109);
       animation: star-load .8s .6s linear infinite alternate;
     }
