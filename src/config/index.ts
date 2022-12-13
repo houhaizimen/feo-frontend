@@ -129,9 +129,8 @@ export const TermsList = {
 }
 
 export const GALLERY_TOP_LIST = [
-  { title: 'FIGHTERS', icon: 'gallery-top-1', desc: 'All the famous fighters are here, Kyo Kusanagi, Lori Yagami, Mai Shiranui, Leopold Goenitz …… and they will face fighters with the same skills in parallel time and space.' },
-  { title: 'RULE', icon: 'gallery-top-2', desc: 'Here, the fighters’ mission is to defeat their doppelgangers from another world where the winners can absorb losers’ energy and become stronger, then compete to win the title of Ultimate Fighting King.' },
-  { title: 'AND NOW', icon: 'gallery-top-3', desc: 'The competition is about to kick off, and fighters have already arrived at the competition field one after another. The following is the background of these fighters.' }
+  { title: 'FIGHTERS', icon: 'gallery-top-1', desc: 'All the famous fighters here, Kyo Kusanagi, Lori Yagami, Mai Shiranui, Leopold Goenitz …… they will face opponents with same skills in parallel time and space.' },
+  { title: 'RULE', icon: 'gallery-top-2', desc: 'Here, the fighters’ mission is to defeat their doppelgangers from another world. The winners can absorb losers’ energy and become stronger, then compete to win the title of Ultimate Fighting King.' }
 ]
 
 export const GALLERY_BOTTOM_LIST = [

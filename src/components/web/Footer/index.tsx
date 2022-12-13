@@ -15,6 +15,9 @@ const Index = () => {
     <div className='web-home-footer-top'>
       <img src="assets/logo.png" alt="" />
       <ul className='cont'>
+        <li>
+          <a href='https://app.gitbook.com/invite/Xm1QhayFc5c9fK3IzxRx/bvUXi2867MG5xaKexsWu'>PRIVACY POLICY</a>
+        </li>
         {
           contList.map(item => <li onClick={() => handleJump(item)} key={item.name}>{item.name}</li>)
         }
