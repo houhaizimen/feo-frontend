@@ -85,16 +85,14 @@ const Index = () => {
     if (isWhiteTime && max === 0) return false
     return (!isWhiteTime && !isPTime) || !account || !balance
   }, [isWhiteTime, isPTime, account, balance, max])
-  return <div className='web-home-banner'>
+  return <div className='m-home-banner padding-26'>
       <div className='cont'>
         <h2>START YOUR JOURNEY IN</h2>
         <div className='line' />
         <h1>FIGHTER ERA ODYSSEY</h1>
-        <div className='web-home-banner-buy'>
+        <div className='m-home-banner-buy'>
           <dl className='item'>
-          {/* Public Sale Whitelist Total Time */}
             <dd>Public Sale</dd>
-            {/* <dt>2022.12.28 pm9:00 - 12.29 pm9:00</dt> */}
             <dt>{PRICE.P} ETH</dt>
           </dl>
           <dl className='item'>
@@ -106,13 +104,13 @@ const Index = () => {
             <dt>7777</dt>
           </dl>
           <p>Whitelists can mint 8h in advance</p>
-          <div className='web-home-banner-buy-step'>
+          <div className='m-home-banner-buy-step'>
             <Stepper value={quantity} max={max} min={1} onChange={val => setQuantity(val)}/>
           </div>
           <Button loading={loading} disabled={disabled} onClick={handleMint}>MINT</Button>
         </div>
       </div>
-      <img src="assets/banner-person.png" alt="" className='person'/>
+      <img src="../assets/m/banner-person.png" alt="" className='person'/>
     <Tips tip={tips} show={show} onClose={() => setShow(false)}/>
   </div>
 }

@@ -1,12 +1,8 @@
 .web-home-banner {
+  position: relative;
   background-image: imgurl('banner-bg.png');
   background-size: 100% 100%;
   z-index: 1;
-  padding-bottom: rem(8);
-  .wrap {
-    position: relative;
-    height: 100%;
-    overflow-y: hidden;
     & > .cont {
       position: relative;
       @include center-1200;
@@ -37,12 +33,10 @@
       z-index: 1;
       position: absolute;
       right: 0;
-      bottom: 0;
+      bottom: rem(8);
       height: 94%;
       object-fit: contain;
-      animation: float-top-bottom 1s ease-in-out infinite alternate;
     }
-  }
   &-buy {
     width: 405px;
     margin-top: rem(40);
@@ -69,8 +63,4 @@
       margin-bottom: rem(30);
     }
   }
-}
-@keyframes float-top-bottom {
-  0%{transform: translateY(0);}
-  100%{transform: translateY(30px);}
 }

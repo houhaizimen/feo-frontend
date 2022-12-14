@@ -1,0 +1,42 @@
+.m-home-nft-holders {
+  position: relative;
+  margin-top: rem(82);
+  &-wrap {
+    position: relative;
+    z-index: 3;
+    & > ul {
+      margin-top: rem(44);
+      display: flex;
+      align-items: center;
+      color: #EF267C;
+      & > li:first-child {
+        width: rem(50);
+        font-size: rem(55);
+        font-family: 'Akrobat-Bold';
+        margin-top: rem(-14);
+        font-weight: bold;
+        margin-right: rem(19);
+      }
+      & > li:last-child {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        & > dt {
+          font-family: 'Universal Serif';
+          font-weight: bold;
+          margin-bottom: rem(6);
+          font-size: rem(15);
+          text-transform: uppercase;
+        }
+        & > dd {
+          color: #fff;
+          font-size: rem(15);
+        }
+      }
+    }
+  }
+  &-person {
+    height: rem(375);
+    margin: rem(26) rem(-26) 0;
+  }
+}

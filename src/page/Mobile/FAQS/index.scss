@@ -1,1 +1,45 @@
-.web-home {}
+.m-faq {
+  @include m-full-bg;
+  &-cont {
+    & > h1 {
+      text-align: center;
+      font-size: rem(22) !important;
+      line-height: rem(35) !important;
+      margin-bottom: rem(42);
+    }
+    & > .list {
+      position: relative;
+      & > dl {
+        margin-bottom: rem(16);
+        & > dt {
+          position: relative;
+          font-size: rem(15);
+          display: flex;
+          align-items: center;
+          font-weight: bold;
+          line-height: rem(19);
+          &::before {
+            content: '';
+            position: relative;
+            left: 0;
+            margin-right: rem(10);
+            width: rem(24);
+            height: rem(24);
+            background-image: imgurl('icon-web.png');
+            background-size: cover;
+          }
+        }
+        & > dd {
+          font-size: rem(13);
+          margin-top: rem(12);
+          line-height: rem(19);
+          color: rgba(#fff, .6);
+          margin-left: rem(34);
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

@@ -47,12 +47,11 @@
     }
   }
   &.mobile {
-    width: rem(117);
-    height: rem(25);
-    line-height: rem(25);
+    width: rem(320);
+    height: rem(53);
+    line-height: rem(53);
     text-align: center;
-    border-radius: rem(11);
-    font-size: rem(12);
+    font-size: rem(17);
     border: 0;
     white-space: nowrap;
     &.mini {

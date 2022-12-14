@@ -16,6 +16,15 @@ $min-width: 1200px;
   padding-bottom: rem(260);
   box-sizing: border-box
 }
+@mixin m-full-bg {
+  min-height: 100vh;
+  position: relative;
+  background: imgurl('m/bg-bottom.png') no-repeat;
+  background-size: cover;
+  background-position: 0 rem(38);
+  padding-top: rem(65);
+  box-sizing: border-box;
+}
 
 
 @function rem($px) {

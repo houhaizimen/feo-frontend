@@ -1,7 +1,7 @@
 .web-stepper {
   display: flex;
   align-items: center;
-  font-size: 20pxs;
+  font-size: 20px;
   &-sub, &-add {
     width: 41px;
     height: 41px;
@@ -31,18 +31,15 @@
     color: rgba(#fff, .3);
   }
   &.mobile {
-    font-size: rem(16);
+    font-size: rem(13);
     .web-stepper-sub, .web-stepper-add {
       width: rem(32);
       height: rem(32);
       text-align: center;
-      line-height: rem(32);
-      font-size: rem(20);
-      padding: 0;
     }
     label {
       margin: 0 rem(5);
-      width: rem(99);
+      width: rem(246);
       height: rem(32);
       text-align: center;
       line-height: rem(32);

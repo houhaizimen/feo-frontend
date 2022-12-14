@@ -1,0 +1,11 @@
+.m-home-raod-map {
+  width: rem(375);
+  height: rem(1356);
+  position: relative;
+  background-image: imgurl('m/roadmap.png');
+  background-size: 100% 100%;
+  padding-top: rem(50);
+  & > h1 {
+   margin-left: rem(26); 
+  }
+}

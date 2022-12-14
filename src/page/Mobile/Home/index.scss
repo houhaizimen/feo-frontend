@@ -1,1 +1,7 @@
-.web-home {}
+.m-home {
+  position: relative;
+  background-image: imgurl('m/bg-bottom.png');
+  background-size: cover;
+  background-position: 0 rem(775);
+  // padding-bottom: rem(317);
+}

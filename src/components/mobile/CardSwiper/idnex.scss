@@ -1,0 +1,88 @@
+.m-home-card-swiper {
+  margin-top: rem(-80);
+  & > h1 {
+    white-space: nowrap;
+    margin-bottom: rem(29);
+  }
+  & > p {
+    margin-bottom: rem(16);
+  }
+  &-wrap {
+    margin: 0 rem(-26);
+    &-swiper {
+      img {
+        display: block;
+        width: rem(287);
+        // height: rem(287);
+        margin: 0 auto;
+      }
+      .swiper-wrapper {
+        width: rem(375) !important;
+        display: flex;
+        align-items: center;
+        // .swiper-slide {
+        //   position: relative;
+        //   transform:scale(.7);
+        //   transition: all .3s ease-in-out;
+        //   z-index: 1;
+        //   img {
+        //     width: 100%;
+        //     object-fit: contain;
+        //     transition: all .3s ease-in-out;
+        //     opacity: .3;
+        //   }
+        //   &-active {
+        //     transform:scale(1.2);
+        //     z-index: 9;
+        //     img {
+        //       opacity: 1;
+        //     }
+        //   }
+        // }
+      }
+      .swiper-button-prev {
+        width: rem(37);
+        left: rem(8);
+        &::after {
+          content: '';
+          width: rem(37);
+          height: rem(37);
+          background-image: imgurl('icon-left.png');
+          background-size: cover;
+        }
+      }
+      .swiper-button-next {
+        width: rem(37);
+        right: rem(8);
+        &::after {
+          content: '';
+          width: rem(37);
+          height: rem(37);
+          background-image: imgurl('icon-right.png');
+          background-size: cover;
+        }
+      }
+    }
+  }
+  & > .btn-wrap {
+    margin-top: rem(27);
+    & > li {
+      display: inline-block;
+      width: rem(155);
+      height: rem(50);
+      font-size: rem(15);
+      white-space: nowrap;
+      background-image: imgurl('btn-bg.png');
+      background-size: 100% 100%;
+      text-align: center;
+      line-height: rem(50);
+      font-family: 'Akrobat-Bold';
+      font-weight: bold;
+      margin-right: rem(13);
+      margin-top: rem(17);
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
+  }
+}

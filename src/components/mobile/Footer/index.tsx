@@ -10,9 +10,9 @@ const Index = () => {
   const handleJump = (item: any) => {
     navigate(item.link)
   }
-  return <div className='web-home-footer'>
-    <div className='web-home-footer-top'>
+  return <div className='m-home-footer'>
       <img src="assets/logo.png" alt="" />
+    <div className='m-home-footer-top'>
       <ul className='cont'>
         <li>
           <a href='https://app.gitbook.com/invite/Xm1QhayFc5c9fK3IzxRx/bvUXi2867MG5xaKexsWu'>PRIVACY POLICY</a>
@@ -26,7 +26,7 @@ const Index = () => {
       </ul>
       <div className='link'>
         {
-          connectList.map(item => <img onClick={() => window.open(item.link)} key={item.icon} src={`assets/${item.icon}.png`} alt="" />)
+          connectList.map(item => <img onClick={() => window.open(item.link)} key={item.icon} src={`../assets/${item.icon}.png`} alt="" />)
         }
       </div>
     </div>

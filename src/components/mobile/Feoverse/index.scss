@@ -1,0 +1,79 @@
+.m-home-feoverse {
+  margin-top: rem(38);
+  & > p {
+    margin-top: rem(28);
+    margin-bottom: rem(23);
+  }
+  &-wrap {
+    font-family: 'Akrobat-Bold';
+    margin: 0 rem(-18);
+    & > header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    & > .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: rem(13);
+    }
+    .item{
+      position: relative;
+      font-family: 'Akrobat-Bold';
+      cursor: pointer;
+      font-weight: bold;
+      font-size: rem(13);
+      & > img {
+        width: 100%;
+      }
+      & > span {
+        position: absolute;
+        top: rem(3);
+        left: rem(12);
+        font-size: rem(29);
+      }
+      & > div {
+        position: absolute;
+        width: 100%;
+        background-color: rgba(#000, .3);
+        height: rem(36);
+        line-height: rem(36);
+        padding-left: rem(12);
+        bottom: 0;
+        left: 0;
+      }
+      &.one {
+        width: rem(218);
+        height: rem(119);
+      }
+      &.three {
+        width: rem(130);
+        height: rem(185);
+      }
+      &.two {
+        width: rem(218);
+        height: rem(155);
+        margin-top: rem(13);
+      }
+      &.four {
+        width: rem(130);
+        height: rem(88);
+        margin-top: rem(13);
+      }
+      &.five {
+        width: rem(173);
+        height: rem(127);
+      }
+      &.six {
+        width: rem(361);
+        height: rem(122);
+        margin-top: rem(13);
+      }
+      &.seven {
+        width: rem(175);
+        height: rem(127);
+      }
+    }
+  }
+}

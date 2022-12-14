@@ -1,0 +1,57 @@
+.m-home-banner {
+  background-image: imgurl('m/bg-top.png');
+  background-size: 100% 100%;
+  & > .cont {
+    position: relative;
+    padding-top: rem(72);
+    & > h1, & > h2 {
+      font-family: 'Universal Serif';
+    }
+    & > h1 {
+      line-height: rem(48);
+      margin-top: rem(5);
+      font-size: rem(42);
+    }
+    & > .line {
+      width: rem(323);
+      height: 2px;
+      background-color: #fff;
+    }
+    & > h2 {
+      line-height: rem(52);
+      margin-bottom: rem(10);
+      font-size: rem(25);
+      white-space: nowrap;
+    }
+  }
+  & > .person {
+    position: relative;
+    left: rem(-26);
+    width: rem(375);
+    margin-top: rem(18);
+  }
+  &-buy {
+    margin-top: rem(29);
+    font-family: 'Akrobat-Bold';
+    font-size: rem(13);
+    & > .item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: rem(16);
+      padding-bottom: rem(14);
+      border-bottom: 0.5px solid #fff;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+    & > p {
+      text-align: center;
+      margin: rem(24) 0 rem(19) 0;
+      color: #fff;
+    }
+    &-step {
+      margin-bottom: rem(30);
+    }
+  }
+}

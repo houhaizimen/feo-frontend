@@ -1,0 +1,76 @@
+.m-gallery {
+  @include m-full-bg;
+  &-cont {
+    & > h1 {
+      font-size: rem(22) !important;
+      line-height: rem(35) !important;
+      padding: 0 rem(26);
+      box-sizing: border-box;
+    }
+    & > .tips {
+      margin-top: rem(9);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      & > li {
+        width: rem(361);
+        margin-bottom: rem(22);
+        & > div {
+          height: rem(143);
+          background-size: 100% 100%;
+          padding: rem(67) 0 rem(0) rem(18);
+          box-sizing: border-box;
+          & > h2 {
+            font-size: rem(24);
+            font-family: 'Universal Serif';
+            text-transform: uppercase;
+          }
+        }
+        & > p {
+          width: rem(323);
+          font-size: rem(15);
+          line-height: rem(19);
+          margin: 0 auto;
+          margin-top: rem(13);
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    & > .card {
+      margin-top: rem(32);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      & > li {
+        position: relative;
+        width: rem(361);
+        height: rem(148);
+        background-size: 100% 100%;
+        cursor: pointer;
+        margin-bottom: rem(20);
+        box-sizing: border-box;
+        & > h1 {
+          position: absolute;
+          top: 50%;
+          right: rem(20);
+          font-size: rem(24);
+          font-family: 'Universal Serif';
+          text-transform: uppercase;
+        }
+        &:last-child {
+          margin-bottom: 0;
+          & > h1 {
+            line-height: rem(29);
+            text-align: center;
+            width: rem(164);
+          }
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

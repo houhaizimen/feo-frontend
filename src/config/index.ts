@@ -11,31 +11,51 @@ export const connectList = [
 ]
 
 export const FAQList = {
-  title: 'FAQS',
+  title: 'FAQ',
   item: [
     {
-      title: 'HOW MANY ITEMS ARE IN THE COLLECTION?',
-      cont: ['7777 in total.']
+      title: 'What are Fighter Era Odyssey digital collectibles (NFT)?',
+      cont: ['SNK officially authorized series of NFTs. Mai Shiranui is the first collection of the series and each of them is a unique, collectible NFT stored on the Ethereum blockchain.']
     },
     {
-      title: 'WHAT IS THE MINT PRICE?',
-      cont: ['Public sale 0.05 ETH: Whitelist 0.04 ETH.']
-    },
-    // {
-    //   title: 'WHEN IS THE MINT?',
-    //   cont: ['12.30.2022 UTC+8 22:00.']
-    // },
-    {
-      title: 'WHERE WILL I BE ABLE TO PURCHASE THE NFT?',
-      cont: ['This link will be given on xxx in an official channel in our discord and our official website.']
+      title: '2.How do I acquire a FEO NFT?',
+      cont: ['You could stay tuned to our twitter [link: https://twitter.com/Odyssey_SNK] and discord [link: https://discord.com/invite/fEyg6FDK]for more information of whitelists. Mint would start soon, and you could also buy one on the marketplace, such as opensea, element and gate.']
     },
     {
-      title: 'WHICH SECONDARY MARKETS WILL THE NFT BE LISTED ON?',
-      cont: ['Most major NFT exchanges including Opensea, xxx, etx..']
+      title: 'How do I trade FEO NFTs?',
+      cont: ['Transfers of FEO NFTs between different accounts are available on the secondary marketplace.']
     },
     {
-      title: 'WHAT IF I NEED SUPPORT OR STILL HAVE QUESTIONS?',
-      cont: ['Please join the Fighter Era Odyssey Discord and tag a mod in the general chat. We also have a dedicated #support channel.']
+      title: 'Where can I get support?',
+      cont: ['Each whitelist address could mint 3 NFTs at most.']
+    },
+    {
+      title: 'What are the maximum mints per whitelist wallet?',
+      cont: ['Each whitelist address could mint 3 NFTs at most.']
+    },
+    {
+      title: 'How are the 7777 NFTs distributed?',
+      cont: ['1000: Whitelist.', '6777: Public sale']
+    },
+    {
+      title: 'Is there a future roadmap?',
+      cont: ['Yes. You can find it on our website [link: https://feoverse.com/]. For the next stage, we world start the NFT staking, IRL cosplay competition and marketplace.']
+    },
+    {
+      title: 'What can collectors do with their FEO NFTs?',
+      cont: ['Each series of NFTs is an invitation to each FEO fighting era. Collectors could stake their collections for extra bonus like candies and fractions of treasure map. Ultimately, FEO tokens would be airdropped to the winners and active participants. Read more [link: https://app.gitbook.com/invite/Xm1QhayFc5c9fK3IzxRx/bvUXi2867MG5xaKexsWu]']
+    },
+    {
+      title: 'What are the rewards for staking?',
+      cont: ['The longer stake, the more rewards. The collectors could receive candies and fractions of treasure map. With 10 candies, they could participate in giveaway for more candies, fractions or NFT airdrop.']
+    },
+    {
+      title: 'How soon after mint will staking be available?',
+      cont: ['Please stay tuned to our twitter and discord, coming soon.']
+    },
+    {
+      title: '11.Can I sell or list my NFT while it’s staking?',
+      cont: ['You are free to sell your NFT in the secondary market and we will not force to limit its liquidity, but this also means that you will not receive any staking bonus when we spot check and find that you are no longer an NFT holder.']
     }
   ]
 }
