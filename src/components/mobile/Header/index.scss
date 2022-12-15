@@ -3,20 +3,22 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 999;
+  z-index: 9999;
   height: rem(38);
   padding: 0 rem(27);
   box-sizing: border-box;
   font-family: 'Akrobat-Bold';
+  background-color: #000;
   & > .cont {
     position: relative;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 1001;
     & > .left {
       & > img {
-        width: rem(26);
+        width: rem(30);
       }
     }
     & > .right {
@@ -25,19 +27,20 @@
       font-family: 'Akrobat-Bold';
       & > img {
         cursor: pointer;
-        width: rem(10);
+        width: rem(20);
         margin-right: rem(14);
       }
       & > .open {
         margin-right: 0;
-        width: rem(8);
+        width: rem(16);
       }
     }
   }
-  &.fixed {
-    background-color: #000;
-  }
+  // &.fixed {
+  //   background-color: #000;
+  // }
   &-popup {
+    padding-top: rem(38);
     background-color: #4F1142;
     & > .title {
       padding-bottom: rem(34);

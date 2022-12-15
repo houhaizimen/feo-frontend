@@ -57,15 +57,15 @@ const Index = () => {
   }, [scroll])
 
   const handleLink = (link: string) => {
-    navigate(link)
     setVisible(false)
     setShow(false)
+    navigate(link)
   }
 
   const handleLogout = () => {
-    logout()
     setVisible(false)
     setShow(false)
+    logout()
   }
 
   return <>
@@ -76,14 +76,12 @@ const Index = () => {
           {
             connectList.map(item => <img onClick={() => window.open(item.link)} key={item.icon} src={`../assets/${item.icon}.png`} alt="" />)
           }
-          <img src="../assets/m/icon-open.png" onClick={() => setVisible(true)} className='open'/>
+          <img src={`../assets/m/icon-${visible ? 'close' : 'open'}.png`} onClick={() => setVisible(!visible)} className='open'/>
         </li>
       </ul>
       <Popup
         visible={visible}
-        onMaskClick={() => {
-          setVisible(false)
-        }}
+        mask={false}
         position='right'
         bodyClassName='m-home-header-popup'
         bodyStyle={{ width: '60vw' }}
