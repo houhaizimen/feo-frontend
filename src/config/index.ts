@@ -18,7 +18,7 @@ export const FAQList = {
       cont: ['SNK officially authorized series of NFTs. Mai Shiranui is the first collection of the series and each of them is a unique, collectible NFT stored on the Ethereum blockchain.']
     },
     {
-      title: '2.How do I acquire a FEO NFT?',
+      title: 'How do I acquire a FEO NFT?',
       cont: ['You could stay tuned to our twitter [link: https://twitter.com/Odyssey_SNK] and discord [link: https://discord.com/invite/fEyg6FDK]for more information of whitelists. Mint would start soon, and you could also buy one on the marketplace, such as opensea, element and gate.']
     },
     {

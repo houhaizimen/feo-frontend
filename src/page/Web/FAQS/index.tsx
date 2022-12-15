@@ -12,9 +12,9 @@ const Index = () => {
         <i className='angle'/>
         <i className='angle'/>
         {
-          FAQList.item.map(item => {
+          FAQList.item.map((item, index) => {
             return <dl key={item.title}>
-              <dt>{item.title}</dt>
+              <dt>{index + 1}.{item.title}</dt>
               <dd>
                 {
                   item.cont.map(items => <p key={items}>{items}</p>)

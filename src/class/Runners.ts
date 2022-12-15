@@ -24,7 +24,7 @@ class Runners {
   getBlanceOf = async (account: string) => {
     const contract = getRunnersContract()
     const res = await contract.balanceOf(account)
-    return getBalanceAmount(res?._hex ?? 0, 0)
+    return getBalanceAmount(res?._hex ?? 0, 0) ?? 0
   }
   /**
    * @returns
