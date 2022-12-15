@@ -44,6 +44,8 @@ const Index = () => {
     const { key } = USER_LOCAL_CONNECT
     localStorage.setItem(key, connector)
     await login(connector)
+    setVisible(false)
+    setShow(false)
   }
   useEffect(() => {
     const { top } = scroll as {
@@ -57,6 +59,13 @@ const Index = () => {
   const handleLink = (link: string) => {
     navigate(link)
     setVisible(false)
+    setShow(false)
+  }
+
+  const handleLogout = () => {
+    logout()
+    setVisible(false)
+    setShow(false)
   }
 
   return <>
@@ -110,7 +119,7 @@ const Index = () => {
               <div className='angel' />
             </div>
             <ul className={classNames('connect-wallet-list', { show })}>
-               <li onClick={() => logout()}>
+               <li onClick={handleLogout}>
                   <img className='logout' src='../assets/icon-dismiss.png' />
                   <span>Disconnect Wallet</span>
                 </li>
