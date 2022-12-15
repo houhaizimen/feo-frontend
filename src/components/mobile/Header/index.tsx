@@ -7,7 +7,11 @@ import { connectList } from '@/config'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '@/hooks/useAuth'
 
+import { Popup } from 'antd-mobile'
+
 const Index = () => {
+  const [visible, setVisible] = useState(false)
+  const [show, setShow] = useState(false)
   const { account } = useWeb3React()
   const { login, logout } = useAuth()
   const scroll = useScroll(document) ?? 0
@@ -32,9 +36,9 @@ const Index = () => {
     }
   ]
   const HEADER_LIST = [
-    { name: 'World', link: '/' },
-    { name: 'Fighter Gallery', link: '/gallery' },
-    { name: 'FAQ', link: '/faqs' }
+    { name: 'World', link: '/m/' },
+    { name: 'Fighter Gallery', link: '/m/gallery' },
+    { name: 'FAQ', link: '/m/faqs' }
   ]
   const handleLogin = async (connector: ConnectorNames) => {
     const { key } = USER_LOCAL_CONNECT
@@ -52,60 +56,69 @@ const Index = () => {
 
   const handleLink = (link: string) => {
     navigate(link)
+    setVisible(false)
   }
 
   return <>
-    {/* <div className='sticky'/> */}
-    <div className={ classNames('app-home-header', { fixed })}>
-    <ul className='cont'>
-      <li className='left' onClick={() => handleLink('/')}><img src='assets/logo.png' alt="" /></li>
-      <li className='right'>
+    <div className={ classNames('m-home-header', { fixed })}>
+      <ul className='cont'>
+        <li className='left' onClick={() => handleLink('/')}><img src='../assets/logo.png' alt="" /></li>
+        <li className='right'>
+          {
+            connectList.map(item => <img onClick={() => window.open(item.link)} key={item.icon} src={`../assets/${item.icon}.png`} alt="" />)
+          }
+          <img src="../assets/m/icon-open.png" onClick={() => setVisible(true)} className='open'/>
+        </li>
+      </ul>
+      <Popup
+        visible={visible}
+        onMaskClick={() => {
+          setVisible(false)
+        }}
+        position='right'
+        bodyClassName='m-home-header-popup'
+        bodyStyle={{ width: '60vw' }}
+      >
+        <ul className='title'>
+          {
+            HEADER_LIST.map(item => <li key={item.name} className={ classNames({ active: pathname === item.link })} onClick={() => handleLink(item.link)}>{item.name}</li>)
+          }
+        </ul>
         {
-          <ul className='title'>
-            {
-              HEADER_LIST.map(item => <li key={item.name} className={ classNames({ active: pathname === item.link })} onClick={() => handleLink(item.link)}>{item.name}</li>)
-            }
-          </ul>
-        }
-        {
-          <div className='link'>
-            {
-              connectList.map(item => <img onClick={() => window.open(item.link)} key={item.icon} src={`assets/${item.icon}.png`} alt="" />)
-            }
-          </div>
-        }
-        {
-          !account && <div className='wallet'>
-            <div className='connect'>
+          !account && <div className='connect-wallet'>
+            <div className={classNames('connect-wallet-connect', { show })} onClick={() => setShow(!show)}>
               Connect Wallet
+              <div className='angel' />
             </div>
-            <ul className={classNames('wallet-connect')}>
-                {
-                  walletList.map(item => <li className='left' key={item.name} onClick={() => handleLogin(item.connectId)}>
-                    <img src={`./assets/${item.icon}.png`} />
-                    <span>{item.name}</span>
-                  </li>)
-                }
-              </ul>
-          </div>
-        }
-        {
-          account && <div className='wallet'>
-            <div className='connect'>
-              <img className='icon' src="assets/icon-account.png" alt="" />
-              {account.slice(0, 4)}...{account.slice(-6)}
-            </div>
-            <ul className={classNames('wallet-connect')}>
-              <li onClick={() => logout()}>
-                <img className='icon' src="assets/icon-dismiss.png" alt="" />
-                <span>Disconnect Wallet</span>
-              </li>
+            <ul className={classNames('connect-wallet-list', { show })}>
+              {
+                walletList.map(item => <li key={item.name} onClick={() => handleLogin(item.connectId)}>
+                  <img src={`../assets/${item.icon}.png`} />
+                  <span>{item.name}</span>
+                </li>)
+              }
             </ul>
           </div>
         }
-      </li>
-    </ul>
-  </div>
+        {
+          account && <div className='connect-wallet'>
+            <div className={classNames('connect-wallet-connect', { show })} onClick={() => setShow(!show)}>
+              <div className='account'>
+                <img className='icon' src="../assets/icon-account.png" alt="" />
+                {account?.slice(0, 4)}...{account?.slice(-6)}
+              </div>
+              <div className='angel' />
+            </div>
+            <ul className={classNames('connect-wallet-list', { show })}>
+               <li onClick={() => logout()}>
+                  <img className='logout' src='../assets/icon-dismiss.png' />
+                  <span>Disconnect Wallet</span>
+                </li>
+            </ul>
+          </div>
+        }
+      </Popup>
+    </div>
   </>
 }
 

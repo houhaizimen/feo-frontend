@@ -29,22 +29,22 @@
     }
     .star-1 {
       position: absolute;
-      top: rem(20);
-      left: rem(56);
+      top: rem(40);
+      right: rem(26);
       width: rem(66);
       animation: star-load .8s .2s linear infinite alternate;
     }
     .star-2 {
       position: absolute;
       bottom: 40%;
-      right: rem(-20);
+      right: rem(-10);
       width: rem(63);
       animation: star-load .8s .4s linear infinite alternate;
     }
     .star-3 {
       position: absolute;
-      bottom: 30%;
-      right: rem(50);
+      bottom: rem(130);
+      left: rem(0);
       width: rem(54);
       animation: star-load .8s .6s linear infinite alternate;
     }

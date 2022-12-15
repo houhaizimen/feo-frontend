@@ -5,7 +5,7 @@ import { connectList } from '@/config'
 const Index = () => {
   const navigate = useNavigate()
   const contList = [
-    { name: 'TERMS', link: '/terms' }
+    { name: 'TERMS', link: '/m/terms' }
   ]
   const handleJump = (item: any) => {
     navigate(item.link)

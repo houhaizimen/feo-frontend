@@ -21,7 +21,7 @@ const Index = () => {
       }
       {/* <img className='line' src="./assets/nft-holder-line.png" alt="" /> */}
     </div>
-    <img className='m-home-nft-holders-person' src="../assets/nft-holders-right.png" alt="" />
+    <img className='m-home-nft-holders-person' src="../assets/m/m-nft-holder-person.png" alt="" />
   </div>
 }
 

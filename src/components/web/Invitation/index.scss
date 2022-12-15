@@ -20,34 +20,34 @@
       position: absolute;
       top: -20%;
       transform: translateX(-25%);
-      width: 120%;
+      width: 140%;
       animation: bg-load 1s linear infinite alternate;
       z-index: 2;
     }
     & > img.invitation {
       position: absolute;
       top: rem(50);
-      height: 85%;
+      height: 80%;
       z-index: 3;
     }
     .star-1 {
       position: absolute;
-      top: rem(-8);
-      left: rem(-10);
+      top: rem(40);
+      right: rem(160);
       width: rem(135);
       animation: star-load .8s .2s linear infinite alternate;
     }
     .star-2 {
       position: absolute;
-      bottom: 40%;
-      left: rem(570);
+      bottom: 30%;
+      right: rem(100);
       width: rem(129);
       animation: star-load .8s .4s linear infinite alternate;
     }
     .star-3 {
       position: absolute;
-      bottom: 16%;
-      left: rem(530);
+      bottom: 14%;
+      left: rem(-50);
       width: rem(109);
       animation: star-load .8s .6s linear infinite alternate;
     }

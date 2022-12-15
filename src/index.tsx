@@ -4,6 +4,7 @@ import App from '@/App'
 import { Web3ReactProvider } from '@web3-react/core'
 import { getLibrary } from '@/utils/provider'
 
+import 'antd-mobile/es/global'
 import '@/style/style.scss'
 
 const root = ReactDOM.createRoot(

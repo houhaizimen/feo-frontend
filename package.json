@@ -13,6 +13,7 @@
     "@types/react-router-dom": "^5.3.3",
     "@web3-react/walletconnect-connector": "^6.2.13",
     "ahooks": "^3.7.2",
+    "antd-mobile": "^5.27.0",
     "bignumber.js": "^9.1.0",
     "classnames": "^2.3.2",
     "node-sass": "^7.0.1",
