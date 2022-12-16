@@ -62,7 +62,7 @@ const Index = () => {
       const count = await getBlanceOf(account ?? '')
       setLoading(false)
       setShow(true)
-      if (res === 1) setTips(`Congratulations! You successfully mint ${count / 3} NFT!`)
+      if (res === 1) setTips(`Congratulations! You successfully mint ${count}/3 NFT!`)
       else setTips('Sorry, something went wrong. Please try again later.')
       return
     }
