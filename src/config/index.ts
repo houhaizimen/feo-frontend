@@ -19,7 +19,7 @@ export const FAQList = {
     },
     {
       title: 'How do I acquire a FEO NFT?',
-      cont: ["You could stay tuned to our twitter  [link: <a href='https://twitter.com/Odyssey_SNK'>https://twitter.com/Odyssey_SNK</a>] and discord  [link: <a href='https://discord.com/invite/fEyg6FDK'>https://discord.com/invite/fEyg6FDK</a>]for more information of whitelists. Mint would start soon, and you could also buy one on the marketplace, such as opensea, element and gate."]
+      cont: ['You could stay tuned to our twitter and discord for more information of whitelists. Mint would start soon, and you could also buy one on the marketplace, such as opensea, element and gate.']
     },
     {
       title: 'How do I trade FEO NFTs?',
@@ -27,7 +27,7 @@ export const FAQList = {
     },
     {
       title: 'Where can I get support?',
-      cont: ['You can DM twitter or join our Discord server for more help.', 'You could also contact us: FEO.SNK@gmail.com']
+      cont: ['You can DM twitter or join our discord server for more help.', 'You could also contact us: FEO.SNK@gmail.com']
     },
     {
       title: 'What are the maximum mints per whitelist wallet?',
@@ -35,15 +35,15 @@ export const FAQList = {
     },
     {
       title: 'How are the 7777 NFTs distributed?',
-      cont: ['1000: Whitelist.', '6777: Public sale']
+      cont: ['777: Team', '1000: Whitelist.', '6000: Public sale']
     },
     {
       title: 'Is there a future roadmap?',
-      cont: ["Yes. You can find it on our website [link: <a href=' https://feoverse.com/'>https://feoverse.com/</a>]. For the next stage, we world start the NFT staking, IRL cosplay competition and marketplace."]
+      cont: ['Yes. You can find it on our website. For the next stage, we would start the NFT staking, IRL cosplay competition and marketplace.']
     },
     {
       title: 'What can collectors do with their FEO NFTs?',
-      cont: ["Each series of NFTs is an invitation to each FEO fighting era. Collectors could stake their collections for extra bonus like candies and fractions of treasure map. Ultimately, FEO tokens would be airdropped to the winners and active participants. Read more [link: <a href='https://app.gitbook.com/invite/Xm1QhayFc5c9fK3IzxRx/bvUXi2867MG5xaKexsWu'>https://app.gitbook.com/invite/Xm1QhayFc5c9fK3IzxRx/bvUXi2867MG5xaKexsWu</a>]"]
+      cont: ['Each series of NFTs is an invitation to each FEO fighting era. Collectors could stake their collections for extra bonus like candies and fractions of treasure map. Ultimately, FEO tokens would be airdropped to the winners and active participants. Read more from our docs.']
     },
     {
       title: 'What are the rewards for staking?',
@@ -149,7 +149,7 @@ export const TermsList = {
 }
 
 export const GALLERY_TOP_LIST = [
-  { title: 'FIGHTERS', icon: 'gallery-top-1', desc: 'All the famous fighters here, Kyo Kusanagi, Lori Yagami, Mai Shiranui, Leopold Goenitz …… they will face opponents with same skills in parallel time and space.' },
+  { title: 'FIGHTERS', icon: 'gallery-top-1', desc: 'All the famous fighters here, Kyo Kusanagi, Lori Yagami, Mai Shiranui, Leopold Goenitz …… they will face opponents with same skills in parallel space-time.' },
   { title: 'RULE', icon: 'gallery-top-2', desc: 'Here, the fighters’ mission is to defeat their doppelgangers from another world. The winners can absorb losers’ energy and become stronger, then compete to win the title of Ultimate Fighting King.' }
 ]
 
@@ -164,4 +164,16 @@ export const SWIPER_LIST = [
   { icon: '6' },
   { icon: '7' },
   { icon: '9' }
+]
+
+export const INVITATION_LIST = [
+  'In 2077, a world-class mixed martial arts competition in parallel time and space is around the corner. Fighting masters all over the world gather at South Town, and a contest across time and space is about to be staged.',
+  'Every fighter would eliminate opponents from parallel space-time, then obtain his/her energy to become stronger.',
+  'The fighting competition is approaching. However, fighters are missing one by one, and this might have something to do with a mysterious organization. A terrifying conspiracy is about to emerge…'
+]
+
+export const SWIPER_TEXT_LIST = [
+  'Mai Shiranui, a classic character image of SNK, is a deeply rooted female ninja-playing opponent with gorgeous movements, coquettish costumes and an iconic fan in the palm of her hand.',
+  'When the fighting kicks off, this glamorous female fighter is the first to fight. To fully awaken the potential hidden in her body, Mai Shiranui will transform into 7777 Avatars to enter different parallel space-time. The fighters start to see the ultimate upgrading path to the king of fighting.',
+  'In Fighter Era Odyssey, each Mai Shiranui NFT is a unique, collectible NFT stored on the Ethereum blockchain.'
 ]
