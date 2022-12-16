@@ -54,7 +54,7 @@ export const FAQList = {
       cont: ['Please stay tuned to our twitter and discord, coming soon.']
     },
     {
-      title: '11.Can I sell or list my NFT while it’s staking?',
+      title: 'Can I sell or list my NFT while it’s staking?',
       cont: ['You are free to sell your NFT in the secondary market and we will not force to limit its liquidity, but this also means that you will not receive any staking bonus when we spot check and find that you are no longer an NFT holder.']
     }
   ]

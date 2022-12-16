@@ -110,7 +110,7 @@ const Index = () => {
           <Button loading={loading} disabled={disabled} onClick={handleMint}>MINT</Button>
         </div>
       </div>
-      <img src="../assets/m/banner-person.png" alt="" className='person'/>
+      <img src="../assets/banner-person.png" alt="" className='person'/>
     <Tips tip={tips} show={show} onClose={() => setShow(false)}/>
   </div>
 }
