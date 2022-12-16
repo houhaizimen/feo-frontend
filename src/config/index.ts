@@ -19,7 +19,7 @@ export const FAQList = {
     },
     {
       title: 'How do I acquire a FEO NFT?',
-      cont: ['You could stay tuned to our twitter [link: https://twitter.com/Odyssey_SNK] and discord [link: https://discord.com/invite/fEyg6FDK]for more information of whitelists. Mint would start soon, and you could also buy one on the marketplace, such as opensea, element and gate.']
+      cont: ["You could stay tuned to our twitter  [link: <a href='https://twitter.com/Odyssey_SNK'>https://twitter.com/Odyssey_SNK</a>] and discord  [link: <a href='https://discord.com/invite/fEyg6FDK'>https://discord.com/invite/fEyg6FDK</a>]for more information of whitelists. Mint would start soon, and you could also buy one on the marketplace, such as opensea, element and gate."]
     },
     {
       title: 'How do I trade FEO NFTs?',
@@ -27,7 +27,7 @@ export const FAQList = {
     },
     {
       title: 'Where can I get support?',
-      cont: ['Each whitelist address could mint 3 NFTs at most.']
+      cont: ['You can DM twitter or join our Discord server for more help.', 'You could also contact us: FEO.SNK@gmail.com']
     },
     {
       title: 'What are the maximum mints per whitelist wallet?',
@@ -39,11 +39,11 @@ export const FAQList = {
     },
     {
       title: 'Is there a future roadmap?',
-      cont: ['Yes. You can find it on our website [link: https://feoverse.com/]. For the next stage, we world start the NFT staking, IRL cosplay competition and marketplace.']
+      cont: ["Yes. You can find it on our website [link: <a href=' https://feoverse.com/'>https://feoverse.com/</a>]. For the next stage, we world start the NFT staking, IRL cosplay competition and marketplace."]
     },
     {
       title: 'What can collectors do with their FEO NFTs?',
-      cont: ['Each series of NFTs is an invitation to each FEO fighting era. Collectors could stake their collections for extra bonus like candies and fractions of treasure map. Ultimately, FEO tokens would be airdropped to the winners and active participants. Read more [link: https://app.gitbook.com/invite/Xm1QhayFc5c9fK3IzxRx/bvUXi2867MG5xaKexsWu]']
+      cont: ["Each series of NFTs is an invitation to each FEO fighting era. Collectors could stake their collections for extra bonus like candies and fractions of treasure map. Ultimately, FEO tokens would be airdropped to the winners and active participants. Read more [link: <a href='https://app.gitbook.com/invite/Xm1QhayFc5c9fK3IzxRx/bvUXi2867MG5xaKexsWu'>https://app.gitbook.com/invite/Xm1QhayFc5c9fK3IzxRx/bvUXi2867MG5xaKexsWu</a>]"]
     },
     {
       title: 'What are the rewards for staking?',

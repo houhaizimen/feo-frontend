@@ -30,7 +30,7 @@ const Index = () => {
         }
       </div>
     </div>
-    <p>© 2022 Crack, LCC. All rights reserved</p>
+    <p>© 2022 FEO, LCC. All rights reserved</p>
   </div>
 }
 

@@ -17,7 +17,7 @@ const Index = () => {
               <dt>{index + 1}.{item.title}</dt>
               <dd>
                 {
-                  item.cont.map(items => <p key={items}>{items}</p>)
+                  item.cont.map(items => <p key={items} dangerouslySetInnerHTML={{__html: items}}/>)
                 }
               </dd>
             </dl>

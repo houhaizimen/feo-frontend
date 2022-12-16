@@ -42,6 +42,7 @@ body, html, ul, li, dl, dt, dd, div, img, p, h1, h2 {
 a {
   text-decoration: none;
   color: #fff;
+  word-break: break-all;
 }
 ul {
   list-style: none;

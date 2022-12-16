@@ -45,7 +45,7 @@ const Index = () => {
         <div className='item seven'>
           <img className='item seven' src="../assets/feo/m-07.png" alt="" />
           <span>07</span>
-          <div className='name'>Coming SOON...</div>
+          <div className='name'>Coming Soon...</div>
         </div>
       </div>
     </div>

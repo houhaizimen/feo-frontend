@@ -8,7 +8,7 @@ import 'swiper/css/navigation'
 const Index = () => {
   // SwiperCore.use([Pagination])
   const list = [
-    'Mai Shiranui, a classic character image of SNK, is a deeply rooted female ninja-playing opponents with gorgeous movements, coquettish costumes and an iconic fan in the palm of her hand.',
+    'Mai Shiranui, a classic character image of SNK, is a deeply rooted female ninja-playing opponent with gorgeous movements, coquettish costumes and an iconic fan in the palm of her hand.',
     'When the fighting kicks off, this glamorous female fighter is the first to fight. To fully awaken the potential hidden in her body, Mai Shiranui will transform into 7777 Avatars to enter different parallel time and space. The fighters start to see the ultimate upgrading path to the king of fighting.',
     'In Fighter Era Odyssey, each Mai Shiranui NFT is a unique, collectible NFT stored on the Ethereum blockchain.'
   ]

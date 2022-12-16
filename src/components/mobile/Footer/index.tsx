@@ -11,7 +11,7 @@ const Index = () => {
     navigate(item.link)
   }
   return <div className='m-home-footer'>
-      <img src="assets/logo.png" alt="" />
+      <img src="../assets/logo.png" alt="" />
     <div className='m-home-footer-top'>
       <ul className='cont'>
         <li>
@@ -30,7 +30,7 @@ const Index = () => {
         }
       </div>
     </div>
-    <p>© 2022 Crack, LCC. All rights reserved</p>
+    <p>© 2022 FEO, LCC. All rights reserved</p>
   </div>
 }
 

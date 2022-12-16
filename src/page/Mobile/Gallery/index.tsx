@@ -5,7 +5,7 @@ import Footer from '@/components/mobile/Footer'
 const Index = () => {
   return <div className='m-gallery'>
     <div className='m-gallery-cont'>
-      <h1 className='title'>A world class<br /> fighting competition <br />KOF in FEOVERSE is<br /> aproaching</h1>
+      <h1 className='title'>A world class<br /> fighting competition <br />KOF in FEOVERSE is<br /> approaching</h1>
       <ul className='tips'>
         {
           GALLERY_TOP_LIST.map(item => {
