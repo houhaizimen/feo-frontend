@@ -11,6 +11,7 @@
     @include center-1200;
     z-index: 3;
     & > ul {
+      position: relative;
       margin-top: rem(91);
       display: flex;
       align-items: center;
@@ -23,6 +24,7 @@
         font-weight: bold;
       }
       & > li:last-child {
+        max-width: 5rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -59,6 +61,17 @@
     width: 100vw;
     bottom: 0;
     right: 0;
-    z-index: 6;
+    z-index: 1;
+  }
+}
+@media screen and (max-width: 1380px) {
+  .web-home-nft-holders {
+    &-wrap {
+      & > ul {
+        & > li:last-child {
+          max-width: 7rem;
+        }
+      }
+    }
   }
 }
