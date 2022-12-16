@@ -18,7 +18,7 @@ const Index = () => {
           </li>
         </ul>)
       }
-      <img className='line' src="./assets/nft-holder-line.png" alt="" />
+      {/* <img className='line' src="./assets/nft-holder-line.png" alt="" /> */}
     </div>
     <img className='web-home-nft-holders-person' src="./assets/nft-holders-right.png" alt="" />
   </div>

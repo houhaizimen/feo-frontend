@@ -29,13 +29,13 @@ export const FAQList = {
       title: 'Where can I get support?',
       cont: ['You can DM twitter or join our discord server for more help.', 'You could also contact us: FEO.SNK@gmail.com']
     },
-    {
-      title: 'What are the maximum mints per whitelist wallet?',
-      cont: ['Each whitelist address could mint 3 NFTs at most.']
-    },
+    // {
+    //   title: 'What are the maximum mints per whitelist wallet?',
+    //   cont: ['Each whitelist address could mint 3 NFTs at most.']
+    // },
     {
       title: 'How are the 7777 NFTs distributed?',
-      cont: ['777: Team', '1000: Whitelist.', '6000: Public sale']
+      cont: ['777: Team', '1000: Whitelist', '6000: Public sale']
     },
     {
       title: 'Is there a future roadmap?',
@@ -159,11 +159,16 @@ export const GALLERY_BOTTOM_LIST = [
 ]
 
 export const SWIPER_LIST = [
+  { icon: '1' },
   { icon: '2' },
+  { icon: '3' },
   { icon: '4' },
+  { icon: '5' },
   { icon: '6' },
   { icon: '7' },
-  { icon: '9' }
+  { icon: '8' },
+  { icon: '9' },
+  { icon: '10' }
 ]
 
 export const INVITATION_LIST = [

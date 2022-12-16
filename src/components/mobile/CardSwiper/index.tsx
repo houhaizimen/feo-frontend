@@ -25,6 +25,7 @@ const Index = () => {
         centeredSlides={true}
         initialSlide={3}
         slidesPerView={'auto'}
+        loop
         className="mySwiper m-home-card-swiper-wrap-swiper">
         {
           SWIPER_LIST.map((item, index: number) => {

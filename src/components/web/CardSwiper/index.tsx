@@ -26,6 +26,7 @@ const Index = () => {
         centeredSlides={true}
         initialSlide={3}
         slidesPerView={'auto'}
+        loop
         // centeredSlides={true}
         className="mySwiper web-home-card-swiper-wrap-swiper">
         {
