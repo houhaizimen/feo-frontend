@@ -61,18 +61,25 @@ const Index = () => {
       const res = await whitelistMint(quantity, (account as string), library)
       const count = await getBlanceOf(account ?? '')
       setLoading(false)
-      setShow(true)
-      if (res === 1) setTips(`Congratulations! You successfully mint ${count}/3 NFT!`)
-      else setTips('Sorry, something went wrong. Please try again later.')
-      return
+      if (res === 1) {
+        setShow(true)
+        setTips(`Congratulations! You successfully mint ${count / 3} NFT!`)
+      } else {
+        setShow(true)
+        setTips('Sorry, something went wrong. Please try again later.')
+      }
     }
     if (isPTime) {
       const res = await publicMint(quantity, (account as string), library)
       const count = await getBlanceOf(account ?? '')
       setLoading(false)
-      setShow(true)
-      if (res) setTips(`Congratulations! You successfully mint ${count} NFT!`)
-      else setTips('Sorry, something went wrong. Please try again later.')
+      if (res) {
+        setShow(true)
+        setTips(`Congratulations! You successfully mint ${count} NFT!`)
+      } else {
+        setShow(true)
+        setTips('Sorry, something went wrong. Please try again later.')
+      }
     }
   }
   const max = useMemo(() => {
