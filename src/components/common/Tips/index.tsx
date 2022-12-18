@@ -13,11 +13,12 @@ interface PropsTypes {
 
 const Index: FC<PropsTypes> = ({ show = false, type = 'success', onClose, tip, children }) => {
   useEffect(() => {
-    setTimeout(() => {
-      onClose?.()
-    }, 5000)
+    if (show) {
+      setTimeout(() => {
+        onClose?.()
+      }, 5000)
+    }
   }, [show, onClose])
-  console.log()
   return createPortal(
     <>
       {
