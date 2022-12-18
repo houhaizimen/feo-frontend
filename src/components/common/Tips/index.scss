@@ -24,4 +24,20 @@
     line-height: 24px;
     font-family: 'Akrobat-Bold';
   }
+  &.mobile {
+    max-width: rem(322);
+    height: rem(81);
+    top: rem(200);
+    padding: 0 rem(14);
+    box-sizing: border-box;
+    border-radius: rem(14);
+    & > img {
+      width: rem(20);
+      margin-right: rem(10);
+    }
+    & > span {
+      font-size: rem(13);
+      line-height: rem(13);
+    }
+  }
 }

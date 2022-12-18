@@ -15,7 +15,7 @@ const Index = () => {
     <div className='m-home-footer-top'>
       <ul className='cont'>
         <li>
-          <a href='https://app.gitbook.com/invite/Xm1QhayFc5c9fK3IzxRx/bvUXi2867MG5xaKexsWu'>PRIVACY POLICY</a>
+          <a href='https://fighter-era-odyssey.gitbook.io/privacy-policy/'>PRIVACY POLICY</a>
         </li>
         {
           contList.map(item => <li onClick={() => handleJump(item)} key={item.name}>{item.name}</li>)
