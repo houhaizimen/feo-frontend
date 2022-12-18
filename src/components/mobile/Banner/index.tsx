@@ -29,6 +29,10 @@ const Index = () => {
     const bol = now >= wStart * 1000 && now <= wEnd * 1000
     setIsWhiteTime(bol)
     setIsPTime(now > pStart)
+    return {
+      wTime: bol,
+      pTime: now > pStart
+    }
   }, [getwlMintStartTime, getwlMintEndTime, getpMintStartTime])
 
   const handleBalanceOf = useCallback(async (account: string) => {
@@ -44,45 +48,41 @@ const Index = () => {
     if (account) void handleBalanceOf(account)
   }, [handleBalanceOf, account])
 
-  const handleMint = async () => {
-    const sta = true
-    if (sta) {
-      return
-    }
+  const handleMint = useCallback(async () => {
     setLoading(true)
-    const price = PRICE[isPTime ? 'P' : 'W']
+    const { wTime, pTime } = await handleGetStartTime()
+    console.log(wTime, pTime)
+    const price = PRICE[pTime ? 'P' : 'W']
     if (Number(balance) < price) {
       setShow(true)
       setTips('Insufficient balance')
       setLoading(false)
       return
     }
-    if (isWhiteTime) {
+    if (wTime) {
       const res = await whitelistMint(quantity, (account as string), library)
-      const count = await getBlanceOf(account ?? '')
       setLoading(false)
-      setShow(true)
       if (res === 1) {
         setShow(true)
-        setTips(`Congratulations! You successfully mint ${count / 3} NFT!`)
+        setTips(`Congratulations! You successfully mint ${quantity} NFT!`)
       } else {
         setShow(true)
         setTips('Sorry, something went wrong. Please try again later.')
       }
+      return
     }
-    if (isPTime) {
+    if (pTime) {
       const res = await publicMint(quantity, (account as string), library)
-      const count = await getBlanceOf(account ?? '')
       setLoading(false)
       if (res) {
         setShow(true)
-        setTips(`Congratulations! You successfully mint ${count} NFT!`)
+        setTips(`Congratulations! You successfully mint ${quantity} NFT!`)
       } else {
         setShow(true)
         setTips('Sorry, something went wrong. Please try again later.')
       }
     }
-  }
+  }, [handleGetStartTime, account, balance, library, publicMint, quantity, whitelistMint])
   const max = useMemo(() => {
     if (isWhiteTime) {
       return count ? 3 - count : 3
