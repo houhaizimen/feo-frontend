@@ -119,7 +119,7 @@ const Index = () => {
             <ul className={classNames('connect-wallet-list', { show })}>
                <li onClick={handleLogout}>
                   <img className='logout' src='../assets/icon-dismiss.png' />
-                  <span>Disconnect Wallet</span>
+                  <span>Disconnect</span>
                 </li>
             </ul>
           </div>

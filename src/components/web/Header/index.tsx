@@ -95,10 +95,10 @@ const Index = () => {
               <img className='icon' src="assets/icon-account.png" alt="" />
               {account.slice(0, 4)}...{account.slice(-6)}
             </div>
-            <ul className={classNames('wallet-connect')}>
+            <ul className={classNames('wallet-connect logout')}>
               <li onClick={() => logout()}>
                 <img className='icon' src="assets/icon-dismiss.png" alt="" />
-                <span>Disconnect Wallet</span>
+                <span>Disconnect</span>
               </li>
             </ul>
           </div>

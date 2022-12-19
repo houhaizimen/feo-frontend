@@ -18,12 +18,12 @@ const Index = () => {
         </div>
         <div className='item six'>
           <img src="./assets/feo/06.png" alt="" />
-          <span>06</span>
+          <span>05</span>
           <div className='name'>Virtual Showrooms</div>
         </div>
         <div className='item five'>
           <img src="./assets/feo/05.png" alt="" />
-          <span>05</span>
+          <span>06</span>
           <div className='name'>Collections</div>
         </div>
         <div className='item four'>
