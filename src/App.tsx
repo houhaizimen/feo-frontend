@@ -1,6 +1,6 @@
 import React from 'react'
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
-import { useAutoConnect } from '@/hooks/useAuth'
+// import { useAutoConnect } from '@/hooks/useAuth'
 import { useBlockNumber } from '@/hooks/useBlock'
 import { useNetWork } from '@/hooks/useNetWork'
 
@@ -8,7 +8,7 @@ import Web from '@/page/Web'
 import Mobile from '@/page/Mobile'
 
 function App() {
-  useAutoConnect()
+  // useAutoConnect()
   useBlockNumber()
   useNetWork()
   return (

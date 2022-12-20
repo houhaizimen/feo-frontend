@@ -93,6 +93,7 @@ const Index = () => {
     if (isWhiteTime && max === 0) return false
     return (!isWhiteTime && !isPTime) || !account || !balance
   }, [isWhiteTime, isPTime, account, balance, max])
+  console.log(disabled)
   return <div className='m-home-banner padding-26'>
       <div className='cont'>
         <h2>START YOUR JOURNEY IN</h2>
@@ -115,7 +116,8 @@ const Index = () => {
           <div className='m-home-banner-buy-step'>
             <Stepper value={quantity} max={max} min={1} onChange={val => setQuantity(val)}/>
           </div>
-          <Button loading={loading} disabled={disabled} onClick={handleMint}>MINT</Button>
+          {/* <Button loading={loading} disabled={disabled} onClick={handleMint}>MINT</Button> */}
+          <Button loading={loading} disabled={true} onClick={handleMint}>MINT</Button>
         </div>
       </div>
       <img src="../assets/banner-person.png" alt="" className='person'/>
