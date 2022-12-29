@@ -112,7 +112,7 @@ const Index = () => {
             <dd>Total</dd>
             <dt>7777</dt>
           </dl>
-          <p>Whitelists can mint 6h in advance</p>
+          <p>Whitelists can mint 8h in advance</p>
           <div className='m-home-banner-buy-step'>
             <Stepper value={quantity} max={max} min={1} onChange={val => setQuantity(val)}/>
           </div>
