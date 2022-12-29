@@ -34,8 +34,8 @@ export const FAQList = {
     //   cont: ['Each whitelist address could mint 3 NFTs at most.']
     // },
     {
-      title: 'How are the 7777 NFTs distributed?',
-      cont: ['777: Team', '1000: Whitelist', '6000: Public sale']
+      title: 'When can I mint the NFT?',
+      cont: ['Pre-sale: January,18, 2023 1:00PM (UTC+9)', 'Public sale: January,18, 2023 9:00PM (UTC+9)']
     },
     {
       title: 'Is there a future roadmap?',
