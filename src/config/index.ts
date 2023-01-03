@@ -7,7 +7,8 @@ export enum PRICE {
 export const connectList = [
   { icon: 'connect', link: '' },
   { icon: 'twitter', link: 'https://twitter.com/Odyssey_SNK' },
-  { icon: 'discord', link: 'https://discord.gg/Zt3CugAerc' }
+  { icon: 'discord', link: 'https://discord.gg/Zt3CugAerc' },
+  { icon: 'medium', link: 'https://medium.com/@feo.snk' }
 ]
 
 export const FAQList = {
