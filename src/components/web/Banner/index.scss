@@ -60,7 +60,10 @@
       color: #fff;
     }
     &-step {
-      margin-bottom: rem(30);
+      margin-top: rem(23);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
   }
 }

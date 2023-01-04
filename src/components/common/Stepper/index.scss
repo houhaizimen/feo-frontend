@@ -3,8 +3,8 @@
   align-items: center;
   font-size: 20px;
   &-sub, &-add {
-    width: 41px;
-    height: 41px;
+    width: 56px;
+    height: 56px;
     background-image: imgurl('step-del.png');
     background-size: 100% 100%;
     cursor: pointer;
@@ -16,13 +16,13 @@
   }
   label {
     display: block;
-    margin: 0 4px;
+    margin: 0 7px;
     text-align: center;
     // border: 1px solid #fff;
-    width: 316px;
-    height: 41px;
+    width: 95px;
+    height: 56px;
     text-align: center;
-    line-height: 41px;
+    line-height: 56px;
     box-sizing: border-box;
     background-image: imgurl('step-bg.png');
     background-size: 100% 100%;
@@ -33,14 +33,14 @@
   &.mobile {
     font-size: rem(13);
     .web-stepper-sub, .web-stepper-add {
-      width: rem(32);
-      height: rem(32);
+      width: rem(45);
+      height: rem(45);
       text-align: center;
     }
     label {
-      margin: 0 rem(5);
-      width: rem(246);
-      height: rem(32);
+      margin: 0 rem(6);
+      width: rem(76);
+      height: rem(45);
       text-align: center;
       line-height: rem(32);
     }

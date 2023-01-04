@@ -1,8 +1,8 @@
 .web-button {
-  width: 405px;
-  height: rem(81);
+  width: 174px;
+  height: 56px;
   padding: 0;
-  line-height: rem(81);
+  line-height: 56px;
   text-align: center;
   background-image: imgurl('btn-bg.png');
   background-size: 100% 100%;
@@ -47,9 +47,9 @@
     }
   }
   &.mobile {
-    width: rem(320);
-    height: rem(53);
-    line-height: rem(53);
+    width: rem(139);
+    height: rem(43);
+    line-height: rem(43);
     text-align: center;
     font-size: rem(17);
     border: 0;

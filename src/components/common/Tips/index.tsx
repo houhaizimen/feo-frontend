@@ -16,14 +16,14 @@ const Index: FC<PropsTypes> = ({ show = false, type = 'success', onClose, tip, c
     if (show) {
       setTimeout(() => {
         onClose?.()
-      }, 5000)
+      }, 4000)
     }
   }, [show, onClose])
   return createPortal(
     <>
       {
         show && (<div className={classNames('web-home-tips', { mobile: isMobile() })}>
-          <img src={`assets/tips-${type === 'success' ? '1' : '2'}.png`} alt="" />
+          <img src={`${isMobile() ? '../' : ''}assets/tips-${type === 'success' ? '1' : '2'}.png`} alt="" />
           <span>{tip}{children}</span>
         </div>)
       }
