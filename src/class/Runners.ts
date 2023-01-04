@@ -1,10 +1,7 @@
 import { getRunnersContract } from '@/config/getContract'
-import { ethers } from 'ethers'
 import { Web3Provider } from '@ethersproject/providers'
-import { getBalanceAmount, BIG_TEN } from '@/utils/formatAmount'
-import BigNumber from 'bignumber.js'
+import { getBalanceAmount } from '@/utils/formatAmount'
 import estimateGas from '@/utils/estimateGas'
-import { PRICE } from '@/config/index'
 import { getMerkleTree } from '@/utils/merkletree'
 
 class Runners {
@@ -35,6 +32,34 @@ class Runners {
     const res = await contract.wlMintEndTime()
     return getBalanceAmount(res?._hex ?? 0, 0)
   }
+   /**
+   * @returns
+   */
+
+   getMaxMinted = async () => {
+    const contract = getRunnersContract()
+    const res = await contract.maxMinted()
+    return getBalanceAmount(res?._hex ?? 0, 0)
+  }
+  /**
+   * @returns
+   */
+
+  getPPrice = async (): Promise<any[]> => {
+    const contract = getRunnersContract()
+    const res = await contract.pPrice()
+    return [getBalanceAmount(res?._hex ?? 0, 18), res?._hex]
+  }
+  /**
+   * @returns
+   */
+
+  getWlPrice = async (): Promise<any[]> => {
+    const contract = getRunnersContract()
+    const res = await contract.wlPrice()
+    return [getBalanceAmount(res?._hex ?? 0, 18), res?._hex]
+  }
+
   /**
    * @returns
    */
@@ -50,9 +75,8 @@ class Runners {
 
    publicMint = async (_quantity: number, account: string, library: Web3Provider) => {
     const contract = getRunnersContract(library.getSigner(account))
-    const price = BigNumber(PRICE.P * _quantity).multipliedBy(BIG_TEN.pow(18)).toString()
-    // const price = BigNumber(PRICE.P * _quantity).toString()
-    const value = ethers.BigNumber.from(price)._hex
+    const prices = await this.getPPrice()
+    const value = prices[1]
     try {
       const gasLimit = await estimateGas(contract, 'publicMint', [_quantity, { value }])
       const tx = await contract.publicMint(_quantity, { gasLimit, value })
@@ -73,9 +97,8 @@ class Runners {
       return -1
     }
     const contract = getRunnersContract(library.getSigner(account))
-    const price = BigNumber(PRICE.W * _quantity).multipliedBy(BIG_TEN.pow(18)).toString()
-    // const price = BigNumber(PRICE.P * _quantity).toString()
-    const value = ethers.BigNumber.from(price)._hex
+    const prices = await this.getPPrice()
+    const value = prices[1]
     try {
       const gasLimit = await estimateGas(contract, 'whitelistMint', [merk, _quantity, { value }])
       const tx = await contract.whitelistMint(merk, _quantity, { gasLimit, value })

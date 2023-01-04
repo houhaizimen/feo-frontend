@@ -1,7 +1,6 @@
 import { ethers } from 'ethers'
 
 export const getRPC = (): string => process.env.REACT_APP_RPC ?? ''
-console.log(process.env.REACT_APP_CHAINID)
 export const getChainId = () => process.env.REACT_APP_CHAINID ?? '5'
 
 export const JSONRPCProvider = new ethers.providers.JsonRpcProvider(getRPC(), parseInt(getChainId()))

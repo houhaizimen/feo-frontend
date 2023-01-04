@@ -1,9 +1,9 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { useBalance } from '@/hooks/useBlance'
 import { useWeb3React } from '@web3-react/core'
 import { PRICE } from '@/config/index'
 import Runners from '@/class/Runners'
-import { getMerkleTree } from '@/utils/merkletree'
+import { useMintData } from '@/hooks/useMintData'
 
 import Button from '@/components/common/Button'
 import Stepper from '@/components/common/Stepper'
@@ -11,43 +11,13 @@ import Tips from '@/components/common/Tips'
 
 const Index = () => {
   const { account, library } = useWeb3React()
-  getMerkleTree(account ?? '')
   const balance = useBalance(account ?? '')
   const [quantity, setQuantity] = useState<number>(1)
   const [loading, setLoading] = useState<boolean>(false)
   const [show, setShow] = useState<boolean>(false)
   const [tips, setTips] = useState<string>('')
-  const [count, setCount] = useState<number>(0)
-  const { getBlanceOf, getwlMintStartTime, getwlMintEndTime, getpMintStartTime, publicMint, whitelistMint } = Runners
-  const [isWhiteTime, setIsWhiteTime] = useState<boolean>(false)
-  const [isPTime, setIsPTime] = useState<boolean>(false)
-  const handleGetStartTime = useCallback(async () => {
-    const wStart = await getwlMintStartTime()
-    const wEnd = await getwlMintEndTime()
-    const pStart = await getpMintStartTime()
-    const now = new Date().getTime()
-    const bol = now >= wStart * 1000 && now <= wEnd * 1000
-    setIsWhiteTime(bol)
-    setIsPTime(now > pStart)
-    return {
-      wTime: bol,
-      pTime: now > pStart
-    }
-  }, [getwlMintStartTime, getwlMintEndTime, getpMintStartTime])
-
-  const handleBalanceOf = useCallback(async (account: string) => {
-    const res = await getBlanceOf(account)
-    setCount(res)
-  }, [getBlanceOf])
-
-  useEffect(() => {
-    void handleGetStartTime()
-  }, [handleGetStartTime])
-
-  useEffect(() => {
-    if (account) void handleBalanceOf(account)
-  }, [handleBalanceOf, account])
-
+  const { publicMint, whitelistMint } = Runners
+  const { max, handleGetStartTime } = useMintData(account ?? '', balance)
   const handleMint = useCallback(async () => {
     setLoading(true)
     const { wTime, pTime } = await handleGetStartTime()
@@ -83,17 +53,6 @@ const Index = () => {
       }
     }
   }, [handleGetStartTime, account, balance, library, publicMint, quantity, whitelistMint])
-  const max = useMemo(() => {
-    if (isWhiteTime) {
-      return count ? 3 - count : 3
-    }
-    return 100
-  }, [isWhiteTime, count])
-  const disabled = useMemo(() => {
-    if (isWhiteTime && max === 0) return false
-    return (!isWhiteTime && !isPTime) || !account || !balance
-  }, [isWhiteTime, isPTime, account, balance, max])
-  console.log(disabled)
   return <div className='web-home-banner'>
       <div className='cont'>
         <h2>START YOUR JOURNEY IN</h2>
