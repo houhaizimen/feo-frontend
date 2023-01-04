@@ -60,9 +60,7 @@ const Index = () => {
         <h1>FIGHTER ERA ODYSSEY</h1>
         <div className='web-home-banner-buy'>
           <dl className='item'>
-          {/* Public Sale Whitelist Total Time */}
             <dd>Public Sale</dd>
-            {/* <dt>2022.12.28 pm9:00 - 12.29 pm9:00</dt> */}
             <dt>{PRICE.P} ETH</dt>
           </dl>
           <dl className='item'>
