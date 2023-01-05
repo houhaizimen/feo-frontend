@@ -5,17 +5,15 @@
     position: relative;
     z-index: 3;
     & > ul {
-      margin-top: rem(44);
+      margin-top: rem(26);
       display: flex;
       align-items: center;
       color: #EF267C;
       & > li:first-child {
-        width: rem(50);
-        font-size: rem(55);
-        font-family: 'Akrobat-Bold';
-        margin-top: rem(-14);
-        font-weight: bold;
-        margin-right: rem(19);
+        margin-right: rem(24);
+        & > img {
+          width: rem(40);
+        }
       }
       & > li:last-child {
         display: flex;

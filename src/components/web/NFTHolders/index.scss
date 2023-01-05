@@ -12,16 +12,15 @@
     z-index: 3;
     & > ul {
       position: relative;
-      margin-top: rem(91);
+      margin-top: rem(55);
       display: flex;
       align-items: center;
       color: #EF267C;
       & > li:first-child {
-        width: rem(150);
-        font-size: rem(107);
-        font-family: 'Akrobat-Bold';
-        margin-top: -6px;
-        font-weight: bold;
+        & > img {
+          width: rem(73);
+        }
+        margin-right: rem(55);
       }
       & > li:last-child {
         max-width: 5rem;

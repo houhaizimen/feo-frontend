@@ -6,8 +6,8 @@ const Index = () => {
     <h1 className='title'>Privilege for<br /> NFT Holders</h1>
     <div className='web-home-nft-holders-wrap'>
       {
-        NFT_HOLDERS_LIST.map((item, index) => <ul key={item.title}>
-          <li>0{index + 1}</li>
+        NFT_HOLDERS_LIST.map((item) => <ul key={item.title}>
+          <li><img src={`assets/nftHolder/${item.icon}.png`} alt="" /></li>
           <li>
             <dt>{item.title}</dt>
             <dd>{item.desc}</dd>
