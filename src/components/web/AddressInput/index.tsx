@@ -15,8 +15,8 @@ const Index = () => {
   const handleClick = () => {
     if (address) {
       const bol = whilteList.includes(address)
-      if (bol) setTips('The address is in the white list')
-      else setTips('Sorry, The address is not in the white list')
+      if (bol) setTips('Congratulations! Your address is on the whitelist.')
+      else setTips('Sorry, The address is not in the whitelist.')
       setShow(true)
     }
   }

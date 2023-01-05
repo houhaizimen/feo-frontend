@@ -2,6 +2,8 @@
   width: 406px;
   height: 50px;
   position: relative;
+  background-color: rgba(#EF267C, .56);
+  display: flex;
   & > input {
     display: block;
     width: 100%;
@@ -9,9 +11,9 @@
     border: 2px solid rgba(#fff, .5);
     font-size: rem(23);
     color: #fff;
-    background-color: rgba(#EF267C, .56);
     padding: 0 50px 0 23px;
     box-sizing: border-box;
+    background-color: transparent;
     outline: none;
     z-index: 1;
     &::-webkit-input-placeholder {
