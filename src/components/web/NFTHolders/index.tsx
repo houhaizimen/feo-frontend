@@ -1,16 +1,12 @@
 import React from 'react'
+import { NFT_HOLDERS_LIST } from '@/config'
 
 const Index = () => {
-  const list = [
-    { title: 'SNK Fan Community', desc: 'Make new friends with big fan of SNK' },
-    { title: 'Priority Purchasing', desc: 'Your collection is the key to next series of NFT and events IRL' },
-    { title: 'Unlock Exclusive Experience', desc: 'Amazing KOF battles and gaming' }
-  ]
   return <div className='web-home-nft-holders'>
     <h1 className='title'>Privilege for<br /> NFT Holders</h1>
     <div className='web-home-nft-holders-wrap'>
       {
-        list.map((item, index) => <ul key={item.title}>
+        NFT_HOLDERS_LIST.map((item, index) => <ul key={item.title}>
           <li>0{index + 1}</li>
           <li>
             <dt>{item.title}</dt>

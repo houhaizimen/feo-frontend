@@ -184,3 +184,10 @@ export const SWIPER_TEXT_LIST = [
   'When the fighting kicks off, this glamorous female fighter is the first to fight. To fully awaken the potential hidden in her body, Mai Shiranui will transform into 7777 Avatars to enter different parallel space-time. The fighters start to see the ultimate upgrading path to the king of fighting.',
   'In Fighter Era Odyssey, each Mai Shiranui NFT is a unique, collectible NFT stored on the Ethereum blockchain.'
 ]
+
+export const NFT_HOLDERS_LIST = [
+  { title: 'SNK Fan Community', desc: 'Make new friends with big fan of SNK', icon: '' },
+  { title: 'Priority Purchasing', desc: 'Your collection is the key to next series of NFT and events IRL', icon: '' },
+  { title: 'Continuous income', desc: 'NFT staking bonus and skin', icon: '' },
+  { title: 'Unlock Exclusive Experience', desc: 'Amazing KOF battles and gaming', icon: '' }
+]
