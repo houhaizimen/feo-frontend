@@ -33,7 +33,7 @@ const Index = () => {
         }
       </div>
     </div>
-    <p>© 2022 FEO, LCC. All rights reserved</p>
+    <p>© SNK CORPORATION ALL RIGHTS RESERVED.</p>
   </div>
 }
 

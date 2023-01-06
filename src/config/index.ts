@@ -28,12 +28,8 @@ export const FAQList = {
     },
     {
       title: 'Where can I get support?',
-      cont: ['You can DM twitter or join our discord server for more help.', 'You could also contact us: FEO.SNK@gmail.com']
+      cont: ['You can DM twitter or join our discord server for more help.']
     },
-    // {
-    //   title: 'What are the maximum mints per whitelist wallet?',
-    //   cont: ['Each whitelist address could mint 3 NFTs at most.']
-    // },
     {
       title: 'When can I mint the NFT?',
       cont: ['Pre-sale: January,18, 2023 1:00PM (UTC+9)', 'Public sale: January,18, 2023 9:00PM (UTC+9)']
