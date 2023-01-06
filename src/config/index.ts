@@ -166,7 +166,8 @@ export const SWIPER_LIST = [
   { icon: '7' },
   { icon: '8' },
   { icon: '9' },
-  { icon: '10' }
+  { icon: '10' },
+  { icon: '11' }
 ]
 
 export const INVITATION_LIST = [
@@ -184,6 +185,6 @@ export const SWIPER_TEXT_LIST = [
 export const NFT_HOLDERS_LIST = [
   { title: 'SNK Fan Community', desc: 'Make new friends with big fan of SNK', icon: '1' },
   { title: 'Priority Purchasing', desc: 'Your collection is the key to next series of NFT and events IRL', icon: '2' },
-  { title: 'Continuous income', desc: 'NFT staking bonus and skin reward in FEOVERSE', icon: '3' },
+  { title: 'Continuous income', desc: 'NFT staking bonus and skin reward', icon: '3' },
   { title: 'Unlock Exclusive Experience', desc: 'Amazing KOF battles in FEOVERSE', icon: '4' }
 ]
