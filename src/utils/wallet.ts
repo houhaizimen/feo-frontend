@@ -1,6 +1,5 @@
 
 import { InjectedConnector } from '@web3-react/injected-connector'
-// import { WalletLinkConnector } from '@web3-react/walletlink-connector'
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 import { getRPC, getChainId } from '@/utils/provider'
 import { ChainId } from '@/config/types'
@@ -31,8 +30,7 @@ const walletLink = async () => {
   const { WalletLinkConnector } = await import('@web3-react/walletlink-connector')
   return new WalletLinkConnector({
     url: getRPC(),
-    appName: 'Metalk-BO',
-    // appLogoUrl: 'https://static.metalk.co/image/common/logo.png',
+    appName: 'Fighter Era Odyssey',
     supportedChainIds: [ChainId.MAIN_CHAIN_ID, ChainId.TEST_CHAIN_ID]
   })
 }
