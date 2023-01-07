@@ -1,8 +1,8 @@
 .web-home-raod-map {
   position: relative;
-  background-image: imgurl('roadmap-bg.png');
+  // background-image: imgurl('roadmap-bg.png');
   background-size: 100% 100%;
-  padding-top: rem(85);
+  // padding-top: rem(85);
   &-header {
     display: flex;
     align-items: center;
@@ -25,10 +25,11 @@
     }
   }
   & > .cont {
-    min-width: 1200px;
-    width: rem(1680);
+    // min-width: 1200px;
+    // width: rem(1680);
     margin: 0 auto;
-    padding-top: rem(106);
+    // padding-top: rem(106);
+    width: 100vw;
     & > img {
       width: 100%;
     }
