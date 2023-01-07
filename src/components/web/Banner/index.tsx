@@ -76,7 +76,7 @@ const Index = () => {
           <div className='web-home-banner-buy-step'>
             <Stepper value={quantity} max={max} min={1} onChange={val => setQuantity(val)}/>
             {/* <Button loading={loading} disabled={disabled} onClick={handleMint}>MINT</Button> */}
-            <Button loading={loading} disabled={true} onClick={handleMint}>MINT</Button>
+            <Button loading={loading} onClick={handleMint}>MINT</Button>
           </div>
         </div>
       </div>

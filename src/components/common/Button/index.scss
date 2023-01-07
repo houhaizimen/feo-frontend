@@ -74,8 +74,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      transform: none !important;
       & > img {
-        width: rem(30);
+        width: rem(24);
         animation: loading 1.3s linear infinite;
       }
     }

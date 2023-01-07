@@ -1,6 +1,6 @@
 import { getRunnersContract } from '@/config/getContract'
 import { Web3Provider } from '@ethersproject/providers'
-import { getBalanceAmount } from '@/utils/formatAmount'
+import { getBalanceAmount, getAountToBigHex } from '@/utils/formatAmount'
 import estimateGas from '@/utils/estimateGas'
 import { getMerkleTree } from '@/utils/merkletree'
 
@@ -18,19 +18,37 @@ class Runners {
    * @returns
    */
 
-  getBlanceOf = async (account: string) => {
+  getwlMintEndTime = async () => {
     const contract = getRunnersContract()
-    const res = await contract.balanceOf(account)
-    return getBalanceAmount(res?._hex ?? 0, 0) ?? 0
+    const res = await contract.wlMintEndTime()
+    return getBalanceAmount(res?._hex ?? 0, 0)
   }
   /**
    * @returns
    */
 
-  getwlMintEndTime = async () => {
+  getpMintStartTime = async () => {
     const contract = getRunnersContract()
-    const res = await contract.wlMintEndTime()
+    const res = await contract.pMintStartTime()
     return getBalanceAmount(res?._hex ?? 0, 0)
+  }
+  /**
+   * @returns
+   */
+
+  getpMintEndTime = async () => {
+    const contract = getRunnersContract()
+    const res = await contract.pMintEndTime()
+    return getBalanceAmount(res?._hex ?? 0, 0)
+  }
+  /**
+   * @returns
+   */
+
+  getBlanceOf = async (account: string) => {
+    const contract = getRunnersContract()
+    const res = await contract.balanceOf(account)
+    return getBalanceAmount(res?._hex ?? 0, 0) ?? 0
   }
    /**
    * @returns
@@ -38,7 +56,7 @@ class Runners {
 
    getMaxMinted = async () => {
     const contract = getRunnersContract()
-    const res = await contract.maxMinted()
+    const res = await contract.maxWLMinted()
     return getBalanceAmount(res?._hex ?? 0, 0)
   }
   /**
@@ -59,16 +77,6 @@ class Runners {
     const res = await contract.wlPrice()
     return [getBalanceAmount(res?._hex ?? 0, 18), res?._hex]
   }
-
-  /**
-   * @returns
-   */
-
-  getpMintStartTime = async () => {
-    const contract = getRunnersContract()
-    const res = await contract.pMintStartTime()
-    return getBalanceAmount(res?._hex ?? 0, 0)
-  }
   /**
    * @returns
    */
@@ -76,7 +84,7 @@ class Runners {
    publicMint = async (_quantity: number, account: string, library: Web3Provider) => {
     const contract = getRunnersContract(library.getSigner(account))
     const prices = await this.getPPrice()
-    const value = prices[1]
+    const value = getAountToBigHex(prices[0], _quantity)
     try {
       const gasLimit = await estimateGas(contract, 'publicMint', [_quantity, { value }])
       const tx = await contract.publicMint(_quantity, { gasLimit, value })
@@ -96,9 +104,10 @@ class Runners {
     if (merk === '') {
       return -1
     }
+    console.log(account)
     const contract = getRunnersContract(library.getSigner(account))
-    const prices = await this.getPPrice()
-    const value = prices[1]
+    const prices = await this.getWlPrice()
+    const value = getAountToBigHex(prices[0], _quantity)
     try {
       const gasLimit = await estimateGas(contract, 'whitelistMint', [merk, _quantity, { value }])
       const tx = await contract.whitelistMint(merk, _quantity, { gasLimit, value })

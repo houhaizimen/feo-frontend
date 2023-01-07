@@ -1,4 +1,5 @@
 import BigNumber from 'bignumber.js'
+import { BigNumber as BIGNUMBER } from 'ethers'
 
 export const BIG_TEN = new BigNumber(10)
 
@@ -13,4 +14,8 @@ export const formatCurrencyAmount = (amount: BigNumber, decimals = 18): number =
 
 export const formatDisplayBalance = (amount: BigNumber, decimals = 18, fixedDecimals = 3) => {
   return formatCurrencyAmount(amount, decimals).toFixed(fixedDecimals)
+}
+
+export const getAountToBigHex = (amount: BigNumber, value: number) => {
+  return BIGNUMBER.from((new BigNumber(amount).multipliedBy(BIG_TEN.pow(18))).multipliedBy(value).toString()).toHexString()
 }
