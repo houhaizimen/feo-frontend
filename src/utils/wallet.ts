@@ -81,7 +81,7 @@ export const walletList = [
   },
   // {
   //   name: 'OKX',
-  //   icon: 'metamask',
+  //   icon: 'okx',
   //   connectId: ConnectorNames.Injected
   // },
   {
