@@ -72,3 +72,26 @@ export const setupNetwork = async (): Promise<boolean> => {
   }
   return false
 }
+
+export const walletList = [
+  {
+    name: 'Metamask',
+    icon: 'metamask',
+    connectId: ConnectorNames.Injected
+  },
+  {
+    name: 'OKX',
+    icon: 'metamask',
+    connectId: ConnectorNames.Injected
+  },
+  {
+    name: 'Coinbase',
+    icon: 'coinbase',
+    connectId: ConnectorNames.WalletLink
+  },
+  {
+    name: 'WalletConnect',
+    icon: 'wallet-connect',
+    connectId: ConnectorNames.WalletConnect
+  }
+]
