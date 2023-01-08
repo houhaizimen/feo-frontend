@@ -56,6 +56,7 @@ export const useMintData = (account: string, balance: string) => {
   return {
     max,
     disabled,
-    handleGetStartTime
+    handleGetStartTime,
+    handleBalanceOf
   }
 }

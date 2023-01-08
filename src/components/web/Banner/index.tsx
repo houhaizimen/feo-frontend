@@ -18,7 +18,7 @@ const Index = () => {
   const [show, setShow] = useState<boolean>(false)
   const [tips, setTips] = useState<string>('')
   const { publicMint, whitelistMint } = Runners
-  const { max, handleGetStartTime, disabled } = useMintData(account ?? '', balance)
+  const { max, handleGetStartTime, disabled, handleBalanceOf } = useMintData(account ?? '', balance)
   const handleMint = useCallback(async () => {
     setLoading(true)
     const { wTime, pTime } = await handleGetStartTime()
@@ -35,6 +35,7 @@ const Index = () => {
       if (res === 1) {
         setShow(true)
         setTips(`Congratulations! You successfully mint ${quantity} NFT!`)
+        await handleBalanceOf(account as string)
       } else {
         setShow(true)
         setTips('Sorry, something went wrong. Please try again later.')
@@ -52,7 +53,7 @@ const Index = () => {
         setTips('Sorry, something went wrong. Please try again later.')
       }
     }
-  }, [handleGetStartTime, account, balance, library, publicMint, quantity, whitelistMint])
+  }, [handleGetStartTime, account, balance, library, publicMint, quantity, whitelistMint, handleBalanceOf])
   return <div className='web-home-banner'>
       <div className='cont'>
         <h2>START YOUR JOURNEY IN</h2>
