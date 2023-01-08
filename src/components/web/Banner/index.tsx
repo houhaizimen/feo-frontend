@@ -38,6 +38,7 @@ const Index = () => {
       setShow(true)
       setTips(`Each whitelist can have at most ${maxCount} NFTs`)
       setLoading(false)
+      return
     }
     if (wTime) {
       const res = await whitelistMint(quantity, (account as string), library)
