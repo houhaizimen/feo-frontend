@@ -3677,5 +3677,3 @@ export const whilteList: string[] = [
   '0x45f082F16E32Ec2DAd6597810414068eFFcfe2e1', // cf
   '0xe0e8595563463a90E07aa524AABb323cC63aa76F'
 ]
-
-
