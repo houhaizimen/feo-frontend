@@ -2,6 +2,7 @@ import React, { useCallback, useState } from 'react'
 import { useBalance } from '@/hooks/useBlance'
 import { useWeb3React } from '@web3-react/core'
 import { PRICE } from '@/config/index'
+// import { getMerkleTree } from '@/utils/merkletree'
 import Runners from '@/class/Runners'
 import { useMintData } from '@/hooks/useMintData'
 
@@ -11,6 +12,7 @@ import Tips from '@/components/common/Tips'
 import AddressInput from '@/components/web/AddressInput'
 
 const Index = () => {
+  // getMerkleTree('0xe0e8595563463a90E07aa524AABb323cC63aa76F')
   const { account, library } = useWeb3React()
   const balance = useBalance(account ?? '')
   const [quantity, setQuantity] = useState<number>(1)
