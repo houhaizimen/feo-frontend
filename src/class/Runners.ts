@@ -109,7 +109,7 @@ class Runners {
     console.log(merk)
     const contract = getRunnersContract(library.getSigner(account))
     const prices = await this.getWlPrice()
-    const value = prices[1]
+    const value = getAountToBigHex(prices[1], _quantity)
     console.log(value)
     try {
       const gasLimit = await estimateGas(contract, 'whitelistMint', [merk, _quantity, { value }])

@@ -18,27 +18,37 @@ const Index = () => {
   const [quantity, setQuantity] = useState<number>(1)
   const [loading, setLoading] = useState<boolean>(false)
   const [show, setShow] = useState<boolean>(false)
+  const [types, setTypes] = useState<'success' | 'error'>('success')
   const [tips, setTips] = useState<string>('')
   const { publicMint, whitelistMint } = Runners
-  const { max, handleGetStartTime, disabled, handleBalanceOf } = useMintData(account ?? '', balance)
+  const { max, handleGetStartTime, disabled, handleBalanceOf, maxCount } = useMintData(account ?? '', balance)
   const handleMint = useCallback(async () => {
     setLoading(true)
     const { wTime, pTime } = await handleGetStartTime()
     const price = PRICE[pTime ? 'P' : 'W']
     if (Number(balance) < price) {
+      setTypes('error')
       setShow(true)
       setTips('Insufficient balance')
       setLoading(false)
       return
     }
+    if (max === 0) {
+      setTypes('error')
+      setShow(true)
+      setTips(`Each whitelist can have at most ${maxCount} NFTs`)
+      setLoading(false)
+    }
     if (wTime) {
       const res = await whitelistMint(quantity, (account as string), library)
       setLoading(false)
       if (res === 1) {
+        setTypes('success')
         setShow(true)
         setTips(`Congratulations! You successfully mint ${quantity} NFT!`)
         await handleBalanceOf(account as string)
       } else {
+        setTypes('error')
         setShow(true)
         setTips('Sorry, something went wrong. Please try again later.')
       }
@@ -48,14 +58,16 @@ const Index = () => {
       const res = await publicMint(quantity, (account as string), library)
       setLoading(false)
       if (res) {
+        setTypes('success')
         setShow(true)
         setTips(`Congratulations! You successfully mint ${quantity} NFT!`)
       } else {
+        setTypes('error')
         setShow(true)
         setTips('Sorry, something went wrong. Please try again later.')
       }
     }
-  }, [handleGetStartTime, account, balance, library, publicMint, quantity, whitelistMint, handleBalanceOf])
+  }, [handleGetStartTime, maxCount, max, account, balance, library, publicMint, quantity, whitelistMint, handleBalanceOf])
   return <div className='web-home-banner'>
       <div className='cont'>
         <h2>START YOUR JOURNEY IN</h2>
@@ -83,7 +95,7 @@ const Index = () => {
         </div>
       </div>
       <img src="assets/banner-person.png" alt="" className='person'/>
-    <Tips tip={tips} show={show} onClose={() => setShow(false)}/>
+    <Tips tip={tips} show={show} type={types} onClose={() => setShow(false)}/>
   </div>
 }
 
