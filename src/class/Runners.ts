@@ -87,6 +87,7 @@ class Runners {
     const contract = getRunnersContract(library.getSigner(account))
     const prices = await this.getPPrice()
     const value = getAountToBigHex(prices[1], _quantity)
+    console.log(value)
     try {
       const gasLimit = await estimateGas(contract, 'publicMint', [_quantity, { value }])
       const tx = await contract.publicMint(_quantity, { gasLimit, value })
