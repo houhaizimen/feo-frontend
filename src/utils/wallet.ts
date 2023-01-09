@@ -80,11 +80,6 @@ export const walletList = [
     connectId: ConnectorNames.Injected
   },
   {
-    name: 'OKX',
-    icon: 'okx',
-    connectId: ConnectorNames.Injected
-  },
-  {
     name: 'Coinbase',
     icon: 'coinbase',
     connectId: ConnectorNames.WalletLink
@@ -93,5 +88,10 @@ export const walletList = [
     name: 'WalletConnect',
     icon: 'wallet-connect',
     connectId: ConnectorNames.WalletConnect
+  },
+  {
+    name: 'OKX',
+    icon: 'okx',
+    connectId: ConnectorNames.Injected
   }
 ]
