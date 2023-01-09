@@ -113,7 +113,7 @@ class Runners {
     const value = getAountToBigHex(prices[1], _quantity)
     console.log(value)
     try {
-      const gasLimit = await estimateGas(contract, 'whitelistMint', [merk, _quantity, { value }])
+      const gasLimit = await estimateGas(contract, 'whitelistMint', [merk, _quantity, { value }]) // value： send amount
       const tx = await contract.whitelistMint(merk, _quantity, { gasLimit, value })
       const res = await tx.wait()
       return res.status

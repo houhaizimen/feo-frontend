@@ -30,8 +30,7 @@ const walletLink = async () => {
   const { WalletLinkConnector } = await import('@web3-react/walletlink-connector')
   return new WalletLinkConnector({
     url: getRPC(),
-    appName: 'Metalk-BO',
-    // appLogoUrl: 'https://static.metalk.co/image/common/logo.png',
+    appName: 'Fighter Era Odyssey',
     supportedChainIds: [ChainId.MAIN_CHAIN_ID, ChainId.TEST_CHAIN_ID]
   })
 }
@@ -73,3 +72,26 @@ export const setupNetwork = async (): Promise<boolean> => {
   }
   return false
 }
+
+export const walletList = [
+  {
+    name: 'Metamask',
+    icon: 'metamask',
+    connectId: ConnectorNames.Injected
+  },
+  {
+    name: 'OKX',
+    icon: 'okx',
+    connectId: ConnectorNames.Injected
+  },
+  {
+    name: 'Coinbase',
+    icon: 'coinbase',
+    connectId: ConnectorNames.WalletLink
+  },
+  {
+    name: 'WalletConnect',
+    icon: 'wallet-connect',
+    connectId: ConnectorNames.WalletConnect
+  }
+]
