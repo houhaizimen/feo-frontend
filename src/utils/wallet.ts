@@ -79,11 +79,11 @@ export const walletList = [
     icon: 'metamask',
     connectId: ConnectorNames.Injected
   },
-  // {
-  //   name: 'OKX',
-  //   icon: 'okx',
-  //   connectId: ConnectorNames.Injected
-  // },
+  {
+    name: 'OKX',
+    icon: 'okx',
+    connectId: ConnectorNames.Injected
+  },
   {
     name: 'Coinbase',
     icon: 'coinbase',
