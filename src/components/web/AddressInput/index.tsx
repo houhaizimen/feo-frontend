@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import classnames from 'classnames'
 import { isMobile } from '@/utils/tools'
-import { whilteList } from '@/config/whiteList'
+import { whiteList } from '@/config/whiteList'
 
 import Tips from '@/components/common/Tips'
 
@@ -14,7 +14,7 @@ const Index = () => {
   }
   const handleClick = () => {
     if (address) {
-      const bol = whilteList.includes(address)
+      const bol = whiteList.includes(address)
       if (bol) setTips('Congratulations! Your address is on the whitelist.')
       else setTips('Sorry, The address is not in the whitelist.')
       setShow(true)
