@@ -90,7 +90,7 @@ export const walletList = [
     connectId: ConnectorNames.WalletConnect
   },
   {
-    name: 'OKX',
+    name: 'OKX WALLET',
     icon: 'okx',
     connectId: ConnectorNames.Injected
   }

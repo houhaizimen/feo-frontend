@@ -71,11 +71,10 @@ const Index = () => {
             <dd>Total</dd>
             <dt>7777</dt>
           </dl>
-          <p>Whitelists can mint 8h in advance</p>
+          <p>Each whitelist can mint up to 2 NFTs</p>
           <AddressInput />
           <div className='web-home-banner-buy-step'>
             <Stepper value={quantity} max={max} min={1} onChange={val => setQuantity(val)}/>
-            {/* <Button loading={loading} disabled={disabled} onClick={handleMint}>MINT</Button> */}
             <Button loading={loading} disabled={true} onClick={handleMint}>MINT</Button>
           </div>
         </div>
