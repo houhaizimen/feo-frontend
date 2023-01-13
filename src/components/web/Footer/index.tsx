@@ -34,7 +34,7 @@ const Index = () => {
       </div>
     </div>
     <p>©SNK CORPORATION ALL RIGHTS RESERVED.</p>
-    <p>©FEOVERSE, LCC. All rights reserved.</p>
+    <p>©FEOVERSE, LCC. ALL RIGHTS RESERVED.</p>
   </div>
 }
 
