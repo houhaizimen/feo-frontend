@@ -6,7 +6,7 @@ export enum PRICE {
 
 export const connectList = [
   { icon: 'connect', link: '' },
-  { icon: 'twitter', link: 'https://twitter.com/Odyssey_SNK' },
+  { icon: 'twitter', link: 'https://twitter.com/FEOVERSE' },
   { icon: 'discord', link: 'https://discord.gg/Zt3CugAerc' },
   { icon: 'medium', link: 'https://medium.com/@feo.snk' }
 ]
@@ -166,8 +166,7 @@ export const SWIPER_LIST = [
   { icon: '7' },
   { icon: '8' },
   { icon: '9' },
-  { icon: '10' },
-  { icon: '11' }
+  { icon: '10' }
 ]
 
 export const INVITATION_LIST = [
