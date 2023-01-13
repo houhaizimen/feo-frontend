@@ -32,6 +32,6 @@ $min-width: 1200px;
 }
 
 @function imgurl($url) {
-  @return url('../../public/assets/' + $url);
+  @return imgurl('~@/assets/' + $url);
 }
 
