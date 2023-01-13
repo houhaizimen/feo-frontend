@@ -47,10 +47,14 @@
   & > p {
     // @include center-1200;
     text-align: center;
-    padding: rem(30) 0;
+    padding-top: rem(30);
     border-top: 1px solid #fff;
     transition: all .6s;
     min-width: 1200px;
+    &:last-child {
+      border: 0;
+      padding: rem(14) 0 rem(40) 0;
+    }
   }
 }
 
@@ -63,7 +67,10 @@
       }
     }
     & > p {
-      padding: rem(10);
+      padding-top: rem(10);
+      &:last-child {
+        padding: rem(6) 0 rem(18) 0;
+      }
     }
   }
 }

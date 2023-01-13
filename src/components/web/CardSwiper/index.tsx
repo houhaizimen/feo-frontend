@@ -10,7 +10,7 @@ const Index = () => {
   const btnsList = [
     'Unique Collectibles',
     'NFT Marketplace',
-    'Imersive FEOVERSE',
+    'Immersive FEOVERSE',
     'Fighting Battle'
   ]
   return <div className='web-home-card-swiper'>

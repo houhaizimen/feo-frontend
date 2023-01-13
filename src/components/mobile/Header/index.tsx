@@ -54,7 +54,7 @@ const Index = () => {
   return <>
     <div className={ classNames('m-home-header', { fixed })}>
       <ul className='cont'>
-        <li className='left' onClick={() => handleLink('/')}><img src='../assets/logo.png' alt="" /></li>
+        <li className='left' onClick={() => handleLink('/m/')}><img src='../assets/logo.png' alt="" /></li>
         <li className='right'>
           {
             connectList.map(item => <img onClick={() => window.open(item.link)} key={item.icon} src={`../assets/${item.icon}.png`} alt="" />)
