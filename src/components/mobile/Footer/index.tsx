@@ -33,7 +33,8 @@ const Index = () => {
         }
       </div>
     </div>
-    <p>© SNK CORPORATION ALL RIGHTS RESERVED.</p>
+    <p>©SNK CORPORATION ALL RIGHTS RESERVED.</p>
+    <p>©FEOVERSE, LCC. All rights reserved.</p>
   </div>
 }
 

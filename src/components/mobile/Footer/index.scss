@@ -38,6 +38,10 @@
   & > p {
     text-align: center;
     padding: rem(20) 0;
+    &:last-child {
+      padding-top: 0;
+      margin-top: rem(-10);
+    }
   }
 }
 
