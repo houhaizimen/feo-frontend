@@ -7,5 +7,6 @@ export const getMerkleTree = (address: string) => {
   if (index === -1) return ''
   const Nodes = whiteList.map((item: string) => keccak256(item))
   const tree = new MerkleTree(Nodes, keccak256, { sortPairs: true })
+  console.log(tree.getHexRoot())
   return tree.getHexProof(Nodes[index])
 }
