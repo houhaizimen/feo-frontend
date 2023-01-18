@@ -8,7 +8,7 @@ export const connectList = [
   { icon: 'connect', link: '' },
   { icon: 'twitter', link: 'https://twitter.com/FEOVERSE' },
   { icon: 'discord', link: 'https://discord.gg/Zt3CugAerc' },
-  { icon: 'medium', link: 'https://medium.com/@feo.snk' }
+  { icon: 'medium', link: 'https://medium.com/@FEOVERSE' }
 ]
 
 export const FAQList = {
