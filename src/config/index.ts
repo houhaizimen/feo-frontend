@@ -49,11 +49,11 @@ export const FAQList = {
     {
       title: 'How soon after mint will staking be available?',
       cont: ['Please stay tuned to our twitter and discord, coming soon.']
-    },
-    {
-      title: 'Can I sell or list my NFT while it’s staking?',
-      cont: ['You are free to sell your NFT in the secondary market and we will not force to limit its liquidity, but this also means that you will not receive any staking bonus when we spot check and find that you are no longer an NFT holder.']
     }
+    // {
+    //   title: 'Can I sell or list my NFT while it’s staking?',
+    //   cont: ['You are free to sell your NFT in the secondary market and we will not force to limit its liquidity, but this also means that you will not receive any staking bonus when we spot check and find that you are no longer an NFT holder.']
+    // }
   ]
 }
 
@@ -159,7 +159,7 @@ export const GALLERY_BOTTOM_LIST = [
 ]
 
 export const SWIPER_LIST = [
-  { icon: '1' },
+  // { icon: '1' },
   { icon: '2' },
   { icon: '3' },
   { icon: '4' },
