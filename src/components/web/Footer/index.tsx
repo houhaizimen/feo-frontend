@@ -25,7 +25,7 @@ const Index = () => {
         </li>
         <li>
           {/* <a href='mailto:FEO.SNK@gmail.com'>CONTACT US</a> */}
-          <a href='mailto:xx'>CONTACT US</a>
+          <a href='mailto:feoverse@gmail.com'>CONTACT US</a>
         </li>
       </ul>
       <div className='link'>

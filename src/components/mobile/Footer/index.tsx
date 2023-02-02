@@ -24,7 +24,7 @@ const Index = () => {
           <a href='https://fighter-era-odyssey.gitbook.io/docs/'>WHITEPAPER</a>
         </li>
         <li>
-          <a href='mailto:xx'>CONTACT US</a>
+          <a href='mailto:feoverse@gmail.com'>CONTACT US</a>
           {/* <a href='mailto:FEO.SNK@gmail.com'>CONTACT US</a> */}
         </li>
       </ul>
