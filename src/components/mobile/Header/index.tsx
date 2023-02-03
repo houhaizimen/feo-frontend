@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useWeb3React } from '@web3-react/core'
 import classNames from 'classnames'
 import { useScroll } from 'ahooks'
-import { ConnectorNames, USER_LOCAL_CONNECT, walletList } from '@/utils/wallet'
+import { ConnectorNames, USER_LOCAL_CONNECT, useGetWalletList } from '@/utils/wallet'
 import { connectList } from '@/config'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '@/hooks/useAuth'
@@ -14,6 +14,7 @@ const Index = () => {
   const [show, setShow] = useState(false)
   const { account } = useWeb3React()
   const { login, logout } = useAuth()
+  const walletList = useGetWalletList()
   const scroll = useScroll(document) ?? 0
   const [fixed, setFixed] = useState<boolean>(false)
   const { pathname } = useLocation()

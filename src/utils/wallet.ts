@@ -3,6 +3,7 @@ import { InjectedConnector } from '@web3-react/injected-connector'
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 import { getRPC, getChainId } from '@/utils/provider'
 import { ChainId } from '@/config/types'
+// import { useTranslation } from 'react-i18next'
 
 export const USER_LOCAL_CONNECT = {
   key: 'connectId'
@@ -73,25 +74,34 @@ export const setupNetwork = async (): Promise<boolean> => {
   return false
 }
 
-export const walletList = [
-  {
-    name: 'Metamask',
-    icon: 'metamask',
-    connectId: ConnectorNames.Injected
-  },
-  {
-    name: 'Coinbase',
-    icon: 'coinbase',
-    connectId: ConnectorNames.WalletLink
-  },
-  {
-    name: 'WalletConnect',
-    icon: 'wallet-connect',
-    connectId: ConnectorNames.WalletConnect
-  },
-  {
-    name: 'OKX WALLET',
-    icon: 'okx',
-    connectId: ConnectorNames.Injected
-  }
-]
+interface WALLET_TYPE {
+  name: string
+  icon: string
+  connectId: ConnectorNames
+}
+
+export const useGetWalletList = (): WALLET_TYPE[] => {
+  // const { t } = useTranslation()
+  return [
+    {
+      name: 'Metamask',
+      icon: 'metamask',
+      connectId: ConnectorNames.Injected
+    },
+    {
+      name: 'Coinbase',
+      icon: 'coinbase',
+      connectId: ConnectorNames.WalletLink
+    },
+    {
+      name: 'WalletConnect',
+      icon: 'wallet-connect',
+      connectId: ConnectorNames.WalletConnect
+    },
+    {
+      name: 'OKX WALLET',
+      icon: 'okx',
+      connectId: ConnectorNames.Injected
+    }
+  ]
+}

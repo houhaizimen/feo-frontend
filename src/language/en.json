@@ -1,5 +1,16 @@
 {
+  "title": "Fighter Era Odyssey",
 	"banner": {
-    "title": "feo"
+    "World": "World",
+    "Fighter": "Fighter Gallery",
+    "FAQ": "FAQ",
+    "Connect": "Connect Wallet",
+    "Disconnect": "Disconnect",
+    "wallets": {
+      "Metamask": "Metamask",
+      "Coinbase": "Coinbase",
+      "WalletConnect": "WalletConnect",
+      "okx": "OKX WALLET"
+    }
   }
 }
