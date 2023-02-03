@@ -6,10 +6,14 @@ import { ConnectorNames, USER_LOCAL_CONNECT, walletList } from '@/utils/wallet'
 import { connectList } from '@/config'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '@/hooks/useAuth'
+import { useTranslation, getI18n } from 'react-i18next'
 
 const Index = () => {
   const { account } = useWeb3React()
   const { login, logout } = useAuth()
+  const { t, i18n } = useTranslation()
+  console.log(getI18n().language)
+  console.log(t('banner.title'))
   const scroll = useScroll(document) ?? 0
   const [fixed, setFixed] = useState<boolean>(false)
   const { pathname } = useLocation()
@@ -37,10 +41,17 @@ const Index = () => {
     navigate(link)
   }
 
+  const changeLanguage = (val: string) => {
+    void i18n.changeLanguage(val)
+  }
+
+  console.log(changeLanguage)
+
   return <>
     {/* <div className='sticky'/> */}
     <div className={ classNames('app-home-header', { fixed })}>
     <ul className='cont'>
+      {/* <li onClick={() => changeLanguage('jp')}>{t('banner.title')}</li> */}
       <li className='left' onClick={() => handleLink('/')}><img src='assets/logo.png' alt="" /></li>
       <li className='right'>
         {
