@@ -4,6 +4,7 @@ import { useWeb3React } from '@web3-react/core'
 import { PRICE } from '@/config/index'
 import Runners from '@/class/Runners'
 import { useMintData } from '@/hooks/useMintData'
+import { useTranslation } from 'react-i18next'
 
 import Button from '@/components/common/Button'
 import Stepper from '@/components/common/Stepper'
@@ -11,6 +12,9 @@ import Tips from '@/components/common/Tips'
 import AddressInput from '@/components/web/AddressInput'
 
 const Index = () => {
+  const { t } = useTranslation()
+  const ts: Record<string, any> = t('BANNER', { returnObjects: true })
+  const ts_TIPS: Record<string, any> = t('TIPS', { returnObjects: true })
   const { account, library } = useWeb3React()
   const balance = useBalance(account ?? '')
   const [quantity, setQuantity] = useState<number>(1)
@@ -25,7 +29,7 @@ const Index = () => {
     const price = PRICE[pTime ? 'P' : 'W']
     if (Number(balance) < price) {
       setShow(true)
-      setTips('Insufficient balance')
+      setTips(`${ts_TIPS.ERROR.balance}`)
       setLoading(false)
       return
     }
@@ -34,10 +38,10 @@ const Index = () => {
       setLoading(false)
       if (res === 1) {
         setShow(true)
-        setTips(`Congratulations! You successfully mint ${quantity} NFT!`)
+        setTips(`${t('TIPS.SUCCESS.mint', { quantity })}`)
       } else {
         setShow(true)
-        setTips('Sorry, something went wrong. Please try again later.')
+        setTips(`${ts_TIPS.ERROR.mint}`)
       }
       return
     }
@@ -46,36 +50,36 @@ const Index = () => {
       setLoading(false)
       if (res) {
         setShow(true)
-        setTips(`Congratulations! You successfully mint ${quantity} NFT!`)
+        setTips(`${t('TIPS.SUCCESS.mint', { quantity })}`)
       } else {
         setShow(true)
-        setTips('Sorry, something went wrong. Please try again later.')
+        setTips(`${ts_TIPS.ERROR.mint}`)
       }
     }
   }, [handleGetStartTime, account, balance, library, publicMint, quantity, whitelistMint])
   return <div className='web-home-banner'>
       <div className='cont'>
-        <h2>START YOUR JOURNEY IN</h2>
+        <h2>{ts.title}</h2>
         <div className='line' />
-        <h1>FIGHTER ERA ODYSSEY</h1>
+        <h1>{ts.sub_title}</h1>
         <div className='web-home-banner-buy'>
           <dl className='item'>
-            <dd>Public Sale</dd>
+            <dd>{ts.sale}</dd>
             <dt>{PRICE.P} ETH</dt>
           </dl>
           <dl className='item'>
-            <dd>Whitelist</dd>
+            <dd>{ts.Whitelist}</dd>
             <dt>{PRICE.W} ETH</dt>
           </dl>
           <dl className='item'>
-            <dd>Total</dd>
+            <dd>{ts.Total}</dd>
             <dt>7777</dt>
           </dl>
-          <p>Each whitelist can mint up to 2 NFTs</p>
+          <p>{ts.tips}</p>
           <AddressInput />
           <div className='web-home-banner-buy-step'>
             <Stepper value={quantity} max={max} min={1} onChange={val => setQuantity(val)}/>
-            <Button loading={loading} disabled={true} onClick={handleMint}>MINT</Button>
+            <Button loading={loading} disabled={true} onClick={handleMint}>{ts.MINT}</Button>
           </div>
         </div>
       </div>

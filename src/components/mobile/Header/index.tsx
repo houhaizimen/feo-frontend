@@ -59,8 +59,6 @@ const Index = () => {
     void i18n.changeLanguage(val)
   }
 
-  console.log(changeLanguage)
-
   return <>
     <div className={ classNames('m-home-header', { fixed })}>
       <ul className='cont'>
