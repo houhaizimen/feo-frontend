@@ -113,3 +113,8 @@ export const SWIPER_LIST = [
   { icon: '9' },
   { icon: '10' }
 ]
+
+export const LANG_LIST = [
+  { title: 'EN', value: 'en', icon: 'en' },
+  { title: 'JPN', value: 'ja', icon: 'ja' }
+]

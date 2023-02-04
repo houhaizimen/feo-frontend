@@ -3,7 +3,7 @@ import { useWeb3React } from '@web3-react/core'
 import classNames from 'classnames'
 import { useScroll } from 'ahooks'
 import { ConnectorNames, USER_LOCAL_CONNECT, useGetWalletList } from '@/utils/wallet'
-import { connectList } from '@/config'
+import { connectList, LANG_LIST } from '@/config'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '@/hooks/useAuth'
 import { useTranslation } from 'react-i18next'
@@ -16,6 +16,7 @@ const Index = () => {
   const walletList = useGetWalletList()
   const scroll = useScroll(document) ?? 0
   const [fixed, setFixed] = useState<boolean>(false)
+  const [rotate, setRotate] = useState<boolean>(false)
   const { pathname } = useLocation()
   const navigate = useNavigate()
   const HEADER_LIST = [
@@ -45,8 +46,6 @@ const Index = () => {
     void i18n.changeLanguage(val)
   }
 
-  console.log(changeLanguage)
-
   return <>
     <div className={ classNames('app-home-header', { fixed })}>
     <ul className='cont'>
@@ -64,6 +63,24 @@ const Index = () => {
             {
               connectList.slice(0, 3).map(item => <img onClick={() => window.open(item.link)} key={item.icon} src={`assets/${item.icon}.png`} alt="" />)
             }
+          </div>
+        }
+        {
+          <div className='lang'>
+            <div className='lang-cont'>
+              <div className={classNames('lang-cont-top', { down: rotate })} onClick={() => setRotate(!rotate)}>
+                <img src="assets/icon-lang.png" alt="" />
+                <img src="assets/icon-up.png" alt="" />
+              </div>
+              <div className='lang-cont-bottom'>
+                {
+                  LANG_LIST.map(item => <div key={item.value} onClick={() => changeLanguage(item.value)}>
+                    <img src={`assets/icon-${item.icon}.png`} alt="" />
+                    <span>{item.title}</span>
+                  </div>)
+                }
+              </div>
+            </div>
           </div>
         }
         {

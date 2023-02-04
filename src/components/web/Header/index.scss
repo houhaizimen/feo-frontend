@@ -27,7 +27,7 @@
       align-items: center;
       font-family: 'Akrobat-Bold';
       font-size: 18px;
-      padding-right: rem(168);
+      padding-right: rem(200);
       & > .title, & > .link {
         display: flex;
         align-items: center;
@@ -64,6 +64,69 @@
           transition: all .4s ease-in-out;
           &:hover {
             transform: scale(1.2);
+          }
+        }
+      }
+      .lang {
+        position: relative;
+        width: rem(63);
+        height: rem(48);
+        border-radius: rem(7);
+        background-color: rgba(#fff, .2);
+        &-cont {
+          position: absolute;
+          top: 0;
+          left: 0;
+          cursor: pointer;
+          height: auto;
+          &-top {
+            margin-top: rem(12);
+            margin-left: rem(13);
+            line-height: rem(24);
+            & > img {
+              width: rem(24);
+              margin-right: rem(7);
+              vertical-align: top;
+              &:last-child {
+                width: rem(8);
+                margin: 0;
+                transition: all .3s;
+              }
+            }
+            // &.down {
+            //   img:last-child {
+            //     transform: rotate(180deg);
+            //   }
+            // }
+          }
+          &-bottom {
+            transition: all .6ss;
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+            margin-top: rem(24);
+            & > div {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: rem(77);
+              height: rem(40);
+              margin-top: rem(12);
+              background-image: imgurl('account-bg.png');
+              background-size: 100% 100%;
+              font-size: rem(18);
+              & > img {
+                width: rem(15);
+                margin-right: rem(6);
+              }
+            }
+          }
+          &:hover {
+            .lang-cont-bottom {
+              opacity: 1;
+              height: auto;
+              overflow: visible;
+            }
           }
         }
       }
