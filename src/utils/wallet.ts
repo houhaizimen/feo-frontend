@@ -3,7 +3,7 @@ import { InjectedConnector } from '@web3-react/injected-connector'
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 import { getRPC, getChainId } from '@/utils/provider'
 import { ChainId } from '@/config/types'
-// import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 
 export const USER_LOCAL_CONNECT = {
   key: 'connectId'
@@ -81,25 +81,26 @@ interface WALLET_TYPE {
 }
 
 export const useGetWalletList = (): WALLET_TYPE[] => {
-  // const { t } = useTranslation()
+  const { t } = useTranslation()
+  const ts: Record<string, any> = t('HEADER.wallets', { returnObjects: true })
   return [
     {
-      name: 'Metamask',
+      name: ts.Metamask,
       icon: 'metamask',
       connectId: ConnectorNames.Injected
     },
     {
-      name: 'Coinbase',
+      name: ts.Coinbase,
       icon: 'coinbase',
       connectId: ConnectorNames.WalletLink
     },
     {
-      name: 'WalletConnect',
+      name: ts.WalletConnect,
       icon: 'wallet-connect',
       connectId: ConnectorNames.WalletConnect
     },
     {
-      name: 'OKX WALLET',
+      name: ts.okx,
       icon: 'okx',
       connectId: ConnectorNames.Injected
     }

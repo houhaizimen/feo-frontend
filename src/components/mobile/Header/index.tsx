@@ -6,6 +6,7 @@ import { ConnectorNames, USER_LOCAL_CONNECT, useGetWalletList } from '@/utils/wa
 import { connectList } from '@/config'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '@/hooks/useAuth'
+import { useTranslation } from 'react-i18next'
 
 import { Popup } from 'antd-mobile'
 
@@ -14,15 +15,17 @@ const Index = () => {
   const [show, setShow] = useState(false)
   const { account } = useWeb3React()
   const { login, logout } = useAuth()
+  const { t, i18n } = useTranslation()
+  const ts: Record<string, any> = t('HEADER', { returnObjects: true })
   const walletList = useGetWalletList()
   const scroll = useScroll(document) ?? 0
   const [fixed, setFixed] = useState<boolean>(false)
   const { pathname } = useLocation()
   const navigate = useNavigate()
   const HEADER_LIST = [
-    { name: 'World', link: '/m/' },
-    { name: 'Fighter Gallery', link: '/m/gallery' },
-    { name: 'FAQ', link: '/m/faqs' }
+    { name: ts.World, link: '/m/' },
+    { name: ts.Fighter, link: '/m/gallery' },
+    { name: ts.FAQ, link: '/m/faqs' }
   ]
   const handleLogin = async (connector: ConnectorNames) => {
     const { key } = USER_LOCAL_CONNECT
@@ -52,6 +55,12 @@ const Index = () => {
     logout()
   }
 
+  const changeLanguage = (val: string) => {
+    void i18n.changeLanguage(val)
+  }
+
+  console.log(changeLanguage)
+
   return <>
     <div className={ classNames('m-home-header', { fixed })}>
       <ul className='cont'>
@@ -78,7 +87,7 @@ const Index = () => {
         {
           !account && <div className='connect-wallet'>
             <div className={classNames('connect-wallet-connect', { show })} onClick={() => setShow(!show)}>
-              Connect Wallet
+              {ts.Connect}
               <div className='angel' />
             </div>
             <ul className={classNames('connect-wallet-list', { show })}>
@@ -103,7 +112,7 @@ const Index = () => {
             <ul className={classNames('connect-wallet-list', { show })}>
                <li onClick={handleLogout}>
                   <img className='logout' src='../assets/icon-dismiss.png' />
-                  <span>Disconnect</span>
+                  <span>{ts.Disconnect}</span>
                 </li>
             </ul>
           </div>

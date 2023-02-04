@@ -1,9 +1,11 @@
 import React from 'react'
-import { INVITATION_LIST } from '@/config'
+import { useTranslation } from 'react-i18next'
 
 const Index = () => {
+  const { t } = useTranslation()
+  const INVITATION_LIST: string[] = t('INVITATION.desc', { returnObjects: true })
   return <div className='web-home-invitation'>
-    <h1 className='title'>SNK Officially<br /> Authorized NFT</h1>
+    <h1 className='title' dangerouslySetInnerHTML={{ __html: t('INVITATION.title') }}/>
     {
       INVITATION_LIST.map(item => <p key={item}>{item}</p>)
     }

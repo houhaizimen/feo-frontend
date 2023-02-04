@@ -1,20 +1,17 @@
 import React from 'react'
-import { SWIPER_LIST, SWIPER_TEXT_LIST } from '@/config'
+import { SWIPER_LIST } from '@/config'
 import { Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { useTranslation } from 'react-i18next'
 import 'swiper/css'
 import 'swiper/css/navigation'
 
 const Index = () => {
-  // SwiperCore.use([Pagination])
-  const btnsList = [
-    'Unique Collectibles',
-    'NFT Marketplace',
-    'Immersive FEOVERSE',
-    'Fighting Battle'
-  ]
+  const { t } = useTranslation()
+  const SWIPER_TEXT_LIST: string[] = t('CARDSWIPER.SWIPER_TEXT_LIST', { returnObjects: true })
+  const btnsList: string[] = t('CARDSWIPER.btnsList', { returnObjects: true })
   return <div className='m-home-card-swiper padding-26'>
-    <h1 className='title'>The first fighter<br /> to appear on the stage</h1>
+    <h1 className='title' dangerouslySetInnerHTML={{ __html: t('CARDSWIPER.title') }}/>
     {
       SWIPER_TEXT_LIST.map(item => <p key={item}>{item}</p>)
     }
