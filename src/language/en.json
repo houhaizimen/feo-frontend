@@ -16,7 +16,7 @@
   "TIPS": {
     "input": "Verify your whitelists address",
     "SUCCESS": {
-      "search_input": "Congratulations! Your address is on the whitelist.",
+      "search_input": "Congratulations! Your address is on the whitelist!",
       "mint": "Congratulations! You successfully mint {{quantity}} NFT!"
     },
     "ERROR": {

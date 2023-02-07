@@ -14,24 +14,24 @@
     }
   },
   "TIPS": {
-    "input": "Verify your whitelists address",
+    "input": "ホワイトリストに登録されているアドレスか確認してください",
     "SUCCESS": {
-      "search_input": "Congratulations! Your address is on the whitelist.",
+      "search_input": "おめでとうございます！このアドレスはホワイトリストに登録されています！",
       "mint": "Congratulations! You successfully mint {{quantity}} NFT!"
     },
     "ERROR": {
-      "search_input": "Sorry, The address is not in the whitelist.",
+      "search_input": "申し訳ありませんが、このアドレスはホワイトリストに登録されていません。",
       "balance": "Insufficient balance",
       "mint": "Sorry, something went wrong. Please try again later."
     }
   },
   "BANNER": {
-    "title": "START YOUR JOURNEY IN",
+    "title": "今こそ旅立ちの時",
     "sub_title": "FIGHTER ERA ODYSSEY",
-    "sale": "Public Sale",
-    "Whitelist": "Whitelist",
-    "Total": "Total",
-    "tips": "Each whitelist can mint up to 2 NFTs",
+    "sale": "一般販売",
+    "Whitelist": "先行販売",
+    "Total": "発行数",
+    "tips": "ホワイトリスト保有者は最大２つまでNFTをミントすることができます",
     "MINT": "MINT"
   },
   "INVITATION": {
