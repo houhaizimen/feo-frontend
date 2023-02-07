@@ -3,7 +3,7 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom'
 // import { useAutoConnect } from '@/hooks/useAuth'
 import { useBlockNumber } from '@/hooks/useBlock'
 import { useNetWork } from '@/hooks/useNetWork'
-import { useChangeTitle } from '@/hooks/useLan'
+import { useChangeTitle, useLanImage } from '@/hooks/useLan'
 
 import Web from '@/page/Web'
 import Mobile from '@/page/Mobile'
@@ -13,6 +13,7 @@ function App() {
   useBlockNumber()
   useNetWork()
   useChangeTitle()
+  useLanImage()
   return (
     <div className="App">
       <BrowserRouter>

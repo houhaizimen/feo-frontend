@@ -10,7 +10,7 @@ const Index = () => {
       INVITATION_LIST.map(item => <p key={item}>{item}</p>)
     }
     <div className='m-home-invitation-star'>
-      <img className='invitation' src="../assets/invitation.png" alt="" />
+      <img className='invitation' src={`../assets/invitation${window.imgLang}.png`} alt="" />
       <img className='bg' src="../assets/invitation-bg.png" alt="" />
       <img className='star-1' src="../assets/star-1.png" alt="" />
       <img className='star-2' src="../assets/star-2.png" alt="" />

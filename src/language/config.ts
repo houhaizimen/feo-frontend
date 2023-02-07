@@ -3,6 +3,11 @@ import { initReactI18next } from 'react-i18next'
 import translation_en from './en.json'
 import translation_ja from './ja.json'
 
+export enum IMAGE_LAN_TYPE {
+  en = '',
+  ja = '-ja'
+}
+
 const resources = {
 en: {
   translation: translation_en

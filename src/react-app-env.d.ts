@@ -9,5 +9,6 @@ interface Window {
     isMetaMask?: true
     request: (...args: any[]) => Promise<void>
     on: (...args: any[]) => Promise<void>
-  }
+  },
+  imgLang: string
 }
