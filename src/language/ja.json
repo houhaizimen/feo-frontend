@@ -77,17 +77,17 @@
     "card7": "Coming Soon.."
   },
   "FOOTER": {
-    "PRIVACY": "PRIVACY POLICY",
-    "TERMS": "TERMS",
-    "WHITEPAPER": "WHITEPAPER",
-    "CONTACT": "CONTACT US",
+    "PRIVACY": "プライバシーポリシー",
+    "TERMS": "期間",
+    "WHITEPAPER": "ホワイトペーパー",
+    "CONTACT": "お問い合わせ",
     "copyright": [
       "©SNK CORPORATION ALL RIGHTS RESERVED.",
       "©FEOVERSE, LCC. ALL RIGHTS RESERVED."
     ]
   },
   "TERMS": {
-    "title": "Terms",
+    "title": "期間",
     "item": [
     {
       "title": "TERMS OF USE",
