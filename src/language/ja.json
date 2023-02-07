@@ -1,10 +1,10 @@
 {
   "title": "Fighter Era Odyssey",
 	"HEADER": {
-    "World": "World",
-    "Fighter": "Fighter Gallery",
-    "FAQ": "FAQ",
-    "Connect": "Connect Wallet",
+    "World": "概要",
+    "Fighter": "ファイタ",
+    "FAQ": "よくある質問",
+    "Connect": "ウォレット接続",
     "Disconnect": "Disconnect",
     "wallets": {
       "Metamask": "Metamask",
@@ -17,12 +17,12 @@
     "input": "ホワイトリストに登録されているアドレスか確認してください",
     "SUCCESS": {
       "search_input": "おめでとうございます！このアドレスはホワイトリストに登録されています！",
-      "mint": "Congratulations! You successfully mint {{quantity}} NFT!"
+      "mint": "おめでとうございます！{{quantity}}不知火舞NFTのミントに成功しました！"
     },
     "ERROR": {
       "search_input": "申し訳ありませんが、このアドレスはホワイトリストに登録されていません。",
-      "balance": "Insufficient balance",
-      "mint": "Sorry, something went wrong. Please try again later."
+      "balance": "残高不足によりガス料金の支払いができません",
+      "mint": " 後ほどもう一度お試しください."
     }
   },
   "BANNER": {
@@ -32,49 +32,48 @@
     "Whitelist": "先行販売",
     "Total": "発行数",
     "tips": "ホワイトリスト保有者は最大２つまでNFTをミントすることができます",
-    "MINT": "MINT"
+    "MINT": "ミント"
   },
   "INVITATION": {
-    "title": "SNK Officially<br /> Authorized NFT",
+    "title": "SNK<br /> 公認NFT",
     "desc": [
-      "Mai Shiranui, a classic character image of SNK, is a deeply rooted female ninja-playing opponent with gorgeous movements, coquettish costumes and an iconic fan in the palm of her hand.",
-      "When the fighting kicks off, this glamorous female fighter is the first to fight. To fully awaken the potential hidden in her body, Mai Shiranui will transform into 7777 Avatars to enter different parallel space-time. The fighters start to see the ultimate upgrading path to the king of fighting.",
-      "In Fighter Era Odyssey, each Mai Shiranui NFT is a unique, collectible NFT stored on the Ethereum blockchain."
+      "時は2077年。平行時空で行われる世界的な闘技大会の開催が目前に迫っている。世界中のファイターがFEOVERSEに集結し、時空を超えた闘いを繰り広げようとしている。",
+      "すべてのファイターは、平行時空の敵を倒し、より強くなるためのエネルギーを得なければならない。",
+      "闘技大会が近づいてきたにもかかわらず、ファイターが次々と行方不明になっている。謎の組織と関係あるのだろうか。恐るべき陰謀は今動き出す..."
     ]
   },
   "CARDSWIPER": {
-    "title": "The first fighter<br /> to appear on the stage",
+    "title": "一人目のファイター",
     "SWIPER_TEXT_LIST": [
-      "Mai Shiranui, a classic character image of SNK, is a deeply rooted female ninja-playing opponent with gorgeous movements, coquettish costumes and an iconic fan in the palm of her hand.",
-      "When the fighting kicks off, this glamorous female fighter is the first to fight. To fully awaken the potential hidden in her body, Mai Shiranui will transform into 7777 Avatars to enter different parallel space-time. The fighters start to see the ultimate upgrading path to the king of fighting.",
-      "In Fighter Era Odyssey, each Mai Shiranui NFT is a unique, collectible NFT stored on the Ethereum blockchain."
+      "SNKが生み出したキャラクター『不知火 舞』は、華麗な身裁きと艶めかしい装い、手に持つ特徴的な扇が特徴的な “くノ一” として根強い人気を誇る。",
+      "この美しい女性は一人目のファイターとして闘技大会へ参戦する。不知火 舞はその身に秘められた潜在能力を完全に覚醒させるため、7,777体のアバターへと変化し、究極の高みを目指して、平行する時空へと旅立つ。",
+      "Fighter Era Odysseyの不知火 舞NFTはすべてが異なるコレクティブNFTとしてEthereum上で発行されます。"
     ],
     "btnsList": [
-      "Unique Collectibles",
-      "NFT Marketplace",
-      "Immersive FEOVERSE",
-      "Fighting Battle"
+      "ユニークなNFTシリーズ",
+      "NFTマーケットプレイス",
+      "没入型メタバース",
+      "格闘ゲーム"
     ]
   },
   "NFTHOLDER": {
-    "title": "Privilege for {{symbol}} NFT Holders",
-    "title1": "Welcome {{name}}, to react using react-i18next fully type-safe",
+    "title": "NFT所有者 {{symbol}} 限定特典",
     "NFT_HOLDERS_LIST": [
-      { "title": "SNK Fan Community", "desc": "Make new friends with big fan of SNK", "icon": "1" },
-      { "title": "Priority Purchasing", "desc": "Your collection is the key to next series of NFT and events IRL", "icon": "2" },
-      { "title": "Continuous income", "desc": "NFT staking bonus and skin reward", "icon": "3" },
-      { "title": "Unlock Exclusive Experience", "desc": "Amazing KOF battles in FEOVERSE", "icon": "4" }
+      { "title": "SNKファンコミュニティ", "desc": "SNKファンで集まって交流可能", "icon": "1" },
+      { "title": "優先購入", "desc": "次回のNFT購入時やイベントでの優先権", "icon": "2" },
+      { "title": "継続的な報酬", "desc": "NFTをステーキングすることでボーナスやスキン報酬がもらえる", "icon": "3" },
+      { "title": "さらなる特典も", "desc": "KOFの熱狂がFEOVERSEで始まる！", "icon": "4" }
     ]
   },
   "FEOVERSE": {
     "title": "FEOVERSE",
-    "desc": "The FEOVERSE will build an immersive metaverse where fans and collectors could stake their claims in a collaborative world of collecting.",
-    "card1": "IRL Cosplay",
-    "card2": "NFT Marketplace",
-    "card3": "KOF battle",
-    "card4": "Skin bonu",
-    "card5": "Virtual Showrooms",
-    "card6": "Collections",
+    "desc": "FEOVERSEはファンやコレクターが集う没入型のメタバースを構築します。",
+    "card1": "コスプレ",
+    "card2": "NFTマーケットプレイス",
+    "card3": "格闘ゲーム",
+    "card4": "スキン報酬",
+    "card5": "バーチャルショールーム",
+    "card6": "コレクション",
     "card7": "Coming Soon.."
   },
   "FOOTER": {
@@ -177,51 +176,51 @@
     ]
   },
   "GALLERY": {
-    "title": "A world class fighting competition KOF<br /> in FEOVERSE is approaching",
+    "title": "世界中の猛者が集う {{symbol}} KOF in FEOVERSE",
     "GALLERY_TOP_LIST": [
-      { "title": "FIGHTERS", "icon": "gallery-top-1", "desc": "All the famous fighters here, Kyo Kusanagi, Iori Yagami, Mai Shiranui…… they will face opponents with same skills in parallel space-time." },
-      { "title": "RULE", "icon": "gallery-top-2", "desc": "Here, the fighters’ mission is to defeat their doppelgangers from another world. The winners can absorb losers’ energy and become stronger, then compete to win the title of Ultimate Fighting King." },
-      { "title": "NOW", "icon": "gallery-top-3", "desc": "The competition is about to kick off, and fighters have already arrived at the competition field one after another. The following is the background of these fighters." }
+      { "title": "ファイター", "icon": "gallery-top-1", "desc": "草薙京、八神庵、不知火舞といった人気のファイターたちは平行時空で同じ技を持つ自身と対峙することに" },
+      { "title": "ルール", "icon": "gallery-top-2", "desc": "草薙京、八神庵、不知火舞といった人気のファイターたちは平行時空で同じ技を持つ自身と対峙することに" },
+      { "title": "現在", "icon": "gallery-top-3", "desc": "大会の開幕を目前に控え、ファイターたちは続々と会場に到着している。現在までに到着したファイターは以下の通り" }
     ],
     "GALLERY_BOTTOM_LIST": [
-      { "title": "Mai Shiranui", "icon": "gallery-1" },
+      { "title": "不知火 舞", "icon": "gallery-1" },
       { "title": "To be continued…", "icon": "gallery-2" }
     ]
   },
   "FAQ": {
-    "title": "FAQ",
+    "title": "よくある質問",
     "item": [
       {
-        "title": "What are Fighter Era Odyssey digital collectibles (NFT)?",
-        "cont": ["SNK officially authorized series of NFTs. Mai Shiranui is the first collection of the series and each of them is a unique, collectible NFT stored on the Ethereum blockchain."]
+        "title": "Fighter Era Odysseyデジタルコレクション（NFT）とはなんですか？",
+        "cont": ["Fighter Era Odysseyデジタルコレクションとは、SNK公認のNFTシリーズです。第一弾として7,777体全て異なる不知火舞NFTがEthereum上でリリースされます。"]
       },
       {
-        "title": "How do I acquire a FEO NFT?",
-        "cont": ["You could stay tuned to our twitter and discord for more information of whitelists. Mint would start soon, and you could also buy one on the marketplace, such as opensea, element and gate."]
+        "title": "FEOのNFTを手に入れるにはどうすればいいですか？",
+        "cont": ["ホワイトリストに関してはTwitterやDiscordコミュニティをご覧ください。ミント後はOpenSeaやElementなどのNFTマーケットプレイスで購入することも可能です。"]
       },
       {
-        "title": "How do I trade FEO NFTs?",
-        "cont": ["Transfers of FEO NFTs between different accounts are available on the secondary marketplace."]
+        "title": " FEOのNFTはどこで取引できますか？",
+        "cont": ["NFTマーケットプレイスなどの二次市場でお取引いただけます。"]
       },
       {
-        "title": "Where can I get support?",
-        "cont": ["You can DM twitter or join our discord server for more help."]
+        "title": "解決しない疑問がある場合、どちらから問い合わせればいいですか？",
+        "cont": ["Discordコミュニティ内併設のサポートチャンネルをご利用ください（日本語可）。"]
       },
       {
-        "title": "Is there a future roadmap?",
-        "cont": ["Yes. You can find it on our website. For the next stage, we would start the NFT staking, IRL cosplay competition and marketplace."]
+        "title": "ロードマップはありますか？",
+        "cont": ["はい。概要ページでご確認いただけます。"]
       },
       {
-        "title": "What can collectors do with their FEO NFTs?",
-        "cont": ["Each series of NFTs is an invitation to each FEO fighting era. Collectors could stake their collections for extra bonus like candies and fractions of treasure map. Ultimately, FEO tokens would be airdropped to the winners and active participants. Read more from our docs."]
+        "title": "FEOのNFTを所有するメリットは何ですか？",
+        "cont": ["各NFTは対応した時代の招待券となります。所有者はそのNFTをステーキングすることでキャンディや宝の地図の破片といったアイテムを手に入れることも可能です。さらに、将来的にはFEOトークンが勝者や積極的な参加者の方々へ配布されます。詳細はホワイトペーパーをご参照ください。"]
       },
       {
-        "title": "What are the rewards for staking?",
-        "cont": ["The longer stake, the more rewards. The collectors could receive candies and fractions of treasure map. With 10 candies, they could participate in giveaway for more candies, fractions or NFT airdrop."]
+        "title": "ステーキング報酬とは何ですか？",
+        "cont": ["NFTをステーキングすることで受け取れる報酬です。ステーキング期間に応じてキャンディーや宝の地図の破片を受け取ることができます。キャンディーを10個集めると、キャンディーの増加や、NFTエアドロップなどに応募することが可能です。"]
       },
       {
-        "title": "How soon after mint will staking be available?",
-        "cont": ["Please stay tuned to our twitter and discord, coming soon."]
+        "title": "ステーキング機能は、ミント終了後の何日後くらいに利用できるようになりますか？",
+        "cont": ["こちらは近日中に、TwitterやDiscordでお知らせいたしますのでお楽しみに！"]
       }
     ]
   }

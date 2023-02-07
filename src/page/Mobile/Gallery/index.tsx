@@ -7,7 +7,7 @@ const Index = () => {
   const ts: Record<string, any> = t('GALLERY', { returnObjects: true })
   return <div className='m-gallery'>
     <div className='m-gallery-cont'>
-      <h1 className='title' dangerouslySetInnerHTML={{ __html: ts.title }}/>
+    <h1 className='title' dangerouslySetInnerHTML={{ __html: t('GALLERY.title', { symbol: '<br />' }) }} />
       <ul className='tips'>
         {
           ts.GALLERY_TOP_LIST.map((item: any) => {
