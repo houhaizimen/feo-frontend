@@ -14,7 +14,7 @@ import AddressInput from '@/components/web/AddressInput'
 const Index = () => {
   const { t } = useTranslation()
   const ts: Record<string, any> = t('BANNER', { returnObjects: true })
-  const ts_TIPS: Record<string, any> = t('TIPS', { returnObjects: true })
+  const TS_TIPS: Record<string, any> = t('TIPS', { returnObjects: true })
   const { account, library } = useWeb3React()
   const balance = useBalance(account ?? '')
   const [quantity, setQuantity] = useState<number>(1)
@@ -29,7 +29,7 @@ const Index = () => {
     const price = PRICE[pTime ? 'P' : 'W']
     if (Number(balance) < price) {
       setShow(true)
-      setTips(`${ts_TIPS.ERROR.balance}`)
+      setTips(`${TS_TIPS.ERROR.balance}`)
       setLoading(false)
       return
     }
@@ -41,7 +41,7 @@ const Index = () => {
         setTips(`${t('TIPS.SUCCESS.mint', { quantity })}`)
       } else {
         setShow(true)
-        setTips(`${ts_TIPS.ERROR.mint}`)
+        setTips(`${TS_TIPS.ERROR.mint}`)
       }
       return
     }
@@ -53,10 +53,10 @@ const Index = () => {
         setTips(`${t('TIPS.SUCCESS.mint', { quantity })}`)
       } else {
         setShow(true)
-        setTips(`${ts_TIPS.ERROR.mint}`)
+        setTips(`${TS_TIPS.ERROR.mint}`)
       }
     }
-  }, [handleGetStartTime, account, balance, library, publicMint, quantity, whitelistMint])
+  }, [handleGetStartTime, account, balance, library, publicMint, quantity, whitelistMint, TS_TIPS, t])
   return <div className='web-home-banner'>
       <div className='cont'>
         <h2>{ts.title}</h2>
