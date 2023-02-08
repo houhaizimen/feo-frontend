@@ -59,9 +59,9 @@ const Index = () => {
   }, [handleGetStartTime, account, balance, library, publicMint, quantity, whitelistMint, TS_TIPS, t])
   return <div className='m-home-banner padding-26'>
       <div className='cont'>
-        <h2>START YOUR JOURNEY IN</h2>
+        <h2>{ts.title}</h2>
         <div className='line' />
-        <h1>FIGHTER ERA ODYSSEY</h1>
+        <h1>{ts.sub_title}</h1>
         <div className='m-home-banner-buy'>
           <dl className='item'>
             <dd>{ts.sale}</dd>

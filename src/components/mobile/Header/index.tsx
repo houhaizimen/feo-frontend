@@ -3,7 +3,7 @@ import { useWeb3React } from '@web3-react/core'
 import classNames from 'classnames'
 import { useScroll } from 'ahooks'
 import { ConnectorNames, USER_LOCAL_CONNECT, useGetWalletList } from '@/utils/wallet'
-import { connectList } from '@/config'
+import { connectList, LANG_LIST } from '@/config'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '@/hooks/useAuth'
 import { useTranslation } from 'react-i18next'
@@ -13,6 +13,7 @@ import { Popup } from 'antd-mobile'
 const Index = () => {
   const [visible, setVisible] = useState(false)
   const [show, setShow] = useState(false)
+  const [showLang, setShowLan] = useState(false)
   const { account } = useWeb3React()
   const { login, logout } = useAuth()
   const { t, i18n } = useTranslation()
@@ -56,11 +57,10 @@ const Index = () => {
   }
 
   const changeLanguage = (val: string) => {
+    setVisible(false)
+    setShowLan(false)
     void i18n.changeLanguage(val)
   }
-
-  console.log(changeLanguage)
-
   return <>
     <div className={ classNames('m-home-header', { fixed })}>
       <ul className='cont'>
@@ -117,6 +117,20 @@ const Index = () => {
             </ul>
           </div>
         }
+         <div className='connect-wallet'>
+            <div className={classNames('connect-wallet-connect', { show: showLang })} onClick={() => setShowLan(!showLang)}>
+              <img src="../assets/icon-lang.png" alt="" />
+              <div className='angel' />
+            </div>
+            <ul className={classNames('connect-wallet-list', { show: showLang })}>
+              {
+                  LANG_LIST.map(item => <li key={item.title} onClick={() => changeLanguage(item.value)}>
+                  <img src={`../assets/icon-${item.icon}.png`} alt="" />
+                  <span>{item.title}</span>
+                </li>)
+                }
+            </ul>
+          </div>
       </Popup>
     </div>
   </>
