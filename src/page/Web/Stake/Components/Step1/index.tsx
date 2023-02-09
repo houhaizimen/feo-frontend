@@ -9,7 +9,7 @@ const Index = () => {
     <h1 className='web-stake-step1-title'>STEP<span>1</span>CONNECT WALLET</h1>
     <ContainerBg className='web-stake-step1-cont'>
       {
-        account && <Button size='large'>Connect Wallet</Button>
+        !account && <Button size='large'>Connect Wallet</Button>
       }
       {
         account && <div className='info'>
