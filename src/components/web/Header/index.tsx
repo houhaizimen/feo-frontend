@@ -39,7 +39,7 @@ const Index = () => {
       name: 'Era Mission',
       children: [
         { name: 'NFT Staking', link: '/stake' },
-        { name: 'R-Epoch', link: '/epoch' }
+        { name: 'R-Epoch', link: '/repoch' }
       ]
     },
     {
@@ -51,7 +51,7 @@ const Index = () => {
     {
       name: 'Doc',
       children: [
-        { name: 'Whitepaper', link: '/skin' },
+        { name: 'Whitepaper', link: 'https://fighter-era-odyssey.gitbook.io/docs/' },
         { name: ts.FAQ, link: '/faqs' }
       ]
     }
@@ -71,7 +71,12 @@ const Index = () => {
   }, [scroll])
 
   const handleLink = (link: string) => {
-    navigate(link)
+    const reg = /https|http/
+    if (reg.test(link)) {
+      window.open(link)
+    } else {
+      navigate(link)
+    }
   }
 
   const changeLanguage = (val: string) => {
@@ -91,13 +96,14 @@ const Index = () => {
           <ul className='title'>
             {
               HEADER_LIST.map(item => <li key={item.name}>
-                <div className='title-cont'>
-                  <div className={classNames('title-cont-top', { active: handleLinkActive(item.children), down: rotate })} onClick={() => setRotate(!rotate)}>
+                <div className={classNames('title-cont', { active: handleLinkActive(item.children) })}>
+                  <div className={classNames('title-cont-top', { down: rotate })} onClick={() => setRotate(!rotate)}>
                     {item.name}
+                    <img src="assets/icon-up.png" alt="" />
                   </div>
                   <div className='title-cont-bottom'>
                     {
-                      item.children.map(item => <div key={item.name} onClick={() => () => handleLink(item.link)}>
+                      item.children.map(item => <div key={item.name} onClick={() => handleLink(item.link)}>
                         <span>{item.name}</span>
                       </div>)
                     }
@@ -107,31 +113,28 @@ const Index = () => {
             }
           </ul>
         }
-        {
-          <div className='link'>
-            {
-              connectList.slice(0, 3).map(item => <img onClick={() => window.open(item.link)} key={item.icon} src={`assets/${item.icon}.png`} alt="" />)
-            }
-          </div>
-        }
-        {
-          <div className='lang'>
-            <div className='lang-cont'>
-              <div className={classNames('lang-cont-top', { down: rotate })} onClick={() => setRotate(!rotate)}>
-                <img src="assets/icon-lang.png" alt="" />
-                <img src="assets/icon-up.png" alt="" />
-              </div>
-              <div className='lang-cont-bottom'>
-                {
-                  LANG_LIST.map(item => <div key={item.value} onClick={() => changeLanguage(item.value)}>
-                    <img src={`assets/icon-${item.icon}.png`} alt="" />
-                    <span>{item.title}</span>
-                  </div>)
-                }
-              </div>
+        <div className='link'>
+          {
+            connectList.slice(0, 3).map(item => <img onClick={() => window.open(item.link)} key={item.icon} src={`assets/${item.icon}.png`} alt="" />)
+          }
+        </div>
+        <div className='lang'>
+          <div className='lang-cont'>
+            <div className={classNames('lang-cont-top', { down: rotate })} onClick={() => setRotate(!rotate)}>
+              <img src="assets/icon-lang.png" alt="" />
+              <img src="assets/icon-up.png" alt="" />
+            </div>
+            <div className='lang-cont-bottom'>
+              {
+                LANG_LIST.map(item => <div key={item.value} onClick={() => changeLanguage(item.value)}>
+                  <img src={`assets/icon-${item.icon}.png`} alt="" />
+                  <span>{item.title}</span>
+                </div>)
+              }
             </div>
           </div>
-        }
+        </div>
+        <img src="assets/icon-avatar.png" className='avatar' alt="" onClick={() => handleLink('/profile')}/>
         {
           !account && <div className='wallet'>
             <div className='connect'>

@@ -23,9 +23,9 @@ const Index = () => {
         {
           contList.map(item => <li onClick={() => handleJump(item)} key={item.name}>{item.name}</li>)
         }
-        <li>
+        {/* <li>
           <a href='https://fighter-era-odyssey.gitbook.io/docs/'>{ts.WHITEPAPER}</a>
-        </li>
+        </li> */}
         <li>
           <a href='mailto:feoverse@gmail.com'>{ts.CONTACT}</a>
         </li>
