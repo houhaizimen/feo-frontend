@@ -1,0 +1,26 @@
+.web-stake-step1 {
+  margin-top: rem(62);
+  & > h1 {
+    font-family: 'Universal Serif';
+    font-size: rem(28);
+    & > span {
+      color: #EF267C;
+      margin: 0 rem(10) 0 rem(4);
+      font-size: rem(24);
+    }
+  }
+  &-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: rem(31);
+    & > .info > p {
+      font-size: rem(34);
+      text-align: center;
+      &:last-child {
+        color: #EF267C;
+        margin-top: rem(32);
+      }
+    }
+  }
+}

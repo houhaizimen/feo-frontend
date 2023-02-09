@@ -1,0 +1,23 @@
+.web-container {
+  position: relative;
+  width: 100%;
+  min-height: rem(253);
+  background-image: imgurl('stake/container-bg.png');
+  background-size: 100% 100%;
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: rem(250);
+    height: rem(11);
+    background-image: imgurl('stake/bg-banner.png');
+    background-size: 100% 100%;
+  }
+  &::before {
+    top: 0;
+  }
+  &::after {
+    bottom: 0;
+  }
+}

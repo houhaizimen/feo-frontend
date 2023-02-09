@@ -1,0 +1,39 @@
+.web-stake-rewards {
+  margin-top: rem(121);
+  & > header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    & > .left {
+      flex: 1;
+      & > p {
+        font-size: rem(25);
+        line-height: rem(33);
+        margin-top: rem(40);
+        &:first-child {
+          margin-top: rem(61);
+        }
+      }
+    }
+    & > .right {
+      width: rem(521);
+      margin-left: rem(42);
+    }
+  }
+  & > footer {
+    margin-top: rem(105);
+    & > ul {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      height: rem(57);
+      font-size: rem(25);
+      line-height: rem(57);
+      & > li {
+        text-align: center;
+      }
+      &:nth-child(2n -1) {
+        background-color: #491236;
+      }
+    }
+  }
+}
