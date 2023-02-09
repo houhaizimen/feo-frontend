@@ -19,10 +19,42 @@ const Index = () => {
   const [rotate, setRotate] = useState<boolean>(false)
   const { pathname } = useLocation()
   const navigate = useNavigate()
-  const HEADER_LIST = [
-    { name: ts.World, link: '/' },
-    { name: ts.Fighter, link: '/gallery' },
-    { name: ts.FAQ, link: '/faqs' }
+
+  interface HEADER_CHILDREN_TYPES {
+    name: string
+    link: string
+  }
+  interface HEADER_TYPES {
+    name: string
+    children: HEADER_CHILDREN_TYPES[]
+  }
+  const HEADER_LIST: HEADER_TYPES[] = [
+    {
+      name: ts.World,
+      children: [
+        { name: ts.Fighter, link: '/gallery' }
+      ]
+    },
+    {
+      name: 'Era Mission',
+      children: [
+        { name: 'NFT Staking', link: '/stake' },
+        { name: 'R-Epoch', link: '/epoch' }
+      ]
+    },
+    {
+      name: 'Marketplace',
+      children: [
+        { name: 'Skin Gallery', link: '/skin' }
+      ]
+    },
+    {
+      name: 'Doc',
+      children: [
+        { name: 'Whitepaper', link: '/skin' },
+        { name: ts.FAQ, link: '/faqs' }
+      ]
+    }
   ]
   const handleLogin = async (connector: ConnectorNames) => {
     const { key } = USER_LOCAL_CONNECT
@@ -46,6 +78,10 @@ const Index = () => {
     void i18n.changeLanguage(val)
   }
 
+  const handleLinkActive = (items: HEADER_CHILDREN_TYPES[]) => {
+    return items.findIndex(item => item.link === pathname) > -1
+  }
+
   return <>
     <div className={ classNames('app-home-header', { fixed })}>
     <ul className='cont'>
@@ -54,7 +90,20 @@ const Index = () => {
         {
           <ul className='title'>
             {
-              HEADER_LIST.map(item => <li key={item.name} className={ classNames({ active: pathname === item.link })} onClick={() => handleLink(item.link)}>{item.name}</li>)
+              HEADER_LIST.map(item => <li key={item.name}>
+                <div className='title-cont'>
+                  <div className={classNames('title-cont-top', { active: handleLinkActive(item.children), down: rotate })} onClick={() => setRotate(!rotate)}>
+                    {item.name}
+                  </div>
+                  <div className='title-cont-bottom'>
+                    {
+                      item.children.map(item => <div key={item.name} onClick={() => () => handleLink(item.link)}>
+                        <span>{item.name}</span>
+                      </div>)
+                    }
+                  </div>
+                </div>
+              </li>)
             }
           </ul>
         }

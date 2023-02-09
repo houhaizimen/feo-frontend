@@ -12,7 +12,6 @@
   & > .cont {
     position: relative;
     height: 100%;
-    // @include center-1200;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -34,24 +33,67 @@
       }
       & > .title {
         li {
-          position: relative;
+          width: rem(115);
           height: 38px;
+          position: relative;
           margin-right: 58px;
           line-height: 38px;
           text-align: center;
           white-space: nowrap;
           cursor: pointer;
-          &.active {
-            &::after {
-              content: '';
-              position: absolute;
+          .title-cont {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            cursor: pointer;
+            height: auto;
+            &-top {
+              position: relative;
+              height: 38px;
+            }
+            &-bottom {
+              position: relative;
+              width: 115px;
+              transition: all .6s;
               left: 50%;
               transform: translate(-50%);
-              top: 0;
-              bottom: 0;
-              width: 115px;
-              background-image: imgurl('active-bg.png');
-              background-size: 100% 100%;
+              opacity: 0;
+              height: 0;
+              overflow: hidden;
+              margin-top: rem(24);
+              & > div {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: rem(40);
+                margin-top: rem(12);
+                background-image: imgurl('account-bg.png');
+                background-size: 100% 100%;
+                font-size: rem(18);
+                & > img {
+                  width: rem(15);
+                  margin-right: rem(6);
+                }
+              }
+            }
+            &.active, &:hover {
+              .title-cont-top::after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                transform: translate(-50%);
+                top: 0;
+                bottom: 0;
+                width: 115px;
+                background-image: imgurl('active-bg.png');
+                background-size: 100% 100%;
+              }
+              .title-cont-bottom {
+                opacity: 1;
+                height: auto;
+                overflow: visible;
+              }
             }
           }
         }
@@ -93,14 +135,9 @@
                 transition: all .3s;
               }
             }
-            // &.down {
-            //   img:last-child {
-            //     transform: rotate(180deg);
-            //   }
-            // }
           }
           &-bottom {
-            transition: all .6ss;
+            transition: all .6s;
             opacity: 0;
             height: 0;
             overflow: hidden;
