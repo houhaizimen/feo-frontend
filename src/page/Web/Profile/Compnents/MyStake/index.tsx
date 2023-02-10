@@ -8,9 +8,9 @@ const Index = () => {
   return <div className='web-profile-my-stake'>
     <h1 className='profile-title'>My staking</h1>
     <ContainerBg className='web-profile-my-stake-wrap'>
-      {/* {
+      {
         <p>You can earn more candies and fragments of treasure map by staking.</p>
-      } */}
+      }
       {
 
       }

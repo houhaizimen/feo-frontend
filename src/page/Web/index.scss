@@ -11,4 +11,55 @@
     text-transform: uppercase;
     font-weight: bold;
   }
+  .card-list {
+    margin-top: rem(51);
+    padding-left: rem(26);
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    max-height: 300px;
+    overflow-y: auto;
+    & > .card {
+      margin: 40px 90px 0 0;
+      padding: rem(10) 0;
+      & > p {
+        font-size: rem(25);
+        text-align: center;
+        margin-bottom: rem(35);
+      }
+      & > img {
+        width: 192px;
+        cursor: pointer;
+      }
+      &:nth-child(-n+4) {
+        margin-top: 0;
+      }
+      &:last-child, &:nth-child(4n) {
+        margin-right: 0;
+      }
+      &.checked {
+        position: relative;
+        z-index: 2;
+        &::after {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 212px;
+          height: 212px;
+          background-image: imgurl('stake/checked-bg.png');
+          background-size: 100% 100%;
+        }
+      }
+    }
+    & > p {
+      margin-top: rem(49);
+      text-align: center;
+      font-size: rem(25);
+    }
+    &::-webkit-scrollbar { width:6px !important; height: 300px !important; background: #4F1142 !important; border-radius:10px !important;} 
+    &::-webkit-scrollbar-thumb{ display:block; height: 67px; width:6px; margin:0 auto; border-radius: 10px; background: #EF267C !important;}
+  }
 }
