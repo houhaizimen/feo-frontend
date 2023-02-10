@@ -27,12 +27,22 @@
     line-height: 86px;
     font-size: rem(30);
   }
+  &.modium {
+    width: 237px;
+    height: 78px;
+    line-height: 78px;
+    font-size: rem(30);
+  }
   &.border {
     background: transparent !important;
     border: 1px solid #fff;
   }
   &.disabled {
     opacity: .5;
+  }
+  &.blacks{
+    background-image: imgurl('btn-black-bg.png');
+    background-size: 100% 100%;
   }
   & > .loading-wrap {
     width: 100%;

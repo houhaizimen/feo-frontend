@@ -3,8 +3,8 @@ import classNames from 'classnames'
 import { isMobile } from '@/utils/tools'
 
 interface PropsType {
-  size?: 'mini' | 'small' | 'large'
-  type?: 'border' | 'default'
+  size?: 'mini' | 'small' | 'medium' | 'large'
+  type?: 'border' | 'default' | 'blacks'
   loading?: boolean
   disabled?: boolean
   className?: string
