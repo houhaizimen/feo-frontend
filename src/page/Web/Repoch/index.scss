@@ -48,16 +48,26 @@
           margin-bottom: rem(27);
         }
         & > .detail {
+          position: relative;
           margin-top: rem(45);
           & > ul {
             padding: rem(14) 0;
             text-align: center;
             display: grid;
-            grid-template-columns: 1fr 1fr 1.5fr;
+            grid-template-columns: 1fr 1fr 1fr;
             align-items: center;
             font-size: rem(25);
             background-color: rgba(#EF267C , 0.1);
             margin-bottom: rem(24);
+          }
+          &::after {
+            content: '';
+            position: absolute;
+            left: 33%;
+            top: 0;
+            bottom: 0;
+            right: 33%;
+            background-color: rgba(#EF267C , 0.12);
           }
         }
       }
