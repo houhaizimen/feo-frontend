@@ -1,6 +1,9 @@
-.web-stake {
+.web-repoch {
   @include full-bg;
   &-cont {
     @include center-1200;
+    & > h1.title {
+      text-align: center;
+    }
   }
 }

@@ -65,7 +65,7 @@ const Index = () => {
   }, [CandyCheckList, handleCANDYCheck])
   return <>
     {
-      !account && <div className='web-stake-step1 web-stake-step2'>
+       account && <div className='web-stake-step1 web-stake-step2'>
         <h1 className='web-stake-step1-title'>STEP<span>2</span>SELECT NFT TO BE STAKED</h1>
         <ContainerBg className='web-stake-step2-cont'>
           {MAI_DOM}
