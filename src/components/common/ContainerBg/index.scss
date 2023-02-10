@@ -2,8 +2,37 @@
   position: relative;
   width: 100%;
   min-height: rem(253);
-  background-image: imgurl('stake/container-bg.png');
+  background-color: rgba(#491236, .5);
   background-size: 100% 100%;
+  border: 1px solid #EF267C;
+  &-circle {
+    display: inline-block;
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #EF267C;
+    &:nth-child(1){
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%);
+    }
+    &:nth-child(2){
+      top: 0;
+      right: 0;
+      transform: translate(50%, -50%);
+    }
+    &:nth-child(3){
+      bottom: 0;
+      left: 0;
+      transform: translate(-50%, 50%);
+    }
+    &:nth-child(4){
+      bottom: 0;
+      right: 0;
+      transform: translate(50%, 50%);
+    }
+  }
   &::before, &::after {
     content: '';
     position: absolute;

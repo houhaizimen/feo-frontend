@@ -73,5 +73,9 @@
         font-size: rem(25);
       }
     }
+    &-stake {
+      display: block;
+      margin: 0 auto rem(68)
+    }
   }
 }

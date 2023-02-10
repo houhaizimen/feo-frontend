@@ -3,6 +3,7 @@ import { useWeb3React } from '@web3-react/core'
 import classNames from 'classnames'
 
 import ContainerBg from '@/components/common/ContainerBg'
+import Button from '@/components/common/Button'
 
 const Index = () => {
   const [MaiCheckList, setMaiCheckList] = useState<string[]>([])
@@ -69,6 +70,7 @@ const Index = () => {
         <ContainerBg className='web-stake-step2-cont'>
           {MAI_DOM}
           {MaiCheckList.length > 0 && CANDY_DOM}
+          <Button className='web-stake-step2-cont-stake' size='large'>Connect Wallet</Button>
         </ContainerBg>
       </div>
     }
