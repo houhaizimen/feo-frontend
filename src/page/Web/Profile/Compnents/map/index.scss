@@ -1,0 +1,18 @@
+.web-profile-map {
+  &-wrap {
+    margin-top: rem(29);
+    padding: rem(59) rem(165);
+    box-sizing: border-box;
+    &-cont {
+      display: grid;
+      grid-template-columns: repeat(3, 292px);
+      grid-template-rows: repeat(3, 292px);
+      & > div {
+        position: relative;
+        & > img {
+          width: 100%;
+        }
+    }
+    }
+  }
+}

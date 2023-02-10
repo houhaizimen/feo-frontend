@@ -1,0 +1,19 @@
+.web-profile-my-stake {
+  .profile-title {
+    margin-bottom: rem(46);
+  }
+  margin-bottom: rem(79);
+  &-wrap {
+    padding: rem(57) rem(37);
+    box-sizing: border-box;
+    font-size: rem(25);
+    & > p {
+      margin-bottom: 51px;
+      text-align: center;
+    }
+    & > .web-button {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}

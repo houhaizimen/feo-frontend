@@ -1,0 +1,17 @@
+.web-profile-gendies {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  margin-bottom: rem(135);
+  & > .left {
+    & > dl {
+      display: flex;
+      align-items: center;
+      margin-top: rem(35);
+      font-size: rem(25);
+      & > dt {
+        margin-right: rem(167);
+      }
+    }
+  }
+}
