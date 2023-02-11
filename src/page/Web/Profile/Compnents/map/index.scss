@@ -12,6 +12,18 @@
         & > img {
           width: 100%;
         }
+        & > span {
+          height: rem(35);
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          padding: 0 rem(9) 0 rem(14);
+          background-color: #EF267C;
+          border-radius: rem(15)0 0 0 ;
+          line-height: rem(35);
+          font-size: rem(29);
+          font-family: 'Universal Serif';
+        }
     }
     }
   }

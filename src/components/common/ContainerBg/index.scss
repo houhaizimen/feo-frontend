@@ -48,5 +48,6 @@
   }
   &::after {
     bottom: 0;
+    transform: translateX(-50%) rotate(180deg);
   }
 }

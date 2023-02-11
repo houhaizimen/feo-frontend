@@ -20,6 +20,9 @@ const Index = () => {
         {
           list.map(item => <div key={item.src}>
             <img src={`assets/puzzleCard/${item.src}.png`} alt="" />
+            {
+              item.sum > 0 && <span>{item.sum}</span>
+            }
           </div>)
         }
       </div>
