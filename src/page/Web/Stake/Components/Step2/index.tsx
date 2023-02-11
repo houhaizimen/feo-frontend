@@ -61,6 +61,7 @@ const Index = () => {
       }
     </div>
     <p>Expected reward: xx candies and fragment #4 & #5</p>
+    <Button className='web-stake-step2-cont-stake' size='large'>Stake</Button>
   </div>
   }, [CandyCheckList, handleCANDYCheck])
   return <>
@@ -70,7 +71,6 @@ const Index = () => {
         <ContainerBg className='web-stake-step2-cont'>
           {MAI_DOM}
           {MaiCheckList.length > 0 && CANDY_DOM}
-          <Button className='web-stake-step2-cont-stake' size='large'>Connect Wallet</Button>
         </ContainerBg>
       </div>
     }
