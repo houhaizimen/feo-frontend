@@ -46,6 +46,10 @@
           font-family: 'Universal Serif';
           line-height: rem(62);
           margin-bottom: rem(27);
+          text-transform: uppercase;
+          & > span {
+            color: #EF267C;
+          }
         }
         & > .detail {
           position: relative;

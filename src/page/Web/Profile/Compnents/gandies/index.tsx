@@ -7,7 +7,7 @@ const Index = () => {
       <h1 className='profile-title'>Candies</h1>
       <dl>
         <dt>Number of candies: <span>0</span></dt>
-        <dd>Yield of candies :: <span>0</span></dd>
+        <dd>Yield of candies: <span>0</span></dd>
       </dl>
     </div>
     <Button size='large'>To Gashapon</Button>
