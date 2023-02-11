@@ -10,7 +10,6 @@ const Stake = lazy(async () => await import('@/page/Web/Stake'))
 const Repoch = lazy(async () => await import('@/page/Web/Repoch'))
 const Profile = lazy(async () => await import('@/page/Web/Profile'))
 
-
 function Index () {
   return (
     <div className="m-app">
