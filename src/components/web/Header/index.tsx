@@ -45,7 +45,7 @@ const Index = () => {
     {
       name: 'Marketplace',
       children: [
-        { name: 'Skin Gallery', link: '/skin' }
+        { name: 'Skin Gallery', link: '' }
       ]
     },
     {
@@ -71,6 +71,7 @@ const Index = () => {
   }, [scroll])
 
   const handleLink = (link: string) => {
+    if (!link) return
     const reg = /https|http/
     if (reg.test(link)) {
       window.open(link)

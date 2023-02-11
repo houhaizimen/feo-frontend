@@ -1,8 +1,10 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import ContainerBg from '@/components/common/ContainerBg'
 import Button from '@/components/common/Button'
 
 const Index = () => {
+  const navigate = useNavigate()
   const TITLE_LIST = ['NFT', 'Start date', 'End date', 'Expected candies', 'Expected fragments']
   // const RES_LIST = [
   //   { nft: 'Mai Shiranui x3', start: '1.18', end: '1.20', candies: '72', fragments: '#4' }
@@ -34,7 +36,7 @@ const Index = () => {
           }
         </div>
       }
-      <Button size='medium'>To staking</Button>
+      <Button size='medium' onClick={() => navigate('/stake')}>To staking</Button>
     </ContainerBg>
   </div>
 }

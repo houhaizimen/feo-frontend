@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import ContainerBg from '@/components/common/ContainerBg'
 import Button from '@/components/common/Button'
 
 const Index = () => {
   const [NFTList, setNFTList] = useState<string[]>([])
+  const navigate = useNavigate()
   console.log(setNFTList)
   return <div className='web-profile-my-nft'>
     <h1 className='profile-title'>My NFT</h1>
@@ -22,7 +24,7 @@ const Index = () => {
       </div>
       }
       {
-        NFTList.length === 0 && <Button size='medium'>To Buy</Button>
+        NFTList.length === 0 && <Button size='medium' onClick={() => navigate('/repoch')}>To Buy</Button>
       }
     </ContainerBg>
   </div>
