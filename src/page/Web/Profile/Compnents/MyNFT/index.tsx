@@ -14,7 +14,7 @@ const Index = () => {
       {
         <div className='card-list'>
         {
-          '123456789'.split('').map(item => <div className='card'>
+          NFTList.map(item => <div className='card'>
             <p>1111111111111111</p>
             <img src={`assets/card/${item}.png`} alt="" />
           </div>)

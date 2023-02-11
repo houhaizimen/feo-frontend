@@ -7,6 +7,30 @@
     padding: rem(57) rem(37);
     box-sizing: border-box;
     font-size: rem(25);
+    & > .stake-list {
+      & > ul {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: rem(44);
+        margin-bottom: rem(44);
+        font-size: rem(30);
+        color: #EF267C ;
+        text-align: center;
+        & > li {
+          word-wrap: break-word;
+          &:first-child {
+            text-align: left;
+          }
+        }
+        &:last-child {
+          margin-bottom: rem(40);
+        }
+        &:first-child {
+          color: #fff;
+        }
+      }
+    }
     & > p {
       margin-bottom: 51px;
       text-align: center;
