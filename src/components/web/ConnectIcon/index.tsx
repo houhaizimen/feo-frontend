@@ -4,14 +4,14 @@ import { connectList } from '@/config'
 
 const Index = () => {
   const scroll = useScroll(document) ?? 0
-  const [ show, setShow ] = useState<boolean>(true)
+  const [show, setShow] = useState<boolean>(true)
   useEffect(() => {
     const { top } = scroll as any
     const dom = document.querySelector('.web-home-footer') as HTMLDivElement
-    const ch = document.documentElement.clientHeight ?? 0
-    const domh = dom?.clientHeight ?? 0
-    const sh = document.body?.scrollHeight
-    if (ch + top + domh >= sh) setShow(false)
+    const ch: number = document.documentElement.clientHeight ?? 0
+    const domh: number = dom?.clientHeight ?? 0
+    const sh: number = document.body?.scrollHeight ?? 0
+    if (ch + Number(top) + domh >= sh) setShow(false)
     else setShow(true)
   }, [scroll])
   return <>
