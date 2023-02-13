@@ -53,10 +53,11 @@
               position: relative;
               &> img {
                 position: relative;
-                top: -2px;
+                top: -3px;
                 right: -9px;
                 width: 10px;
                 transition: all .3s;
+                opacity: 0;
               }
             }
             &-bottom {
@@ -86,16 +87,21 @@
               }
             }
             &.active, &:hover {
-              .title-cont-top::after {
-                content: '';
-                position: absolute;
-                left: 50%;
-                transform: translate(-50%);
-                top: 0;
-                bottom: 0;
-                width: 120px;
-                background-image: imgurl('active-bg.png');
-                background-size: 100% 100%;
+              .title-cont-top{
+                & > img {
+                  opacity: 1;
+                }
+                &::after {
+                  content: '';
+                  position: absolute;
+                  left: 50%;
+                  transform: translate(-50%);
+                  top: 0;
+                  bottom: 0;
+                  width: 120px;
+                  background-image: imgurl('active-bg.png');
+                  background-size: 100% 100%;
+                }
               }
             }
             &:hover {
