@@ -28,7 +28,7 @@ const Index = () => {
     <h1>Mai Shiranui NFT</h1>
     <dl>
       <dd>Please select the following NFTs to be staked:</dd>
-      <dt>Total amount: 4</dt>
+      <dt>Total amount: 0</dt>
     </dl>
     {
       MaiCheckList.length > 0
@@ -51,7 +51,7 @@ const Index = () => {
     <h1>Mai Shiranui NFT</h1>
     <dl>
       <dd>Stake Kachousen NFT as accelerator. Each address can only stake up to 3 ones</dd>
-      <dt>Total amount: 4</dt>
+      <dt>Total amount: 0</dt>
     </dl>
     <div className='card-list'>
       {

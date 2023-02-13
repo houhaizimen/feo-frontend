@@ -3,7 +3,7 @@ import { useWeb3React } from '@web3-react/core'
 import classNames from 'classnames'
 import { useScroll } from 'ahooks'
 import { ConnectorNames, USER_LOCAL_CONNECT, useGetWalletList } from '@/utils/wallet'
-import { connectList, LANG_LIST } from '@/config'
+import { LANG_LIST } from '@/config'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '@/hooks/useAuth'
 import { useTranslation } from 'react-i18next'
@@ -114,11 +114,11 @@ const Index = () => {
             }
           </ul>
         }
-        <div className='link'>
+        {/* <div className='link'>
           {
             connectList.slice(0, 3).map(item => <img onClick={() => window.open(item.link)} key={item.icon} src={`assets/${item.icon}.png`} alt="" />)
           }
-        </div>
+        </div> */}
         <div className='lang'>
           <div className='lang-cont'>
             <div className={classNames('lang-cont-top', { down: rotate })} onClick={() => setRotate(!rotate)}>

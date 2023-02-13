@@ -11,7 +11,7 @@ const Index = () => {
     ['Mai Shiranui NFT x1', 1, '#4'],
     ['Mai Shiranui NFT x3', 4, '#4 #5'],
     ['Mai Shiranui NFT x5', 8, '#4 #5 #6'],
-    ['Mai Shiranui NFT x1o', 20, '#4 #5 #6 #7']
+    ['Mai Shiranui NFT x10', 20, '#4 #5 #6 #7']
   ]
   return <div className='web-stake-rewards'>
     <header>

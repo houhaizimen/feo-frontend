@@ -1,7 +1,10 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
+
 import Button from '@/components/common/Button'
 
 const Index = () => {
+  const navigate = useNavigate()
   return <div className='web-profile-gendies'>
     <div className='left'>
       <h1 className='profile-title'>Candies</h1>
@@ -10,7 +13,7 @@ const Index = () => {
         <dd>Yield of candies: <span>0</span></dd>
       </dl>
     </div>
-    <Button size='large'>To Gashapon</Button>
+    <Button size='large' onClick={() => navigate('/repoch')}>To Gashapon</Button>
   </div>
 }
 

@@ -10,8 +10,8 @@ const Index = () => {
   const [show, setShow] = useState<Boolean>(false)
   const REPOCH_LIST = [
     ['Reward', 'Probability', 'Details'],
-    ['Candy bag', '55%', '1-100 candies'],
-    ['Treasure bag', '40%', 'Fragmegs #1-#9'],
+    ['Candy bag', '55%', '1-100 Candies'],
+    ['Treasure bag', '40%', 'fragment #1-#9'],
     ['NFT', '5%', 'Kachousen NFT<br /> Rare Mai Shiranui NFT<br /> 3D Costume NFT']
   ]
   return <div className='web-repoch'>
