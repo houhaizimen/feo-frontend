@@ -25,10 +25,10 @@ const Index = () => {
       <ContainerBg className='web-repoch-cont-rule'>
         <div className='left'>
           <img src="assets/stake/egg-machine.png" alt="" />
-          <Button size='large'>Open</Button>
+          <Button>Open</Button>
         </div>
         <div className='right'>
-          <h2>Spend <span>10</span> candies to get a capsule</h2>
+          <h2>Spend <span>10</span> candies to <br />get a capsule</h2>
           <p>Have a try. You are the lucky one!</p>
           <div className='detail'>
             {

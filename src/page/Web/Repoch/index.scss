@@ -45,7 +45,7 @@
           font-size: rem(46);
           font-family: 'Universal Serif';
           line-height: rem(62);
-          margin-bottom: rem(27);
+          margin-bottom: rem(20);
           text-transform: uppercase;
           & > span {
             color: #EF267C;
@@ -53,7 +53,7 @@
         }
         & > .detail {
           position: relative;
-          margin-top: rem(45);
+          margin-top: rem(35);
           & > ul {
             padding: rem(14) 0;
             text-align: center;
@@ -62,7 +62,7 @@
             align-items: center;
             font-size: rem(25);
             background-color: rgba(#EF267C , 0.1);
-            margin-bottom: rem(24);
+            margin-bottom: rem(20);
           }
           &::after {
             content: '';

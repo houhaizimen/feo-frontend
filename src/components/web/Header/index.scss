@@ -5,11 +5,13 @@
   right: 0;
   z-index: 999;
   height: rem(98);
-  padding: 0 200px;
+  // padding: 0 200px;
   transition: all .3s;
   box-sizing: border-box;
   
   & > .cont {
+    width: 1200px;
+    margin: 0 auto;
     position: relative;
     height: 100%;
     display: flex;
@@ -51,9 +53,9 @@
               position: relative;
               &> img {
                 position: relative;
-                top: -10px;
+                top: -2px;
                 right: -9px;
-                width: 8px;
+                width: 10px;
                 transition: all .3s;
               }
             }
@@ -91,7 +93,7 @@
                 transform: translate(-50%);
                 top: 0;
                 bottom: 0;
-                width: 115px;
+                width: 120px;
                 background-image: imgurl('active-bg.png');
                 background-size: 100% 100%;
               }
@@ -256,18 +258,18 @@
     background-color: #000;
   }
 }
-@media screen and (max-width: 1380px) {
-  .app-home-header {
-    padding: 0 40px;
-  }
-}
-@media screen and (min-width:1381px) and (max-width: 1600px) {
-  .app-home-header {
-    padding: 0 100px;
-  }
-}
-@media screen and (min-width:1601px) and (max-width: 1920px) {
-  .app-home-header {
-    padding: 0 140px;
-  }
-}
+// @media screen and (max-width: 1380px) {
+//   .app-home-header {
+//     padding: 0 40px;
+//   }
+// }
+// @media screen and (min-width:1381px) and (max-width: 1600px) {
+//   .app-home-header {
+//     padding: 0 100px;
+//   }
+// }
+// @media screen and (min-width:1601px) and (max-width: 1920px) {
+//   .app-home-header {
+//     padding: 0 140px;
+//   }
+// }
