@@ -54,10 +54,9 @@
               &> img {
                 position: relative;
                 top: -3px;
-                right: -9px;
+                right: -6px;
                 width: 10px;
                 transition: all .3s;
-                opacity: 0;
               }
             }
             &-bottom {
@@ -88,9 +87,6 @@
             }
             &.active, &:hover {
               .title-cont-top{
-                & > img {
-                  opacity: 1;
-                }
                 &::after {
                   content: '';
                   position: absolute;
@@ -98,7 +94,7 @@
                   transform: translate(-50%);
                   top: 0;
                   bottom: 0;
-                  width: 120px;
+                  width: 130px;
                   background-image: imgurl('active-bg.png');
                   background-size: 100% 100%;
                 }

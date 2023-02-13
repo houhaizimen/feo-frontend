@@ -1,11 +1,14 @@
 import React, { useState, useMemo, useCallback } from 'react'
 import { useWeb3React } from '@web3-react/core'
+import { useTranslation } from 'react-i18next'
 import classNames from 'classnames'
 
 import ContainerBg from '@/components/common/ContainerBg'
 import Button from '@/components/common/Button'
 
 const Index = () => {
+  const { t } = useTranslation()
+  const ts: Record<string, any> = t('STAKE.STEP2', { returnObjects: true })
   const [MaiCheckList, setMaiCheckList] = useState<string[]>([])
   const [CandyCheckList, setCandyCheckList] = useState<string[]>([])
   const { account } = useWeb3React()
@@ -25,10 +28,10 @@ const Index = () => {
   }, [CandyCheckList])
   const MAI_DOM = useMemo(() => {
     return <div className='web-stake-step2-cont-item'>
-    <h1>Mai Shiranui NFT</h1>
+    <h1>{ts.Mai}</h1>
     <dl>
-      <dd>Please select the following NFTs to be staked:</dd>
-      <dt>Total amount: 0</dt>
+      <dd>{ts.stakeDesc1}</dd>
+      <dt>{ts.total} 0</dt>
     </dl>
     {
       MaiCheckList.length > 0
@@ -40,18 +43,19 @@ const Index = () => {
             </div>)
           }
         </div>
-        <p>Expected reward: xx candies and fragment #4 & #5</p>
+        <p>{t('STAKE.STEP2.expected1', { type: '1/3/5/10' })}</p>
+        {/* <p>You can stake 1/3/5/10 Mai Shiranui NFT(s) at a time.</p> */}
       </>
-      : <p className='empty'>Currently, your wallet does not show any Mai Shiranui NFT for staking</p>
+      : <p className='empty'>{ts.empty}</p>
     }
   </div>
-  }, [MaiCheckList, handleMAICheck])
+  }, [MaiCheckList, handleMAICheck, t, ts.Mai, ts.stakeDesc1, ts.total, ts.empty])
   const CANDY_DOM = useMemo(() => {
     return <div className='web-stake-step2-cont-item'>
-    <h1>Mai Shiranui NFT</h1>
+    <h1>{ts.Kachousen}</h1>
     <dl>
-      <dd>Stake Kachousen NFT as accelerator. Each address can only stake up to 3 ones</dd>
-      <dt>Total amount: 0</dt>
+      <dd>{ts.stakeDesc2}</dd>
+      <dt>{ts.total}: 0</dt>
     </dl>
     <div className='card-list'>
       {
@@ -60,14 +64,14 @@ const Index = () => {
         </div>)
       }
     </div>
-    <p>Expected reward: xx candies and fragment #4 & #5</p>
+    <p>{t('STAKE.STEP2.expected2', { candies: 'xxx', type: '#4 & #5' })}</p>
     <Button className='web-stake-step2-cont-stake' size='large'>Stake</Button>
   </div>
-  }, [CandyCheckList, handleCANDYCheck])
+  }, [CandyCheckList, handleCANDYCheck, t, ts.stakeDesc2, ts.total, ts.Kachousen])
   return <>
     {
        account && <div className='web-stake-step1 web-stake-step2'>
-        <h1 className='web-stake-step1-title'>STEP<span>2</span>SELECT NFT TO BE STAKED</h1>
+        <h1 className='web-stake-step1-title' dangerouslySetInnerHTML={{ __html: ts.title }}/>
         <ContainerBg className='web-stake-step2-cont'>
           {MAI_DOM}
           {MaiCheckList.length > 0 && CANDY_DOM}

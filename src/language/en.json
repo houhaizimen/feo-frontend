@@ -17,12 +17,15 @@
     "input": "Verify your whitelists address",
     "SUCCESS": {
       "search_input": "Congratulations! Your address is on the whitelist!",
-      "mint": "Congratulations! You successfully mint {{quantity}} NFT!"
+      "mint": "Congratulations! You successfully mint {{quantity}} NFT!",
+      "connect": "Please connect the wallet first!",
+      "buy": "You've successfully staked your NFTs"
     },
     "ERROR": {
       "search_input": "Sorry, The address is not in the whitelist.",
       "balance": "Insufficient balance",
-      "mint": "Sorry, something went wrong. Please try again later."
+      "mint": "Sorry, something went wrong. Please try again later.",
+      "candy": "Sorry, you don’t have enough candies."
     }
   },
   "BANNER": {
@@ -224,5 +227,87 @@
         "cont": ["Please stay tuned to our twitter and discord, coming soon."]
       }
     ]
+  },
+  "STAKE": {
+    "BANNER": {
+      "title": "FEOVERSE <br />NFT Staking",
+      "desc": "Earn candies and fragments of treasure map by staking NFT",
+      "see": "See more"
+    },
+    "REWARDS": {
+      "title": "STAKING REWARDS",
+      "REWARDS_LIST": [
+        "NFT holders can stake their collection to earn candies and fragments of treasure map.",
+        "Candies are used to obtain a capsule through Gashapon Machine. The lucky ones might get rare NFTs and multiple limited 3D costumes.",
+        "Winners who can collect all the nine pieces of fragments of treasure map can share amazing era token incentives."
+      ],
+      "CONFIG_LIST": [
+        ["Staked NFT", "Candy per day", "Fragment"],
+        ["Mai Shiranui NFT x1", 1, "#4"],
+        ["Mai Shiranui NFT x3", 4, "#4 #5"],
+        ["Mai Shiranui NFT x5", 8, "#4 #5 #6"],
+        ["Mai Shiranui NFT x10", 20, "#4 #5 #6 #7"]
+      ]
+    },
+    "STEP1": {
+      "title": "STEP<span>1</span>CONNECT WALLET",
+      "connect": "Connect Wallet",
+      "SUCCESS": "SUCCESSFULLY CONNECTED TO WALLET"
+    },
+    "STEP2": {
+      "title": "STEP<span>2</span>SELECT NFT TO BE STAKED",
+      "Mai": "Mai Shiranui NFT",
+      "stakeDesc1": "Please select the following NFTs to be staked:",
+      "total": "Total amount:",
+      "expected1": "You can stake {{type}} Mai Shiranui NFT(s) at a time.",
+      "expected2": "Expected reward: {{candies}} candies and fragment {{fragment}}",
+      "Kachousen": "Kachousen NFT",
+      "stakeDesc2": "Stake Kachousen NFT as accelerator. Each address can only stake up to 3 ones",
+      "stake": "Stake",
+      "empty": "Currently, your wallet does not show any Mai Shiranui NFT for staking.",
+      "confirm": "Confirm"
+    }
+  },
+  "REPOCH": {
+    "title": "Gashapon Machine",
+    "desc": "In R-Epoch, fighters can uplock new skills through the Gashapon Machine",
+    "count": "MY CANDY:",
+    "spend": "Spend <span>{{count}}</span> candies to <br />get a capsule",
+    "tip": "Have a try. You are the lucky one!",
+    "REPOCH_LIST": [
+      ["Reward", "Probability", "Details"],
+      ["Candy bag", "55%", "1-100 Candies"],
+      ["Treasure bag", "40%", "fragment #1-#9"],
+      ["NFT", "5%", "Kachousen NFT<br /> Rare Mai Shiranui NFT<br /> 3D Costume NFT"]
+    ],
+    "open": "Open",
+    "SUCCESS_MODAL": {
+      "title": "Congratulations！ <br />You’ve Got",
+      "start": "Start again",
+      "to": "To package"
+    }
+  },
+  "PROFILE": {
+    "GANDIES": {
+      "title": "Candies",
+      "num": "Number of candies:",
+      "yied": "Yield of candies:",
+      "to": "To Gashapon"
+    },
+    "MYNFT": {
+      "title": "My NFT",
+      "desc": "You don't have any collection yet.",
+      "to": "To Buy"
+    },
+    "MYSTAKE": {
+      "title": "My staking",
+      "desc": "You can earn more candies and fragments of treasure map by staking.",
+      "TITLE_LIST": ["NFT", "Start date", "End date", "Expected candies", "Expected fragments"],
+      "mai": "Mai Shiranui",
+      "to": "To staking"
+    },
+    "MAP": {
+      "title": "Fragments of treasure map"
+    }
   }
 }
