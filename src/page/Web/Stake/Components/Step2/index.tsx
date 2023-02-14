@@ -44,7 +44,6 @@ const Index = () => {
           }
         </div>
         <p>{t('STAKE.STEP2.expected1', { type: '1/3/5/10' })}</p>
-        {/* <p>You can stake 1/3/5/10 Mai Shiranui NFT(s) at a time.</p> */}
       </>
       : <p className='empty'>{ts.empty}</p>
     }
