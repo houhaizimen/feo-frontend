@@ -22,9 +22,9 @@
     width: 133px;
   }
   &.large {
-    width: 280px;
-    height: 86px;
-    line-height: 86px;
+    width: rem(280);
+    height: rem(86);
+    line-height: rem(86);
     font-size: rem(30);
   }
   &.modium {

@@ -5,12 +5,12 @@
     box-sizing: border-box;
     &-cont {
       display: grid;
-      grid-template-columns: repeat(3, 292px);
-      grid-template-rows: repeat(3, 292px);
+      grid-template-columns: repeat(3, rem(292));
+      grid-template-rows: repeat(3, rem(292));
       & > div {
         position: relative;
         & > img {
-          width: 100%;
+          width: 106%;
         }
         & > span {
           height: rem(35);

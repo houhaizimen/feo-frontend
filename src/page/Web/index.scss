@@ -20,7 +20,7 @@
     max-height: 300px;
     overflow-y: auto;
     & > .card {
-      margin: 40px 90px 0 0;
+      margin: rem(40) rem(90) 0 0;
       padding: rem(10) 0;
       & > p {
         font-size: rem(25);
@@ -28,7 +28,7 @@
         margin-bottom: rem(35);
       }
       & > img {
-        width: 192px;
+        width: rem(192);
         cursor: pointer;
       }
       &:nth-child(-n+4) {
