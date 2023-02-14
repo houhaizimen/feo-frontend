@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   z-index: 999;
-  height: rem(98);
+  height: rem(108);
   // padding: 0 200px;
   transition: all .3s;
   box-sizing: border-box;
@@ -35,7 +35,7 @@
       }
       & > .title {
         li {
-          width: rem(115);
+          min-width: 130px;
           height: 38px;
           position: relative;
           margin-right: 58px;
@@ -51,12 +51,40 @@
             height: auto;
             &-top {
               position: relative;
-              &> img {
-                position: relative;
-                top: -3px;
-                right: -6px;
+              &> img.select {
+                position: absolute;
+                top: rem(18);
+                right: 0;
                 width: 10px;
                 transition: all .3s;
+              }
+              &-tips {
+                position: absolute;
+                top: rem(10);
+                right: rem(18);
+                width: 6px;
+                height: 6px;
+                background: imgurl('icon-tips.png');
+                background-size: 100% 100%;
+                cursor: pointer;
+                z-index: 10000;
+                & > div.comming {
+                  position: absolute;
+                  left: 50%;
+                  top: rem(-38);
+                  transform: translateX(-50%);
+                  padding: 4px 5px;
+                  background-color: #EF267C;
+                  font-size: rem(8);
+                  line-height: rem(14);
+                  z-index: 10001;
+                  display: none;
+                }
+                &:hover {
+                  .comming {
+                    display: block;
+                  }
+                }
               }
             }
             &-bottom {

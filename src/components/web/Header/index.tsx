@@ -26,6 +26,7 @@ const Index = () => {
   }
   interface HEADER_TYPES {
     name: string
+    comming?: boolean
     children: HEADER_CHILDREN_TYPES[]
   }
   const HEADER_LIST: HEADER_TYPES[] = [
@@ -44,6 +45,7 @@ const Index = () => {
     },
     {
       name: 'Marketplace',
+      comming: true,
       children: [
         { name: 'Skin Gallery', link: '' }
       ]
@@ -100,7 +102,12 @@ const Index = () => {
                 <div className={classNames('title-cont', { active: handleLinkActive(item.children) })}>
                   <div className={classNames('title-cont-top', { down: rotate })} onClick={() => setRotate(!rotate)}>
                     {item.name}
-                    <img src="assets/icon-up.png" alt="" />
+                    <img className='select' src="assets/icon-up.png" alt="" />
+                    {
+                      item.comming && <div className='title-cont-top-tips'>
+                        <div className='comming'>Coming Soon</div>
+                      </div>
+                    }
                   </div>
                   <div className='title-cont-bottom'>
                     {
