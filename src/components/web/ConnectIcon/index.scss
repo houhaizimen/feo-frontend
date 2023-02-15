@@ -2,7 +2,7 @@
   position: fixed;
   top: rem(408);
   // left: rem(210);
-  left: calc((100vw - 1200px) / 2 - 140px);
+  left: calc((100vw - 1200px) / 2 - 130px);
   display: flex;
   flex-direction: column;
   z-index: 888;
@@ -19,8 +19,8 @@
     }
   }
 }
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1400px) {
   .web-connect-icon {
-    left: 20px;
+    left: 30px;
   }
 }

@@ -110,7 +110,7 @@ const Index = () => {
                             item.comming && <div className='title-cont-bottom-tips'>
                               <div className='comming'>
                                 <img src="assets/icon-tips.png" alt="" />
-                                Coming Soon
+                                {ts.come}
                               </div>
                             </div>
                           }

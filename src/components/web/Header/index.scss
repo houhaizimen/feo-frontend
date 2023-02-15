@@ -38,7 +38,7 @@
           min-width: 110px;
           height: 38px;
           position: relative;
-          margin-right: rem(38);
+          margin-right: rem(54);
           line-height: 38px;
           text-align: center;
           white-space: nowrap;
@@ -188,9 +188,9 @@
           }
           &-bottom {
             transition: all .6s;
-            // opacity: 0;
-            // height: 0;
-            // overflow: hidden;
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
             margin-top: rem(24);
             & > div {
               display: flex;
