@@ -6,7 +6,6 @@ import { useNetWork } from '@/hooks/useNetWork'
 import { useChangeTitle, useLanImage } from '@/hooks/useLan'
 import ConnectIcon from '@/components/web/ConnectIcon'
 
-
 import Web from '@/page/Web'
 import Mobile from '@/page/Mobile'
 
