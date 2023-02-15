@@ -3,7 +3,7 @@
   background: imgurl('2.png') no-repeat;
   background-size: cover;
   &-cont {
-    @include center-1200;
+    @include max-center-1200;
     & > h1.title {
       text-align: center;
     }

@@ -10,7 +10,8 @@
       "Metamask": "Metamask",
       "Coinbase": "Coinbase",
       "WalletConnect": "WalletConnect",
-      "okx": "OKX WALLET"
+      "okx": "OKX WALLET",
+      "BitKeep": "BitKeep"
     }
   },
   "TIPS": {
@@ -277,7 +278,7 @@
     "REPOCH_LIST": [
       ["Reward", "Probability", "Details"],
       ["Candy bag", "55%", "1-100 Candies"],
-      ["Treasure bag", "40%", "fragment #1-#9"],
+      ["Treasure bag", "40%", "Fragment #1-#9"],
       ["NFT", "5%", "Kachousen NFT<br /> Rare Mai Shiranui NFT<br /> 3D Costume NFT"]
     ],
     "open": "Open",

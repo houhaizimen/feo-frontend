@@ -1,13 +1,13 @@
 $min-width: 1200px;
 
-@mixin center-1200 {
+@mixin max-center-1200 {
   display: block;
   width: rem(1200);
   min-width: 800px;
   margin: 0 auto;
 }
 
-@mixin max-center-1200 {
+@mixin center-1200 {
   display: block;
   width: $min-width;
   margin: 0 auto;
@@ -21,7 +21,7 @@ $min-width: 1200px;
   background-position: 0 rem(-98);
   padding-top: rem(147);
   padding-bottom: rem(280);
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 @mixin m-full-bg {
   min-height: 100vh;
