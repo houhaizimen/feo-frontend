@@ -100,8 +100,7 @@ const Index = () => {
               HEADER_LIST.map(item => <li key={item.name}>
                 <div className={classNames('title-cont', { active: handleLinkActive(item.children) })}>
                   <div className={classNames('title-cont-top', { down: rotate })} onClick={() => setRotate(!rotate)}>
-                    {item.name}
-                    <img className='select' src="assets/icon-up.png" alt="" />
+                    <div>{item.name} <img className='select' src="assets/icon-up.png" alt="" /></div>
                   </div>
                   <div className='title-cont-bottom'>
                     {

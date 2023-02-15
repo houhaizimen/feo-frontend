@@ -6,11 +6,11 @@ export const useNetWork = () => {
     window.location.reload()
   })
   const BitKeepProvider = window?.bitkeep?.ethereum
-  BitKeepProvider.on('accountsChanged', async (accounts: string) => {
+  BitKeepProvider?.on('accountsChanged', async (accounts: string) => {
     console.log('accounts changed')
     window.location.reload()
  })
- BitKeepProvider.on('chainChanged', async (chainId: string) => {
+ BitKeepProvider?.on('chainChanged', async (chainId: string) => {
     console.log('chainId changed')
     window.location.reload()
  })

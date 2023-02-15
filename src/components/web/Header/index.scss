@@ -51,12 +51,14 @@
             height: auto;
             &-top {
               position: relative;
-              &> img.select {
-                position: absolute;
-                top: rem(18);
-                right: 0;
-                width: 10px;
-                transition: all .3s;
+              & > div {
+                &> img.select {
+                  position: relative;
+                  top: rem(-14);
+                  right: rem(-4);
+                  width: 10px;
+                  transition: all .3s;
+                }
               }
             }
             &-bottom {
