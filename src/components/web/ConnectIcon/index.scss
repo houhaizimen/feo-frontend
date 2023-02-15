@@ -5,6 +5,7 @@
   left: calc((100vw - 1200px) / 2 - 140px);
   display: flex;
   flex-direction: column;
+  z-index: 888;
   & > img {
     width: rem(37);
     margin-bottom: rem(26);

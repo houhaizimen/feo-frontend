@@ -1,7 +1,6 @@
 import React from 'react'
 
 import Footer from '@/components/web/Footer'
-import ConnectIcon from '@/components/web/ConnectIcon'
 import Grandies from './Compnents/gandies'
 import MyStake from './Compnents/MyStake'
 import MyNFT from './Compnents/MyNFT'
@@ -16,7 +15,6 @@ const Index = () => {
       <Map />
     </div>
     <Footer />
-    <ConnectIcon />
   </div>
 }
 

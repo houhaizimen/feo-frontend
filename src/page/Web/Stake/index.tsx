@@ -1,7 +1,6 @@
 import React from 'react'
 
 import Footer from '@/components/web/Footer'
-import ConnectIcon from '@/components/web/ConnectIcon'
 import Banner from './Components/Banner'
 import Rewards from './Components/Rewards'
 import Step1 from './Components/Step1'
@@ -16,7 +15,6 @@ const Index = () => {
       <Step2 />
     </div>
     <Footer />
-    <ConnectIcon />
   </div>
 }
 

@@ -4,6 +4,8 @@ import { useAutoConnect } from '@/hooks/useAuth'
 import { useBlockNumber } from '@/hooks/useBlock'
 import { useNetWork } from '@/hooks/useNetWork'
 import { useChangeTitle, useLanImage } from '@/hooks/useLan'
+import ConnectIcon from '@/components/web/ConnectIcon'
+
 
 import Web from '@/page/Web'
 import Mobile from '@/page/Mobile'
@@ -22,6 +24,7 @@ function App() {
           <Route path="/*" element={<Web />} />
         </Routes>
       </BrowserRouter>
+      <ConnectIcon />
     </div>
   )
 }

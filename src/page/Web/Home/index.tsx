@@ -6,7 +6,6 @@ import NFTHolders from '@/components/web/NFTHolders'
 import RoadMap from '@/components/web/RoadMap'
 import Feoverse from '@/components/web/Feoverse'
 import Footer from '@/components/web/Footer'
-import ConnectIcon from '@/components/web/ConnectIcon'
 
 const Index = () => {
   return <div className='web-home'>
@@ -17,7 +16,6 @@ const Index = () => {
     <RoadMap/>
     <Feoverse />
     <Footer/>
-    <ConnectIcon />
   </div>
 }
 

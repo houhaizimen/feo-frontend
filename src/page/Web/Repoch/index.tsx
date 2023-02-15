@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import Footer from '@/components/web/Footer'
-import ConnectIcon from '@/components/web/ConnectIcon'
 import ContainerBg from '@/components/common/ContainerBg'
 import Button from '@/components/common/Button'
 import BuySuccessModal from './Components/BuySuccess'
@@ -41,7 +40,6 @@ const Index = () => {
       </ContainerBg>
     </div>
     <Footer />
-    <ConnectIcon />
     <BuySuccessModal show={show} onClose={() => setShow(false)}/>
   </div>
 }
