@@ -106,7 +106,7 @@ export const useGetWalletList = (): WALLET_TYPE[] => {
     },
     {
       name: ts.BitKeep,
-      icon: 'okx',
+      icon: 'bitkeep',
       connectId: ConnectorNames.Injected
     }
   ]
