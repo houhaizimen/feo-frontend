@@ -35,10 +35,10 @@
       }
       & > .title {
         li {
-          min-width: 130px;
+          min-width: 110px;
           height: 38px;
           position: relative;
-          margin-right: 58px;
+          margin-right: rem(38);
           line-height: 38px;
           text-align: center;
           white-space: nowrap;
@@ -56,14 +56,14 @@
                   position: relative;
                   top: rem(-14);
                   right: rem(-4);
-                  width: 10px;
+                  width: rem(12);
                   transition: all .3s;
                 }
               }
             }
             &-bottom {
               position: relative;
-              width: 115px;
+              width: 140px;
               transition: all .6s;
               left: 50%;
               transform: translate(-50%);
@@ -98,15 +98,22 @@
                 cursor: pointer;
                 z-index: 10000;
                 & > div.comming {
+                  display: flex;
+                  align-items: center;
                   top: 50%;
                   transform: translateY(-50%);
                   position: absolute;
-                  padding: 4px 5px;
+                  padding: rem(8) rem(6);
                   background-color: #EF267C;
                   font-size: rem(8);
                   line-height: rem(14);
                   z-index: 10001;
                   display: none;
+                  border-radius: rem(4);
+                  & > img {
+                    width: rem(10);
+                    margin-right: rem(6);
+                  }
                 }
               }
             }
@@ -119,7 +126,7 @@
                   transform: translate(-50%);
                   top: 0;
                   bottom: 0;
-                  width: 146px;
+                  width: 140px;
                   background-image: imgurl('active-bg.png');
                   background-size: 100% 100%;
                 }
@@ -148,7 +155,7 @@
       }
       .avatar {
         width: 32px;
-        margin-left: 20px;
+        margin-left: rem(38);
         cursor: pointer;
       }
       .lang {
@@ -160,7 +167,8 @@
         &-cont {
           position: absolute;
           top: 0;
-          left: 0;
+          left: 50%;
+          transform: translateX(-50%);
           cursor: pointer;
           height: auto;
           &-top {
@@ -180,9 +188,9 @@
           }
           &-bottom {
             transition: all .6s;
-            opacity: 0;
-            height: 0;
-            overflow: hidden;
+            // opacity: 0;
+            // height: 0;
+            // overflow: hidden;
             margin-top: rem(24);
             & > div {
               display: flex;

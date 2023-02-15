@@ -16,7 +16,7 @@ const Index = () => {
         <dd>{ts.yied} <span>0</span></dd>
       </dl>
     </div>
-    <Button size='large' onClick={() => navigate('/repoch')}>{ts.to}</Button>
+    <Button size='medium' onClick={() => navigate('/repoch')}>{ts.to}</Button>
   </div>
 }
 

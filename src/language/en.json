@@ -5,6 +5,13 @@
     "Fighter": "Fighter Gallery",
     "FAQ": "FAQ",
     "Connect": "Connect Wallet",
+    "ERA": "Era Mission",
+    "stake": "NFT Staking",
+    "epoch": "R-Epoch",
+    "Marketplace": "Marketplace",
+    "skin": "Skin Gallery",
+    "doc": "Doc",
+    "Whitepaper": "Whitepaper",
     "Disconnect": "Disconnect",
     "wallets": {
       "Metamask": "Metamask",
@@ -204,28 +211,37 @@
         "cont": ["You could stay tuned to our twitter and discord for more information of whitelists. Mint would start soon, and you could also buy one on the marketplace, such as opensea, element and gate."]
       },
       {
-        "title": "How do I trade FEO NFTs?",
-        "cont": ["Transfers of FEO NFTs between different accounts are available on the secondary marketplace."]
+        "title": "What time does the mint start?",
+        "cont": ["Pre-sale: 13:00PM (UTC+9) Feb 23, 2023","Public sale: 21:00PM (UTC+9) Feb 23, 2023."]
       },
       {
-        "title": "Where can I get support?",
-        "cont": ["You can DM twitter or join our discord server for more help."]
+        "title": "How many Mai Shiranui NFTs can each address mint at most?",
+        "cont": ["Pre-sale: Whitelists can mint up to 2 ones, while Kachousen NFT holders can mint up to 5 ones.", "Public sale: No limit."]
       },
       {
-        "title": "Is there a future roadmap?",
-        "cont": ["Yes. You can find it on our website. For the next stage, we would start the NFT staking, IRL cosplay competition and marketplace."]
+        "title": "What can collectors do with their Mai Shiranui NFTs?",
+        "cont": ["Each series of NFTs is an invitation to each FEO fighting era and participate in era missions. In Genesis Mai Shiranui Era, holders can take part in collection of fragments of treasure map, NFT staking and R-Epoch Gashapon. "]
       },
       {
-        "title": "What can collectors do with their FEO NFTs?",
-        "cont": ["Each series of NFTs is an invitation to each FEO fighting era. Collectors could stake their collections for extra bonus like candies and fractions of treasure map. Ultimately, FEO tokens would be airdropped to the winners and active participants. Read more from our docs."]
+        "title": "What are the benefits if holding Kachousen NFT?",
+        "cont": ["Kachousen NFT is accessory of Mai Shiranui, which is limited to 3333 copies and will be used as accelerator during the NFT staking process. If staking Mai Shiranui NFT with Kachousen NFT, they can obtain extra 50% of candy bonus. In addition, Kachousen NFT holders can mint up to 5 Mai Shiranui NFTs."]
       },
       {
-        "title": "What are the rewards for staking?",
-        "cont": ["The longer stake, the more rewards. The collectors could receive candies and fractions of treasure map. With 10 candies, they could participate in giveaway for more candies, fractions or NFT airdrop."]
+        "title": "What is the NFT staking activity in FEOVERSE?",
+        "cont": ["Holders of Mai Shiranui NFT can stake their collection to earn candies and fragments of treasure map.","With 10 candies, they can start up Gashapon Machine and get such as 3D costume NFT, fragment of treasure map and rare Mai Shiranui NFT. Winners with all nine complete fragments can share era token incentives.", "Learn more: https://medium.com/@FEOVERSE/genesis-era-task-collection-of-treasure-map-fragments-341cd0dedcce"]
       },
       {
         "title": "How soon after mint will staking be available?",
-        "cont": ["Please stay tuned to our twitter and discord, coming soon."]
+        "cont": ["NFT staking will be soon launched in the middle of March in 2023. Please look forward and stay tuned."]
+      },
+      {
+        "title": "What can holders do in FEOVERSE marketplace?",
+        "cont": ["In marketplace, you can freely trade treasure maps, fragments, Kachousen NFT, Mai Shiranui NFT, 3D costume NFTs and other precious items.Also, limited-edition skin gallery will soon be launched in FEOVERSE marketplace, where holders of Mai Shiranui NFT can obtain amazing 3D costume NFTs for their collections."]
+      },
+      {
+        "title": "Is there a future roadmap of FEOVERSE?",
+        "cont": ["FEO will create a series of KOF NFT collections and build an immersive metaverse—FEOVERSE. With a brand-based ecosystem, all FEO NFTs will be co-branded and cooperated with various partners. ",
+        "FEOVERSE will also build up ecosystem of game projects, enabling gameplay and circular game economies and reach a vibrant DAO of co-creation, co-building, and co-governance with FEO community."]
       }
     ]
   },

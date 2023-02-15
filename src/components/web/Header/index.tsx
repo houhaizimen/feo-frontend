@@ -37,23 +37,23 @@ const Index = () => {
       ]
     },
     {
-      name: 'Era Mission',
+      name: ts.ERA,
       children: [
-        { name: 'NFT Staking', link: '/stake' },
-        { name: 'R-Epoch', link: '/repoch' }
+        { name: ts.stake, link: '/stake' },
+        { name: ts.epoch, link: '/repoch' }
       ]
     },
     {
-      name: 'Marketplace',
+      name: ts.Marketplace,
       children: [
-        { name: 'Skin Gallery', link: '', comming: true }
+        { name: ts.skin, link: '', comming: true }
       ]
     },
     {
-      name: 'Doc',
+      name: ts.doc,
       children: [
-        { name: 'Whitepaper', link: 'https://fighter-era-odyssey.gitbook.io/docs/' },
-        { name: ts.FAQ, link: '/faqs' }
+        { name: ts.FAQ, link: '/faqs' },
+        { name: ts.Whitepaper, link: 'https://fighter-era-odyssey.gitbook.io/docs/' }
       ]
     }
   ]
@@ -108,7 +108,10 @@ const Index = () => {
                         <span>{item.name}</span>
                           {
                             item.comming && <div className='title-cont-bottom-tips'>
-                              <div className='comming'>Coming Soon</div>
+                              <div className='comming'>
+                                <img src="assets/icon-tips.png" alt="" />
+                                Coming Soon
+                              </div>
                             </div>
                           }
                       </div>)
@@ -119,11 +122,6 @@ const Index = () => {
             }
           </ul>
         }
-        {/* <div className='link'>
-          {
-            connectList.slice(0, 3).map(item => <img onClick={() => window.open(item.link)} key={item.icon} src={`assets/${item.icon}.png`} alt="" />)
-          }
-        </div> */}
         <div className='lang'>
           <div className='lang-cont'>
             <div className={classNames('lang-cont-top', { down: rotate })} onClick={() => setRotate(!rotate)}>
