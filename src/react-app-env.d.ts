@@ -10,5 +10,8 @@ interface Window {
     request: (...args: any[]) => Promise<void>
     on: (...args: any[]) => Promise<void>
   },
+  bitkeep: {
+    ethereum: any,
+  }
   imgLang: string
 }
