@@ -105,8 +105,8 @@
                   position: absolute;
                   padding: rem(8) rem(6);
                   background-color: #EF267C;
-                  font-size: rem(8);
-                  line-height: rem(14);
+                  font-size: rem(18);
+                  line-height: rem(18);
                   z-index: 10001;
                   display: none;
                   border-radius: rem(4);
@@ -173,8 +173,11 @@
           height: auto;
           &-top {
             margin-top: rem(12);
-            margin-left: rem(13);
+            // margin-left: rem(13);
             line-height: rem(24);
+            display: flex;
+            justify-content: center;
+            align-items: center;
             & > img {
               width: rem(24);
               margin-right: rem(7);
