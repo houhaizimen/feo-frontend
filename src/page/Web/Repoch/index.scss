@@ -18,14 +18,14 @@
       align-items: center;
       margin-top: rem(35);
       & > img {
-        width: 110px;
+        width: rem(110);
         margin-right: 9px;
       }
     }
     &-rule {
       display: flex;
       align-items: center;
-      margin-top: rem(106);
+      margin-top: rem(60);
       padding: rem(39) rem(51);
       & > .left {
         display: flex;
