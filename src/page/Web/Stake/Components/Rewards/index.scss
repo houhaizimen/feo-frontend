@@ -1,22 +1,25 @@
 .web-stake-rewards {
-  margin-top: rem(100);
+  margin-top: rem(73);
   & > header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     & > .left {
       flex: 1;
-      & > p {
+      & > .title {
+        margin-bottom: rem(61);
+      }
+      p {
         font-size: rem(25);
         line-height: rem(33);
-        margin-top: rem(40);
-        &:first-child {
-          margin-top: rem(61);
+        margin-bottom: rem(24);
+        &:last-child {
+          margin-bottom: 0;
         }
       }
     }
     & > .right {
-      width: rem(521);
+      width: rem(541);
       margin-left: rem(42);
     }
   }

@@ -9,14 +9,14 @@
     }
     & > p {
       font-size: rem(25);
-      margin-top:  27px;
+      margin-top: rem(17);
       text-align: center;
     }
     &-candy {
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-top: rem(35);
+      margin-top: rem(25);
       & > img {
         width: rem(110);
         margin-right: 9px;
@@ -25,8 +25,9 @@
     &-rule {
       display: flex;
       align-items: center;
-      margin-top: rem(60);
+      margin-top: rem(40);
       padding: rem(39) rem(51);
+      box-sizing: border-box;
       & > .left {
         display: flex;
         flex-direction: column;
@@ -34,8 +35,8 @@
         margin-left: rem(44);
         margin-right: rem(145);
         & > img {
-          width: rem(247);
-          margin-bottom: rem(25);
+          width: rem(218);
+          margin-bottom: rem(21);
         }
       }
       & > .right {
@@ -45,7 +46,7 @@
           font-size: rem(46);
           font-family: 'Universal Serif';
           line-height: rem(62);
-          margin-bottom: rem(20);
+          margin-bottom: rem(9);
           text-transform: uppercase;
           & > span {
             color: #EF267C;
@@ -53,7 +54,7 @@
         }
         & > .detail {
           position: relative;
-          margin-top: rem(35);
+          margin-top: rem(27);
           & > ul {
             padding: rem(14) 0;
             text-align: center;
@@ -62,7 +63,7 @@
             align-items: center;
             font-size: rem(25);
             background-color: rgba(#EF267C , 0.1);
-            margin-bottom: rem(20);
+            margin-bottom: rem(12);
           }
           &::after {
             content: '';
