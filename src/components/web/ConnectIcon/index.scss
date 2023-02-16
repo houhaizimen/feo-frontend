@@ -1,7 +1,7 @@
 .web-connect-icon {
   position: fixed;
   top: rem(408);
-  left: calc((100vw - 1200px) / 2 - 130px);
+  left: calc((100vw - 1300px) / 2 - 63px);
   display: flex;
   flex-direction: column;
   z-index: 888;
@@ -20,11 +20,11 @@
 }
 @media screen and (max-width: 1500px) {
   .web-connect-icon {
-    left: 30px;
+    left: rem(40);
   }
 }
 @media screen and (max-width: 1320px) {
   .web-connect-icon {
-    left: 0;
+    left: rem(20);
   }
 }
