@@ -23,7 +23,7 @@ const Index = () => {
       {ts.title}
       <div className='question'>
         <div className='question-cont'>
-          <h3>How to get fragments #1 - #9</h3>
+          <h3>{ts.how}</h3>
           {
             ts.QUESTION_LIST.map((item: any) => <ul key={item[0]} className='question-cont-list'>
               {
