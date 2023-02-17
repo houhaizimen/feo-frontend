@@ -75,6 +75,8 @@ class Runners {
   getWlPrice = async (): Promise<any[]> => {
     const contract = getRunnersContract()
     const res = await contract.wlPrice()
+    console.log(res)
+    console.log([getBalanceAmount(res?._hex ?? 0, 18), res?._hex])
     return [getBalanceAmount(res?._hex ?? 0, 18), res?._hex]
   }
   /**
@@ -84,7 +86,8 @@ class Runners {
    publicMint = async (_quantity: number, account: string, library: Web3Provider) => {
     const contract = getRunnersContract(library.getSigner(account))
     const prices = await this.getPPrice()
-    const value = getAountToBigHex(prices[0], _quantity)
+    const value = getAountToBigHex(prices[1], _quantity)
+    console.log(value)
     try {
       const gasLimit = await estimateGas(contract, 'publicMint', [_quantity, { value }])
       const tx = await contract.publicMint(_quantity, { gasLimit, value })
@@ -104,10 +107,11 @@ class Runners {
     if (merk === '') {
       return -1
     }
-    console.log(account)
+    console.log(merk)
     const contract = getRunnersContract(library.getSigner(account))
     const prices = await this.getWlPrice()
-    const value = getAountToBigHex(prices[0], _quantity)
+    const value = getAountToBigHex(prices[1], _quantity)
+    console.log(value)
     try {
       const gasLimit = await estimateGas(contract, 'whitelistMint', [merk, _quantity, { value }]) // value： send amount
       const tx = await contract.whitelistMint(merk, _quantity, { gasLimit, value })

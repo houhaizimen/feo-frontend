@@ -459,14 +459,14 @@
         "type": "uint256"
       }
     ],
-    "name": "mintFromPlanNft",
+    "name": "mintFromPlaNft",
     "outputs": [],
     "stateMutability": "payable",
     "type": "function"
   },
   {
     "inputs": [],
-    "name": "mintFromPlanNftCount",
+    "name": "mintFromPlaNftCount",
     "outputs": [
       {
         "internalType": "uint256",
@@ -492,7 +492,7 @@
   },
   {
     "inputs": [],
-    "name": "nswapMintlimit",
+    "name": "nswapMintLimit",
     "outputs": [
       {
         "internalType": "uint256",
@@ -594,7 +594,7 @@
   },
   {
     "inputs": [],
-    "name": "planNftMintLimit",
+    "name": "plaNftMintLimit",
     "outputs": [
       {
         "internalType": "uint256",
@@ -986,7 +986,7 @@
         "type": "uint256"
       }
     ],
-    "name": "updatePlanNftMintLimit",
+    "name": "updatePlaNftMintLimit",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

@@ -50,12 +50,13 @@ export const useMintData = (account: string, balance: string) => {
     return 100
   }, [isWhiteTime, count, maxCount])
   const disabled = useMemo(() => {
-    if (isWhiteTime && max === 0) return false
     return (!isWhiteTime && !isPTime) || !account || !balance
-  }, [isWhiteTime, isPTime, account, balance, max])
+  }, [isWhiteTime, isPTime, account, balance])
   return {
     max,
     disabled,
-    handleGetStartTime
+    handleGetStartTime,
+    handleBalanceOf,
+    maxCount
   }
 }

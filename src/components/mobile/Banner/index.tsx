@@ -19,17 +19,26 @@ const Index = () => {
   const balance = useBalance(account ?? '')
   const [quantity, setQuantity] = useState<number>(1)
   const [loading, setLoading] = useState<boolean>(false)
+  const [types, setTypes] = useState<'success' | 'error'>('success')
   const [show, setShow] = useState<boolean>(false)
   const [tips, setTips] = useState<string>('')
   const { publicMint, whitelistMint } = Runners
-  const { max, handleGetStartTime } = useMintData(account ?? '', balance)
+  const { max, handleGetStartTime, maxCount } = useMintData(account ?? '', balance)
   const handleMint = useCallback(async () => {
     setLoading(true)
     const { wTime, pTime } = await handleGetStartTime()
     const price = PRICE[pTime ? 'P' : 'W']
     if (Number(balance) < price) {
+      setTypes('error')
       setShow(true)
       setTips(`${TS_TIPS.ERROR.balance}`)
+      setLoading(false)
+      return
+    }
+    if (max === 0) {
+      setTypes('error')
+      setShow(true)
+      setTips(`Each whitelist can have at most ${maxCount} NFTs`)
       setLoading(false)
       return
     }
@@ -37,9 +46,11 @@ const Index = () => {
       const res = await whitelistMint(quantity, (account as string), library)
       setLoading(false)
       if (res === 1) {
+        setTypes('success')
         setShow(true)
         setTips(`${t('TIPS.SUCCESS.mint', { quantity })}`)
       } else {
+        setTypes('error')
         setShow(true)
         setTips(`${TS_TIPS.ERROR.mint}`)
       }
@@ -49,14 +60,16 @@ const Index = () => {
       const res = await publicMint(quantity, (account as string), library)
       setLoading(false)
       if (res) {
+        setTypes('success')
         setShow(true)
         setTips(`${t('TIPS.SUCCESS.mint', { quantity })}`)
       } else {
+        setTypes('error')
         setShow(true)
         setTips(`${TS_TIPS.ERROR.mint}`)
       }
     }
-  }, [handleGetStartTime, account, balance, library, publicMint, quantity, whitelistMint, TS_TIPS, t])
+  }, [handleGetStartTime, maxCount, max, account, balance, library, publicMint, quantity, whitelistMint, TS_TIPS, t])
   return <div className='m-home-banner padding-26'>
       <div className='cont'>
         <h2>{ts.title}</h2>
@@ -85,7 +98,7 @@ const Index = () => {
         </div>
       </div>
       <img src="../assets/banner-person.png" alt="" className='person'/>
-    <Tips tip={tips} show={show} onClose={() => setShow(false)}/>
+      <Tips tip={tips} show={show} type={types} onClose={() => setShow(false)}/>
   </div>
 }
 
