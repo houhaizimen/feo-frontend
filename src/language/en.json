@@ -196,8 +196,8 @@
       { "title": "NOW", "icon": "gallery-top-3", "desc": "The competition is about to kick off, and fighters have already arrived at the competition field one after another. The following is the background of these fighters." }
     ],
     "GALLERY_BOTTOM_LIST": [
-      { "title": "Mai Shiranui", "icon": "gallery-1" },
-      { "title": "To be continued…", "icon": "gallery-2" }
+      { "title": "Mai Shiranui", "icon": "gallery-1", "link": "/stake" },
+      { "title": "To be continued…", "icon": "gallery-2", "link": "" }
     ]
   },
   "FAQ": {
@@ -248,7 +248,7 @@
   },
   "STAKE": {
     "BANNER": {
-      "title": "FEOVERSE NFT Staking",
+      "title": "Mai Shiranui NFT Staking",
       "desc": "Earn candies and fragments of treasure map by staking NFT",
       "see": "See more"
     },
@@ -325,7 +325,19 @@
       "to": "To staking"
     },
     "MAP": {
-      "title": "Fragments of treasure map"
+      "title": "Fragments of treasure map",
+      "QUESTION_LIST": [
+        ["#1", "Reach level 10 or participate activities in FEO discord"],
+        ["#2", "Retweet the tweets designated by FEO"],
+        ["#3", "Keep holding Mai Shiranui NFT until the revealing of the collection"],
+        ["#4-#8", "NFT staking"],
+        ["#9", "Only from Gashapon Machine"]
+      ],
+      "how": "How to get fragments #1 - #9",
+      "desc": "Fragment #1-#8 can also be obtained through Gashapon Machine.",
+      "title2": "Collect fragments #1-#9 of treasure map to share era token incentives.",
+      "title3": "If nine fragments are in your bag, try synthesizing and see what is waiting for you!",
+      "synthesize": "To synthesize"
     }
   }
 }

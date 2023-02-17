@@ -1,16 +1,93 @@
 .web-profile-map {
+  & > h1 {
+    position: relative;
+    display: inline-block;
+   .question {
+      position: absolute;
+      width: rem(19);
+      height: rem(19);
+      background: imgurl('icon-question.png');
+      background-size: 100% 100%;
+      right: rem(-32);
+      top: rem(10);
+      cursor: pointer;
+      &-cont {
+        position: relative;
+        top: rem(-10);
+        left: 50%;
+        transform: translate(-50%, -100%);
+        min-width: rem(720);
+        min-height: rem(255);
+        padding: rem(28) rem(35);
+        background: imgurl('question-bg.png');
+        background-size: 100% 100%;
+        opacity: 0;
+        overflow: hidden;
+        height: 0;
+        transition: all .3s;
+        & > h3 {
+          font-size: rem(18);
+          margin-bottom: rem(11);
+          text-transform: uppercase;
+          font-family: 'Universal Serif';
+          line-height: rem(20);
+          color: #EF267C;
+          text-align: center;
+        }
+        &-list {
+          display: grid;
+          grid-template-columns: 1fr 4fr;
+          height: rem(35);
+          line-height: rem(35);
+          font-size: rem(14);
+          white-space:nowrap;
+          font-family: "Lovato Light";
+          & > li {
+            &:first-child {
+              text-align: center;
+            }
+          }
+          &:nth-child(2n) {
+            background-color: rgba(#EF267C, .2);
+          }
+        }
+        & > p {
+          font-size: rem(12);
+          text-align: center;
+          margin-top: rem(12);
+          line-height: rem(18);
+          font-family: "Lovato Light";
+          margin-bottom: rem(25);
+        }
+      }
+      &:hover {
+        .question-cont {
+          opacity: 1;
+          overflow: visible;
+          height: auto;
+        }
+      }
+    }
+  }
   &-wrap {
     margin-top: rem(29);
-    padding: rem(59) rem(165);
+    padding: rem(59) 0;
     box-sizing: border-box;
+    & > p {
+      font-size: rem(25);
+      line-height: rem(33);
+      text-align: center;
+      margin-bottom: rem(47);
+    }
     &-cont {
       display: grid;
-      grid-template-columns: repeat(3, rem(292));
-      grid-template-rows: repeat(3, rem(292));
+      grid-template-columns: repeat(3, rem(198));
+      grid-template-rows: repeat(3, rem(198));
+      justify-content: center;
       & > div {
         position: relative;
         & > img {
-          width: 106%;
+          width: 102%;
         }
         & > span {
           height: rem(35);
@@ -25,6 +102,10 @@
           font-family: 'Universal Serif';
         }
     }
+    }
+    & > .web-button {
+      display: block;
+      margin: rem(40) auto 0;
     }
   }
 }
