@@ -16,9 +16,6 @@
         top: rem(-10);
         left: 50%;
         transform: translate(-50%, -100%);
-        min-width: rem(720);
-        min-height: rem(255);
-        padding: rem(28) rem(35);
         background: imgurl('question-bg.png');
         background-size: 100% 100%;
         opacity: 0;
@@ -52,7 +49,7 @@
           }
         }
         & > p {
-          font-size: rem(12);
+          font-size: rem(14);
           text-align: center;
           margin-top: rem(12);
           line-height: rem(18);
@@ -62,9 +59,12 @@
       }
       &:hover {
         .question-cont {
+          min-width: rem(720);
+          min-height: rem(255);
           opacity: 1;
           overflow: visible;
           height: auto;
+          padding: rem(28) rem(35);
         }
       }
     }

@@ -10,6 +10,7 @@ const Index = () => {
   const handleJump = (link: string) => {
     if (!link) return
     navigate(link)
+    window.scrollTo(0, 0)
   }
   return <div className='web-gallery'>
     <div className='web-gallery-cont'>
@@ -32,7 +33,9 @@ const Index = () => {
           return <li key={item.title} onClick={() => handleJump(item.link)} style={{
             backgroundImage: `url(assets/${item.icon}.png)`
           }}>
-            <h1>{item.title}</h1>
+            <div className='card-text'>
+              <h1>{item.title}</h1>
+            </div>
           </li>
           })
         }
