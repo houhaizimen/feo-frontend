@@ -52,6 +52,7 @@ const Index = () => {
         setTypes('success')
         setShow(true)
         setTips(`${t('TIPS.SUCCESS.mint', { quantity })}`)
+        setQuantity(1)
       } else {
         setTypes('error')
         setShow(true)
@@ -65,6 +66,7 @@ const Index = () => {
       if (res) {
         setTypes('success')
         setShow(true)
+        setQuantity(1)
         setTips(`${t('TIPS.SUCCESS.mint', { quantity })}`)
       } else {
         setTypes('error')
