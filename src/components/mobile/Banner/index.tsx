@@ -23,7 +23,7 @@ const Index = () => {
   const [show, setShow] = useState<boolean>(false)
   const [tips, setTips] = useState<string>('')
   const { publicMint, whitelistMint } = Runners
-  const { max, handleGetStartTime, maxCount } = useMintData(account ?? '', balance)
+  const { max, handleGetStartTime, maxCount, disabled } = useMintData(account ?? '', balance)
   const handleMint = useCallback(async () => {
     setLoading(true)
     const { wTime, pTime } = await handleGetStartTime()
@@ -93,7 +93,7 @@ const Index = () => {
           <div className='m-home-banner-buy-step'>
             <Stepper value={quantity} max={max} min={1} onChange={val => setQuantity(val)}/>
             {/* <Button loading={loading} disabled={disabled} onClick={handleMint}>MINT</Button> */}
-            <Button loading={loading} disabled={true} onClick={handleMint}>{ts.MINT}</Button>
+            <Button loading={loading} disabled={disabled} onClick={handleMint}>{ts.MINT}</Button>
           </div>
         </div>
       </div>
