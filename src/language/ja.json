@@ -27,7 +27,7 @@
     "SUCCESS": {
       "search_input": "おめでとうございます！このアドレスはホワイトリストに登録されました！",
       "mint": "おめでとうございます！{{quantity}}不知火舞NFTのミントに成功しました！",
-      "connect": "Please connect the wallet first!",
+      "connect": "先にまず、ウォレットを接続してください！",
       "buy": "NFT のステーキングに成功しました。"
     },
     "ERROR": {
