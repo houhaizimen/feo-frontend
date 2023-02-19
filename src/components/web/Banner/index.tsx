@@ -1,7 +1,6 @@
 import React, { useCallback, useState } from 'react'
 import { useBalance } from '@/hooks/useBlance'
 import { useWeb3React } from '@web3-react/core'
-import { PRICE } from '@/config/index'
 import { getMerkleTree } from '@/utils/merkletree'
 import Runners from '@/class/Runners'
 import { useMintData } from '@/hooks/useMintData'
@@ -26,11 +25,11 @@ const Index = () => {
   const [tips, setTips] = useState<string>('')
   const { publicMint, whitelistMint } = Runners
   // const { max, handleGetStartTime, maxCount, disabled } = useMintData(account ?? '', balance)
-  const { handleGetStartTime, disabled } = useMintData(account ?? '', balance)
+  const { handleGetStartTime, disabled, pPrice, wPrice } = useMintData(account ?? '', balance)
   const handleMint = useCallback(async () => {
     setLoading(true)
     const { wTime, pTime } = await handleGetStartTime()
-    const price = PRICE[pTime ? 'P' : 'W']
+    const price = pTime ? pPrice : wPrice
     if (Number(balance) < price) {
       setTypes('error')
       setShow(true)
@@ -51,8 +50,8 @@ const Index = () => {
       if (res === 1) {
         setTypes('success')
         setShow(true)
-        setTips(`${t('TIPS.SUCCESS.mint', { quantity })}`)
         setQuantity(1)
+        setTips(`${t('TIPS.SUCCESS.mint', { quantity })}`)
       } else {
         setTypes('error')
         setShow(true)
@@ -74,7 +73,7 @@ const Index = () => {
         setTips(`${TS_TIPS.ERROR.mint}`)
       }
     }
-  }, [handleGetStartTime, account, balance, library, publicMint, quantity, whitelistMint, TS_TIPS, t])
+  }, [pPrice, wPrice, handleGetStartTime, account, balance, library, publicMint, quantity, whitelistMint, TS_TIPS, t])
   return <div className='web-home-banner'>
       <div className='cont'>
         <h2>{ts.title}</h2>
@@ -83,11 +82,11 @@ const Index = () => {
         <div className='web-home-banner-buy'>
           <dl className='item'>
             <dd>{ts.sale}</dd>
-            <dt>{PRICE.P} ETH</dt>
+            <dt>{pPrice} ETH</dt>
           </dl>
           <dl className='item'>
             <dd>{ts.Whitelist}</dd>
-            <dt>{PRICE.W} ETH</dt>
+            <dt>{wPrice} ETH</dt>
           </dl>
           <dl className='item'>
             <dd>{ts.Total}</dd>

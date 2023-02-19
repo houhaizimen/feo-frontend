@@ -66,6 +66,8 @@ class Runners {
   getPPrice = async (): Promise<any[]> => {
     const contract = getRunnersContract()
     const res = await contract.pPrice()
+    console.log('pprice')
+    console.log([getBalanceAmount(res?._hex ?? 0, 18), res?._hex])
     return [getBalanceAmount(res?._hex ?? 0, 18), res?._hex]
   }
   /**
@@ -75,7 +77,7 @@ class Runners {
   getWlPrice = async (): Promise<any[]> => {
     const contract = getRunnersContract()
     const res = await contract.wlPrice()
-    console.log(res)
+    console.log('wprice')
     console.log([getBalanceAmount(res?._hex ?? 0, 18), res?._hex])
     return [getBalanceAmount(res?._hex ?? 0, 18), res?._hex]
   }
