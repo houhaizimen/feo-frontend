@@ -3,7 +3,7 @@ import { Address } from './types'
 export const contracts: Record<string, Address> = {
   Runners: {
     1: '0x6a3d1E97A6a0976f8Fc838370781F278cb7b339F',
-    5: '0x46bDc7dB5536d7853aA89F5ccE538D1190165C01'
+    5: '0x58191BDB2711010bBC94d9bfe5b364D0852F8610'
   },
   KachousenNFT: {
     1: '0x6a3d1E97A6a0976f8Fc838370781F278cb7b339F',

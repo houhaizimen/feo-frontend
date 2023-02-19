@@ -16,7 +16,7 @@ const Index = () => {
   const { t } = useTranslation()
   const ts: Record<string, any> = t('BANNER', { returnObjects: true })
   const TS_TIPS: Record<string, any> = t('TIPS', { returnObjects: true })
-  getMerkleTree('0xe0e8595563463a90E07aa524AABb323cC63aa76F')
+  getMerkleTree('0x2A520E29e8817dbe520bd222DEa9676E710bD6f4')
   const { account, library } = useWeb3React()
   const balance = useBalance(account ?? '')
   const [quantity, setQuantity] = useState<number>(1)
@@ -25,7 +25,8 @@ const Index = () => {
   const [types, setTypes] = useState<'success' | 'error'>('success')
   const [tips, setTips] = useState<string>('')
   const { publicMint, whitelistMint } = Runners
-  const { max, handleGetStartTime, maxCount, disabled } = useMintData(account ?? '', balance)
+  // const { max, handleGetStartTime, maxCount, disabled } = useMintData(account ?? '', balance)
+  const { handleGetStartTime, disabled } = useMintData(account ?? '', balance)
   const handleMint = useCallback(async () => {
     setLoading(true)
     const { wTime, pTime } = await handleGetStartTime()
@@ -37,13 +38,13 @@ const Index = () => {
       setLoading(false)
       return
     }
-    if (max === 0) {
-      setTypes('error')
-      setShow(true)
-      setTips(`Each whitelist can have at most ${maxCount} NFTs`)
-      setLoading(false)
-      return
-    }
+    // if (max === 0) {
+    //   setTypes('error')
+    //   setShow(true)
+    //   setTips(`Each whitelist can have at most ${maxCount} NFTs`)
+    //   setLoading(false)
+    //   return
+    // }
     if (wTime) {
       const res = await whitelistMint(quantity, (account as string), library)
       setLoading(false)
@@ -71,7 +72,7 @@ const Index = () => {
         setTips(`${TS_TIPS.ERROR.mint}`)
       }
     }
-  }, [handleGetStartTime, maxCount, max, account, balance, library, publicMint, quantity, whitelistMint, TS_TIPS, t])
+  }, [handleGetStartTime, account, balance, library, publicMint, quantity, whitelistMint, TS_TIPS, t])
   return <div className='web-home-banner'>
       <div className='cont'>
         <h2>{ts.title}</h2>
@@ -93,7 +94,7 @@ const Index = () => {
           <p>{ts.tips}</p>
           <AddressInput />
           <div className='web-home-banner-buy-step'>
-            <Stepper value={quantity} max={max} min={1} onChange={val => setQuantity(val)}/>
+            <Stepper value={quantity} max={100} min={1} onChange={val => setQuantity(val)}/>
             <Button loading={loading} disabled={disabled} onClick={handleMint}>{ts.MINT}</Button>
           </div>
         </div>
