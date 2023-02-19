@@ -154,7 +154,7 @@
         }
       }
       .avatar {
-        width: rem(24);
+        width: rem(29);
         margin-left: rem(38);
         cursor: pointer;
       }
@@ -226,7 +226,7 @@
         top: 30%;
         & > .connect {
           position: relative;
-          width: rem(166);
+          width: 140px;
           font-size: rem(18);
           height: rem(38);
           text-align: center;
@@ -241,7 +241,7 @@
           }
         }
         .wallet-connect {
-          width: rem(168);
+          width: 140px;
           width: 100%;
           position: relative;
           top: rem(12);
@@ -260,7 +260,7 @@
           }
           & > li {
             cursor: pointer;
-            width: rem(166);
+            width: 140px;
             display: flex;
             align-items: center;
             justify-content: center;

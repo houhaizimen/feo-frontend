@@ -47,18 +47,30 @@
         &:hover {
           filter: grayscale(0);
         }
-        & > h1 {
+        .card-text {
+          width: 208px;
+          height: 214px;
           position: absolute;
           top: 50%;
-          right: 154px;
-          font-size: 46px;
-          font-family: 'Universal Serif';
-          text-transform: uppercase;
+          transform: translateY(-50%);
+          right: 215px;
+          background-image: imgurl('icon-01.png');
+          background-size: 100% 100%;
+          & > h1 {
+            position: absolute;
+            top: 48%;
+            left: 50%;
+            transform: translate(-50%);
+            font-size: 46px;
+            font-family: 'Universal Serif';
+            text-transform: uppercase;
+            white-space: nowrap;
+          }
         }
         &:last-child {
-          margin-bottom: 0;
-          & > h1 {
-            right: 75px;
+          .card-text {
+            right: 187px;
+            background-image: imgurl('icon-02.png');
           }
         }
       }
