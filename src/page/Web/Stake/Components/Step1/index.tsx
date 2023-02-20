@@ -23,7 +23,7 @@ const Index = () => {
         </div>
       }
     </ContainerBg>
-    <Tips type='error' tip='Please connect the wallet first!' show={show} onClose={() => setShow(false)}/>
+    <Tips type='error' tip={t('TIPS.SUCCESS.connect') as string} show={show} onClose={() => setShow(false)}/>
   </div>
 }
 
