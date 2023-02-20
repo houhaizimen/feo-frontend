@@ -5,7 +5,7 @@ export enum PRICE {
 }
 
 export const connectList = [
-  { icon: 'connect', link: '' },
+  { icon: 'connect', link: 'https://opensea.io/collection/maishiranui' },
   { icon: 'twitter', link: 'https://twitter.com/FEOVERSE' },
   { icon: 'discord', link: 'https://discord.gg/Zt3CugAerc' },
   { icon: 'medium', link: 'https://medium.com/@FEOVERSE' }

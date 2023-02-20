@@ -19,7 +19,7 @@ ja: {
 
 void i18n.use(initReactI18next).init({
 resources,
-lng: 'en',
+lng: 'ja',
 interpolation: {
   escapeValue: false
 }
