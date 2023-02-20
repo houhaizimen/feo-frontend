@@ -28,7 +28,7 @@
       align-items: center;
       font-family: 'Akrobat-Bold';
       font-size: 18px;
-      padding-right: 200px;
+      padding-right: 180px;
       & > .title, & > .link {
         display: flex;
         align-items: center;
@@ -155,7 +155,7 @@
       }
       .avatar {
         width: rem(29);
-        margin-left: rem(38);
+        margin-left: 36px;
         cursor: pointer;
       }
       .lang {
@@ -253,7 +253,7 @@
           overflow: hidden;
           &.logout {
             & > li {
-              height: rem(60);
+              height: rem(40);
               padding-left: rem(2);
               margin: 0;
             }

@@ -41,7 +41,7 @@
       }
       & > .right {
         flex: 1;
-        font-size: rem(25);
+        font-size: rem(22);
         & > h2 {
           font-size: rem(46);
           font-family: 'Universal Serif';
@@ -61,7 +61,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             align-items: center;
-            font-size: rem(25);
+            font-size: rem(22);
             background-color: rgba(#EF267C , 0.1);
             margin-bottom: rem(12);
           }
