@@ -14,7 +14,7 @@ const Index = () => {
         {
           FAQList.item.map((item, index) => {
             return <dl key={item.title}>
-              <dt>{index + 1}. {item.title}</dt>
+              <dt>{Number(index) + 1}. {item.title}</dt>
               <dd>
                 {
                   item.cont.map(items => <p key={items} dangerouslySetInnerHTML={{ __html: items }}/>)
