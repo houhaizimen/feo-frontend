@@ -99,11 +99,11 @@ export const useGetWalletList = (): WALLET_TYPE[] => {
       icon: 'wallet-connect',
       connectId: ConnectorNames.WalletConnect
     },
-    {
-      name: ts.okx,
-      icon: 'okx',
-      connectId: ConnectorNames.Injected
-    },
+    // {
+    //   name: ts.okx,
+    //   icon: 'okx',
+    //   connectId: ConnectorNames.Injected
+    // },
     {
       name: ts.BitKeep,
       icon: 'bitkeep',

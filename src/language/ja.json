@@ -13,7 +13,7 @@
     "skin": "衣装",
     "doc": "ドキュメント",
     "Whitepaper": "ﾎﾜｲﾄﾍﾟｰﾊﾟｰ",
-    "Disconnect": "Disconnect",
+    "Disconnect": "ログアウト",
     "wallets": {
       "Metamask": "Metamask",
       "Coinbase": "Coinbase",
@@ -229,7 +229,7 @@
       },
       {
         "title": "FEOVERSEのNFTステーキング活動とは何ですか？",
-        "cont": ["不知火 舞のNFT保有者は、ステーキングすることでキャンディーや宝の地図のかけらを獲得することができます。キャンディー10個でガシャポンマシンを回し、3DコスチュームNFTや宝の地図のかけら、レアな不知火舞NFTなどを手に入れることができます。9つのピースをすべてコンプリートした勝者は、時代トークンボーナスを共有することができます。", "詳細はこちら：https://medium.com/@FEOVERSE/genesis-era-task-collection-of-treasure-map-fragments-341cd0dedcce"]
+        "cont": ["不知火 舞のNFT保有者は、ステーキングすることでキャンディーや宝の地図のかけらを獲得することができます。キャンディー10個でガシャポンマシンを回し、3DコスチュームNFTや宝の地図のかけら、レアな不知火舞NFTなどを手に入れることができます。9つのピースをすべてコンプリートした勝者は、時代トークンボーナスを共有することができます。", "詳細はこちら： <a href='https://medium.com/@FEOVERSE/genesis-era-task-collection-of-treasure-map-fragments-341cd0dedcce'>https://medium.com/@FEOVERSE/genesis-era-task-collection-of-treasure-map-fragments-341cd0dedcce</a>"]
       },
       {
         "title": "ミント終了後の何日後くらいに利用できるようになりますか？",

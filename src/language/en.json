@@ -1,7 +1,7 @@
 {
   "title": "Fighter Era Odyssey",
 	"HEADER": {
-    "come": "coming soon",
+    "come": "Coming soon",
     "World": "World",
     "Fighter": "Fighter Gallery",
     "FAQ": "FAQ",
@@ -230,7 +230,7 @@
       },
       {
         "title": "What is the NFT staking activity in FEOVERSE?",
-        "cont": ["Holders of Mai Shiranui NFT can stake their collection to earn candies and fragments of treasure map. With 10 candies, they can start up Gashapon Machine and get such as 3D costume NFT, fragment of treasure map and rare Mai Shiranui NFT. Winners with all nine complete fragments can share era token incentives.", "Learn more: https://medium.com/@FEOVERSE/genesis-era-task-collection-of-treasure-map-fragments-341cd0dedcce"]
+        "cont": ["Holders of Mai Shiranui NFT can stake their collection to earn candies and fragments of treasure map. With 10 candies, they can start up Gashapon Machine and get such as 3D costume NFT, fragment of treasure map and rare Mai Shiranui NFT. Winners with all nine complete fragments can share era token incentives.", "Learn more: <a href='https://medium.com/@FEOVERSE/genesis-era-task-collection-of-treasure-map-fragments-341cd0dedcce'>https://medium.com/@FEOVERSE/genesis-era-task-collection-of-treasure-map-fragments-341cd0dedcce</a>"]
       },
       {
         "title": "How soon after mint will staking be available?",
