@@ -1,14 +1,16 @@
 import React from 'react'
-import { GALLERY_TOP_LIST, GALLERY_BOTTOM_LIST } from '@/config'
+import { useTranslation } from 'react-i18next'
 import Footer from '@/components/mobile/Footer'
 
 const Index = () => {
+  const { t } = useTranslation()
+  const ts: Record<string, any> = t('GALLERY', { returnObjects: true })
   return <div className='m-gallery'>
     <div className='m-gallery-cont'>
-      <h1 className='title'>A world class<br /> fighting competition <br />KOF in FEOVERSE is<br /> approaching</h1>
+    <h1 className='title' dangerouslySetInnerHTML={{ __html: t('GALLERY.title', { symbol: '<br />' }) }} />
       <ul className='tips'>
         {
-          GALLERY_TOP_LIST.map(item => {
+          ts.GALLERY_TOP_LIST.map((item: any) => {
           return <li key={item.title}>
             <div style={{
             backgroundImage: `url(../assets/m/${item.icon}.png)`
@@ -20,7 +22,7 @@ const Index = () => {
       </ul>
       <ul className='card'>
         {
-          GALLERY_BOTTOM_LIST.map(item => {
+          ts.GALLERY_BOTTOM_LIST.map((item: any) => {
           return <li key={item.title} style={{
             backgroundImage: `url(../assets/m/${item.icon}.png)`
           }}>

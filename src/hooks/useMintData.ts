@@ -1,11 +1,14 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import Runners from '@/class/Runners'
 export const useMintData = (account: string, balance: string) => {
-  const { getBlanceOf, getwlMintStartTime, getwlMintEndTime, getpMintStartTime, getpMintEndTime, getMaxMinted } = Runners
-  const [count, setCount] = useState<number>(0)
+  // const { getBlanceOf, getwlMintStartTime, getwlMintEndTime, getpMintStartTime, getpMintEndTime, getMaxMinted } = Runners
+  const { getwlMintStartTime, getwlMintEndTime, getpMintStartTime, getpMintEndTime, getWlPrice, getPPrice } = Runners
+  // const [count, setCount] = useState<number>(0)
   const [isWhiteTime, setIsWhiteTime] = useState<boolean>(false)
   const [isPTime, setIsPTime] = useState<boolean>(false)
-  const [maxCount, setMaxCount] = useState<number>(0)
+  const [pPrice, setPPrice] = useState<any>(null)
+  const [wPrice, setwPrice] = useState<any>(false)
+  // const [maxCount, setMaxCount] = useState<number>(0)
   const handleGetStartTime = useCallback(async () => {
     const wStart = await getwlMintStartTime()
     const wEnd = await getwlMintEndTime()
@@ -22,40 +25,60 @@ export const useMintData = (account: string, balance: string) => {
     }
   }, [getwlMintStartTime, getwlMintEndTime, getpMintStartTime, getpMintEndTime])
 
-  const handleBalanceOf = useCallback(async (account: string) => {
-    const res = await getBlanceOf(account)
-    setCount(res)
-  }, [getBlanceOf])
+  // const handleBalanceOf = useCallback(async (account: string) => {
+  //   const res = await getBlanceOf(account)
+  //   setCount(res)
+  // }, [getBlanceOf])
 
-  const handleMaxMinted = useCallback(async () => {
-    const res = await getMaxMinted()
-    setMaxCount(res)
-  }, [getMaxMinted])
+  // const handleMaxMinted = useCallback(async () => {
+  //   const res = await getMaxMinted()
+  //   setMaxCount(res)
+  // }, [getMaxMinted])
+
+  // useEffect(() => {
+  //   void handleMaxMinted()
+  //  }, [handleMaxMinted])
+  const handleWlPrice = useCallback(async () => {
+    const res = await getWlPrice()
+    setwPrice(res[0])
+  }, [getWlPrice])
 
   useEffect(() => {
-    void handleMaxMinted()
-   }, [handleMaxMinted])
+    void handleWlPrice()
+   }, [handleWlPrice])
+
+  const handlePPrice = useCallback(async () => {
+    const res = await getPPrice()
+    setPPrice(res[0])
+  }, [getPPrice])
+
+  useEffect(() => {
+    void handlePPrice()
+   }, [handlePPrice])
 
   useEffect(() => {
     void handleGetStartTime()
   }, [handleGetStartTime])
 
-  useEffect(() => {
-    if (account) void handleBalanceOf(account)
-  }, [handleBalanceOf, account])
-  const max = useMemo(() => {
-    if (isWhiteTime) {
-      return maxCount - count
-    }
-    return 100
-  }, [isWhiteTime, count, maxCount])
+  // useEffect(() => {
+  //   if (account) void handleBalanceOf(account)
+  // }, [handleBalanceOf, account])
+  // const max = useMemo(() => {
+  //   if (isWhiteTime) {
+  //     return maxCount - count
+  //   }
+  //   return 100
+  // }, [isWhiteTime, count, maxCount])
   const disabled = useMemo(() => {
-    if (isWhiteTime && max === 0) return false
     return (!isWhiteTime && !isPTime) || !account || !balance
-  }, [isWhiteTime, isPTime, account, balance, max])
+  }, [isWhiteTime, isPTime, account, balance])
   return {
-    max,
+    // max,
+    pPrice,
+    wPrice,
     disabled,
     handleGetStartTime
+    // handleBalanceOf,
+    // maxCount
   }
 }

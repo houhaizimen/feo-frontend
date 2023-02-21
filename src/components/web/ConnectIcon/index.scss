@@ -1,0 +1,30 @@
+.web-connect-icon {
+  position: fixed;
+  top: rem(408);
+  left: calc((100vw - 1300px) / 2 - 63px);
+  display: flex;
+  flex-direction: column;
+  z-index: 888;
+  & > img {
+    width: rem(46);
+    margin-bottom: rem(60);
+    cursor: pointer;
+    transition: all .3s;
+    &:hover {
+      transform: scale(1.1);
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+@media screen and (max-width: 1500px) {
+  .web-connect-icon {
+    left: rem(40);
+  }
+}
+@media screen and (max-width: 1320px) {
+  .web-connect-icon {
+    left: rem(20);
+  }
+}

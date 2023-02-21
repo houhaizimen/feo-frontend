@@ -43,9 +43,10 @@
     padding-top: rem(38);
     background-color: #4F1142;
     box-shadow: 0 rem(-10) rem(30) rem(10) #290321;
+    overflow-y: auto;
+    box-sizing: border-box;
     & > .title {
       padding-bottom: rem(34);
-      border-bottom: 1px solid rgba(#fff, .1);
       & > li {
         height: rem(42);
         line-height: rem(42);
@@ -59,8 +60,9 @@
       }
     }
     .connect-wallet {
-      margin-top: rem(31);
+      padding: rem(31) 0 rem(21);
       padding-left: rem(23);
+      border-top: 1px solid rgba(#fff, .1);
       &-connect {
         font-size: rem(17);
         display: flex;
@@ -86,6 +88,9 @@
           border-right-color: transparent;
           margin-top: rem(10);
           transition: transform .3s;
+        }
+        & > img {
+          width: rem(23);
         }
         &.show {
           & > .angel {

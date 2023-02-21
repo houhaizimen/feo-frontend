@@ -28,7 +28,8 @@ function writePath() {
   const page_style_list =  getAllPath('./src/page', [])
   const list = [...components_style_list, ...page_style_list]
   list.forEach((i) => {
-    fs.appendFileSync(stylePath, `@import "${i}";\n`)
+    const filePath = i.replace('./src', '@')
+    fs.appendFileSync(stylePath, `@import "${filePath}";\n`)
   })
 }
 

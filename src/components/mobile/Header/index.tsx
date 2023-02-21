@@ -2,26 +2,31 @@ import React, { useEffect, useState } from 'react'
 import { useWeb3React } from '@web3-react/core'
 import classNames from 'classnames'
 import { useScroll } from 'ahooks'
-import { ConnectorNames, USER_LOCAL_CONNECT, walletList } from '@/utils/wallet'
-import { connectList } from '@/config'
+import { ConnectorNames, USER_LOCAL_CONNECT, useGetWalletList } from '@/utils/wallet'
+import { connectList, LANG_LIST } from '@/config'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '@/hooks/useAuth'
+import { useTranslation } from 'react-i18next'
 
 import { Popup } from 'antd-mobile'
 
 const Index = () => {
   const [visible, setVisible] = useState(false)
   const [show, setShow] = useState(false)
+  const [showLang, setShowLan] = useState(false)
   const { account } = useWeb3React()
   const { login, logout } = useAuth()
+  const { t, i18n } = useTranslation()
+  const ts: Record<string, any> = t('HEADER', { returnObjects: true })
+  const walletList = useGetWalletList()
   const scroll = useScroll(document) ?? 0
   const [fixed, setFixed] = useState<boolean>(false)
   const { pathname } = useLocation()
   const navigate = useNavigate()
   const HEADER_LIST = [
-    { name: 'World', link: '/m/' },
-    { name: 'Fighter Gallery', link: '/m/gallery' },
-    { name: 'FAQ', link: '/m/faqs' }
+    { name: ts.World, link: '/m/' },
+    { name: ts.Fighter, link: '/m/gallery' },
+    { name: ts.FAQ, link: '/m/faqs' }
   ]
   const handleLogin = async (connector: ConnectorNames) => {
     const { key } = USER_LOCAL_CONNECT
@@ -51,6 +56,11 @@ const Index = () => {
     logout()
   }
 
+  const changeLanguage = (val: string) => {
+    setVisible(false)
+    setShowLan(false)
+    void i18n.changeLanguage(val)
+  }
   return <>
     <div className={ classNames('m-home-header', { fixed })}>
       <ul className='cont'>
@@ -77,7 +87,7 @@ const Index = () => {
         {
           !account && <div className='connect-wallet'>
             <div className={classNames('connect-wallet-connect', { show })} onClick={() => setShow(!show)}>
-              Connect Wallet
+              {ts.Connect}
               <div className='angel' />
             </div>
             <ul className={classNames('connect-wallet-list', { show })}>
@@ -102,11 +112,25 @@ const Index = () => {
             <ul className={classNames('connect-wallet-list', { show })}>
                <li onClick={handleLogout}>
                   <img className='logout' src='../assets/icon-dismiss.png' />
-                  <span>Disconnect</span>
+                  <span>{ts.Disconnect}</span>
                 </li>
             </ul>
           </div>
         }
+         <div className='connect-wallet'>
+            <div className={classNames('connect-wallet-connect', { show: showLang })} onClick={() => setShowLan(!showLang)}>
+              <img src="../assets/icon-lang.png" alt="" />
+              <div className='angel' />
+            </div>
+            <ul className={classNames('connect-wallet-list', { show: showLang })}>
+              {
+                  LANG_LIST.map(item => <li key={item.title} onClick={() => changeLanguage(item.value)}>
+                  <img src={`../assets/icon-${item.icon}.png`} alt="" />
+                  <span>{item.title}</span>
+                </li>)
+                }
+            </ul>
+          </div>
       </Popup>
     </div>
   </>

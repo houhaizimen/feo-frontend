@@ -1,0 +1,42 @@
+.web-stake-rewards {
+  margin-top: rem(73);
+  & > header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    & > .left {
+      flex: 1;
+      & > .title {
+        margin-bottom: rem(61);
+      }
+      p {
+        font-size: rem(25);
+        line-height: rem(33);
+        margin-bottom: rem(24);
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    & > .right {
+      width: rem(541);
+      margin-left: rem(42);
+    }
+  }
+  & > footer {
+    margin-top: rem(105);
+    & > ul {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      height: rem(57);
+      font-size: rem(25);
+      line-height: rem(57);
+      & > li {
+        text-align: center;
+      }
+      &:nth-child(2n -1) {
+        background-color: rgba(#491236, .5);
+      }
+    }
+  }
+}

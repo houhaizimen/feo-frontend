@@ -6,6 +6,9 @@ const Home = lazy(async () => await import('./Home'))
 const Gallery = lazy(async () => await import('./Gallery'))
 const FAQS = lazy(async () => await import('./FAQS'))
 const Terms = lazy(async () => await import('./Terms'))
+const Stake = lazy(async () => await import('@/page/Web/Stake'))
+const Repoch = lazy(async () => await import('@/page/Web/Repoch'))
+const Profile = lazy(async () => await import('@/page/Web/Profile'))
 
 function Index () {
   return (
@@ -17,6 +20,9 @@ function Index () {
           <Route path='/gallery' element={<Gallery />} />
           <Route path='/faqs' element={<FAQS />} />
           <Route path='/terms' element={<Terms />} />
+          <Route path='/stake' element={<Stake />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/repoch' element={<Repoch />} />
         </Routes>
       </Suspense>
     </div>

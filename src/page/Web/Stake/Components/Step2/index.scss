@@ -1,0 +1,35 @@
+.web-stake-step2 {
+  &-cont {
+    padding: rem(48) rem(50);
+    box-sizing: border-box;
+    margin-top: rem(31);
+    &-item {
+      margin-bottom: rem(61);
+      & > h1 {
+        font-size: rem(25);
+        color: #EF267C;
+        font-family: 'Universal Serif';
+        text-transform: uppercase;
+      }
+      & > dl {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: rem(53);
+        font-size: rem(25);
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+      & > p {
+        margin: rem(89) 0 rem(60) 0;
+        text-align: center;
+        font-size: rem(25);
+      }
+    }
+    &-stake {
+      display: block;
+      margin: 0 auto rem(68)
+    }
+  }
+}

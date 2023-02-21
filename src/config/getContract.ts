@@ -2,6 +2,7 @@ import { ethers, ContractInterface } from 'ethers'
 import { Address } from './types'
 import { JSONRPCProvider, getChainId } from '@/utils/provider'
 import RunnersABI from '@/abi/Runners.json'
+import kachousenABI from '@/abi/kachousen.json'
 import { contracts } from './contract'
 
 export const getContract = (abi: ContractInterface, address: Address, signer?: ethers.Signer | ethers.providers.Provider) => {
@@ -12,4 +13,8 @@ export const getContract = (abi: ContractInterface, address: Address, signer?: e
 
 export const getRunnersContract = (signer?: ethers.Signer | ethers.providers.Provider): any => {
   return getContract(RunnersABI, contracts.Runners, signer)
+}
+
+export const getkachousenContract = (signer?: ethers.Signer | ethers.providers.Provider): any => {
+  return getContract(kachousenABI, contracts.KachousenNFT, signer)
 }

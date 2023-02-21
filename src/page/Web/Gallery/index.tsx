@@ -1,14 +1,23 @@
 import React from 'react'
-import { GALLERY_TOP_LIST, GALLERY_BOTTOM_LIST } from '@/config'
+import { useTranslation } from 'react-i18next'
+import { useNavigate } from 'react-router-dom'
 import Footer from '@/components/web/Footer'
 
 const Index = () => {
+  const { t } = useTranslation()
+  const ts: Record<string, any> = t('GALLERY', { returnObjects: true })
+  const navigate = useNavigate()
+  const handleJump = (link: string) => {
+    if (!link) return
+    navigate(link)
+    window.scrollTo(0, 0)
+  }
   return <div className='web-gallery'>
     <div className='web-gallery-cont'>
-      <h1 className='title'>A world class fighting competition KOF<br /> in FEOVERSE is approaching</h1>
+      <h1 className='title' dangerouslySetInnerHTML={{ __html: t('GALLERY.title', { symbol: '<br />' }) }} />
       <ul className='tips'>
         {
-          GALLERY_TOP_LIST.map(item => {
+          ts.GALLERY_TOP_LIST.map((item: any) => {
           return <li key={item.title} style={{
             backgroundImage: `url(assets/${item.icon}.png)`
           }}>
@@ -20,11 +29,13 @@ const Index = () => {
       </ul>
       <ul className='card'>
         {
-          GALLERY_BOTTOM_LIST.map(item => {
-          return <li key={item.title} style={{
+          ts.GALLERY_BOTTOM_LIST.map((item: any) => {
+          return <li key={item.title} onClick={() => handleJump(item.link)} style={{
             backgroundImage: `url(assets/${item.icon}.png)`
           }}>
-            <h1>{item.title}</h1>
+            <div className='card-text'>
+              <h1>{item.title}</h1>
+            </div>
           </li>
           })
         }

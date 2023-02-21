@@ -18,14 +18,20 @@
   &:hover {
     transform: scale(1.1);
   }
-   &.mini {
+   &.mini- {
     width: 133px;
   }
   &.large {
-    width:  487px;
-    height: 68px;
-    line-height: 68px;
-    font-size: 2.5rem;
+    width: rem(280);
+    height: rem(86);
+    line-height: rem(86);
+    font-size: rem(30);
+  }
+  &.modium {
+    width: 237px;
+    height: 78px;
+    line-height: 78px;
+    font-size: rem(30);
   }
   &.border {
     background: transparent !important;
@@ -33,6 +39,10 @@
   }
   &.disabled {
     opacity: .5;
+  }
+  &.blacks{
+    background-image: imgurl('btn-black-bg.png');
+    background-size: 100% 100%;
   }
   & > .loading-wrap {
     width: 100%;
