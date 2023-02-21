@@ -13,7 +13,6 @@ interface PropsTypes {
 
 const Index: FC<PropsTypes> = ({ show = false, type = 'success', onClose, tip, children }) => {
   useEffect(() => {
-    console.log(show)
     if (show) {
       setTimeout(() => {
         onClose?.()
