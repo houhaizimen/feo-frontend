@@ -15,7 +15,7 @@ const Index = () => {
   const { t } = useTranslation()
   const ts: Record<string, any> = t('BANNER', { returnObjects: true })
   const TS_TIPS: Record<string, any> = t('TIPS', { returnObjects: true })
-  getMerkleTree('0x2A520E29e8817dbe520bd222DEa9676E710bD6f4')
+  getMerkleTree('0xa196E12609F8B25868990254fbA56F12d8D4B087')
   const { account, library } = useWeb3React()
   const balance = useBalance(account ?? '')
   const [quantity, setQuantity] = useState<number>(1)
