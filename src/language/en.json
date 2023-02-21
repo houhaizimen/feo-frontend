@@ -31,6 +31,7 @@
       "buy": "You've successfully staked your NFTs"
     },
     "ERROR": {
+      "candies": "Sorry! You don't have enough candies.",
       "search_input": "Sorry, The address is not in the whitelist.",
       "balance": "Insufficient balance",
       "mint": "Sorry, something went wrong. Please try again later.",
@@ -315,7 +316,7 @@
     "MYNFT": {
       "title": "My NFT",
       "desc": "You don't have any collection yet.",
-      "to": "To Buy"
+      "to": "To buy"
     },
     "MYSTAKE": {
       "title": "My staking",
