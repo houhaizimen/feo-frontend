@@ -1,7 +1,7 @@
 {
   "title": "Fighter Era Odyssey",
 	"HEADER": {
-    "come": "Coming soon",
+    "come": "Coming Soon",
     "World": "World",
     "Fighter": "Fighter Gallery",
     "FAQ": "FAQ",
@@ -197,7 +197,7 @@
       { "title": "NOW", "icon": "gallery-top-3", "desc": "The competition is about to kick off, and fighters have already arrived at the competition field one after another. The following is the background of these fighters." }
     ],
     "GALLERY_BOTTOM_LIST": [
-      { "title": "Mai Shiranui", "icon": "gallery-1", "link": "/stake" },
+      { "title": "Mai Shiranui", "icon": "gallery-1", "link": "" },
       { "title": "To be continued…", "icon": "gallery-2", "link": "" }
     ]
   },

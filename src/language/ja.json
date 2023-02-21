@@ -196,7 +196,7 @@
       { "title": "現在", "icon": "gallery-top-3", "desc": "大会の開幕を目前に控え、ファイターたちは続々と会場に到着している。現在までに到着したファイターは以下の通り" }
     ],
     "GALLERY_BOTTOM_LIST": [
-      { "title": "不知火 舞", "icon": "gallery-1", "link": "/stake" },
+      { "title": "不知火 舞", "icon": "gallery-1", "link": "" },
       { "title": "つづく…", "icon": "gallery-2", "link": "" }
     ]
   },
