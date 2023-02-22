@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useWeb3React } from '@web3-react/core'
 import classNames from 'classnames'
 import { useScroll } from 'ahooks'
-import { ConnectorNames, USER_LOCAL_CONNECT, useGetWalletList } from '@/utils/wallet'
+import { ConnectorNames, USER_LOCAL_CONNECT, USER_LOCAL_NAME, useGetWalletList } from '@/utils/wallet'
 import { LANG_LIST } from '@/config'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '@/hooks/useAuth'
@@ -57,9 +57,11 @@ const Index = () => {
       ]
     }
   ]
-  const handleLogin = async (connector: ConnectorNames) => {
+  const handleLogin = async (connector: ConnectorNames, names: string) => {
     const { key } = USER_LOCAL_CONNECT
+    const { name } = USER_LOCAL_NAME
     localStorage.setItem(key, connector)
+    localStorage.setItem(name, names)
     await login(connector)
   }
   useEffect(() => {
@@ -146,7 +148,7 @@ const Index = () => {
             </div>
             <ul className={classNames('wallet-connect')}>
                 {
-                  walletList.map(item => <li className='left' key={item.name} onClick={() => handleLogin(item.connectId)}>
+                  walletList.map(item => <li className='left' key={item.name} onClick={() => handleLogin(item.connectId, item.name)}>
                     <img src={`./assets/${item.icon}.png`} />
                     <span>{item.name}</span>
                   </li>)

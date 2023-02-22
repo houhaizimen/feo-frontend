@@ -8,6 +8,9 @@ import { useTranslation } from 'react-i18next'
 export const USER_LOCAL_CONNECT = {
   key: 'connectId'
 }
+export const USER_LOCAL_NAME = {
+  name: 'connectName'
+}
 
 export enum ConnectorNames {
   Injected = 'injected',
@@ -43,8 +46,16 @@ export const connectorsByName: { [connectorName in ConnectorNames]: any } = {
 }
 
 // auto register network
-export const setupNetwork = async (): Promise<boolean> => {
-  const provider = window?.ethereum
+interface PropsType {
+  type?: string
+}
+export const setupNetwork = async ({ type = '' }: PropsType): Promise<boolean> => {
+  let provider = window?.ethereum
+  console.log('222222222222222222222222222222222222')
+  console.log(type)
+  if (type === 'BitKeep') {
+    provider = window?.bitkeep && window?.bitkeep?.ethereum
+  }
   if (provider != null) {
     const chainId = parseInt(getChainId(), 10)
     try {

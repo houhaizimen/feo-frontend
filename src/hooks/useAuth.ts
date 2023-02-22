@@ -1,8 +1,9 @@
 import { useCallback, useEffect } from 'react'
 import { useWeb3React, UnsupportedChainIdError } from '@web3-react/core'
-import { USER_LOCAL_CONNECT, injected, setupNetwork, ConnectorNames, connectorsByName } from '@/utils/wallet'
+import { USER_LOCAL_CONNECT, USER_LOCAL_NAME, injected, setupNetwork, ConnectorNames, connectorsByName } from '@/utils/wallet'
 
 const { key } = USER_LOCAL_CONNECT
+const { name } = USER_LOCAL_NAME
 
 export const useAuth = () => {
   const { activate, deactivate } = useWeb3React()
@@ -11,7 +12,8 @@ export const useAuth = () => {
     const connector = typeof getConnector !== 'function' ? connectorsByName[connectorID] : await getConnector()
     activate(connector, async (error: Error) => {
       if (error instanceof UnsupportedChainIdError) {
-        const hasSetup: boolean = await setupNetwork()
+        const type = localStorage.getItem(name) as string ?? ''
+        const hasSetup: boolean = await setupNetwork({ type })
         if (hasSetup) {
           void activate(injected)
         }
@@ -33,6 +35,7 @@ export const useAutoConnect = () => {
   const { login } = useAuth()
   useEffect(() => {
     const value = localStorage.getItem(key) as ConnectorNames
+    console.log(value)
     value && login(value)
   }, [login])
 }
