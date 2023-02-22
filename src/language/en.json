@@ -59,7 +59,7 @@
     "title": "The first fighter<br /> to appear on the stage",
     "SWIPER_TEXT_LIST": [
       "Mai Shiranui, a classic character image of SNK, is a deeply rooted female ninja-playing opponent with gorgeous movements, coquettish costumes and an iconic fan in the palm of her hand.",
-      "When the fighting kicks off, this glamorous female fighter is the first to fight. To fully awaken the potential hidden in her body, Mai Shiranui will transform into 7777 Avatars to enter different parallel space-time. The fighters start to see the ultimate upgrading path to the king of fighting.",
+      "When the fighting kicks off, this glamorous female fighter is the first to fight. To fully awaken the potential hidden in her body, Mai Shiranui will transform into 7777 avatars to enter different parallel space-time. The fighters start to see the ultimate upgrading path to the king of fighting.",
       "In Fighter Era Odyssey, each Mai Shiranui NFT is a unique, collectible NFT stored on the Ethereum blockchain."
     ],
     "btnsList": [
@@ -238,7 +238,7 @@
       },
       {
         "title": "What can holders do in FEOVERSE marketplace?",
-        "cont": ["In marketplace, you can freely trade treasure maps, fragments, Kachousen NFT, Mai Shiranui NFT, 3D costume NFTs and other precious items.Also, limited-edition skin gallery will soon be launched in FEOVERSE marketplace, where holders of Mai Shiranui NFT can obtain amazing 3D costume NFTs for their collections."]
+        "cont": ["In marketplace, you can freely trade treasure maps, fragments, Kachousen NFTs, Mai Shiranui NFTs, 3D costume NFTs and other precious items. Also, limited-edition skin gallery will soon be launched in FEOVERSE marketplace, where holders of Mai Shiranui NFT can obtain amazing 3D costume NFTs for their collections."]
       },
       {
         "title": "Is there a future roadmap of FEOVERSE?",
@@ -289,7 +289,7 @@
   },
   "REPOCH": {
     "title": "Gashapon Machine",
-    "desc": "In R-Epoch, fighters can uplock new skills through the Gashapon Machine",
+    "desc": "In R-Epoch, fighters can unlock new skills through the Gashapon Machine",
     "count": "MY CANDY:",
     "spend": "Spend <span>{{count}}</span> candies to <br />get a capsule",
     "tip": "Have a try. You are the lucky one!",

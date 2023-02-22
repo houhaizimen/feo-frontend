@@ -82,11 +82,11 @@ const Index = () => {
         <div className='web-home-banner-buy'>
           <dl className='item'>
             <dd>{ts.sale}</dd>
-            <dt>{pPrice} ETH</dt>
+            <dt>0.05 ETH</dt>
           </dl>
           <dl className='item'>
             <dd>{ts.Whitelist}</dd>
-            <dt>{wPrice} ETH</dt>
+            <dt>0.04 ETH</dt>
           </dl>
           <dl className='item'>
             <dd>{ts.Total}</dd>
