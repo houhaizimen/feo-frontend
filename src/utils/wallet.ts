@@ -51,8 +51,6 @@ interface PropsType {
 }
 export const setupNetwork = async ({ type = '' }: PropsType): Promise<boolean> => {
   let provider = window?.ethereum
-  console.log('222222222222222222222222222222222222')
-  console.log(type)
   if (type === 'BitKeep') {
     provider = window?.bitkeep && window?.bitkeep?.ethereum
   }

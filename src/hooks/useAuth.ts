@@ -36,6 +36,7 @@ export const useAutoConnect = () => {
   useEffect(() => {
     const value = localStorage.getItem(key) as ConnectorNames
     console.log(value)
+    console.log(value)
     value && login(value)
   }, [login])
 }
