@@ -39,6 +39,7 @@ export const useMintData = (account: string, balance: string) => {
   //   void handleMaxMinted()
   //  }, [handleMaxMinted])
   const handleWlPrice = useCallback(async () => {
+    console.log('wprice')
     const res = await getWlPrice()
     setwPrice(res[0])
   }, [getWlPrice])

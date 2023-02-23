@@ -23,7 +23,7 @@ const Index = () => {
   const [tips, setTips] = useState<string>('')
   const { publicMint, whitelistMint } = Runners
   // const { max, handleGetStartTime, maxCount, disabled } = useMintData(account ?? '', balance)
-  const { handleGetStartTime, pPrice, wPrice } = useMintData(account ?? '', balance)
+  const { handleGetStartTime, pPrice, wPrice, disabled } = useMintData(account ?? '', balance)
   const handleMint = useCallback(async () => {
     setLoading(true)
     const { wTime, pTime } = await handleGetStartTime()
@@ -80,11 +80,11 @@ const Index = () => {
         <div className='m-home-banner-buy'>
           <dl className='item'>
             <dd>{ts.sale}</dd>
-            <dt>0.05 ETH</dt>
+            <dt>{pPrice} ETH</dt>
           </dl>
           <dl className='item'>
             <dd>{ts.Whitelist}</dd>
-            <dt>0.04 ETH</dt>
+            <dt>{wPrice} ETH</dt>
           </dl>
           <dl className='item'>
             <dd>{ts.Total}</dd>
@@ -95,8 +95,7 @@ const Index = () => {
           <div className='m-home-banner-buy-step'>
             <Stepper value={quantity} max={100} min={1} onChange={val => setQuantity(val)}/>
             {/* <Button loading={loading} disabled={disabled} onClick={handleMint}>MINT</Button> */}
-            {/* <Button loading={loading} disabled={disabled} onClick={handleMint}>{ts.MINT}</Button> */}
-            <Button loading={loading} disabled={true} onClick={handleMint}>{ts.MINT}</Button>
+            <Button loading={loading} disabled={disabled} onClick={handleMint}>{ts.MINT}</Button>
           </div>
         </div>
       </div>

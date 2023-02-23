@@ -13,11 +13,11 @@ module.exports = override(
         new TerserPlugin({
           parallel: true,
           terserOptions: {
-            // compress: {
-            //   drop_console: true,
-            //   drop_debugger: true,
-            //   pure_funcs: ['console.log', 'console.error'],
-            // },
+            compress: {
+              drop_console: true,
+              drop_debugger: true,
+              pure_funcs: ['console.log', 'console.error'],
+            },
             format: {
               comments: false,
             }

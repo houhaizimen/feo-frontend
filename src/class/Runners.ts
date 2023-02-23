@@ -75,6 +75,7 @@ class Runners {
   getWlPrice = async (): Promise<any[]> => {
     const contract = getRunnersContract()
     const res = await contract.wlPrice()
+    console.log(res)
     return [getBalanceAmount(res?._hex ?? 0, 18), res?._hex]
   }
   /**
