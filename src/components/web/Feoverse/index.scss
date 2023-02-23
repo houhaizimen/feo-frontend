@@ -33,9 +33,10 @@
         width: 100%;
         background-color: rgba(#000, .3);
         font-size: 25px;
-        height: 69px;
-        line-height: 69px;
-        padding-left: 22px;
+        line-height: 30px;
+        word-break: break-all;
+        padding: 22px;
+        box-sizing: border-box;
         bottom: 0;
         left: 0;
         transition: all .3s;
