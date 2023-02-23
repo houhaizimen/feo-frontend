@@ -14,9 +14,9 @@ module.exports = override(
           parallel: true,
           terserOptions: {
             compress: {
-              drop_console: true,
+              // drop_console: true,
               drop_debugger: true,
-              pure_funcs: ['console.log', 'console.error'],
+              pure_funcs: ['console.log'],
             },
             format: {
               comments: false,
