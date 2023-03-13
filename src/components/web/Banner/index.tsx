@@ -25,7 +25,7 @@ const Index = () => {
   const [tips, setTips] = useState<string>('')
   const { publicMint, whitelistMint } = Runners
   // const { max, handleGetStartTime, maxCount, disabled } = useMintData(account ?? '', balance)
-  const { handleGetStartTime, pPrice, wPrice, disabled } = useMintData(account ?? '', balance)
+  const { maxSupply, totalSupply, handleGetStartTime, pPrice, wPrice, disabled } = useMintData(account ?? '', balance)
   const handleMint = useCallback(async () => {
     setLoading(true)
     const { wTime, pTime } = await handleGetStartTime()
@@ -37,13 +37,6 @@ const Index = () => {
       setLoading(false)
       return
     }
-    // if (max === 0) {
-    //   setTypes('error')
-    //   setShow(true)
-    //   setTips(`Each whitelist can have at most ${maxCount} NFTs`)
-    //   setLoading(false)
-    //   return
-    // }
     if (wTime) {
       const res = await whitelistMint(quantity, (account as string), library)
       setLoading(false)
@@ -91,7 +84,7 @@ const Index = () => {
           </dl>
           <dl className='item'>
             <dd>{ts.Total}</dd>
-            <dt>7777</dt>
+            <dt>{totalSupply ?? ''}/{maxSupply ?? ''}</dt>
           </dl>
           <p>{ts.tips}</p>
           {/* <AddressInput /> */}

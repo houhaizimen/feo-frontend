@@ -2,8 +2,9 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import Runners from '@/class/Runners'
 export const useMintData = (account: string, balance: string) => {
   // const { getBlanceOf, getwlMintStartTime, getwlMintEndTime, getpMintStartTime, getpMintEndTime, getMaxMinted } = Runners
-  const { getwlMintStartTime, getwlMintEndTime, getpMintStartTime, getpMintEndTime, getWlPrice, getPPrice } = Runners
-  // const [count, setCount] = useState<number>(0)
+  const { getmaxSupply, getTotalSupply, getwlMintStartTime, getwlMintEndTime, getpMintStartTime, getpMintEndTime, getWlPrice, getPPrice } = Runners
+  const [maxSupply, setMaxSupply] = useState<number>(0)
+  const [totalSupply, setTotalSupply] = useState<number>(0)
   const [isWhiteTime, setIsWhiteTime] = useState<boolean>(false)
   const [isPTime, setIsPTime] = useState<boolean>(false)
   const [pPrice, setPPrice] = useState<any>(null)
@@ -25,19 +26,22 @@ export const useMintData = (account: string, balance: string) => {
     }
   }, [getwlMintStartTime, getwlMintEndTime, getpMintStartTime, getpMintEndTime])
 
-  // const handleBalanceOf = useCallback(async (account: string) => {
-  //   const res = await getBlanceOf(account)
-  //   setCount(res)
-  // }, [getBlanceOf])
+  const handleTotalSupply = useCallback(async () => {
+    const res = await getTotalSupply()
+    console.log(res)
+    setTotalSupply(res)
+  }, [getTotalSupply])
 
-  // const handleMaxMinted = useCallback(async () => {
-  //   const res = await getMaxMinted()
-  //   setMaxCount(res)
-  // }, [getMaxMinted])
+  const handleMaxSupply = useCallback(async () => {
+    const res = await getmaxSupply()
+    console.log(res)
+    setMaxSupply(res)
+  }, [getmaxSupply])
 
-  // useEffect(() => {
-  //   void handleMaxMinted()
-  //  }, [handleMaxMinted])
+  useEffect(() => {
+    void handleMaxSupply()
+    void handleTotalSupply()
+   }, [handleMaxSupply, handleTotalSupply])
   const handleWlPrice = useCallback(async () => {
     console.log('wprice')
     const res = await getWlPrice()
@@ -81,6 +85,8 @@ export const useMintData = (account: string, balance: string) => {
     pPrice,
     wPrice,
     disabled,
+    maxSupply,
+    totalSupply,
     handleGetStartTime
     // handleBalanceOf,
     // maxCount

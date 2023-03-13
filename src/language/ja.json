@@ -43,10 +43,10 @@
     "sub_title": "FIGHTER ERA ODYSSEY",
     "Fighter": "ファイター",
     "Mai": "不知火舞",
-    "sale": "一般販売",
+    "sale": "価格",
     "Whitelist": "先行販売",
     "Total": "発行数",
-    "tips": "Unlock exclusive NFT heroes and fight for honor!",
+    "tips": "限定NFTを手に入れて名誉ある闘いを！",
     "MINT": "ミント"
   },
   "INVITATION": {
@@ -211,7 +211,7 @@
       },
       {
         "title": "NFTの購入方法? ",
-        "cont": ["現在ミントイベント開催中。FEO公式ウェブサイトやOpenSeaなどのNFTマーケットプレイスからFEOのNFTを手に入れることができます。"]
+        "cont": ["FEO公式ウェブサイトやOpenSeaなどのNFTマーケットプレイスからFEOのNFTを手に入れることができます。"]
       },
       {
         "title": "ミントはいつ始まりますか？",

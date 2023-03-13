@@ -78,6 +78,20 @@ class Runners {
     console.log(res)
     return [getBalanceAmount(res?._hex ?? 0, 18), res?._hex]
   }
+
+  getmaxSupply = async (): Promise<any> => {
+    const contract = getRunnersContract()
+    const res = await contract.maxSupply()
+    console.log(res)
+    return getBalanceAmount(res?._hex ?? 0, 0)
+  }
+
+  getTotalSupply = async (): Promise<any> => {
+    const contract = getRunnersContract()
+    const res = await contract.totalSupply()
+    console.log(res)
+    return getBalanceAmount(res?._hex ?? 0, 0)
+  }
   /**
    * @returns
    */

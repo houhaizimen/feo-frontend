@@ -43,7 +43,7 @@
     "sub_title": "FIGHTER ERA ODYSSEY",
     "Fighter": "Fighter",
     "Mai": "Mai Shiranui",
-    "sale": "Public Sale",
+    "sale": "Price",
     "Whitelist": "Whitelist",
     "Total": "Total",
     "tips": "Unlock exclusive NFT heroes and fight for honor!",
@@ -212,7 +212,7 @@
       },
       {
         "title": "How do I acquire a FEO NFT?",
-        "cont": ["Minting is live! You can acquire one through official website and also buy one on the marketplace, such as opensea"]
+        "cont": [" You can acquire one through official website and also buy one on the marketplace, such as opensea"]
       },
       {
         "title": "What time does the mint start?",
