@@ -19,7 +19,7 @@
     margin: 0 7px;
     text-align: center;
     // border: 1px solid #fff;
-    width: 95px;
+    flex: 1;
     height: 56px;
     text-align: center;
     line-height: 56px;
@@ -39,7 +39,6 @@
     }
     label {
       margin: 0 rem(6);
-      width: rem(76);
       height: rem(45);
       text-align: center;
       line-height: rem(45);

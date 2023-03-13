@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next'
 import Button from '@/components/common/Button'
 import Stepper from '@/components/common/Stepper'
 import Tips from '@/components/common/Tips'
-import AddressInput from '@/components/web/AddressInput'
+// import AddressInput from '@/components/web/AddressInput'
 
 const Index = () => {
   const { t } = useTranslation()
@@ -81,23 +81,22 @@ const Index = () => {
         <h1>{ts.sub_title}</h1>
         <div className='web-home-banner-buy'>
           <dl className='item'>
-            <dd>{ts.sale}</dd>
-            <dt>{pPrice} ETH</dt>
+            <dd>{ts.Fighter}</dd>
+            <dt>{ts.Mai}</dt>
           </dl>
           <dl className='item'>
-            <dd>{ts.Whitelist}</dd>
-            <dt>{wPrice} ETH</dt>
+            <dd>{ts.sale}</dd>
+            {/* <dt>{pPrice} ETH</dt> */}
+            <dt>0.05 ETH</dt>
           </dl>
           <dl className='item'>
             <dd>{ts.Total}</dd>
             <dt>7777</dt>
           </dl>
           <p>{ts.tips}</p>
-          <AddressInput />
-          <div className='web-home-banner-buy-step'>
-            <Stepper value={quantity} max={100} min={1} onChange={val => setQuantity(val)}/>
-            <Button loading={loading} disabled={disabled} onClick={handleMint}>{ts.MINT}</Button>
-          </div>
+          {/* <AddressInput /> */}
+          <Stepper value={quantity} max={100} min={1} onChange={val => setQuantity(val)}/>
+          <Button loading={loading} disabled={disabled} onClick={handleMint}>{ts.MINT}</Button>
         </div>
       </div>
       <img src="assets/banner-person.png" alt="" className='person'/>

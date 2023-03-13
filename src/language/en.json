@@ -41,10 +41,12 @@
   "BANNER": {
     "title": "START YOUR JOURNEY IN",
     "sub_title": "FIGHTER ERA ODYSSEY",
+    "Fighter": "Fighter",
+    "Mai": "Mai Shiranui",
     "sale": "Public Sale",
     "Whitelist": "Whitelist",
     "Total": "Total",
-    "tips": "Each whitelist can mint up to 2 NFTs",
+    "tips": "Unlock exclusive NFT heroes and fight for honor!",
     "MINT": "MINT"
   },
   "INVITATION": {
@@ -210,7 +212,7 @@
       },
       {
         "title": "How do I acquire a FEO NFT?",
-        "cont": ["You could stay tuned to our twitter and discord for more information of whitelists. Mint would start soon, and you could also buy one on the marketplace, such as opensea element  and gate."]
+        "cont": ["Minting is live! You can acquire one through official website and also buy one on the marketplace, such as opensea"]
       },
       {
         "title": "What time does the mint start?",
@@ -238,7 +240,7 @@
       },
       {
         "title": "What can holders do in FEOVERSE marketplace?",
-        "cont": ["In marketplace, you can freely trade treasure maps, fragments, Kachousen NFTs, Mai Shiranui NFTs."]
+        "cont": ["In marketplace, you can freely trade treasure maps, fragments, Kachousen NFTs, Mai Shiranui NFTs.3D costume NFTs and other precious items.", "Also, limited-edition skin gallery will soon be launched in FEOVERSE marketplace, where holders of Mai Shiranui NFT can obtain amazing 3D costume NFTs for their collections."]
       },
       {
         "title": "Is there a future roadmap of FEOVERSE?",
@@ -297,7 +299,7 @@
       ["Reward", "Probability", "Details"],
       ["Candy bag", "55%", "1-100 Candies"],
       ["Treasure bag", "40%", "Fragment #1-#9"],
-      ["NFT", "5%", "Kachousen NFT<br /> Rare Mai Shiranui NFT"]
+      ["NFT", "5%", "Kachousen NFT<br /> Rare Mai Shiranui NFT<br />3D skin NFT"]
     ],
     "open": "Open",
     "SUCCESS_MODAL": {

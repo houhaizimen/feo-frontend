@@ -50,11 +50,9 @@
       margin: rem(24) 0 rem(29) 0;
       color: #fff;
     }
-    &-step {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: rem(13);
+    .web-button {
+      width: 100%;
+      margin-top: rem(24);
     }
   }
 }

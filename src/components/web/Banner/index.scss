@@ -59,11 +59,10 @@
       margin: rem(30) 0;
       color: #fff;
     }
-    &-step {
-      margin-top: rem(23);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    .web-button {
+      display: block;
+      width: 100%;
+      margin-top: rem(30);
     }
   }
 }
