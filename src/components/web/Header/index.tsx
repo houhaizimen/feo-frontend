@@ -39,7 +39,7 @@ const Index = () => {
     {
       name: ts.ERA,
       children: [
-        { name: ts.stake, link: '', comming: true },
+        { name: ts.stake, link: '/stake' },
         { name: ts.epoch, link: '/repoch' }
       ]
     },
