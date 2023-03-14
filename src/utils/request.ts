@@ -1,28 +1,27 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from 'axios'
+import axios, { AxiosRequestConfig, AxiosResponse, AxiosRequestHeaders } from 'axios'
 import { API_BASE_URL } from '@/config'
 
 const instance = axios.create({
   baseURL: API_BASE_URL,
-  timeout: 1000
+  timeout: 6000
 })
 
-axios.interceptors.request.use((config: AxiosRequestConfig) => {
-  console.log(config)
-  // let customHeaders: AxiosRequestHeaders = null
-  // config.headers = customHeaders
+instance.interceptors.request.use((config: AxiosRequestConfig) => {
+  const customHeaders: AxiosRequestHeaders = {
+    ...config.headers
+  }
+  if (config.method === 'post') {
+    customHeaders['Content-Type'] = 'application/json'
+  }
+  config.headers = customHeaders
   return config
 }, (error: Error) => {
   console.log(error)
 })
 
-axios.interceptors.response.use(function (response: AxiosResponse) {
+instance.interceptors.response.use(function (response: AxiosResponse) {
   const data = response.data
-  if (data.code !== 200) {
-    const e = JSON.stringify(data)
-    console.log(e)
-  } else {
     return data
-  }
 }, function (error) {
   return Promise.reject(error)
 })
@@ -43,13 +42,11 @@ const requestHandler = <T>(method: 'get' | 'post', url: string, params: object =
       response = instance.post(url, { ...params }, { ...config })
       break
   }
-  return new Promise<T>((resolve, reject) => {
+  return new Promise<any>((resolve, reject) => {
     response.then(res => {
-      // result data
-      resolve(res.result)
+      resolve(res)
     }).catch(error => {
-      const e = JSON.stringify(error)
-      reject(e)
+      reject(error)
     })
   })
 }

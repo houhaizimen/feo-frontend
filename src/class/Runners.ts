@@ -3,6 +3,14 @@ import { Web3Provider } from '@ethersproject/providers'
 import { getBalanceAmount, getAountToBigHex } from '@/utils/formatAmount'
 import estimateGas from '@/utils/estimateGas'
 import { getMerkleTree } from '@/utils/merkletree'
+import { getInfoList } from '@/api'
+
+export interface tokenURI_PROPS {
+  image: string
+  name: string
+  description: string
+  tokenId: string
+}
 
 class Runners {
   /**
@@ -134,17 +142,23 @@ class Runners {
 
   getBalanceOf = async (account: string) => {
     const contract = getRunnersContract()
-    // const ress = await Promise.all([contract.balanceOf(account), contract.balanceOf(account), contract.balanceOf(account)])
-    // const ress1 = ress.map(item => getBalanceAmount(item?._hex ?? 0, 0))
-    // console.log(ress1)
     const res = await contract.balanceOf(account)
     return getBalanceAmount(res?._hex ?? 0, 0)
   }
 
-  getTokenURI = async (tokenId: number[]) => {
+  getTokenURI = async (tokenId: string[]): Promise<tokenURI_PROPS[]> => {
     const contract = getRunnersContract()
-    const res = await contract.balanceOf()
-    return getBalanceAmount(res?._hex ?? 0, 0)
+    const reqList = tokenId.map(item => contract.tokenURI(item))
+    const res = await Promise.all(reqList)
+    const reqJSON = res.map(item => {
+      const str = item.split('//')[1]
+      const [key, file] = str.split('/')
+      return getInfoList(`https://${key}.ipfs.dweb.link/${file}`)
+    })
+    const jsonRes = await Promise.all(reqJSON)
+    return jsonRes.map((item, index) => {
+      return { ...item, image: `https://${item.image.split('//')[1]}.ipfs.dweb.link`, tokenId: tokenId[index] }
+    })
   }
 }
 export default new Runners()

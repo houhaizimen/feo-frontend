@@ -19,3 +19,7 @@ export const formatDisplayBalance = (amount: BigNumber, decimals = 18, fixedDeci
 export const getAountToBigHex = (amount: BigNumber, value: number) => {
   return BIGNUMBER.from((new BigNumber(amount)).multipliedBy(value).toString()).toHexString()
 }
+
+export const getToBigHex = (amount: string) => {
+  return BIGNUMBER.from((new BigNumber(amount)).toString()).toHexString()
+}

@@ -48,8 +48,8 @@
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          width: 212px;
-          height: 212px;
+          width: rem(212);
+          height: rem(212);
           background-image: imgurl('stake/checked-bg.png');
           background-size: 100% 100%;
         }
