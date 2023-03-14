@@ -134,7 +134,6 @@ class Runners {
 
   getBalanceOf = async (account: string) => {
     const contract = getRunnersContract()
-    console.log(contract.balanceOf(account))
     // const ress = await Promise.all([contract.balanceOf(account), contract.balanceOf(account), contract.balanceOf(account)])
     // const ress1 = ress.map(item => getBalanceAmount(item?._hex ?? 0, 0))
     // console.log(ress1)

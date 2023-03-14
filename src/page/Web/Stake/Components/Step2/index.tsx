@@ -3,6 +3,7 @@ import { useWeb3React } from '@web3-react/core'
 import { useTranslation } from 'react-i18next'
 import classNames from 'classnames'
 import Runners from '@/class/Runners'
+import Kachousen from '@/class/kachousen'
 import { getContractAddress } from '@/config/getContract'
 
 import ContainerBg from '@/components/common/ContainerBg'
@@ -12,14 +13,19 @@ const Index = () => {
   const { t } = useTranslation()
   const ts: Record<string, any> = t('STAKE.STEP2', { returnObjects: true })
   const { getBalanceOf } = Runners
+  const { getKachousenBalanceOf } = Kachousen
   const [MaiCheckList, setMaiCheckList] = useState<string[]>([])
   const [CandyCheckList, setCandyCheckList] = useState<string[]>([])
   const [MAICount, setMAICount] = useState<number>(0)
+  const [KACount, setKACount] = useState<number>(0)
   const { account } = useWeb3React()
   const handleBalanceOf = useCallback(async (account: string) => {
     const res = await getBalanceOf(account)
+    const res1 = await getKachousenBalanceOf(account)
+    console.log(res1)
     setMAICount(res)
-  }, [getBalanceOf])
+    setKACount(res1)
+  }, [getBalanceOf, getKachousenBalanceOf])
   useEffect(() => {
     if (account) void handleBalanceOf(account)
   }, [handleBalanceOf, account])
@@ -74,7 +80,7 @@ const Index = () => {
     <h1>{ts.Kachousen}</h1>
     <dl>
       <dd>{ts.stakeDesc2}</dd>
-      <dt>{ts.total}: 0</dt>
+      <dt>{ts.total}: {KACount}</dt>
     </dl>
     <div className='card-list'>
       {
@@ -86,7 +92,7 @@ const Index = () => {
     <p>{t('STAKE.STEP2.expected2', { candies: 'xxx', type: '#4 & #5' })}</p>
     <Button className='web-stake-step2-cont-stake' size='large'>Stake</Button>
   </div>
-  }, [CandyCheckList, handleCANDYCheck, t, ts.stakeDesc2, ts.total, ts.Kachousen])
+  }, [CandyCheckList, handleCANDYCheck, t, ts.stakeDesc2, ts.total, ts.Kachousen, KACount])
   return <>
     {
        account && <div className='web-stake-step1 web-stake-step2'>
