@@ -131,5 +131,21 @@ class Runners {
       return -2
     }
   }
+
+  getBalanceOf = async (account: string) => {
+    const contract = getRunnersContract()
+    console.log(contract.balanceOf(account))
+    // const ress = await Promise.all([contract.balanceOf(account), contract.balanceOf(account), contract.balanceOf(account)])
+    // const ress1 = ress.map(item => getBalanceAmount(item?._hex ?? 0, 0))
+    // console.log(ress1)
+    const res = await contract.balanceOf(account)
+    return getBalanceAmount(res?._hex ?? 0, 0)
+  }
+
+  getTokenURI = async (tokenId: number[]) => {
+    const contract = getRunnersContract()
+    const res = await contract.balanceOf()
+    return getBalanceAmount(res?._hex ?? 0, 0)
+  }
 }
 export default new Runners()

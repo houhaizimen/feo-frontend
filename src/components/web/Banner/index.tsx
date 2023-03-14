@@ -1,7 +1,6 @@
 import React, { useCallback, useState } from 'react'
 import { useBalance } from '@/hooks/useBlance'
 import { useWeb3React } from '@web3-react/core'
-import { getMerkleTree } from '@/utils/merkletree'
 import Runners from '@/class/Runners'
 import { useMintData } from '@/hooks/useMintData'
 import { useTranslation } from 'react-i18next'
@@ -15,7 +14,6 @@ const Index = () => {
   const { t } = useTranslation()
   const ts: Record<string, any> = t('BANNER', { returnObjects: true })
   const TS_TIPS: Record<string, any> = t('TIPS', { returnObjects: true })
-  getMerkleTree('0xA97213ceA2501a35FE6b932170D33A228908C851')
   const { account, library } = useWeb3React()
   const balance = useBalance(account ?? '')
   const [quantity, setQuantity] = useState<number>(1)

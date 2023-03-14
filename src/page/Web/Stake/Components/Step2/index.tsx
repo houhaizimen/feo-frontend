@@ -1,7 +1,9 @@
-import React, { useState, useMemo, useCallback } from 'react'
+import React, { useState, useMemo, useCallback, useEffect } from 'react'
 import { useWeb3React } from '@web3-react/core'
 import { useTranslation } from 'react-i18next'
 import classNames from 'classnames'
+import Runners from '@/class/Runners'
+import { getContractAddress } from '@/config/getContract'
 
 import ContainerBg from '@/components/common/ContainerBg'
 import Button from '@/components/common/Button'
@@ -9,9 +11,27 @@ import Button from '@/components/common/Button'
 const Index = () => {
   const { t } = useTranslation()
   const ts: Record<string, any> = t('STAKE.STEP2', { returnObjects: true })
+  const { getBalanceOf } = Runners
   const [MaiCheckList, setMaiCheckList] = useState<string[]>([])
   const [CandyCheckList, setCandyCheckList] = useState<string[]>([])
+  const [MAICount, setMAICount] = useState<number>(0)
   const { account } = useWeb3React()
+  const handleBalanceOf = useCallback(async (account: string) => {
+    const res = await getBalanceOf(account)
+    setMAICount(res)
+  }, [getBalanceOf])
+  useEffect(() => {
+    if (account) void handleBalanceOf(account)
+  }, [handleBalanceOf, account])
+  const getMAIList = useCallback(async (account: string) => {
+    const url = `https://api.etherscan.io/api?module=account&action=addresstokennftinventory&address=${account}&contractaddress=${getContractAddress('Runners')}&page=1&offset=1000&apikey=C7BK3J4889CZKHAANJ6JJ8J55I4MTZA513`
+    const res = await fetch(url)
+    const resObj = await res.json()
+    console.log(resObj)
+  }, [])
+  useEffect(() => {
+    if (account) void getMAIList(account)
+  }, [getMAIList, account])
   const handleMAICheck = useCallback((id: string) => {
     const index = MaiCheckList.findIndex(item => id === item)
     const list = [...MaiCheckList]
@@ -31,7 +51,7 @@ const Index = () => {
     <h1>{ts.Mai}</h1>
     <dl>
       <dd>{ts.stakeDesc1}</dd>
-      <dt>{ts.total} 0</dt>
+      <dt>{ts.total} {MAICount}</dt>
     </dl>
     {
       MaiCheckList.length > 0
@@ -48,7 +68,7 @@ const Index = () => {
       : <p className='empty'>{ts.empty}</p>
     }
   </div>
-  }, [MaiCheckList, handleMAICheck, t, ts.Mai, ts.stakeDesc1, ts.total, ts.empty])
+  }, [MaiCheckList, handleMAICheck, t, ts.Mai, ts.stakeDesc1, ts.total, ts.empty, MAICount])
   const CANDY_DOM = useMemo(() => {
     return <div className='web-stake-step2-cont-item'>
     <h1>{ts.Kachousen}</h1>

@@ -7,21 +7,20 @@ const instance = axios.create({
 })
 
 axios.interceptors.request.use((config: AxiosRequestConfig) => {
+  console.log(config)
   // let customHeaders: AxiosRequestHeaders = null
   // config.headers = customHeaders
-  // return config
+  return config
 }, (error: Error) => {
   console.log(error)
-  Promise.reject(error)
 })
 
 axios.interceptors.response.use(function (response: AxiosResponse) {
   const data = response.data
-  if(data.code !== 200){
-    if(data.code == 401){
-    }
+  if (data.code !== 200) {
     const e = JSON.stringify(data)
-  }else{
+    console.log(e)
+  } else {
     return data
   }
 }, function (error) {
@@ -29,28 +28,28 @@ axios.interceptors.response.use(function (response: AxiosResponse) {
 })
 
 interface responseTypes<T>{
-  code: number,
-  msg: string,
+  code: number
+  msg: string
   result: T
 }
 
 const requestHandler = <T>(method: 'get' | 'post', url: string, params: object = {}, config: AxiosRequestConfig = {}): Promise<T> => {
   let response: Promise<responseTypes<T>>
-  switch(method){
+  switch (method) {
     case 'get':
-      response = instance.get(url, {params: { ...params }, ...config});
-      break;
+      response = instance.get(url, { params: { ...params }, ...config })
+      break
     case 'post':
-      response = instance.post(url, {...params}, {...config});
-      break;
+      response = instance.post(url, { ...params }, { ...config })
+      break
   }
   return new Promise<T>((resolve, reject) => {
     response.then(res => {
       // result data
       resolve(res.result)
     }).catch(error => {
-      let e = JSON.stringify(error)
-      reject(error)
+      const e = JSON.stringify(error)
+      reject(e)
     })
   })
 }
