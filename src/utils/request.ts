@@ -3,7 +3,7 @@ import { API_BASE_URL } from '@/config'
 
 const instance = axios.create({
   baseURL: API_BASE_URL,
-  timeout: 6000
+  timeout: 10000
 })
 
 instance.interceptors.request.use((config: AxiosRequestConfig) => {
@@ -13,6 +13,8 @@ instance.interceptors.request.use((config: AxiosRequestConfig) => {
   if (config.method === 'post') {
     customHeaders['Content-Type'] = 'application/json'
   }
+  const token = localStorage.getItem('token')
+  if (token) customHeaders.token = token
   config.headers = customHeaders
   return config
 }, (error: Error) => {
@@ -21,7 +23,7 @@ instance.interceptors.request.use((config: AxiosRequestConfig) => {
 
 instance.interceptors.response.use(function (response: AxiosResponse) {
   const data = response.data
-    return data
+  return data
 }, function (error) {
   return Promise.reject(error)
 })

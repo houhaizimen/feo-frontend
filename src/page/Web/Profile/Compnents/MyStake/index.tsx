@@ -1,25 +1,43 @@
-import React from 'react'
+import React, { FC, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import ContainerBg from '@/components/common/ContainerBg'
 import Button from '@/components/common/Button'
+import Tips from '@/components/common/Tips'
 
-const Index = () => {
+interface PropsType {
+  Stake: any
+}
+
+const Index: FC<PropsType> = ({ Stake }) => {
+  console.log(Stake)
   const navigate = useNavigate()
   const { t } = useTranslation()
+  const [show, setShow] = useState<boolean>(false)
+  const [types, setTypes] = useState<'success' | 'error'>('success')
+  const [tips, setTips] = useState<string>('')
   const ts: Record<string, any> = t('PROFILE.MYSTAKE', { returnObjects: true })
-  // const RES_LIST = [
-  //   { nft: 'Mai Shiranui x3', start: '1.18', end: '1.20', candies: '72', fragments: '#4' }
-  // ]
-  const RES_LIST: any[] = []
+  const stakeList = useMemo(() => {
+    const res = Stake.map((item: any) => ({ nft: `Mai Shiranui x${item.pledgeNum}`, start: item.pledgeStartDate, end: item.pledgeEndDate, candies: item.pledgeCandy, fragments: `#${item.pledgeFragments}` }))
+    return res
+  }, [Stake])
+  const handleWithdraw = (item: any) => {
+    const now = new Date().getTime()
+    const time = new Date(item.end).getTime()
+    if (now < time) {
+      setTypes('error')
+      setTips('Your NFT is locked. Please withdraw after 21 days!')
+      setShow(true)
+    }
+  }
   return <div className='web-profile-my-stake'>
     <h1 className='profile-title'>{ts.title}</h1>
     <ContainerBg className='web-profile-my-stake-wrap'>
       {
-        RES_LIST.length === 0 && <p>{ts.desc}</p>
+        stakeList.length === 0 && <p>{ts.desc}</p>
       }
       {
-        RES_LIST.length > 0 && <div className='stake-list'>
+        stakeList.length > 0 && <div className='stake-list'>
           {
             <ul>
               {
@@ -28,17 +46,21 @@ const Index = () => {
             </ul>
           }
           {
-            RES_LIST.map((item, index) => <ul key={index}>
-              <li>{item.nft}</li>
-              <li>{item.start}</li>
-              <li>{item.end}</li>
-              <li>{item.candies}</li>
-              <li>{item.fragments}</li>
-            </ul>)
+            stakeList.map((item: any, index: number) => <div className='stake-list-cont'>
+              <ul key={index}>
+                <li>{item.nft}</li>
+                <li>{item.start}</li>
+                <li>{item.end}</li>
+                <li>{item.candies}</li>
+                <li>{item.fragments}</li>
+              </ul>
+              <Button size='mini' onClick={() => handleWithdraw(item)}>Withdraw</Button>
+            </div>)
           }
         </div>
       }
       <Button size='medium' onClick={() => navigate('/stake')}>{ts.to}</Button>
+      <Tips tip={tips} show={show} type={types} onClose={() => setShow(false)}/>
     </ContainerBg>
   </div>
 }

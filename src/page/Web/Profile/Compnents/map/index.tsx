@@ -1,13 +1,21 @@
-import React from 'react'
+import React, { FC, useMemo, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import ContainerBg from '@/components/common/ContainerBg'
 
 import Button from '@/components/common/Button'
 
-const Index = () => {
+interface PropsType {
+  Fragment: any
+}
+interface listProps {
+  src: string
+  sum: number
+}
+
+const Index: FC<PropsType> = ({ Fragment }) => {
   const { t } = useTranslation()
   const ts: Record<string, any> = t('PROFILE.MAP', { returnObjects: true })
-  const list = [
+  const list: listProps[] = useMemo(() => [
     { src: '1', sum: 0 },
     { src: '2', sum: 0 },
     { src: '3', sum: 0 },
@@ -17,7 +25,15 @@ const Index = () => {
     { src: '7', sum: 0 },
     { src: '8', sum: 0 },
     { src: '9', sum: 0 }
-  ]
+  ], [])
+  useEffect(() => {
+    Fragment.length > 0 && Fragment.forEach((item: any) => {
+      const index = list.findIndex((item1: listProps) => item1.src === item.no)
+      if (index >= 0) {
+        list[index].sum = item.num
+      }
+    })
+  }, [list, Fragment])
   return <div className='web-profile-map'>
     <h1 className='profile-title'>
       {ts.title}
@@ -25,9 +41,9 @@ const Index = () => {
         <div className='question-cont'>
           <h3>{ts.how}</h3>
           {
-            ts.QUESTION_LIST.map((item: any) => <ul key={item[0]} className='question-cont-list'>
+            ts.QUESTION_LIST.map((item: any, index: number) => <ul key={index} className='question-cont-list'>
               {
-                item.map((items: string) => <li>{items}</li>)
+                item.map((items: string) => <li key={items}>{items}</li>)
               }
             </ul>)
           }
@@ -39,8 +55,8 @@ const Index = () => {
       <p>{ts.title2}<br /> {ts.title3}</p>
       <div className='web-profile-map-wrap-cont'>
         {
-          list.map(item => <div key={item.src}>
-            <img src={`assets/puzzleCard/${item.src}.png`} alt="" />
+          list.map((item, index) => <div key={index}>
+            <img src={`assets/puzzleCard/${item.src}${item.sum > 0 ? `-${item.src}` : ''}.png`} alt="" />
             {
               item.sum > 0 && <span>{item.sum}</span>
             }

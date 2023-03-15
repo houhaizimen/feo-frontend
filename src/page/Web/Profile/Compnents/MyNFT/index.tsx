@@ -1,14 +1,19 @@
-import React, { useState } from 'react'
+import React, { useMemo } from 'react'
 import { connectList } from '@/config'
 import { useTranslation } from 'react-i18next'
+import useNFTS from '@/hooks/useNFT'
+
 import ContainerBg from '@/components/common/ContainerBg'
 import Button from '@/components/common/Button'
 
 const Index = () => {
+  const { MaiList } = useNFTS()
   const { t } = useTranslation()
   const ts: Record<string, any> = t('PROFILE.MYNFT', { returnObjects: true })
-  const [NFTList, setNFTList] = useState<string[]>([])
-  console.log(setNFTList)
+  // const [NFTList, setNFTList] = useState<string[]>([])
+  const NFTList = useMemo(() => [...MaiList, ...MaiList], [MaiList])
+  console.log(NFTList)
+
   return <div className='web-profile-my-nft'>
     <h1 className='profile-title'>{ts.title}</h1>
     <ContainerBg className='web-profile-my-nft-wrap'>
@@ -18,16 +23,17 @@ const Index = () => {
       {
         <div className='card-list'>
         {
-          NFTList.map(item => <div className='card'>
-            <p>1111111111111111</p>
-            <img src={`assets/card/${item}.png`} alt="" />
+          NFTList.map((item, index) => <div className='card' key={index}>
+            <p>{item.name}</p>
+            <img src={item.image} alt="" />
           </div>)
         }
       </div>
       }
-      {
+      {/* {
         NFTList.length === 0 && <Button size='medium' onClick={() => window.open(connectList[0].link)}>{ts.to}</Button>
-      }
+      } */}
+     <Button size='medium' onClick={() => window.open(connectList[0].link)}>{ts.to}</Button>
     </ContainerBg>
   </div>
 }

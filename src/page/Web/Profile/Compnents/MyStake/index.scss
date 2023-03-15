@@ -7,27 +7,30 @@
     padding: rem(57) rem(37);
     box-sizing: border-box;
     font-size: rem(25);
-    & > .stake-list {
-      & > ul {
+    .stake-list {
+      ul {
         width: 100%;
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         grid-gap: rem(44);
         margin-bottom: rem(44);
         font-size: rem(30);
-        color: #EF267C ;
         text-align: center;
+        color: #fff;
         & > li {
           word-wrap: break-word;
           &:first-child {
             text-align: left;
           }
         }
-        &:last-child {
-          margin-bottom: rem(40);
+      }
+      &-cont {
+        & > ul {
+          color: #EF267C;
         }
-        &:first-child {
-          color: #fff;
+        & > .web-button {
+          display: block;
+          margin: rem(30) auto;
         }
       }
     }
