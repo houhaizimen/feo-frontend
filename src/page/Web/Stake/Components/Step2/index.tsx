@@ -2,12 +2,11 @@ import React, { useState, useMemo, useCallback, useEffect } from 'react'
 import { useWeb3React } from '@web3-react/core'
 import { useTranslation } from 'react-i18next'
 import classNames from 'classnames'
-import Runners, { tokenURI_PROPS } from '@/class/Runners'
+import Runners from '@/class/Runners'
 import Kachousen from '@/class/kachousen'
 import Stake from '@/class/Stake'
-import { getContractAddress } from '@/config/getContract'
-import { getMaiList } from '@/api'
 import { PLEDGE_TOTAL } from '@/config'
+import useNFTS from '@/hooks/useNFT'
 
 import ContainerBg from '@/components/common/ContainerBg'
 import Button from '@/components/common/Button'
@@ -17,18 +16,16 @@ const Index = () => {
   const { t } = useTranslation()
   const TS_TIPS: Record<string, any> = t('TIPS', { returnObjects: true })
   const ts: Record<string, any> = t('STAKE.STEP2', { returnObjects: true })
-  const { getBalanceOf, getTokenURI } = Runners
-  const { getKachousenBalanceOf, getKaTokenURI } = Kachousen
+  const { getBalanceOf } = Runners
+  const { getKachousenBalanceOf } = Kachousen
   const { pledge } = Stake
+  const { MaiList, getKaList, getMAIList } = useNFTS()
   const [loading, setLoading] = useState<boolean>(false)
   const [show, setShow] = useState<boolean>(false)
   const [types, setTypes] = useState<'success' | 'error'>('success')
   const [tips, setTips] = useState<string>('')
   const [MaiCheckList, setMaiCheckList] = useState<string[]>([])
   const [CandyCheckList, setCandyCheckList] = useState<string[]>([])
-  const [MaiList, setMaiList] = useState<tokenURI_PROPS[]>([])
-  const [CandyList, setCandyList] = useState<tokenURI_PROPS[]>([])
-  console.log(CandyList)
   const [MAICount, setMAICount] = useState<number>(0)
   const [KACount, setKACount] = useState<number>(0)
   const { account, library } = useWeb3React()
@@ -41,30 +38,6 @@ const Index = () => {
   useEffect(() => {
     if (account) void handleBalanceOf(account)
   }, [handleBalanceOf, account])
-  const getMAIList = useCallback(async (account: string) => {
-    const res = await getMaiList({ address: account, contractaddress: getContractAddress('Runners') })
-    const list = res?.result.map((item: any) => item.TokenId)
-    const infoList = await getTokenURI(list.slice(0, 9))
-    console.log(infoList)
-    setMaiList(infoList)
-    // const url = `https://api.etherscan.io/api?module=account&action=addresstokennftinventory&address=${account}&contractaddress=${getContractAddress('Runners')}&page=1&offset=1000&apikey=C7BK3J4889CZKHAANJ6JJ8J55I4MTZA513`
-    // const res = await fetch(url)
-    // const resObj = await res.json()
-    // console.log(resObj)
-  }, [getTokenURI])
-  const getKaList = useCallback(async (account: string) => {
-    const res = await getMaiList({ address: account, contractaddress: getContractAddress('KachousenNFT') })
-    const list = res?.result.map((item: any) => item.TokenId)
-    const infoList = await getKaTokenURI(list.slice(0, 9))
-    console.log(infoList)
-    setCandyList(infoList)
-  }, [getKaTokenURI])
-  useEffect(() => {
-    if (account) {
-      void getMAIList(account)
-      void getKaList(account)
-    }
-  }, [getMAIList, getKaList, account])
   const handleMAICheck = useCallback((id: string) => {
     const index = MaiCheckList.findIndex(item => id === item)
     const list = [...MaiCheckList]
@@ -88,12 +61,14 @@ const Index = () => {
     setLoading(true)
     if (account) {
       const res = await pledge(MaiCheckList, account, library)
+      void getMAIList(account)
+      void getKaList(account)
       setTypes(res)
       if (res) setTips(TS_TIPS.SUCCESS.buy)
       else setTips(TS_TIPS.ERROR.mint)
       setLoading(false)
     }
-  }, [MaiCheckList, account, library, pledge, TS_TIPS])
+  }, [MaiCheckList, account, library, pledge, TS_TIPS, getMAIList, getKaList])
 
   const MAI_DOM = useMemo(() => {
     return <div className='web-stake-step2-cont-item'>

@@ -140,7 +140,7 @@ const Index = () => {
             </div>
           </div>
         </div>
-        {/* <img src="assets/icon-avatar.png" className='avatar' alt="" onClick={() => handleLink('/profile')}/> */}
+        <img src="assets/icon-avatar.png" className='avatar' alt="" onClick={() => handleLink('/profile')}/>
         {
           !account && <div className='wallet'>
             <div className='connect'>
