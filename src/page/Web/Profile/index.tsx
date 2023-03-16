@@ -13,7 +13,6 @@ const Index = () => {
   const [Profile, setProfile] = useState<any>()
   const getProfile = useCallback(async () => {
     const res = await getUserBagIndex()
-    console.log(res)
     setProfile(res?.data ?? {})
   }, [])
   useEffect(() => {

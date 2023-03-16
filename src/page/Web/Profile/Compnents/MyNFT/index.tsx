@@ -12,7 +12,6 @@ const Index = () => {
   const ts: Record<string, any> = t('PROFILE.MYNFT', { returnObjects: true })
   // const [NFTList, setNFTList] = useState<string[]>([])
   const NFTList = useMemo(() => [...MaiList, ...MaiList], [MaiList])
-  console.log(NFTList)
 
   return <div className='web-profile-my-nft'>
     <h1 className='profile-title'>{ts.title}</h1>

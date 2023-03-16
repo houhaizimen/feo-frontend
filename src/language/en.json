@@ -325,7 +325,9 @@
       "desc": "You can earn more candies and fragments of treasure map by staking.",
       "TITLE_LIST": ["NFT", "Start date", "End date", "Expected candies", "Expected fragments"],
       "mai": "Mai Shiranui",
-      "to": "To staking"
+      "to": "To staking",
+      "unlocked": "Your NFT is locked. Please withdraw after 21 days!",
+      "withdraw": "Withdraw"
     },
     "MAP": {
       "title": "Fragments of treasure map",
