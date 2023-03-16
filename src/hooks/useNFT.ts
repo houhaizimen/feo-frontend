@@ -24,8 +24,7 @@ const useNFTS = () => {
   const getKaList = useCallback(async (account: string) => {
     const res = await getMaiList({ address: account, contractaddress: getContractAddress('KachousenNFT') })
     const list = res?.result.map((item: any) => item.TokenId)
-    const infoList = await getKaTokenURI(list.slice(0, 9))
-    console.log(infoList)
+    const infoList = await getKaTokenURI(list)
     setCandyList(infoList)
   }, [getKaTokenURI])
   useEffect(() => {

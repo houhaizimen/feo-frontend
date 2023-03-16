@@ -19,7 +19,7 @@ const Index = () => {
   const { getBalanceOf } = Runners
   const { getKachousenBalanceOf } = Kachousen
   const { pledge } = Stake
-  const { MaiList, getKaList, getMAIList } = useNFTS()
+  const { MaiList, CandyList, getKaList, getMAIList } = useNFTS()
   const [loading, setLoading] = useState<boolean>(false)
   const [show, setShow] = useState<boolean>(false)
   const [types, setTypes] = useState<'success' | 'error'>('success')
@@ -102,7 +102,7 @@ const Index = () => {
     </dl>
     <div className='card-list'>
       {
-        MaiList.map(item => <div onClick={() => handleCANDYCheck(item.tokenId)} className={classNames('card', { checked: CandyCheckList.includes(item.tokenId) })} key={item.tokenId}>
+        CandyList.map(item => <div onClick={() => handleCANDYCheck(item.tokenId)} className={classNames('card', { checked: CandyCheckList.includes(item.tokenId) })} key={item.tokenId}>
           <img src={item.image} alt="" />
         </div>)
       }
@@ -110,7 +110,7 @@ const Index = () => {
     <p>{t('STAKE.STEP2.expected2', { candies: 'xxx', type: '#4 & #5' })}</p>
     <Button loading={loading} className='web-stake-step2-cont-stake' size='large' disabled={disabled} onClick={handleStake}>Stake</Button>
   </div>
-  }, [loading, handleStake, CandyCheckList, handleCANDYCheck, t, ts.stakeDesc2, ts.total, ts.Kachousen, KACount, MaiList, disabled])
+  }, [loading, handleStake, CandyCheckList, handleCANDYCheck, t, ts.stakeDesc2, ts.total, ts.Kachousen, KACount, CandyList, disabled])
   return <>
     {
        account && <div className='web-stake-step1 web-stake-step2'>

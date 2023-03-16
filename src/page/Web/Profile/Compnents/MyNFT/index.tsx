@@ -7,11 +7,11 @@ import ContainerBg from '@/components/common/ContainerBg'
 import Button from '@/components/common/Button'
 
 const Index = () => {
-  const { MaiList } = useNFTS()
+  const { MaiList, CandyList } = useNFTS()
   const { t } = useTranslation()
   const ts: Record<string, any> = t('PROFILE.MYNFT', { returnObjects: true })
   // const [NFTList, setNFTList] = useState<string[]>([])
-  const NFTList = useMemo(() => [...MaiList, ...MaiList], [MaiList])
+  const NFTList = useMemo(() => [...MaiList, ...CandyList], [MaiList, CandyList])
 
   return <div className='web-profile-my-nft'>
     <h1 className='profile-title'>{ts.title}</h1>
