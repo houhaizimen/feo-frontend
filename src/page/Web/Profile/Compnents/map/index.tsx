@@ -63,7 +63,7 @@ const Index: FC<PropsType> = ({ Fragment }) => {
           </div>)
         }
       </div>
-      <Button size='medium' disabled>{ts.synthesize}</Button>
+      <Button size='mini' disabled>{ts.synthesize}</Button>
     </ContainerBg>
   </div>
 }

@@ -12,7 +12,6 @@ interface PropsType {
 }
 
 const Index: FC<PropsType> = ({ Stake }) => {
-  console.log(Stake)
   const { removePledge } = StakeContract
   const [loading, setLoading] = useState<boolean>(false)
   const navigate = useNavigate()

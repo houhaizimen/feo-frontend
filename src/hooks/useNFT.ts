@@ -12,7 +12,7 @@ const useNFTS = () => {
   const { getKaTokenURI } = Kachousen
   const { account } = useWeb3React()
   const getMAIList = useCallback(async (account: string) => {
-    const res = await getMaiList({ address: account, contractaddress: getContractAddress('Runners') })
+    const res = await getMaiList({ address: account, type: 1, contractaddress: getContractAddress('Runners') })
     const list = res?.result.map((item: any) => item.TokenId)
     const infoList = await getTokenURI(list.slice(0, 9))
     setMaiList(infoList)
@@ -22,7 +22,7 @@ const useNFTS = () => {
     // console.log(resObj)
   }, [getTokenURI])
   const getKaList = useCallback(async (account: string) => {
-    const res = await getMaiList({ address: account, contractaddress: getContractAddress('KachousenNFT') })
+    const res = await getMaiList({ address: account, type: 2, contractaddress: getContractAddress('KachousenNFT') })
     const list = res?.result.map((item: any) => item.TokenId)
     const infoList = await getKaTokenURI(list)
     setCandyList(infoList)

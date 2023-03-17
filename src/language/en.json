@@ -321,11 +321,20 @@
       "to": "To buy"
     },
     "MYSTAKE": {
+      "step": "STEP",
       "title": "My staking",
       "desc": "You can earn more candies and fragments of treasure map by staking.",
       "TITLE_LIST": ["NFT", "Start date", "End date", "Expected candies", "Expected fragments"],
-      "mai": "Mai Shiranui",
+      "mai": "Mai Shiranui NFT",
+      "stake": "Staked NFT",
+      "amount": "Amount",
+      "status": "Status",
+      "locked": "Locked",
+      "reward": "Expected reward",
+      "Details": "Details",
       "to": "To staking",
+      "Candy": "Candy",
+      "Fragment": "Fragment",
       "unlocked": "Your NFT is locked. Please withdraw after 21 days!",
       "withdraw": "Withdraw"
     },

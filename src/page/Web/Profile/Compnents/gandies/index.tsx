@@ -20,7 +20,7 @@ const Index: FC<PropsType> = ({ Profile }) => {
         <dd>{ts.yied} <span>{Profile?.drawUseCandyNum ?? 0}</span></dd>
       </dl>
     </div>
-    <Button size='medium' onClick={() => navigate('/repoch')}>{ts.to}</Button>
+    <Button size='mini' onClick={() => navigate('/repoch')}>{ts.to}</Button>
   </div>
 }
 

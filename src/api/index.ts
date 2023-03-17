@@ -3,6 +3,7 @@ import { request } from '@/utils/request'
 interface MaiListProps {
   address: string
   contractaddress: string
+  type: number
 }
 
 export const getMaiList = async (params: MaiListProps): Promise<any> => {
