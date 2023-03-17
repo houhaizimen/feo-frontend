@@ -3,7 +3,7 @@ import { Web3Provider } from '@ethersproject/providers'
 import { getBalanceAmount, getAountToBigHex } from '@/utils/formatAmount'
 import estimateGas from '@/utils/estimateGas'
 import { getMerkleTree } from '@/utils/merkletree'
-import { getInfoList } from '@/api'
+import { getProxy } from '@/api'
 
 export interface tokenURI_PROPS {
   image: string
@@ -153,7 +153,7 @@ class Runners {
     const reqJSON = res.map(item => {
       const str = item.split('//')[1]
       const [key, file] = str.split('/')
-      return getInfoList(`https://${key}.ipfs.dweb.link/${file}`)
+      return getProxy(`https://${key}.ipfs.dweb.link/${file}`)
     })
     const jsonRes = await Promise.all(reqJSON)
     return jsonRes.map((item, index) => {

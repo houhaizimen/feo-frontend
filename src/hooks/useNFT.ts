@@ -14,7 +14,7 @@ const useNFTS = () => {
   const getMAIList = useCallback(async (account: string) => {
     const res = await getMaiList({ address: account, type: 1, contractaddress: getContractAddress('Runners') })
     const list = res?.result.map((item: any) => item.TokenId)
-    const infoList = await getTokenURI(list.slice(0, 9))
+    const infoList = await getTokenURI(list)
     setMaiList(infoList)
     // const url = `https://api.etherscan.io/api?module=account&action=addresstokennftinventory&address=${account}&contractaddress=${getContractAddress('Runners')}&page=1&offset=1000&apikey=C7BK3J4889CZKHAANJ6JJ8J55I4MTZA513`
     // const res = await fetch(url)

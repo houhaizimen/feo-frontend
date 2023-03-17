@@ -61,12 +61,12 @@ const Index = () => {
     setLoading(true)
     if (account) {
       const res = await pledge(MaiCheckList, account, library)
-      void getMAIList(account)
-      void getKaList(account)
       setTypes(res)
       if (res) setTips(TS_TIPS.SUCCESS.buy)
       else setTips(TS_TIPS.ERROR.mint)
       setLoading(false)
+      void getMAIList(account)
+      void getKaList(account)
     }
   }, [MaiCheckList, account, library, pledge, TS_TIPS, getMAIList, getKaList])
 
@@ -107,10 +107,10 @@ const Index = () => {
         </div>)
       }
     </div>
-    <p>{t('STAKE.STEP2.expected2', { candies: 'xxx', type: '#4 & #5' })}</p>
+    {/* <p>{t('STAKE.STEP2.expected2', { candies: 'xxx', fragment: '#4 & #5' })}</p> */}
     <Button loading={loading} className='web-stake-step2-cont-stake' size='large' disabled={disabled} onClick={handleStake}>Stake</Button>
   </div>
-  }, [loading, handleStake, CandyCheckList, handleCANDYCheck, t, ts.stakeDesc2, ts.total, ts.Kachousen, KACount, CandyList, disabled])
+  }, [loading, handleStake, CandyCheckList, handleCANDYCheck, ts.stakeDesc2, ts.total, ts.Kachousen, KACount, CandyList, disabled])
   return <>
     {
        account && <div className='web-stake-step1 web-stake-step2'>

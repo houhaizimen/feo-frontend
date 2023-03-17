@@ -36,6 +36,9 @@ export const getUserBagIndex = async (): Promise<any> => {
 export const getUserDraw = async (): Promise<any> => {
   return await request.post('draw/userDraw', {})
 }
+export const getProxy = async (url: string): Promise<any> => {
+  return await request.post('noLogin/token/getProxy', { url })
+}
 
 export const getInfoList = async (url: string): Promise<any> => {
   return await request.get(url, {}, { baseURL: '' })

@@ -28,7 +28,6 @@ const Index = () => {
     } else {
       const res = await getUserDraw()
       if (res.code === '0') {
-        console.log(res)
         setData(res?.data ?? {})
         setShow(true)
         await getProfile()
