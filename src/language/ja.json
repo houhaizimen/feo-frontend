@@ -336,6 +336,7 @@
       "amount": "数量",
       "status": "ポジション",
       "locked": "Lockロックされているed",
+      "un": "ロック解除",
       "reward": "予想される奨励金",
       "Details": "詳細",
       "Candy": "キャンディー",

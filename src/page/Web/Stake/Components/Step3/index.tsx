@@ -46,7 +46,7 @@ const Index = () => {
   const handleWithdraw = async (item: any, index: number) => {
     setLoading(true)
     setIndex(index)
-    if (!item.locked) {
+    if (item.locked) {
       setTypes('error')
       setTips(ts.unlocked)
       setShow(true)
@@ -86,7 +86,7 @@ const Index = () => {
               <li>
                 <span>{ts.mai}</span>
                 <span>{item.amount}</span>
-                <span>{item.locked ? `${ts.locked}` : ''}</span>
+                <span>{item.locked ? `${ts.locked}` : ${ts.un}}</span>
               </li>
             </ul>
             <ul className='list bottom'>

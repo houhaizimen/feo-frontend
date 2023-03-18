@@ -336,6 +336,7 @@
       "amount": "Amount",
       "status": "Status",
       "locked": "Locked",
+      "un": "unLocked",
       "reward": "Expected reward",
       "Details": "Details",
       "to": "To staking",
