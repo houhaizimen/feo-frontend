@@ -23,6 +23,16 @@ $min-width: 1200px;
   padding-bottom: rem(280);
   box-sizing: border-box;
 }
+@mixin full-bg-1 {
+  min-height: 100vh;
+  position: relative;
+  background: imgurl('1-1.png') no-repeat;
+  background-size: cover;
+  background-position: 0 rem(-98);
+  padding-top: rem(147);
+  padding-bottom: rem(280);
+  box-sizing: border-box;
+}
 @mixin m-full-bg {
   min-height: 100vh;
   position: relative;

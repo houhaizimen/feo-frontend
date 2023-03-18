@@ -24,6 +24,13 @@
         &:nth-child(2n-1) {
           background-color: rgba(#491236, .5);
         }
+        .item {
+          display: inline-block;
+          margin-right: rem(6);
+          &:last-child {
+            margin-right: 0;
+          }
+        }
       }
     }
     & > ul.bottom {

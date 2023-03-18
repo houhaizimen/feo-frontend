@@ -157,8 +157,12 @@ class Runners {
     })
     const jsonRes = await Promise.all(reqJSON)
     return jsonRes.map((item, index) => {
-      return { ...item, image: `https://${item.image.split('//')[1]}.ipfs.dweb.link`, tokenId: tokenId[index] }
-    })
+      if (item.image) {
+        return { ...item, image: `https://${item.image?.split('//')?.[1]}.ipfs.dweb.link`, tokenId: tokenId[index] }
+      } else {
+        return null
+      }
+    }).filter(item => item !== null)
   }
 }
 export default new Runners()

@@ -22,6 +22,7 @@ const Index = () => {
           }
         </ul>)
       }
+      <p>{ts.desc}</p>
     </footer>
   </div>
 }

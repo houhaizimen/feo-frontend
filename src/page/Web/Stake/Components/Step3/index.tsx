@@ -1,14 +1,15 @@
-import React, { useEffect, useCallback, useState, useMemo } from 'react'
+import React, { useState, useMemo } from 'react'
 import { useWeb3React } from '@web3-react/core'
-import { getUserBagIndex } from '@/api'
 import StakeContract from '@/class/Stake'
 import { useTranslation } from 'react-i18next'
 import ContainerBg from '@/components/common/ContainerBg'
 import Button from '@/components/common/Button'
 import Tips from '@/components/common/Tips'
+import useNFTS from '@/hooks/useNFT'
 
 const Index = () => {
   const { removePledge } = StakeContract
+  const { Stake, getProfile } = useNFTS()
   const { t } = useTranslation()
   const ts: Record<string, any> = t('PROFILE.MYSTAKE', { returnObjects: true })
   const ts1: Record<string, any> = t('TIPS', { returnObjects: true })
@@ -17,15 +18,7 @@ const Index = () => {
   const [tips, setTips] = useState<string>('')
   const [index, setIndex] = useState<number>(-1)
   const { account, library } = useWeb3React()
-  const [Stake, setStake] = useState<any>([])
   const [loading, setLoading] = useState<boolean>(false)
-  const getProfile = useCallback(async () => {
-    const res = await getUserBagIndex()
-    setStake(res?.data?.userStakingRespList ?? [])
-  }, [])
-  useEffect(() => {
-    if (account) void getProfile()
-  }, [account, getProfile])
   const stakeList = useMemo(() => {
     return Stake.length > 0 && Stake.map((item: any) => {
       const now = new Date().getTime()
@@ -86,7 +79,7 @@ const Index = () => {
               <li>
                 <span>{ts.mai}</span>
                 <span>{item.amount}</span>
-                <span>{item.locked ? `${ts.locked}` : ${ts.un}}</span>
+                <span>{item.locked ? `${ts.locked}` : `${ts.un}`}</span>
               </li>
             </ul>
             <ul className='list bottom'>
@@ -104,7 +97,7 @@ const Index = () => {
                 <span>{ts.Fragment}</span>
                 <span>{item.pledgeFragments}</span>
                 <span>{
-                  item.pledgeFragmentList.map((item: string) => `#${item}`)
+                  item.pledgeFragmentList.map((item: string) => <span key={item} className='item'>#{item}</span>)
                 }</span>
               </li>
             </ul>

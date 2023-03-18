@@ -16,9 +16,7 @@ const estimateGas = async (
   if (!contract[methodName]) {
     throw new Error(`Method ${methodName} doesn't exist on ${contract.address}`)
   }
-  console.log('3333333333333333333')
   const rawGasEstimation = await contract.estimateGas[methodName](...methodArgs)
-  console.log(rawGasEstimation)
   console.info(`real need gas:${rawGasEstimation}`)
   console.info(`Gas after amplification:${(rawGasEstimation
       .mul(ethers.BigNumber.from(10000).add(ethers.BigNumber.from(gasMarginPer10000)))

@@ -8,7 +8,7 @@
     "Connect": "Connect Wallet",
     "ERA": "Era Mission",
     "stake": "NFT Staking",
-    "epoch": "R-Epoch",
+    "epoch": "Gashapon Machine",
     "Marketplace": "Marketplace",
     "skin": "Skin Gallery",
     "doc": "Doc",
@@ -258,6 +258,7 @@
     },
     "REWARDS": {
       "title": "STAKING REWARDS",
+      "desc": "*Kachousen as the core weapon of Mai Shiranui, will be used as an accelerator during the staking to increase candy by 50%.",
       "REWARDS_LIST": [
         "NFT holders can stake their collection to earn candies and fragments of treasure map.",
         "Candies are used to obtain a capsule through Gashapon Machine. The lucky ones might get rare NFTs and multiple limited 3D costumes.",
@@ -284,7 +285,7 @@
       "expected1": "You can stake {{type}} Mai Shiranui NFT(s) at a time.",
       "expected2": "Expected reward: {{candies}} candies and fragment {{fragment}}",
       "Kachousen": "Kachousen NFT",
-      "stakeDesc2": "Stake Kachousen NFT as accelerator. Each address can only stake up to 3 ones",
+      "stakeDesc2": "SEach address can only use up to 3 Kachosen NFTs as a staking accelerator.",
       "stake": "Stake",
       "empty": "Currently, your wallet does not show any Mai Shiranui NFT for staking.",
       "confirm": "Confirm"
@@ -304,7 +305,7 @@
     ],
     "open": "Open",
     "SUCCESS_MODAL": {
-      "title": "Congratulations！ <br />You’ve Got",
+      "title": "Congratulations!<br />You've Got",
       "start": "Start again",
       "to": "To package",
       "MAI": "Mai Shiranui NFT",

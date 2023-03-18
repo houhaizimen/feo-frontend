@@ -26,8 +26,8 @@ class Stake {
     try {
       const gasLimit = await estimateGas(contract, 'removePledge', [id, { value: 0 }])
       console.log(gasLimit)
-    const tx = await contract.removePledge(id)
-    const res = await tx.wait()
+      const tx = await contract.removePledge(id, { gasLimit })
+      const res = await tx.wait()
     return res.status === 1
     } catch (e) {
       console.log(e)

@@ -24,7 +24,7 @@ class Kachousen {
     })
     const jsonRes = await Promise.all(reqJSON)
     return jsonRes.map((item, index) => {
-      return { ...item, image: `https://${item.image.split('//')[1]}.ipfs.dweb.link`, tokenId: tokenId[index] }
+      return { ...item, image: `https://${item.image?.split('//')?.[1]}.ipfs.dweb.link`, tokenId: tokenId[index] }
     })
   }
 }
