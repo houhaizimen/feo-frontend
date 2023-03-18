@@ -47,7 +47,7 @@ const Index = () => {
       <p>{ts.desc}</p>
       <div className='web-repoch-cont-candy'>
         <img src="assets/stake/icon-candy.png" alt="" />
-        <span>{ts.count} {Profile.candyBalance}</span>
+        <span>{ts.count} {Profile?.candyBalance}</span>
       </div>
       <ContainerBg className='web-repoch-cont-rule'>
         <div className='left'>
