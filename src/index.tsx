@@ -4,6 +4,8 @@ import App from '@/App'
 import { Web3ReactProvider } from '@web3-react/core'
 import { getLibrary } from '@/utils/provider'
 import '@/language/config'
+import { Provider } from 'react-redux'
+import { store } from '@/store'
 
 import 'antd-mobile/es/global'
 import '@/style/style.scss'
@@ -12,7 +14,9 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 )
 root.render(
-  <Web3ReactProvider getLibrary={getLibrary}>
-    <App />
-  </Web3ReactProvider>
+  <Provider store={store}>
+    <Web3ReactProvider getLibrary={getLibrary}>
+      <App />
+    </Web3ReactProvider>
+  </Provider>
 )

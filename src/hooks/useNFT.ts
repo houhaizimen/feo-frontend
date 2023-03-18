@@ -3,12 +3,11 @@ import { useWeb3React } from '@web3-react/core'
 import Runners, { tokenURI_PROPS } from '@/class/Runners'
 import Kachousen from '@/class/kachousen'
 import { getContractAddress } from '@/config/getContract'
-import { getMaiList, getUserBagIndex } from '@/api'
+import { getMaiList } from '@/api'
 
 const useNFTS = () => {
   const [MaiList, setMaiList] = useState<tokenURI_PROPS[]>([])
   const [CandyList, setCandyList] = useState<tokenURI_PROPS[]>([])
-  const [Stake, setStake] = useState<any>([])
   const { getTokenURI } = Runners
   const { getKaTokenURI } = Kachousen
   const { account } = useWeb3React()
@@ -28,24 +27,17 @@ const useNFTS = () => {
     const infoList = await getKaTokenURI(list)
     setCandyList(infoList)
   }, [getKaTokenURI])
-  const getProfile = useCallback(async () => {
-    const res = await getUserBagIndex()
-    setStake(res?.data?.userStakingRespList ?? [])
-  }, [])
   useEffect(() => {
     if (account) {
       void getMAIList(account)
       void getKaList(account)
-      void getProfile()
     }
-  }, [getMAIList, getKaList, account, getProfile])
+  }, [getMAIList, getKaList, account])
   return {
     MaiList,
     CandyList,
     getKaList,
-    Stake,
-    getMAIList,
-    getProfile
+    getMAIList
   }
 }
 

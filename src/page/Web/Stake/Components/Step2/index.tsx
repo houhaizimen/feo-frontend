@@ -7,6 +7,8 @@ import Kachousen from '@/class/kachousen'
 import Stake from '@/class/Stake'
 import { PLEDGE_TOTAL } from '@/config'
 import useNFTS from '@/hooks/useNFT'
+import { useAppDispatch } from '@/store'
+import { setShareMsg } from '@/store/share'
 
 import ContainerBg from '@/components/common/ContainerBg'
 import Button from '@/components/common/Button'
@@ -14,18 +16,18 @@ import Tips from '@/components/common/Tips'
 
 const Index = () => {
   const { t } = useTranslation()
+  const dispatch = useAppDispatch()
   const TS_TIPS: Record<string, any> = t('TIPS', { returnObjects: true })
   const ts: Record<string, any> = t('STAKE.STEP2', { returnObjects: true })
   const { getBalanceOf } = Runners
   const { getKachousenBalanceOf } = Kachousen
   const { pledge } = Stake
-  const { MaiList, getKaList, getMAIList, getProfile } = useNFTS()
+  const { MaiList, getKaList, getMAIList } = useNFTS()
   const [loading, setLoading] = useState<boolean>(false)
   const [show, setShow] = useState<boolean>(false)
   const [types, setTypes] = useState<'success' | 'error'>('success')
   const [tips, setTips] = useState<string>('')
   const [MaiCheckList, setMaiCheckList] = useState<string[]>([])
-  // const [CandyCheckList, setCandyCheckList] = useState<string[]>([])
   const [MAICount, setMAICount] = useState<number>(0)
   const [KACount, setKACount] = useState<number>(0)
   const { account, library } = useWeb3React()
@@ -45,13 +47,6 @@ const Index = () => {
     else list.splice(MaiCheckList.length, 0, id)
     setMaiCheckList(list)
   }, [MaiCheckList])
-  // const handleCANDYCheck = useCallback((id: string) => {
-  //   const index = CandyCheckList.findIndex(item => id === item)
-  //   const list = [...CandyCheckList]
-  //   if (index > -1) list.splice(index, 1)
-  //   else list.splice(CandyCheckList.length, 0, id)
-  //   setCandyCheckList(list)
-  // }, [CandyCheckList])
   const disabled = useMemo(() => {
     const leng = MaiCheckList.length
     return !(PLEDGE_TOTAL.includes(leng))
@@ -69,9 +64,9 @@ const Index = () => {
       void getMAIList(account)
       void getKaList(account)
       void handleBalanceOf(account)
-      void getProfile()
+      dispatch(setShareMsg(JSON.stringify(MaiCheckList)))
     }
-  }, [getProfile, MaiCheckList, account, library, pledge, TS_TIPS, getMAIList, getKaList, handleBalanceOf])
+  }, [dispatch, MaiCheckList, account, library, pledge, TS_TIPS, getMAIList, getKaList, handleBalanceOf])
 
   const MAI_DOM = useMemo(() => {
     return <div className='web-stake-step2-cont-item'>
@@ -94,9 +89,8 @@ const Index = () => {
       </>
       : <p className='empty'>{ts.empty}</p>
     }
-    <Button loading={loading} className='web-stake-step2-cont-stake' size='large' disabled={disabled} onClick={handleStake}>Stake</Button>
   </div>
-  }, [disabled, handleStake, loading, MaiCheckList, handleMAICheck, t, ts.Mai, ts.stakeDesc1, ts.total, ts.empty, MAICount, MaiList])
+  }, [MaiCheckList, handleMAICheck, t, ts.Mai, ts.stakeDesc1, ts.total, ts.empty, MAICount, MaiList])
   const CANDY_DOM = useMemo(() => {
     return <div className='web-stake-step2-cont-item'>
     <h1>{ts.Kachousen}</h1>
@@ -112,9 +106,9 @@ const Index = () => {
       }
     </div> */}
     {/* <p>{t('STAKE.STEP2.expected2', { candies: 'xxx', fragment: '#4 & #5' })}</p> */}
-    {/* <Button loading={loading} className='web-stake-step2-cont-stake' size='large' disabled={disabled} onClick={handleStake}>Stake</Button> */}
+    <Button loading={loading} className='web-stake-step2-cont-stake' size='large' disabled={disabled} onClick={handleStake}>Stake</Button>
   </div>
-  }, [ts.stakeDesc2, ts.total, ts.Kachousen, KACount])
+  }, [loading, handleStake, disabled, ts.stakeDesc2, ts.total, ts.Kachousen, KACount])
   return <>
     {
        account && <div className='web-stake-step1 web-stake-step2'>

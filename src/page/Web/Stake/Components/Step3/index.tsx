@@ -1,15 +1,17 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useCallback, useEffect } from 'react'
 import { useWeb3React } from '@web3-react/core'
+import { getUserBagIndex } from '@/api'
 import StakeContract from '@/class/Stake'
 import { useTranslation } from 'react-i18next'
 import ContainerBg from '@/components/common/ContainerBg'
 import Button from '@/components/common/Button'
 import Tips from '@/components/common/Tips'
-import useNFTS from '@/hooks/useNFT'
+import { useShareState } from '@/store/hooks'
 
 const Index = () => {
+  const msg = useShareState()
   const { removePledge } = StakeContract
-  const { Stake, getProfile } = useNFTS()
+  const [Stake, setStake] = useState<any>([])
   const { t } = useTranslation()
   const ts: Record<string, any> = t('PROFILE.MYSTAKE', { returnObjects: true })
   const ts1: Record<string, any> = t('TIPS', { returnObjects: true })
@@ -19,6 +21,10 @@ const Index = () => {
   const [index, setIndex] = useState<number>(-1)
   const { account, library } = useWeb3React()
   const [loading, setLoading] = useState<boolean>(false)
+  const getProfile = useCallback(async () => {
+    const res = await getUserBagIndex()
+    setStake(res?.data?.userStakingRespList ?? [])
+  }, [])
   const stakeList = useMemo(() => {
     return Stake.length > 0 && Stake.map((item: any) => {
       const now = new Date().getTime()
@@ -36,6 +42,9 @@ const Index = () => {
       }
     })
   }, [Stake])
+  useEffect(() => {
+    if (account) void getProfile()
+  }, [account, getProfile, msg])
   const handleWithdraw = async (item: any, index: number) => {
     setLoading(true)
     setIndex(index)
