@@ -21,11 +21,23 @@ const Index: FC<PropsTypes> = ({ show, onClose, data }) => {
     setCurrentShow(false)
   }
   useEffect(() => setCurrentShow(show), [show])
+  console.log(data)
+  const name: Record<string, any> = {
+    CANDY: ts.Candy,
+    FRAGMENT: ts.Fragment,
+    SKIN: 'SKIN',
+    MATERIAL: 'MATERIAL',
+    NFT_BZHW: ts.MAI,
+    NFT_HDS: ts.Kachou
+  }
   return <Modal show={currentShow} onClose={handleClose}>
     <div className='web-buy-success'>
       <div className='left'>
         <h1 dangerouslySetInnerHTML={{ __html: ts.title }}/>
-        <h2>{data?.awardType} * {data?.atObtain}!</h2>
+        <h2>{name[(data?.awardType) as any]} * {data?.atObtain}!</h2>
+        {
+          (data?.awardType === 'NFT_BZHW' || data?.awardType === 'NFT HDS') && <p>{ts.DESC}</p>
+        }
         <div className='btn-group'>
           <Button size='small' onClick={handleClose}>{ts.start}</Button>
           <Button size='small' type='blacks' onClick={() => navigate('/profile')}>{ts.to}</Button>

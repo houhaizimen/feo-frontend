@@ -24,10 +24,11 @@ class Stake {
   async removePledge (id: string, account: string, library: Web3Provider) {
     const contract = getStakeContract(library.getSigner(account))
     try {
-      const gasLimit = await estimateGas(contract, 'removePledge', [id])
-      const tx = await contract.removePledge(id, { gasLimit })
-      const res = await tx.wait()
-      return res.status === 1
+      const gasLimit = await estimateGas(contract, 'removePledge', [id, { value: 0 }])
+      console.log(gasLimit)
+    const tx = await contract.removePledge(id)
+    const res = await tx.wait()
+    return res.status === 1
     } catch (e) {
       console.log(e)
       return false

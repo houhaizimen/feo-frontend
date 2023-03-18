@@ -28,7 +28,8 @@
       "search_input": "Congratulations! Your address is on the whitelist!",
       "mint": "Congratulations! You successfully mint {{quantity}} NFT!",
       "connect": "Please connect the wallet first!",
-      "buy": "You've successfully staked your NFTs"
+      "buy": "You've successfully staked your NFTs",
+      "withdraw": "Successfully removed pledge!"
     },
     "ERROR": {
       "candies": "Sorry! You don't have enough candies.",
@@ -305,7 +306,12 @@
     "SUCCESS_MODAL": {
       "title": "Congratulations！ <br />You’ve Got",
       "start": "Start again",
-      "to": "To package"
+      "to": "To package",
+      "MAI": "Mai Shiranui NFT",
+      "Kachou": "Kachousen NFT",
+      "Candy": "Candy",
+      "Fragment": "Fragment",
+      "DESC": "Will be airdropped to your wallet within 48 hours"
     }
   },
   "PROFILE": {

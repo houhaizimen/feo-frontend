@@ -11,9 +11,11 @@ const Index = () => {
   const { removePledge } = StakeContract
   const { t } = useTranslation()
   const ts: Record<string, any> = t('PROFILE.MYSTAKE', { returnObjects: true })
+  const ts1: Record<string, any> = t('TIPS', { returnObjects: true })
   const [show, setShow] = useState<boolean>(false)
   const [types, setTypes] = useState<'success' | 'error'>('success')
   const [tips, setTips] = useState<string>('')
+  const [index, setIndex] = useState<number>(-1)
   const { account, library } = useWeb3React()
   const [Stake, setStake] = useState<any>([])
   const [loading, setLoading] = useState<boolean>(false)
@@ -36,29 +38,41 @@ const Index = () => {
         candyDay: item.candyDay,
         pledgeCandy: item.pledgeCandy,
         pledgeFragments: item.pledgeFragments,
-        pledgeFragmentList: item.pledgeFragmentList
+        pledgeFragmentList: item.pledgeFragmentList,
+        id: item.id
       }
     })
   }, [Stake])
-  const handleWithdraw = async (item: any) => {
+  const handleWithdraw = async (item: any, index: number) => {
     setLoading(true)
-    if (item.locked) {
+    setIndex(index)
+    if (!item.locked) {
       setTypes('error')
       setTips(ts.unlocked)
       setShow(true)
     } else {
-      await removePledge(item.id, account ?? '', library)
+      const res = await removePledge(item.id, account ?? '', library)
       void getProfile()
+      if (res) {
+        setTips(ts1.SUCCESS.withdraw)
+        setTypes('success')
+        setShow(true)
+      } else {
+        setTips(ts1.ERROR.mint)
+        setTypes('error')
+        setShow(true)
+      }
     }
     setLoading(false)
+    setIndex(-1)
   }
   return <>
     {
       account && stakeList && stakeList.length > 0 && <div className='web-stake-step1 web-stake-step3'>
         <h1 className='web-stake-step1-title'>{ts.step}<span>3</span>{ts.title}</h1>
        {
-         stakeList.map((item: any, index: number) => {
-          return <ContainerBg className='web-stake-step3-cont' key={index}>
+         stakeList.map((item: any, i: number) => {
+          return <ContainerBg className='web-stake-step3-cont' key={i}>
             <header>
                 <span>{ts.TITLE_LIST[1]}: {item.start}</span>
                 <span>{ts.TITLE_LIST[2]}: {item.end}</span>
@@ -94,7 +108,7 @@ const Index = () => {
                 }</span>
               </li>
             </ul>
-            <Button loading={loading} size='mini' onClick={() => handleWithdraw(item)}>{ts.withdraw}</Button>
+            <Button loading={loading && index === i} size='mini' onClick={() => handleWithdraw(item, i)}>{ts.withdraw}</Button>
         </ContainerBg>
         })
        }

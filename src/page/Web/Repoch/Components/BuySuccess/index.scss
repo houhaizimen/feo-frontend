@@ -1,7 +1,7 @@
 .web-buy-success {
   background-image: imgurl('modal-bg.png');
   background-size: 100% 100%;
-  padding: rem(46) rem(32);
+  padding: rem(46) rem(62);
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -9,12 +9,16 @@
   & > .left {
     font-size: rem(31);
     font-family: 'Universal Serif';
+    text-transform: uppercase;
     & > h1{
       line-height: rem(90);
     }
     & > h2 {
-      color: #EF267C;
       margin: rem(42) 0 rem(78) 0;
+    }
+    & > p {
+      font-size: rem(20);
+      margin-top: rem(17);
     }
     & > .btn-group {
       display: flex;
@@ -25,7 +29,7 @@
     }
   }
   & > .right {
-    width: rem(360);
+    width: rem(400);
     border-radius: 20px;
     margin-left: rem(30);
   }
