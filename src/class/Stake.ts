@@ -4,7 +4,6 @@ import estimateGas from '@/utils/estimateGas'
 
 class Stake {
   async pledge (tokenList: string[], account: string, library: Web3Provider) {
-    console.log(tokenList)
     const contractA = getRunnersContract(library.getSigner(account))
     const contract = getStakeContract(library.getSigner(account))
     try {
@@ -15,8 +14,7 @@ class Stake {
       const gasLimit = await estimateGas(contract, 'pledge', [tokenList])
       const tx = await contract.pledge(tokenList, { gasLimit })
       const res = await tx.wait()
-      console.log(res.status)
-      return res.status
+      return res.status === 1
     } catch (e) {
       console.log(e)
       return false
@@ -29,7 +27,7 @@ class Stake {
       const gasLimit = await estimateGas(contract, 'removePledge', [id])
       const tx = await contract.removePledge(id, { gasLimit })
       const res = await tx.wait()
-      return res.status
+      return res.status === 1
     } catch (e) {
       console.log(e)
       return false

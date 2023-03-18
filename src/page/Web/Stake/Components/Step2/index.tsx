@@ -62,7 +62,7 @@ const Index = () => {
     if (account) {
       const res = await pledge(MaiCheckList, account, library)
       console.log(res)
-      setTypes(res)
+      setTypes(res ? 'success' : 'error')
       setShow(true)
       if (res) setTips(TS_TIPS.SUCCESS.buy)
       else setTips(TS_TIPS.ERROR.mint)
