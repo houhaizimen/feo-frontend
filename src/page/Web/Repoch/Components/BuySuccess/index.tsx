@@ -25,10 +25,10 @@ const Index: FC<PropsTypes> = ({ show, onClose, data }) => {
     <div className='web-buy-success'>
       <div className='left'>
         <h1 dangerouslySetInnerHTML={{ __html: ts.title }}/>
-        <h2>{data?.awardContent}!</h2>
+        <h2>{data?.awardType} * {data?.atObtain}!</h2>
         <div className='btn-group'>
-          <Button size='medium' onClick={handleClose}>{ts.start}</Button>
-          <Button size='medium' type='blacks' onClick={() => navigate('/profile')}>{ts.to}</Button>
+          <Button size='small' onClick={handleClose}>{ts.start}</Button>
+          <Button size='small' type='blacks' onClick={() => navigate('/profile')}>{ts.to}</Button>
         </div>
       </div>
       <img src={`/assets/GIFT/card-${data?.imageUrl}.png`}className='right' alt="" />

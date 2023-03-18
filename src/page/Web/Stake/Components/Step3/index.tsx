@@ -54,10 +54,10 @@ const Index = () => {
   }
   return <>
     {
-      account && <div className='web-stake-step1 web-stake-step3'>
+      account && stakeList && stakeList.length > 0 && <div className='web-stake-step1 web-stake-step3'>
         <h1 className='web-stake-step1-title'>{ts.step}<span>3</span>{ts.title}</h1>
        {
-        stakeList && stakeList.length > 0 && stakeList.map((item: any, index: number) => {
+         stakeList.map((item: any, index: number) => {
           return <ContainerBg className='web-stake-step3-cont' key={index}>
             <header>
                 <span>{ts.TITLE_LIST[1]}: {item.start}</span>
@@ -84,7 +84,7 @@ const Index = () => {
               <li>
                 <span>{ts.Candy}</span>
                 <span>{item.pledgeCandy}</span>
-                <span>{item.candyDay}/d</span>
+                <span>{item.candyDay}</span>
               </li>
               <li>
                 <span>{ts.Fragment}</span>

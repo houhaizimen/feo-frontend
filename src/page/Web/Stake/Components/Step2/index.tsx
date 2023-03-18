@@ -61,14 +61,17 @@ const Index = () => {
     setLoading(true)
     if (account) {
       const res = await pledge(MaiCheckList, account, library)
+      console.log(res)
       setTypes(res)
+      setShow(true)
       if (res) setTips(TS_TIPS.SUCCESS.buy)
       else setTips(TS_TIPS.ERROR.mint)
       setLoading(false)
       void getMAIList(account)
       void getKaList(account)
+      void handleBalanceOf(account)
     }
-  }, [MaiCheckList, account, library, pledge, TS_TIPS, getMAIList, getKaList])
+  }, [MaiCheckList, account, library, pledge, TS_TIPS, getMAIList, getKaList, handleBalanceOf])
 
   const MAI_DOM = useMemo(() => {
     return <div className='web-stake-step2-cont-item'>
@@ -91,8 +94,9 @@ const Index = () => {
       </>
       : <p className='empty'>{ts.empty}</p>
     }
+    <Button loading={loading} className='web-stake-step2-cont-stake' size='large' disabled={disabled} onClick={handleStake}>Stake</Button>
   </div>
-  }, [MaiCheckList, handleMAICheck, t, ts.Mai, ts.stakeDesc1, ts.total, ts.empty, MAICount, MaiList])
+  }, [disabled, handleStake, loading, MaiCheckList, handleMAICheck, t, ts.Mai, ts.stakeDesc1, ts.total, ts.empty, MAICount, MaiList])
   const CANDY_DOM = useMemo(() => {
     return <div className='web-stake-step2-cont-item'>
     <h1>{ts.Kachousen}</h1>
@@ -111,13 +115,14 @@ const Index = () => {
     <Button loading={loading} className='web-stake-step2-cont-stake' size='large' disabled={disabled} onClick={handleStake}>Stake</Button>
   </div>
   }, [loading, handleStake, CandyCheckList, handleCANDYCheck, ts.stakeDesc2, ts.total, ts.Kachousen, KACount, CandyList, disabled])
+  console.log(CANDY_DOM)
   return <>
     {
        account && <div className='web-stake-step1 web-stake-step2'>
         <h1 className='web-stake-step1-title' dangerouslySetInnerHTML={{ __html: ts.title }}/>
         <ContainerBg className='web-stake-step2-cont'>
           {MAI_DOM}
-          {MaiList.length > 0 && CANDY_DOM}
+          {/* {MaiList.length > 0 && CANDY_DOM} */}
         </ContainerBg>
       </div>
     }
