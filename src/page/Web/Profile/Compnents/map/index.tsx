@@ -28,7 +28,7 @@ const Index: FC<PropsType> = ({ Fragment = [] }) => {
   ], [])
   const lists = useMemo(() => {
     return list.map((item: listProps) => {
-      const index = Fragment.length > 0 && Fragment.findIndex((item1: any) => item1.no === item.src)
+      const index = (Fragment.length > 0 && Fragment.findIndex((item1: any) => item1.no === item.src)) ?? -1
       if (index >= 0) return { ...item, sum: Fragment[index]?.num }
       else return item
     })
