@@ -1,4 +1,4 @@
-import React, { FC, useMemo, useEffect } from 'react'
+import React, { FC, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import ContainerBg from '@/components/common/ContainerBg'
 
@@ -12,7 +12,7 @@ interface listProps {
   sum: number
 }
 
-const Index: FC<PropsType> = ({ Fragment }) => {
+const Index: FC<PropsType> = ({ Fragment = [] }) => {
   const { t } = useTranslation()
   const ts: Record<string, any> = t('PROFILE.MAP', { returnObjects: true })
   const list: listProps[] = useMemo(() => [
@@ -26,14 +26,21 @@ const Index: FC<PropsType> = ({ Fragment }) => {
     { src: '8', sum: 0 },
     { src: '9', sum: 0 }
   ], [])
-  useEffect(() => {
-    Fragment.length > 0 && Fragment.forEach((item: any) => {
-      const index = list.findIndex((item1: listProps) => item1.src === item.no)
-      if (index >= 0) {
-        list[index].sum = item.num
-      }
+  const lists = useMemo(() => {
+    return list.map((item: listProps) => {
+      const index = Fragment.length > 0 && Fragment.findIndex((item1: any) => item1.no === item.src)
+      if (index > 0) return { ...item, sum: Fragment[index].num }
+      else return item
     })
-  }, [list, Fragment])
+  }, [Fragment, list])
+  // useEffect(() => {
+  //   Fragment.length > 0 && Fragment.forEach((item: any) => {
+  //     const index = list.findIndex((item1: listProps) => item1.src === item.no)
+  //     if (index >= 0) {
+  //       list[index].sum = item.num
+  //     }
+  //   })
+  // }, [list, Fragment])
   return <div className='web-profile-map'>
     <h1 className='profile-title'>
       {ts.title}
@@ -55,7 +62,7 @@ const Index: FC<PropsType> = ({ Fragment }) => {
       <p>{ts.title2}<br /> {ts.title3}</p>
       <div className='web-profile-map-wrap-cont'>
         {
-          list.map((item, index) => <div key={index}>
+          lists.map((item, index) => <div key={index}>
             <img src={`assets/puzzleCard/${item.src}${item.sum > 0 ? `-${item.src}` : ''}.png`} alt="" />
             {
               item.sum > 0 && <span>{item.sum}</span>
