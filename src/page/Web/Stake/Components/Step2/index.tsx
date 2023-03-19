@@ -61,6 +61,7 @@ const Index = () => {
       if (res) setTips(TS_TIPS.SUCCESS.buy)
       else setTips(TS_TIPS.ERROR.mint)
       setLoading(false)
+      setMaiCheckList([])
       void getMAIList(account)
       void getKaList(account)
       void handleBalanceOf(account)

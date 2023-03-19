@@ -1,5 +1,6 @@
 export const useNetWork = () => {
   void window?.ethereum?.on('accountsChanged', (acounts: string) => {
+    localStorage.removeItem('token')
     window.location.reload()
   })
   void window?.ethereum?.on('chainChanged', (newNetwork: string) => {
@@ -7,6 +8,7 @@ export const useNetWork = () => {
   })
   const BitKeepProvider = window?.bitkeep?.ethereum
   BitKeepProvider?.on('accountsChanged', async (accounts: string) => {
+    localStorage.removeItem('token')
     console.log('accounts changed')
     window.location.reload()
  })

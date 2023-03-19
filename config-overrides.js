@@ -14,12 +14,12 @@ module.exports = override(
           parallel: true,
           terserOptions: {
             compress: {
-              // drop_console: true,
+              drop_console: true,
               drop_debugger: true,
-              pure_funcs: ['console.log'],
+              pure_funcs: ['console.log']
             },
             format: {
-              comments: false,
+              comments: false
             }
           }
         })

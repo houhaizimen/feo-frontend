@@ -11,8 +11,10 @@ class Stake {
       if (!isApproved) {
         await contractA.setApprovalForAll(getContractAddress('StakeNFT'), true)
       }
+      console.log(contract)
       const gasLimit = await estimateGas(contract, 'stake', [tokenList])
       const tx = await contract.stake(tokenList, { gasLimit })
+      console.log(tx)
       const res = await tx.wait()
       return res.status === 1
     } catch (e) {
