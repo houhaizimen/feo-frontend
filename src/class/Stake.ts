@@ -8,11 +8,12 @@ class Stake {
     const contract = getStakeContract(library.getSigner(account))
     try {
       const isApproved = await contractA.isApprovedForAll(account, getContractAddress('StakeNFT'))
+      console.log(isApproved)
       if (!isApproved) {
-        await contractA.setApprovalForAll(getContractAddress('StakeNFT'), true)
+        const tx1 = await contractA.setApprovalForAll(getContractAddress('StakeNFT'), true)
+        await tx1.wait()
       }
-      console.log(contract)
-      const gasLimit = await estimateGas(contract, 'stake', [tokenList])
+      const gasLimit = await estimateGas(contract, 'stake', [tokenList], 0)
       const tx = await contract.stake(tokenList, { gasLimit })
       console.log(tx)
       const res = await tx.wait()
