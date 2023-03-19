@@ -7,7 +7,8 @@ interface MaiListProps {
 }
 
 export const getMaiList = async (params: MaiListProps): Promise<any> => {
-  return await request.post('noLogin/token/listtest', { ...params, page: 1, offset: 100 })
+  // return await request.post('noLogin/token/listtest', { ...params, page: 1, offset: 100 })
+  return await request.post('noLogin/token/list', { ...params, page: 1, offset: 100 })
 }
 interface LoginProps {
   address: string
