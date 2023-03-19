@@ -6,7 +6,7 @@ export const contracts: Record<string, Address> = {
     5: '0x65c177573B68a5c0FF9f9d73230D5b39BB80e939'
   },
   KachousenNFT: {
-    1: '0x6a3d1E97A6a0976f8Fc838370781F278cb7b339F',
+    1: '0x69A08867f63D468A776D4cEa555F79bEb0EA4C45',
     5: '0x388019c25D974fA405a67514C3079423187f2d82'
   },
   StakeNFT: {

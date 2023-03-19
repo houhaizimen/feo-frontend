@@ -33,8 +33,8 @@ const Index = () => {
   const { account, library } = useWeb3React()
   const handleBalanceOf = useCallback(async (account: string) => {
     const res = await getBalanceOf(account)
-    const res1 = await getKachousenBalanceOf(account)
     setMAICount(res)
+    const res1 = await getKachousenBalanceOf(account)
     setKACount(res1)
   }, [getBalanceOf, getKachousenBalanceOf])
   useEffect(() => {
