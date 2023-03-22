@@ -52,7 +52,7 @@ const Index = () => {
       <ContainerBg className='web-repoch-cont-rule'>
         <div className='left'>
           <img src="assets/stake/egg-machine.png" alt="" />
-          <Button onClick={handleOpen}>{ts.open}</Button>
+          <Button disabled onClick={handleOpen}>{ts.open}</Button>
         </div>
         <div className='right'>
           {/* <h2>Spend <span>10</span> candies to <br />get a capsule</h2> */}
