@@ -45,7 +45,7 @@ const Index: FC<PropsTypes> = ({ show, onClose, data }) => {
           <Button size='small' type='blacks' onClick={() => navigate('/profile')}>{ts.to}</Button>
         </div>
       </div>
-      <img src={`/assets/GIFT/card-${data?.imageUrl}.png`}className='right' alt="" />
+      <img src={`/assets/GIFT/icon-${data?.imageUrl}.png`}className='right' alt="" />
     </div>
   </Modal>
 }

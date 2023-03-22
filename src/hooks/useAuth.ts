@@ -20,6 +20,7 @@ export const useAuth = () => {
           void activate(injected)
         }
       } else {
+        console.log(error)
         console.log('Pending Error Occured')
       }
     }).catch(err => {

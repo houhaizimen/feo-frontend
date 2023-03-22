@@ -21,6 +21,7 @@ module.exports = {
     '@typescript-eslint/space-before-function-paren': 0,
     '@typescript-eslint/no-misused-promises': 0,
     '@typescript-eslint/indent': 0,
+    '@typescript-eslint/no-floating-promises': 0,
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
   }
 }

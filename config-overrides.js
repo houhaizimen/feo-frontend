@@ -1,10 +1,11 @@
-const { override, addDecoratorsLegacy, addWebpackAlias } = require("customize-cra");
-const TerserPlugin = require("terser-webpack-plugin")
-const path = require("path");
+const { override, addDecoratorsLegacy, addWebpackAlias } = require('customize-cra')
+const webpack = require('webpack')
+const TerserPlugin = require('terser-webpack-plugin')
+const path = require('path')
 module.exports = override(
   addDecoratorsLegacy(),
   addWebpackAlias({
-    "@": path.resolve(__dirname, './src')
+    '@': path.resolve(__dirname, './src')
   }),
   (config) => {
     if (process.env.NODE_ENV === 'production') {
@@ -22,6 +23,10 @@ module.exports = override(
               comments: false
             }
           }
+        }),
+        new webpack.ProvidePlugin({
+          process: 'process/browser',
+          Buffer: ['buffer', 'Buffer']
         })
       ]
     }
