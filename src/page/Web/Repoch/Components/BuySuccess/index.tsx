@@ -25,7 +25,7 @@ const Index: FC<PropsTypes> = ({ show, onClose, data }) => {
   const name: Record<string, any> = {
     CANDY: ts.Candy,
     FRAGMENT: ts.Fragment,
-    SKIN: 'SKIN',
+    SKIN: '3D SKIN NFT',
     MATERIAL: 'MATERIAL',
     NFT_BZHW: ts.MAI,
     NFT_HDS: ts.Kachou
@@ -34,7 +34,9 @@ const Index: FC<PropsTypes> = ({ show, onClose, data }) => {
     <div className='web-buy-success'>
       <div className='left'>
         <h1 dangerouslySetInnerHTML={{ __html: ts.title }}/>
-        <h2>{name[(data?.awardType) as any]} * {data?.atObtain}!</h2>
+        {
+          (data?.awardType === 'NFT_BZHW' || data?.awardType === 'NFT HDS') ? <h2>{name[(data?.awardType) as any]}</h2> : <h2>{name[(data?.awardType) as any]} {data?.awardType === 'FRAGMENT' ? '#' : '*'} {data?.atObtain}</h2>
+        }
         {
           (data?.awardType === 'NFT_BZHW' || data?.awardType === 'NFT HDS') && <p>{ts.DESC}</p>
         }
