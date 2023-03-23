@@ -1,4 +1,4 @@
-import { getkachousenContract } from '@/config/getContract'
+import { getkachousenContract, getTokenIdContract, getContractAddress } from '@/config/getContract'
 // import { Web3Provider } from '@ethersproject/providers'
 import { getBalanceAmount } from '@/utils/formatAmount'
 import { getProxy } from '@/api'
@@ -13,9 +13,20 @@ class Kachousen {
     return getBalanceAmount(res?._hex ?? 0, 0)
   }
 
-  getKaTokenURI = async (tokenId: string[]): Promise<tokenURI_PROPS[]> => {
+  getTotalSupply = async (): Promise<any> => {
     const contract = getkachousenContract()
-    const reqList = tokenId.map(item => contract.tokenURI(item))
+    const res = await contract.totalSupply()
+    console.log(res)
+    return getBalanceAmount(res?._hex ?? 0, 0)
+  }
+
+  getKaTokenURI = async (account: string): Promise<tokenURI_PROPS[]> => {
+    const contract = getkachousenContract()
+    const tokenIdContract = getTokenIdContract()
+    const total = await this.getTotalSupply()
+    let tokenIds = await tokenIdContract.getOwnedTokenIdList(getContractAddress('KachousenNFT'), account, 1, Number(total) + 1)
+    tokenIds = tokenIds.map((item: any) => getBalanceAmount(item?._hex ?? 0, 0))
+    const reqList = tokenIds.map((item: string | number) => contract.tokenURI(item))
     const res = await Promise.all(reqList)
     const reqJSON = res.map(item => {
       const str = item.split('//')[1]
@@ -24,7 +35,7 @@ class Kachousen {
     })
     const jsonRes = await Promise.all(reqJSON)
     return jsonRes.map((item, index) => {
-      return { ...item, image: `https://${item.image?.split('//')?.[1]}.ipfs.dweb.link`, tokenId: tokenId[index] }
+      return { ...item, image: `https://${item.image?.split('//')?.[1]}.ipfs.dweb.link`, tokenId: tokenIds[index] }
     })
   }
 }

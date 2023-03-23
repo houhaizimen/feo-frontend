@@ -2,8 +2,6 @@ import { useState, useCallback, useEffect } from 'react'
 import { useWeb3React } from '@web3-react/core'
 import Runners, { tokenURI_PROPS } from '@/class/Runners'
 import Kachousen from '@/class/kachousen'
-import { getContractAddress } from '@/config/getContract'
-import { getMaiList } from '@/api'
 
 const useNFTS = () => {
   const [MaiList, setMaiList] = useState<tokenURI_PROPS[]>([])
@@ -16,9 +14,7 @@ const useNFTS = () => {
     setMaiList(infoList)
   }, [getTokenURI])
   const getKaList = useCallback(async (account: string) => {
-    const res = await getMaiList({ address: account, type: 2, contractaddress: getContractAddress('KachousenNFT') })
-    const list = res?.result?.map((item: any) => item.TokenId) ?? []
-    const infoList = await getKaTokenURI(list)
+    const infoList = await getKaTokenURI(account)
     setCandyList(infoList)
   }, [getKaTokenURI])
   useEffect(() => {
