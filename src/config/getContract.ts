@@ -3,6 +3,7 @@ import { JSONRPCProvider, getChainId } from '@/utils/provider'
 import RunnersABI from '@/abi/Runners.json'
 import kachousenABI from '@/abi/kachousen.json'
 import StakeABI from '@/abi/Stake.json'
+import TokenIdABI from '@/abi/TokenId.json'
 import { contracts } from './contract'
 
 export const getContractAddress = (name: string) => {
@@ -24,4 +25,8 @@ export const getkachousenContract = (signer?: ethers.Signer | ethers.providers.P
 
 export const getStakeContract = (signer?: ethers.Signer | ethers.providers.Provider): any => {
   return getContract(StakeABI, getContractAddress('StakeNFT'), signer)
+}
+
+export const getTokenIdContract = (signer?: ethers.Signer | ethers.providers.Provider): any => {
+  return getContract(TokenIdABI, getContractAddress('TokenId'), signer)
 }
