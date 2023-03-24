@@ -13,6 +13,7 @@ export const useAuth = () => {
     const getConnector = connectorsByName[connectorID]
     const connector = typeof getConnector !== 'function' ? connectorsByName[connectorID] : await getConnector()
     activate(connector, async (error: Error) => {
+      console.log(error)
       if (error instanceof UnsupportedChainIdError) {
         const type = localStorage.getItem(name) as string ?? ''
         const hasSetup: boolean = await setupNetwork({ type })

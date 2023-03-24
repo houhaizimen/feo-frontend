@@ -98,25 +98,25 @@ export const useGetWalletList = (): WALLET_TYPE[] => {
       icon: 'metamask',
       connectId: ConnectorNames.Injected
     },
-    // {
-    //   name: ts.Coinbase,
-    //   icon: 'coinbase',
-    //   connectId: ConnectorNames.WalletLink
-    // },
-    // {
-    //   name: ts.WalletConnect,
-    //   icon: 'wallet-connect',
-    //   connectId: ConnectorNames.WalletConnect
-    // },
+    {
+      name: ts.Coinbase,
+      icon: 'coinbase',
+      connectId: ConnectorNames.WalletLink
+    },
+    {
+      name: ts.WalletConnect,
+      icon: 'wallet-connect',
+      connectId: ConnectorNames.WalletConnect
+    }
     // {
     //   name: ts.okx,
     //   icon: 'okx',
     //   connectId: ConnectorNames.Injected
-    // },
-    {
-      name: ts.BitKeep,
-      icon: 'bitkeep',
-      connectId: ConnectorNames.Injected
-    }
+    // }
+    // {
+    //   name: ts.BitKeep,
+    //   icon: 'bitkeep',
+    //   connectId: ConnectorNames.Injected
+    // }
   ]
 }

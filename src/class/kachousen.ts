@@ -16,7 +16,6 @@ class Kachousen {
   getTotalSupply = async (): Promise<any> => {
     const contract = getkachousenContract()
     const res = await contract.totalSupply()
-    console.log(res)
     return getBalanceAmount(res?._hex ?? 0, 0)
   }
 

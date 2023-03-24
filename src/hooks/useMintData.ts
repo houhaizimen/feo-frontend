@@ -28,13 +28,11 @@ export const useMintData = (account: string, balance: string) => {
 
   const handleTotalSupply = useCallback(async () => {
     const res = await getTotalSupply()
-    console.log(res)
     setTotalSupply(res)
   }, [getTotalSupply])
 
   const handleMaxSupply = useCallback(async () => {
     const res = await getmaxSupply()
-    console.log(res)
     setMaxSupply(res)
   }, [getmaxSupply])
 

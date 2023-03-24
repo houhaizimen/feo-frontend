@@ -8,6 +8,20 @@ module.exports = override(
     '@': path.resolve(__dirname, './src')
   }),
   (config) => {
+    config.resolve.fallback = {
+      fs: false,
+      stream: require.resolve('stream-browserify'),
+      buffer: require.resolve('buffer/'),
+      util: require.resolve('util/'),
+      assert: require.resolve('assert/')
+    }
+    config.plugins = [
+      ...config.plugins,
+      new webpack.ProvidePlugin({
+        process: 'process/browser',
+        Buffer: ['buffer', 'Buffer']
+      })
+    ]
     if (process.env.NODE_ENV === 'production') {
       config.plugins = [
         ...config.plugins,

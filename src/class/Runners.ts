@@ -55,9 +55,7 @@ class Runners {
 
   getBlanceOf = async (account: string) => {
     const contract = getRunnersContract()
-    console.log(22222222222222)
     const res = await contract.balanceOf(account)
-    console.log(res)
     return getBalanceAmount(res?._hex ?? 0, 0) ?? 0
   }
    /**
@@ -85,21 +83,18 @@ class Runners {
   getWlPrice = async (): Promise<any[]> => {
     const contract = getRunnersContract()
     const res = await contract.wlPrice()
-    console.log(res)
     return [getBalanceAmount(res?._hex ?? 0, 18), res?._hex]
   }
 
   getmaxSupply = async (): Promise<any> => {
     const contract = getRunnersContract()
     const res = await contract.maxSupply()
-    console.log(res)
     return getBalanceAmount(res?._hex ?? 0, 0)
   }
 
   getTotalSupply = async (): Promise<any> => {
     const contract = getRunnersContract()
     const res = await contract.totalSupply()
-    console.log(res)
     return getBalanceAmount(res?._hex ?? 0, 0)
   }
   /**
