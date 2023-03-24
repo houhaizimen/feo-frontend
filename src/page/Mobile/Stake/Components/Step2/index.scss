@@ -1,0 +1,35 @@
+.m-stake-step2 {
+  &-cont {
+    padding: rem(14) rem(13);
+    box-sizing: border-box;
+    margin-top: rem(31);
+    &-item {
+      margin-bottom: rem(61);
+      & > h1 {
+        font-size: rem(13);
+        color: #EF267C;
+        font-family: 'Universal Serif';
+        text-transform: uppercase;
+        font-weight: 400;
+      }
+      & > dl {
+        margin-top: rem(12);
+        font-size: rem(13);
+        & > dd {
+          margin-bottom: rem(7);
+        }
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+      & > p {
+        margin: rem(28) 0 rem(35) 0;
+        font-size: rem(13);
+      }
+    }
+    &-stake {
+      display: block;
+      margin: rem(45) auto 0;
+    }
+  }
+}

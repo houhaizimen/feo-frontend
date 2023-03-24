@@ -1,0 +1,53 @@
+.m-stake-banner {
+  height: rem(118);
+  background-image: imgurl('stake/banner.png');
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: rem(12) rem(14);
+  box-sizing: border-box;
+  & > p {
+    font-family: 'Universal Serif' !important;
+    font-size: rem(21);
+    line-height: rem(29);
+    text-transform: uppercase;
+  }
+  & > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    font-size: rem(12);
+    margin-top: rem(9);
+    & > p {
+      margin-right: rem(34);
+    }
+    & > i {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: rem(21);
+      background-color: #fff;
+      border-radius: rem(13);
+      text-align: center;
+      color: #EF267C;
+      transition: all .3s;
+      padding: 0 rem(10);
+      font-style: normal;
+      white-space: nowrap;
+      &:hover {
+        transform: scale(1.1);
+      }
+      &::after {
+        content: '';
+        width: rem(3);
+        height: rem(7);
+        background-image: imgurl('stake/icon-right.png');
+        background-size: cover;
+        margin-left: rem(11);
+        // margin-top: rem(-2);
+      }
+    }
+  }
+}

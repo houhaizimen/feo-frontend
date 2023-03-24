@@ -7,6 +7,7 @@ import { connectList, LANG_LIST } from '@/config'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '@/hooks/useAuth'
 import { useTranslation } from 'react-i18next'
+import { HEADER_CHILDREN_TYPES, HEADER_TYPES } from '@/config/types'
 
 import { Popup } from 'antd-mobile'
 
@@ -23,11 +24,36 @@ const Index = () => {
   const [fixed, setFixed] = useState<boolean>(false)
   const { pathname } = useLocation()
   const navigate = useNavigate()
-  const HEADER_LIST = [
-    { name: ts.World, link: '/m/' },
-    { name: ts.Fighter, link: '/m/gallery' },
-    { name: ts.FAQ, link: '/m/faqs' }
+
+  const HEADER_LIST: HEADER_TYPES[] = [
+    {
+      name: ts.World,
+      children: [
+        { name: ts.Fighter, link: '/m/gallery' }
+      ]
+    },
+    {
+      name: ts.ERA,
+      children: [
+        { name: ts.stake, link: '/m/stake' },
+        { name: ts.epoch, link: '/m/repoch' }
+      ]
+    },
+    {
+      name: ts.Marketplace,
+      children: [
+        { name: ts.skin, link: '', comming: true }
+      ]
+    },
+    {
+      name: ts.doc,
+      children: [
+        { name: ts.FAQ, link: '/faqs' },
+        { name: ts.Whitepaper, link: 'https://fighter-era-odyssey.gitbook.io/docs/' }
+      ]
+    }
   ]
+  const [showNav, setShowNav] = useState<string>(HEADER_LIST[0].name)
   const handleLogin = async (connector: ConnectorNames) => {
     const { key } = USER_LOCAL_CONNECT
     localStorage.setItem(key, connector)
@@ -45,9 +71,15 @@ const Index = () => {
   }, [scroll])
 
   const handleLink = (link: string) => {
+    if (!link) return
+    const reg = /https|http/
+    if (reg.test(link)) {
+      window.open(link)
+    } else {
+      navigate(link)
+    }
     setVisible(false)
     setShow(false)
-    navigate(link)
   }
 
   const handleLogout = () => {
@@ -61,6 +93,15 @@ const Index = () => {
     setShowLan(false)
     void i18n.changeLanguage(val)
   }
+  const handleLinkActive = (items: HEADER_CHILDREN_TYPES[]) => {
+    return items.findIndex(item => item.link === pathname) > -1
+  }
+
+  const handleChangeNav = (name: string) => {
+    if (name === showNav) setShowNav('')
+    else setShowNav(name)
+  }
+
   return <>
     <div className={ classNames('m-home-header', { fixed })}>
       <ul className='cont'>
@@ -81,7 +122,20 @@ const Index = () => {
       >
         <ul className='title'>
           {
-            HEADER_LIST.map(item => <li key={item.name} className={ classNames({ active: pathname === item.link })} onClick={() => handleLink(item.link)}>{item.name}</li>)
+            HEADER_LIST.map(item => <li key={item.name} className={ classNames({ active: handleLinkActive(item.children) })}><div className='connect-wallet title-group'>
+            <div className={classNames('connect-wallet-connect', { show: showNav === item.name })} onClick={() => handleChangeNav(item.name)}>
+              {item.name}
+              <div className='angel' />
+            </div>
+            <ul className={classNames('connect-wallet-list', { show: showNav === item.name })}>
+              {
+                item.children.map(items => <li key={items.name} onClick={() => handleLink(items.link)}>
+                  {/* <img src={`../assets/${item.icon}.png`} /> */}
+                  <span>{items.name}</span>
+                </li>)
+              }
+            </ul></div>
+          </li>)
           }
         </ul>
         {

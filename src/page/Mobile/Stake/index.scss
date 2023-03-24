@@ -1,0 +1,7 @@
+.m-stake {
+  @include m-full-bg-1;
+  &-cont {
+    padding: 0 rem(15);
+    box-sizing: border-box;
+  }
+}

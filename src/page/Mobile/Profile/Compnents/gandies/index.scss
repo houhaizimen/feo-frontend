@@ -1,0 +1,21 @@
+.web-profile-gendies {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  margin-bottom: rem(135);
+  & > .left {
+    line-height: rem(32);
+    & > dl {
+      display: flex;
+      align-items: center;
+      margin-top: rem(35);
+      font-size: rem(25);
+      & > dt {
+        margin-right: rem(167);
+      }
+    }
+    span {
+      color: #EF267C;
+    }
+  }
+}

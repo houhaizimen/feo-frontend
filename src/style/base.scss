@@ -58,13 +58,13 @@ ul {
     padding-right: constant(safe-area-inset-right); //如果未竖屏时为0
     padding-bottom: constant(safe-area-inset-bottom);//为底下圆弧的高度 34px
   }
-  &::-webkit-scrollbar, body::-webkit-scrollbar, *::-webkit-scrollbar {
-    width:0px !important;height:0px !important;display: none !important;background: transparent;
-    -webkit-overflow-scrolling: touch;
-    &-thumb, &-track-piece {
-      background: transparent;
-    }
-  }
+  // &::-webkit-scrollbar, body::-webkit-scrollbar, *::-webkit-scrollbar {
+  //   width:0px !important;height:0px !important;display: none !important;background: transparent;
+  //   -webkit-overflow-scrolling: touch;
+  //   &-thumb, &-track-piece {
+  //     background: transparent;
+  //   }
+  // }
   * {
     user-select:none;
   }

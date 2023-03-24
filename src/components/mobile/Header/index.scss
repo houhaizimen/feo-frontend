@@ -48,14 +48,39 @@
     & > .title {
       padding-bottom: rem(34);
       & > li {
-        height: rem(42);
-        line-height: rem(42);
-        margin-top: rem(24);
+        position: relative;
+        margin-top: rem(20);
         padding-left: rem(23);
         font-size: rem(17);
         font-weight: bold;
-        &.active {
+        z-index: 1;
+        &.active::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
           background-color: #EF267C;
+          height: rem(44);
+          z-index: -1;
+        }
+        .title-group {
+          padding: 0;
+          border: 0;
+          & > .connect-wallet-connect {
+            height: rem(48);
+            line-height: rem(48);
+          }
+          & > .connect-wallet-list {
+            padding-left: rem(34);
+            & > li {
+              font-family: 'Akrobat-Bold';
+              font-weight: 100;
+              &:last-child {
+                border-bottom: 1px solid rgba(#fff, .1);
+              }
+            }
+          }
         }
       }
     }

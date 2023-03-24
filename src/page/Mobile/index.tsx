@@ -6,9 +6,9 @@ const Home = lazy(async () => await import('./Home'))
 const Gallery = lazy(async () => await import('./Gallery'))
 const FAQS = lazy(async () => await import('./FAQS'))
 const Terms = lazy(async () => await import('./Terms'))
-const Stake = lazy(async () => await import('@/page/Web/Stake'))
-const Repoch = lazy(async () => await import('@/page/Web/Repoch'))
-const Profile = lazy(async () => await import('@/page/Web/Profile'))
+const Stake = lazy(async () => await import('./Stake'))
+const Repoch = lazy(async () => await import('./Repoch'))
+const Profile = lazy(async () => await import('./Profile'))
 
 function Index () {
   return (

@@ -1,0 +1,44 @@
+.m-stake-rewards {
+  margin-top: rem(23);
+  & > header {
+    & > .top {
+      & > .title {
+        white-space: nowrap;
+        margin-bottom: rem(17);
+      }
+      p {
+        font-size: rem(13);
+        line-height: rem(19);
+        margin-bottom: rem(10);
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    & > .bottom {
+      width: 100%;
+      margin-top: rem(40);
+    }
+  }
+  & > footer {
+    margin-top: rem(27);
+    & > ul {
+      display: grid;
+      grid-template-columns: 1fr .8fr 1fr;
+      height: rem(41);
+      font-size: rem(13);
+      line-height: rem(41);
+      & > li {
+        text-align: center;
+      }
+      &:nth-child(2n -1) {
+        background-color: rgba(#491236, .5);
+      }
+    }
+    & > p {
+      color: rgba(#fff, .5);
+      font-size: rem(12);
+      margin-top: rem(22);
+    }
+  }
+}

@@ -42,6 +42,15 @@ $min-width: 1200px;
   padding-top: rem(65);
   box-sizing: border-box;
 }
+@mixin m-full-bg-1 {
+  min-height: 100vh;
+  position: relative;
+  background: imgurl('m/bg-bottom-stake.png') no-repeat;
+  background-size: cover;
+  background-position: 0 rem(38);
+  padding-top: rem(65);
+  box-sizing: border-box;
+}
 
 
 @function rem($px) {

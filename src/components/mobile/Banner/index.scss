@@ -6,6 +6,7 @@
     padding-top: rem(72);
     & > h1, & > h2 {
       font-family: 'Universal Serif';
+      font-weight: 400;
     }
     & > h1 {
       line-height: rem(48);
@@ -20,7 +21,7 @@
     & > h2 {
       line-height: rem(52);
       margin-bottom: rem(10);
-      font-size: rem(25);
+      font-size: rem(22);
       white-space: nowrap;
     }
   }

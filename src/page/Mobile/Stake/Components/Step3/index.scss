@@ -1,0 +1,47 @@
+.m-stake-step3 {
+  &-cont {
+    padding: rem(25) rem(5);
+    margin-top: rem(20);
+    box-sizing: border-box;
+    & > header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: rem(27);
+      font-size: rem(13);
+      padding: 0 rem(10);
+      box-sizing: border-box;
+    }
+    & > ul.list {
+      font-size: rem(13);
+      border-bottom: rem(1) solid #fff;
+      padding-bottom: rem(14);
+      & > li {
+        display: grid;
+        grid-template-columns: 2fr 1fr 2fr;
+        text-align: center;
+        height: rem(57);
+        line-height: rem(57);
+        margin-bottom: rem(6);
+        &:nth-child(2n-1) {
+          background-color: rgba(#491236, .5);
+        }
+        .item {
+          display: inline-block;
+          margin-right: rem(6);
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+    & > ul.bottom {
+      padding-top: rem(20);
+      border: 0;
+    }
+    .web-button {
+      display: block;
+      margin: rem(27) auto 0;
+    }
+  }
+}

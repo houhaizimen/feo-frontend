@@ -253,6 +253,7 @@
   "STAKE": {
     "BANNER": {
       "title": "Mai Shiranui NFT Staking",
+      "titleM": "Mai Shiranui<br /> NFT Staking",
       "desc": "Earn candies and fragments of treasure map by staking NFT",
       "see": "See more"
     },

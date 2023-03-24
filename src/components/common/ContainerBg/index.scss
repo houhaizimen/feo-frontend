@@ -50,4 +50,15 @@
     bottom: 0;
     transform: translateX(-50%) rotate(180deg);
   }
+  &.mobile {
+    min-height: rem(116);
+    .web-container-circle {
+      width: rem(4);
+      height: rem(4);
+    }
+    &::before, &::after {
+      width: rem(72);
+      height: rem(3);
+    }
+  }
 }

@@ -10,10 +10,58 @@
     line-height: rem(34);
     font-family: 'Universal Serif';
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 400;
   }
   .padding-26 {
     padding: 0 rem(26);
     box-sizing: border-box;
+  }
+  .card-list {
+    margin-top: rem(27);
+    // padding-left: rem(26);
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    max-height: rem(278);
+    overflow-y: auto;
+    & > .card {
+      padding: rem(10) 0;
+      margin-right: rem(23);
+      & > p {
+        font-size: rem(13);
+        text-align: center;
+        margin-bottom: rem(14);
+      }
+      & > img {
+        width: rem(129);
+        cursor: pointer;
+      }
+      &:last-child, &:nth-child(2n) {
+        margin-right: 0;
+      }
+      &.checked {
+        position: relative;
+        z-index: 2;
+        &::after {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: rem(133);
+          height: rem(133);
+          background-image: imgurl('stake/checked-bg.png');
+          background-size: 100% 100%;
+        }
+      }
+    }
+    & > p {
+      margin-top: rem(14);
+      text-align: center;
+      font-size: rem(13);
+    }
+    &::-webkit-scrollbar { width:rem(6) !important; height: rem(178) !important; background: #4F1142 !important; border-radius:rem(10) !important;} 
+   &::-webkit-scrollbar-thumb{ display:block; height: rem(95); width:6px; margin:0 auto; border-radius: rem(10); background: #EF267C !important;}
   }
 }

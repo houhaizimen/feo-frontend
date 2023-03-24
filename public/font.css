@@ -12,5 +12,6 @@
 }
 @font-face {
   font-family: 'Universal Serif';
-  src: url('font/Universal Serif.otf');
+  src: url('font/Universal Serif.ttf');
+  font-weight: 400 !important;
 }

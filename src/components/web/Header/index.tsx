@@ -7,6 +7,7 @@ import { LANG_LIST } from '@/config'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '@/hooks/useAuth'
 import { useTranslation } from 'react-i18next'
+import { HEADER_CHILDREN_TYPES, HEADER_TYPES } from '@/config/types'
 
 const Index = () => {
   const { account } = useWeb3React()
@@ -20,15 +21,6 @@ const Index = () => {
   const { pathname } = useLocation()
   const navigate = useNavigate()
 
-  interface HEADER_CHILDREN_TYPES {
-    name: string
-    link: string
-    comming?: boolean
-  }
-  interface HEADER_TYPES {
-    name: string
-    children: HEADER_CHILDREN_TYPES[]
-  }
   const HEADER_LIST: HEADER_TYPES[] = [
     {
       name: ts.World,
