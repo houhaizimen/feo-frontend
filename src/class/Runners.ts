@@ -1,4 +1,4 @@
-import { getRunnersContract } from '@/config/getContract'
+import { getRunnersContract, getTokenIdContract, getContractAddress } from '@/config/getContract'
 import { Web3Provider } from '@ethersproject/providers'
 import { getBalanceAmount, getAountToBigHex } from '@/utils/formatAmount'
 import estimateGas from '@/utils/estimateGas'
@@ -148,9 +148,13 @@ class Runners {
     return getBalanceAmount(res?._hex ?? 0, 0)
   }
 
-  getTokenURI = async (tokenId: string[]): Promise<tokenURI_PROPS[]> => {
+  getTokenURI = async (account: string): Promise<tokenURI_PROPS[]> => {
     const contract = getRunnersContract()
-    const reqList = tokenId.map(item => contract.tokenURI(item))
+    const tokenIdContract = getTokenIdContract()
+    const total = await this.getTotalSupply()
+    let tokenIds = await tokenIdContract.getOwnedTokenIdList(getContractAddress('Runners'), account, 1, Number(total) + 1)
+    tokenIds = tokenIds.map((item: any) => getBalanceAmount(item?._hex ?? 0, 0))
+    const reqList = tokenIds.map((item: string | number) => contract.tokenURI(item))
     const res = await Promise.all(reqList)
     const reqJSON = res.map(item => {
       const str = item.split('//')[1]
@@ -160,7 +164,7 @@ class Runners {
     const jsonRes = await Promise.all(reqJSON)
     return jsonRes.map((item, index) => {
       if (item.image) {
-        return { ...item, image: `https://${item.image?.split('//')?.[1]}.ipfs.dweb.link`, tokenId: tokenId[index] }
+        return { ...item, image: `https://${item.image?.split('//')?.[1]}.ipfs.dweb.link`, tokenId: tokenIds[index] }
       } else {
         return null
       }

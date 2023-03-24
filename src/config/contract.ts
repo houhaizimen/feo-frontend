@@ -12,5 +12,9 @@ export const contracts: Record<string, Address> = {
   StakeNFT: {
     1: '0xCf70A225380AE7B32D675b4bcE60a2A584Efb8c9',
     5: '0xe729D2E7D35BEEcE0ECcA45c4b20F123b7f51322'
+  },
+  TokenId: {
+    1: '0x604995B9377Ac6d9aBbC57b902f6936Df69D01db',
+    5: '0x2F6d9bda77cEB99cE96f995C49e74CCa73E4222c'
   }
 }
