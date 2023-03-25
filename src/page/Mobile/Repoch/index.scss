@@ -59,7 +59,7 @@
             padding: rem(11) 0;
             text-align: center;
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1.8fr 1.2fr 2fr;
             align-items: center;
             font-size: rem(13);
             background-color: rgba(#EF267C , 0.1);
@@ -68,10 +68,10 @@
           &::after {
             content: '';
             position: absolute;
-            left: 33%;
+            left: 36%;
             top: 0;
             bottom: 0;
-            right: 33%;
+            right: 40%;
             background-color: rgba(#EF267C , 0.12);
           }
         }

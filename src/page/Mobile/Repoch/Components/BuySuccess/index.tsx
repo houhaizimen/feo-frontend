@@ -42,7 +42,7 @@ const Index: FC<PropsTypes> = ({ show, onClose, data }) => {
         }
         <div className='btn-group'>
           <Button size='mini' onClick={handleClose}>{ts.start}</Button>
-          <Button size='mini' type='blacks' onClick={() => navigate('/profile')}>{ts.to}</Button>
+          <Button size='mini' type='blacks' onClick={() => navigate('/m/profile')}>{ts.to}</Button>
         </div>
       </div>
     </div>

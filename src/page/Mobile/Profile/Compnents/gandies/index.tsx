@@ -20,7 +20,7 @@ const Index: FC<PropsType> = ({ Profile = {} }) => {
         <dd>{ts.yied} <span>{Profile?.yieldCandyBalance ?? 0}</span></dd>
       </dl>
     </div>
-    <Button onClick={() => navigate('/repoch')}>{ts.to}</Button>
+    <Button onClick={() => navigate('/m/repoch')}>{ts.to}</Button>
   </div>
 }
 
