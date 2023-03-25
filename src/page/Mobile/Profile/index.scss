@@ -1,7 +1,9 @@
 .m-profile {
-  @include m-full-bg;
-  background: imgurl('2.png') no-repeat;
-  background-size: cover;
+  position: relative;
+  @include m-full-bg-1;
+  // background: imgurl('2.png') no-repeat;
+  // background-size: contain;
+  background-position: 0 rem(30);
   &-cont {
     padding: 0 rem(13);
     box-sizing: border-box;
@@ -11,5 +13,16 @@
     font-family: 'Universal Serif';
     line-height: rem(29);
     font-weight: 400;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: rem(38);
+    left: 0;
+    width: rem(375);
+    height: rem(106);
+    background: imgurl('m/m-profile-top.png') no-repeat;
+    background-size: 100% 100%;
+    z-index: -1;
   }
 }
