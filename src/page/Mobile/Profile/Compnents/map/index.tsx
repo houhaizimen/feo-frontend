@@ -41,10 +41,10 @@ const Index: FC<PropsType> = ({ Fragment = [] }) => {
   //     }
   //   })
   // }, [list, Fragment])
-  return <div className='web-profile-map'>
+  return <div className='m-profile-map'>
     <h1 className='profile-title'>
       {ts.title}
-      <div className='question'>
+      {/* <div className={classNames('question', { active: show })} onClick={() => setShow(!show)}>
         <div className='question-cont'>
           <h3>{ts.how}</h3>
           {
@@ -56,14 +56,14 @@ const Index: FC<PropsType> = ({ Fragment = [] }) => {
           }
           <p>* {ts.desc}</p>
         </div>
-      </div>
+      </div> */}
     </h1>
-    <ContainerBg className='web-profile-map-wrap'>
+    <ContainerBg className='m-profile-map-wrap'>
       <p>{ts.title2}<br /> {ts.title3}</p>
-      <div className='web-profile-map-wrap-cont'>
+      <div className='m-profile-map-wrap-cont'>
         {
           lists.map((item, index) => <div key={index}>
-            <img src={`assets/puzzleCard/${item.src}${item.sum > 0 ? `-${item.src}` : ''}.png`} alt="" />
+            <img src={`/assets/puzzleCard/${item.src}${item.sum > 0 ? `-${item.src}` : ''}.png`} alt="" />
             {
               item.sum > 0 && <span>{item.sum}</span>
             }

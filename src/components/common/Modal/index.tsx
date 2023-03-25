@@ -19,7 +19,7 @@ const Index: FC<PropsTypes> = ({ show = false, onClose, children }) => {
   return createPortal(
     <>
       {
-        currentShow && (<div className={classNames('web-modal', { pc: !isMobile() })}>
+        currentShow && (<div className={classNames('web-modal', { mobile: isMobile() })}>
           <div className="web-modal-mask" onClick={handleClose}/>
           <div className='web-modal-wrap'>
             <div className='web-modal-wrap-close' onClick={handleClose}></div>

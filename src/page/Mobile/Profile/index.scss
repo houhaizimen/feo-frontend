@@ -1,13 +1,15 @@
-.web-profile {
-  @include full-bg;
+.m-profile {
+  @include m-full-bg;
   background: imgurl('2.png') no-repeat;
   background-size: cover;
   &-cont {
-    @include max-center-1200;
+    padding: 0 rem(13);
+    box-sizing: border-box;
   }
   .profile-title {
-    font-size: rem(46);
+    font-size: rem(21);
     font-family: 'Universal Serif';
-    line-height: rem(62);
+    line-height: rem(29);
+    font-weight: 400;
   }
 }

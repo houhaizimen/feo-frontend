@@ -29,9 +29,16 @@
       z-index: 100;
     }
   }
-  &.pc {
+  &.mobile {
     .web-modal-mask {
       background-color: rgba(#000, .3);
+    }
+    .web-modal-wrap {
+      &-close {
+        top: rem(12);
+        right: rem(14);
+        width: rem(10);
+      }
     }
   }
 }

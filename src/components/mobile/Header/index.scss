@@ -153,5 +153,9 @@
         }
       }
     }
+    & > .avatar {
+      width: rem(20);
+      margin: rem(29) 0 rem(30) rem(24);
+    }
   }
 }

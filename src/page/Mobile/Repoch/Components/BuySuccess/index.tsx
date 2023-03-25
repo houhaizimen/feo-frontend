@@ -21,7 +21,6 @@ const Index: FC<PropsTypes> = ({ show, onClose, data }) => {
     setCurrentShow(false)
   }
   useEffect(() => setCurrentShow(show), [show])
-  console.log(data)
   const name: Record<string, any> = {
     CANDY: ts.Candy,
     FRAGMENT: ts.Fragment,
@@ -31,8 +30,9 @@ const Index: FC<PropsTypes> = ({ show, onClose, data }) => {
     NFT_HDS: ts.Kachou
   }
   return <Modal show={currentShow} onClose={handleClose}>
-    <div className='web-buy-success'>
-      <div className='left'>
+    <div className='m-buy-success'>
+      <img src={`/assets/GIFT/icon-${data?.imageUrl}.png`} className='top' alt="" />
+      <div className='bottom'>
         <h1 dangerouslySetInnerHTML={{ __html: ts.title }}/>
         {
           (data?.awardType === 'NFT_BZHW' || data?.awardType === 'NFT HDS') ? <h2>{name[(data?.awardType) as any]}</h2> : <h2>{name[(data?.awardType) as any]} {data?.awardType === 'FRAGMENT' ? '#' : '*'} {data?.atObtain}</h2>
@@ -41,11 +41,10 @@ const Index: FC<PropsTypes> = ({ show, onClose, data }) => {
           (data?.awardType === 'NFT_BZHW' || data?.awardType === 'NFT HDS') && <p>{ts.DESC}</p>
         }
         <div className='btn-group'>
-          <Button size='small' onClick={handleClose}>{ts.start}</Button>
-          <Button size='small' type='blacks' onClick={() => navigate('/profile')}>{ts.to}</Button>
+          <Button size='mini' onClick={handleClose}>{ts.start}</Button>
+          <Button size='mini' type='blacks' onClick={() => navigate('/profile')}>{ts.to}</Button>
         </div>
       </div>
-      <img src={`/assets/GIFT/icon-${data?.imageUrl}.png`}className='right' alt="" />
     </div>
   </Modal>
 }

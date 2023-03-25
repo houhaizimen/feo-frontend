@@ -185,6 +185,7 @@ const Index = () => {
                 }
             </ul>
           </div>
+          <img src="/assets/icon-avatar.png" className='avatar' alt="" onClick={() => handleLink('/m/profile')}/>
       </Popup>
     </div>
   </>

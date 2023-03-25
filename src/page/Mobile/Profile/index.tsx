@@ -2,7 +2,7 @@ import React, { useEffect, useCallback, useState } from 'react'
 import { getUserBagIndex } from '@/api'
 import { useWeb3React } from '@web3-react/core'
 
-import Footer from '@/components/web/Footer'
+import Footer from '@/components/mobile/Footer'
 import Grandies from './Compnents/gandies'
 // import MyStake from './Compnents/MyStake'
 // import MyNFT from './Compnents/MyNFT'
@@ -18,8 +18,8 @@ const Index = () => {
   useEffect(() => {
     if (account) void getProfile()
   }, [account, getProfile])
-  return <div className='web-profile'>
-    <div className='web-profile-cont'>
+  return <div className='m-profile'>
+    <div className='m-profile-cont'>
       <Grandies Profile={Profile}/>
       {/* <MyStake Stake={Profile?.userStakingRespList ?? []}/> */}
       {/* <MyNFT /> */}

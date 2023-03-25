@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { getUserBagIndex, getUserDraw } from '@/api'
 import { useWeb3React } from '@web3-react/core'
 
-import Footer from '@/components/web/Footer'
+import Footer from '@/components/mobile/Footer'
 import ContainerBg from '@/components/common/ContainerBg'
 import Button from '@/components/common/Button'
 import Tips from '@/components/common/Tips'
@@ -41,21 +41,20 @@ const Index = () => {
   useEffect(() => {
     if (account) void getProfile()
   }, [account, getProfile])
-  return <div className='web-repoch'>
-    <div className='web-repoch-cont'>
+  return <div className='m-repoch'>
+    <div className='m-repoch-cont'>
       <h1 className='title'>{ts.title}</h1>
       <p>{ts.desc}</p>
-      <div className='web-repoch-cont-candy'>
-        <img src="assets/stake/icon-candy.png" alt="" />
+      <div className='m-repoch-cont-candy'>
+        <img src="/assets/stake/icon-candy.png" alt="" />
         <span>{ts.count} {Profile?.candyBalance ?? 0}</span>
       </div>
-      <ContainerBg className='web-repoch-cont-rule'>
-        <div className='left'>
-          <img src="assets/stake/egg-machine.png" alt="" />
+      <ContainerBg className='m-repoch-cont-rule'>
+        <div className='top'>
+          <img src="/assets/stake/egg-machine.png" alt="" />
           <Button onClick={handleOpen}>{ts.open}</Button>
         </div>
-        <div className='right'>
-          {/* <h2>Spend <span>10</span> candies to <br />get a capsule</h2> */}
+        <div className='bottom'>
           <h2 dangerouslySetInnerHTML={{ __html: t('REPOCH.spend', { count: 10 }) }}/>
           <p>{ts.tip}</p>
           <div className='detail'>

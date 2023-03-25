@@ -1,69 +1,69 @@
-.web-repoch {
-  @include full-bg;
-  background: imgurl('2.png') no-repeat;
-  background-size: cover;
+.m-repoch {
+  @include m-full-bg;
   &-cont {
-    @include max-center-1200;
+    padding: 0 rem(15);
+    box-sizing: border-box;
     & > h1.title {
       text-align: center;
     }
     & > p {
-      font-size: rem(25);
-      margin-top: rem(17);
+      font-size: rem(13);
+      line-height: rem(19);
+      margin-top: rem(9);
       text-align: center;
     }
     &-candy {
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-top: rem(25);
+      margin-top: rem(21);
+      font-size: rem(17);
       & > img {
-        width: rem(110);
-        margin-right: 9px;
+        width: rem(55);
+        margin-right: rem(3);
       }
     }
     &-rule {
-      display: flex;
-      align-items: center;
-      margin-top: rem(40);
-      padding: rem(39) rem(51);
+      margin-top: rem(23);
+      padding: rem(23) rem(5);
       box-sizing: border-box;
-      & > .left {
+      & > .top {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-left: rem(44);
-        margin-right: rem(145);
+        margin-top: rem(27);
+        margin-bottom: rem(44);
         & > img {
-          width: rem(218);
+          width: rem(167);
           margin-bottom: rem(21);
         }
       }
-      & > .right {
-        flex: 1;
-        font-size: rem(22);
+      & > .bottom {
+        font-size: rem(13);
+        text-align: center;
         & > h2 {
-          font-size: rem(46);
+          font-size: rem(21);
           font-family: 'Universal Serif';
-          line-height: rem(62);
-          margin-bottom: rem(9);
+          line-height: rem(29);
+          margin-bottom: rem(18);
           text-transform: uppercase;
+          font-weight: 400;
           & > span {
             color: #EF267C;
           }
         }
         & > .detail {
           position: relative;
-          margin-top: rem(27);
+          margin-top: rem(18);
           & > ul {
-            padding: rem(14) 0;
+            padding: rem(11) 0;
             text-align: center;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             align-items: center;
-            font-size: rem(22);
+            font-size: rem(13);
             background-color: rgba(#EF267C , 0.1);
-            margin-bottom: rem(12);
+            margin-bottom: rem(10);
           }
           &::after {
             content: '';

@@ -64,7 +64,10 @@
     border: 0;
     white-space: nowrap;
     &.mini {
-      width: rem(96);
+      width: rem(117);
+      line-height: rem(33);
+      line-height: rem(33);
+      font-size: rem(15);
     }
     &.large {
       width:  rem(343);
