@@ -185,8 +185,8 @@ const Index = () => {
                 }
             </ul>
           </div>
-          <div className='avatar'>
-            <img src="/assets/icon-avatar.png" alt="" onClick={() => handleLink('/m/profile')}/>
+          <div className='avatar' onClick={() => handleLink('/m/profile')}>
+            <img src="/assets/icon-avatar.png" alt=""/>
             <span>{ts.map}</span>
           </div>
       </Popup>
