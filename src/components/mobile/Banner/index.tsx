@@ -22,7 +22,7 @@ const Index = () => {
   const [tips, setTips] = useState<string>('')
   const { publicMint, whitelistMint } = Runners
   // const { max, handleGetStartTime, maxCount, disabled } = useMintData(account ?? '', balance)
-  const { maxSupply, totalSupply, handleGetStartTime, pPrice, wPrice, disabled } = useMintData(account ?? '', balance)
+  const { handleGetStartTime, pPrice, wPrice, disabled } = useMintData(account ?? '', balance)
   const handleMint = useCallback(async () => {
     setLoading(true)
     const { wTime, pTime } = await handleGetStartTime()
@@ -85,10 +85,10 @@ const Index = () => {
             <dd>{ts.sale}</dd>
             <dt>{pPrice} ETH</dt>
           </dl>
-          <dl className='item'>
+          {/* <dl className='item'>
             <dd>{ts.Total}</dd>
             <dt>{totalSupply}/{maxSupply}</dt>
-          </dl>
+          </dl> */}
           <p>{ts.tips}</p>
           <Stepper value={quantity} max={100} min={1} onChange={val => setQuantity(val)}/>
           {/* <Button loading={loading} disabled={disabled} onClick={handleMint}>MINT</Button> */}
