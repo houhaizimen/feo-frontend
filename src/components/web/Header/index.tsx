@@ -4,10 +4,11 @@ import classNames from 'classnames'
 import { useScroll } from 'ahooks'
 import { ConnectorNames, USER_LOCAL_CONNECT, USER_LOCAL_NAME, useGetWalletList } from '@/utils/wallet'
 import { LANG_LIST } from '@/config'
-import { useLocation, useNavigate } from 'react-router-dom'
+// import { useLocation, useNavigate } from 'react-router-dom'
+// import { useLocation } from 'react-router-dom'
 import { useAuth } from '@/hooks/useAuth'
 import { useTranslation } from 'react-i18next'
-import { HEADER_CHILDREN_TYPES, HEADER_TYPES } from '@/config/types'
+import { HEADER_TYPES } from '@/config/types'
 
 const Index = () => {
   const { account } = useWeb3React()
@@ -18,21 +19,24 @@ const Index = () => {
   const scroll = useScroll(document) ?? 0
   const [fixed, setFixed] = useState<boolean>(false)
   const [rotate, setRotate] = useState<boolean>(false)
-  const { pathname } = useLocation()
-  const navigate = useNavigate()
+  // const { pathname } = useLocation()
+  // const navigate = useNavigate()
 
   const HEADER_LIST: HEADER_TYPES[] = [
     {
       name: ts.World,
       children: [
-        { name: ts.Fighter, link: '/gallery' }
+        // { name: ts.Fighter, link: '/gallery' }
+        { name: ts.Fighter, link: '/' }
       ]
     },
     {
       name: ts.ERA,
       children: [
-        { name: ts.stake, link: '/stake' },
-        { name: ts.epoch, link: '/repoch' }
+        // { name: ts.stake, link: '/stake' },
+        // { name: ts.epoch, link: '/repoch' }
+        { name: ts.stake, link: '' },
+        { name: ts.epoch, link: '' }
       ]
     },
     {
@@ -44,7 +48,8 @@ const Index = () => {
     {
       name: ts.doc,
       children: [
-        { name: ts.FAQ, link: '/faqs' },
+        // { name: ts.FAQ, link: '/faqs' },
+        { name: ts.FAQ, link: '/' },
         { name: ts.Whitepaper, link: 'https://fighter-era-odyssey.gitbook.io/docs/' }
       ]
     }
@@ -66,22 +71,22 @@ const Index = () => {
   }, [scroll])
 
   const handleLink = (link: string) => {
-    if (!link) return
-    const reg = /https|http/
-    if (reg.test(link)) {
-      window.open(link)
-    } else {
-      navigate(link)
-    }
+    // if (!link) return
+    // const reg = /https|http/
+    // if (reg.test(link)) {
+    //   window.open(link)
+    // } else {
+      // navigate(link)
+    // }
   }
 
   const changeLanguage = (val: string) => {
     void i18n.changeLanguage(val)
   }
 
-  const handleLinkActive = (items: HEADER_CHILDREN_TYPES[]) => {
-    return items.findIndex(item => item.link === pathname) > -1
-  }
+  // const handleLinkActive = (items: HEADER_CHILDREN_TYPES[]) => {
+  //   return items.findIndex(item => item.link === pathname) > -1
+  // }
 
   return <>
     <div className={ classNames('app-home-header', { fixed })}>
@@ -92,7 +97,8 @@ const Index = () => {
           <ul className='title'>
             {
               HEADER_LIST.map(item => <li key={item.name}>
-                <div className={classNames('title-cont', { active: handleLinkActive(item.children) })}>
+                {/* <div className={classNames('title-cont', { active: handleLinkActive(item.children) })}> */}
+                <div className='title-cont'>
                   <div className={classNames('title-cont-top', { down: rotate })} onClick={() => setRotate(!rotate)}>
                     <div>{item.name} <img className='select' src="assets/icon-up.png" alt="" /></div>
                   </div>

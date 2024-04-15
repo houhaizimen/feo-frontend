@@ -4,10 +4,10 @@ import classNames from 'classnames'
 import { useScroll } from 'ahooks'
 import { ConnectorNames, USER_LOCAL_CONNECT, useGetWalletList } from '@/utils/wallet'
 import { connectList, LANG_LIST } from '@/config'
-import { useLocation, useNavigate } from 'react-router-dom'
+// import { useLocation } from 'react-router-dom'
 import { useAuth } from '@/hooks/useAuth'
 import { useTranslation } from 'react-i18next'
-import { HEADER_CHILDREN_TYPES, HEADER_TYPES } from '@/config/types'
+import { HEADER_TYPES } from '@/config/types'
 
 import { Popup } from 'antd-mobile'
 
@@ -22,21 +22,24 @@ const Index = () => {
   const walletList = useGetWalletList()
   const scroll = useScroll(document) ?? 0
   const [fixed, setFixed] = useState<boolean>(false)
-  const { pathname } = useLocation()
-  const navigate = useNavigate()
+  // const { pathname } = useLocation()
+  // const navigate = useNavigate()
 
   const HEADER_LIST: HEADER_TYPES[] = [
     {
       name: ts.World,
       children: [
-        { name: ts.Fighter, link: '/m/gallery' }
+        // { name: ts.Fighter, link: '/m/gallery' }
+        { name: ts.Fighter, link: '' }
       ]
     },
     {
       name: ts.ERA,
       children: [
-        { name: ts.stake, link: '/m/stake' },
-        { name: ts.epoch, link: '/m/repoch' }
+        // { name: ts.stake, link: '/m/stake' },
+        // { name: ts.epoch, link: '/m/repoch' }
+        { name: ts.stake, link: '' },
+        { name: ts.epoch, link: '' }
       ]
     },
     {
@@ -48,7 +51,8 @@ const Index = () => {
     {
       name: ts.doc,
       children: [
-        { name: ts.FAQ, link: '/faqs' },
+        // { name: ts.FAQ, link: '/faqs' },
+        { name: ts.FAQ, link: '' },
         { name: ts.Whitepaper, link: 'https://fighter-era-odyssey.gitbook.io/docs/' }
       ]
     }
@@ -71,15 +75,15 @@ const Index = () => {
   }, [scroll])
 
   const handleLink = (link: string) => {
-    if (!link) return
-    const reg = /https|http/
-    if (reg.test(link)) {
-      window.open(link)
-    } else {
-      navigate(link)
-    }
-    setVisible(false)
-    setShow(false)
+    // if (!link) return
+    // const reg = /https|http/
+    // if (reg.test(link)) {
+    //   window.open(link)
+    // } else {
+    //   navigate(link)
+    // }
+    // setVisible(false)
+    // setShow(false)
   }
 
   const handleLogout = () => {
@@ -93,9 +97,9 @@ const Index = () => {
     setShowLan(false)
     void i18n.changeLanguage(val)
   }
-  const handleLinkActive = (items: HEADER_CHILDREN_TYPES[]) => {
-    return items.findIndex(item => item.link === pathname) > -1
-  }
+  // const handleLinkActive = (items: HEADER_CHILDREN_TYPES[]) => {
+  //   return items.findIndex(item => item.link === pathname) > -1
+  // }
 
   const handleChangeNav = (name: string) => {
     if (name === showNav) setShowNav('')
@@ -122,7 +126,8 @@ const Index = () => {
       >
         <ul className='title'>
           {
-            HEADER_LIST.map(item => <li key={item.name} className={ classNames({ active: handleLinkActive(item.children) })}><div className='connect-wallet title-group'>
+            // HEADER_LIST.map(item => <li key={item.name} className={ classNames({ active: handleLinkActive(item.children) })}><div className='connect-wallet title-group'>
+            HEADER_LIST.map(item => <li key={item.name}><div className='connect-wallet title-group'>
             <div className={classNames('connect-wallet-connect', { show: showNav === item.name })} onClick={() => handleChangeNav(item.name)}>
               {item.name}
               <div className='angel' />

@@ -15,18 +15,19 @@
       }
       & > h1 {
         line-height: rem(85);
-        margin-top: rem(11);
-        font-size: rem(70);
+        margin-top: rem(80);
+        font-size: rem(80);
       }
       & > .line {
         width: rem(600);
         height: 2px;
         background-color: #fff;
+        margin: rem(100) 0 rem(50);
       }
       & > h2 {
         line-height: rem(52);
-        margin-bottom: rem(16);
-        font-size: rem(46);
+        margin-top: rem(160);
+        font-size: rem(44);
       }
       z-index: 3;
     }
